@@ -29,6 +29,7 @@
 		497875D82806ABDD00116DE1 /* TimeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497875D72806ABDD00116DE1 /* TimeSettings.swift */; };
 		497875DA2806CEC300116DE1 /* DataContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497875D92806CEC300116DE1 /* DataContext.swift */; };
 		497875DF2806D33700116DE1 /* HostInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497875DE2806D33700116DE1 /* HostInfo.swift */; };
+		497875E12806D53C00116DE1 /* Slice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497875E02806D53C00116DE1 /* Slice.swift */; };
 		49B6BC79280004EC005AC3BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6BC78280004EC005AC3BE /* AppDelegate.swift */; };
 		49B6BC7B280004EC005AC3BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6BC7A280004EC005AC3BE /* SceneDelegate.swift */; };
 		49B6BC7D280004EC005AC3BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6BC7C280004EC005AC3BE /* ViewController.swift */; };
@@ -48,6 +49,7 @@
 		49C5F1E028009E9D003EB248 /* GameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5F1DF28009E9D003EB248 /* GameType.swift */; };
 		49C5F1E328015FCA003EB248 /* SettingsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5F1E228015FCA003EB248 /* SettingsState.swift */; };
 		49C5F1EB28019CFA003EB248 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49C5F1E928019CFA003EB248 /* Localizable.strings */; };
+		49E7BC522806EAA900843FB7 /* PackageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E7BC512806EAA900843FB7 /* PackageKey.swift */; };
 		7F3DB3EB683C5727F0DEEA0D /* Pods_SIOnline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B118D17261E5B8EB30D59E4A /* Pods_SIOnline.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +98,7 @@
 		49C5F1DF28009E9D003EB248 /* GameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameType.swift; sourceTree = "<group>"; };
 		49C5F1E228015FCA003EB248 /* SettingsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsState.swift; sourceTree = "<group>"; };
 		49C5F1EA28019CFA003EB248 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		49E7BC512806EAA900843FB7 /* PackageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageKey.swift; sourceTree = "<group>"; };
 		706AEA9C60F4E83C7C204180 /* Pods-SIOnline.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIOnline.debug.xcconfig"; path = "Target Support Files/Pods-SIOnline/Pods-SIOnline.debug.xcconfig"; sourceTree = "<group>"; };
 		B118D17261E5B8EB30D59E4A /* Pods_SIOnline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIOnline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D8F96D7E82A0BD02C1C923 /* Pods-SIOnline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIOnline.release.xcconfig"; path = "Target Support Files/Pods-SIOnline/Pods-SIOnline.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +142,7 @@
 				497875D72806ABDD00116DE1 /* TimeSettings.swift */,
 				497875DE2806D33700116DE1 /* HostInfo.swift */,
 				497875E02806D53C00116DE1 /* Slice.swift */,
+				49E7BC512806EAA900843FB7 /* PackageKey.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -432,6 +436,7 @@
 				495A9AE8280587FF0035ABE5 /* StakeTypes.swift in Sources */,
 				497875DF2806D33700116DE1 /* HostInfo.swift in Sources */,
 				495A9AD728054C0A0035ABE5 /* Persons.swift in Sources */,
+				49E7BC522806EAA900843FB7 /* PackageKey.swift in Sources */,
 				49C5F1E328015FCA003EB248 /* SettingsState.swift in Sources */,
 				4951098B2803D6C80019160E /* R.generated.swift in Sources */,
 				49C5F1DE280082CE003EB248 /* Role.swift in Sources */,
