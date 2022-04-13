@@ -6,7 +6,7 @@
 //
 
 
-enum Role: Int {
+enum Role: Int, Codable {
     case Viewer = 0
     case Player = 1
     case Showman = 2

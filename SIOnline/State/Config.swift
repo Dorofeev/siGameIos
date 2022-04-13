@@ -6,22 +6,12 @@
 //
 
 struct Config {
-    let serverUri: String
+    let serverUri: String?
     let apiUri: String
-    let serverDiscoveryUri: String
+    let serverDiscoveryUri: String?
     let rootUri: String
     let useMessagePackProtocol: Bool
     let ads: String
     let forceHttps: Bool
     let rewriteUrl: Bool
 }
-/*
-serverUri?: string;
-apiUri?: string;
-serverDiscoveryUri?: string;
-rootUri?: string;
-useMessagePackProtocol?: boolean;
-ads?: string;
-forceHttps?: boolean;
-rewriteUrl?: boolean;
-*/
