@@ -10,6 +10,7 @@
 		4914D27F2807C9AF000224A1 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D27E2807C9AF000224A1 /* GameSettings.swift */; };
 		4914D2812807CA8A000224A1 /* AccountSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2802807CA89000224A1 /* AccountSettings.swift */; };
 		4914D2832807CBB0000224A1 /* ServerAppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2822807CBB0000224A1 /* ServerAppSettings.swift */; };
+		4914D2872807CE4B000224A1 /* GameCreationResultCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2862807CE4B000224A1 /* GameCreationResultCode.swift */; };
 		4951098B2803D6C80019160E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951098A2803D6C80019160E /* R.generated.swift */; };
 		4951098E2803F23F0019160E /* ServerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951098D2803F23F0019160E /* ServerInfo.swift */; };
 		495A9ACA28048F6B0035ABE5 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A9AC928048F6B0035ABE5 /* ChatMessage.swift */; };
@@ -60,6 +61,7 @@
 		4914D27E2807C9AF000224A1 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 		4914D2802807CA89000224A1 /* AccountSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettings.swift; sourceTree = "<group>"; };
 		4914D2822807CBB0000224A1 /* ServerAppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAppSettings.swift; sourceTree = "<group>"; };
+		4914D2862807CE4B000224A1 /* GameCreationResultCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCreationResultCode.swift; sourceTree = "<group>"; };
 		4951098A2803D6C80019160E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		4951098D2803F23F0019160E /* ServerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerInfo.swift; sourceTree = "<group>"; };
 		495A9AC928048F6B0035ABE5 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				4914D27E2807C9AF000224A1 /* GameSettings.swift */,
 				4914D2802807CA89000224A1 /* AccountSettings.swift */,
 				4914D2822807CBB0000224A1 /* ServerAppSettings.swift */,
+				4914D2862807CE4B000224A1 /* GameCreationResultCode.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				49C5F1D528007F46003EB248 /* Config.swift in Sources */,
 				495A9ACC28048FF40035ABE5 /* ChatMode.swift in Sources */,
 				49B6BC79280004EC005AC3BE /* AppDelegate.swift in Sources */,
+				4914D2872807CE4B000224A1 /* GameCreationResultCode.swift in Sources */,
 				497875D62806A9CC00116DE1 /* AppSettings.swift in Sources */,
 				495A9ACA28048F6B0035ABE5 /* ChatMessage.swift in Sources */,
 				49B6BC7B280004EC005AC3BE /* SceneDelegate.swift in Sources */,
