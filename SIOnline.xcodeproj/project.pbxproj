@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4914D27F2807C9AF000224A1 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D27E2807C9AF000224A1 /* GameSettings.swift */; };
 		4914D2812807CA8A000224A1 /* AccountSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2802807CA89000224A1 /* AccountSettings.swift */; };
 		4914D2832807CBB0000224A1 /* ServerAppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2822807CBB0000224A1 /* ServerAppSettings.swift */; };
 		4951098B2803D6C80019160E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951098A2803D6C80019160E /* R.generated.swift */; };
@@ -56,6 +57,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4914D27E2807C9AF000224A1 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 		4914D2802807CA89000224A1 /* AccountSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettings.swift; sourceTree = "<group>"; };
 		4914D2822807CBB0000224A1 /* ServerAppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAppSettings.swift; sourceTree = "<group>"; };
 		4951098A2803D6C80019160E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -147,6 +149,7 @@
 				497875DE2806D33700116DE1 /* HostInfo.swift */,
 				497875E02806D53C00116DE1 /* Slice.swift */,
 				49E7BC512806EAA900843FB7 /* PackageKey.swift */,
+				4914D27E2807C9AF000224A1 /* GameSettings.swift */,
 				4914D2802807CA89000224A1 /* AccountSettings.swift */,
 				4914D2822807CBB0000224A1 /* ServerAppSettings.swift */,
 			);
@@ -425,6 +428,7 @@
 				4951098E2803F23F0019160E /* ServerInfo.swift in Sources */,
 				49C5F1E028009E9D003EB248 /* GameType.swift in Sources */,
 				495A9AE6280584840035ABE5 /* ThemeInfo.swift in Sources */,
+				4914D27F2807C9AF000224A1 /* GameSettings.swift in Sources */,
 				49C5F1D528007F46003EB248 /* Config.swift in Sources */,
 				495A9ACC28048FF40035ABE5 /* ChatMode.swift in Sources */,
 				49B6BC79280004EC005AC3BE /* AppDelegate.swift in Sources */,
