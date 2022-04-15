@@ -37,6 +37,7 @@
 		497875DF2806D33700116DE1 /* HostInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497875DE2806D33700116DE1 /* HostInfo.swift */; };
 		497875E12806D53C00116DE1 /* Slice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497875E02806D53C00116DE1 /* Slice.swift */; };
 		498BE63C280954700096AF75 /* DummyGameServerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BE63B280954700096AF75 /* DummyGameServerClient.swift */; };
+		498BE63E28096E590096AF75 /* RestrictionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BE63D28096E590096AF75 /* RestrictionType.swift */; };
 		49B6BC79280004EC005AC3BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6BC78280004EC005AC3BE /* AppDelegate.swift */; };
 		49B6BC7B280004EC005AC3BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6BC7A280004EC005AC3BE /* SceneDelegate.swift */; };
 		49B6BC7D280004EC005AC3BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6BC7C280004EC005AC3BE /* ViewController.swift */; };
@@ -91,6 +92,7 @@
 		497875DE2806D33700116DE1 /* HostInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostInfo.swift; sourceTree = "<group>"; };
 		497875E02806D53C00116DE1 /* Slice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slice.swift; sourceTree = "<group>"; };
 		498BE63B280954700096AF75 /* DummyGameServerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyGameServerClient.swift; sourceTree = "<group>"; };
+		498BE63D28096E590096AF75 /* RestrictionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictionType.swift; sourceTree = "<group>"; };
 		49B6BC75280004EC005AC3BE /* SIOnline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SIOnline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B6BC78280004EC005AC3BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49B6BC7A280004EC005AC3BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				495A9ADA280557130035ABE5 /* PlayerStates.swift */,
 				495A9AE3280581C50035ABE5 /* TableMode.swift */,
 				495A9AE7280587FF0035ABE5 /* StakeTypes.swift */,
+				498BE63D28096E590096AF75 /* RestrictionType.swift */,
 			);
 			path = "Enums ";
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				49B6BC7D280004EC005AC3BE /* ViewController.swift in Sources */,
 				49C223B228043ACD007170F4 /* MainView.swift in Sources */,
 				4914D2832807CBB0000224A1 /* ServerAppSettings.swift in Sources */,
+				498BE63E28096E590096AF75 /* RestrictionType.swift in Sources */,
 				49C5F1DB2800817D003EB248 /* SavedState.swift in Sources */,
 				495A9AD1280549A50035ABE5 /* RunState.swift in Sources */,
 				4951098E2803F23F0019160E /* ServerInfo.swift in Sources */,

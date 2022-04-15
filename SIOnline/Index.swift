@@ -55,19 +55,25 @@ class Index {
                     startController.showError(message: "Server uris object is broken!")
                     return
                 }
-                self?.run(with: serverUri[0].uri, state: State.initialState(), gameId: gameId)
+                self?.run(with: serverUri[0].uri, state: State.initialState(), config: config, gameId: gameId)
             }
         } else {
-            run(with: serverUri!, state: State.initialState(), gameId: gameId)
+            run(with: serverUri!, state: State.initialState(), config: config, gameId: gameId)
         }
         
     }
     
-    private func run(with Uri: String, state: State, gameId: String?) {
+    private func run(with uri: String, state: State, config: Config, gameId: String?) {
         let savedState = SavedState.loadState()
         setState(state: state, savedState: savedState, gameId: gameId)
         
-        //let dataContext =
+        let dataContext = DataContext(
+            config: config,
+            serverUri: uri,
+            connection: nil,
+            gameClient: DummyGameServerClient(),
+            contentUris: []
+        )
     }
     
     private func getServerUri(serverDiscoveryUri: String, completion: @escaping ([ServerInfo]?, AFError?) -> ()) {

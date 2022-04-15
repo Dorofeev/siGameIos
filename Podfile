@@ -7,5 +7,6 @@ pod 'R.swift', '6.1.0'
 pod 'Alamofire', '5.5'
 pod 'PromiseKit', '6.8'
 pod 'SwiftSignalRClient', '0.9.0'
+pod 'ReSwift', '6.1.0'
 
 end
