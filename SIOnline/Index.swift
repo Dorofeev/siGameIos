@@ -10,13 +10,6 @@ import UIKit
 class Index {
     private var config: Config?
     
-    init() {
-        getServerUri(serverDiscoveryUri: "https://vladimirkhil.com/api/si/servers", completion: { response, error in
-            print("response == \(response)")
-            print("error == \(error)")
-        })
-    }
-    
     func setState(state: State, savedState: SavedState?, gameId: String?) -> State {
         guard let savedState = savedState else {
             return state

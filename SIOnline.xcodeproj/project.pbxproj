@@ -10,6 +10,7 @@
 		4914D27F2807C9AF000224A1 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D27E2807C9AF000224A1 /* GameSettings.swift */; };
 		4914D2812807CA8A000224A1 /* AccountSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2802807CA89000224A1 /* AccountSettings.swift */; };
 		4914D2832807CBB0000224A1 /* ServerAppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2822807CBB0000224A1 /* ServerAppSettings.swift */; };
+		4914D2852807CDFA000224A1 /* GameCreationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2842807CDFA000224A1 /* GameCreationResult.swift */; };
 		4914D2872807CE4B000224A1 /* GameCreationResultCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2862807CE4B000224A1 /* GameCreationResultCode.swift */; };
 		4951098B2803D6C80019160E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951098A2803D6C80019160E /* R.generated.swift */; };
 		4951098E2803F23F0019160E /* ServerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951098D2803F23F0019160E /* ServerInfo.swift */; };
@@ -32,6 +33,7 @@
 		497875D62806A9CC00116DE1 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497875D52806A9CC00116DE1 /* AppSettings.swift */; };
 		497875D82806ABDD00116DE1 /* TimeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497875D72806ABDD00116DE1 /* TimeSettings.swift */; };
 		497875DA2806CEC300116DE1 /* DataContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497875D92806CEC300116DE1 /* DataContext.swift */; };
+		497875DD2806D19700116DE1 /* IGameServerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497875DC2806D19700116DE1 /* IGameServerClient.swift */; };
 		497875DF2806D33700116DE1 /* HostInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497875DE2806D33700116DE1 /* HostInfo.swift */; };
 		497875E12806D53C00116DE1 /* Slice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497875E02806D53C00116DE1 /* Slice.swift */; };
 		49B6BC79280004EC005AC3BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6BC78280004EC005AC3BE /* AppDelegate.swift */; };
@@ -61,6 +63,7 @@
 		4914D27E2807C9AF000224A1 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 		4914D2802807CA89000224A1 /* AccountSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettings.swift; sourceTree = "<group>"; };
 		4914D2822807CBB0000224A1 /* ServerAppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAppSettings.swift; sourceTree = "<group>"; };
+		4914D2842807CDFA000224A1 /* GameCreationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCreationResult.swift; sourceTree = "<group>"; };
 		4914D2862807CE4B000224A1 /* GameCreationResultCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCreationResultCode.swift; sourceTree = "<group>"; };
 		4951098A2803D6C80019160E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		4951098D2803F23F0019160E /* ServerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerInfo.swift; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 		497875D52806A9CC00116DE1 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		497875D72806ABDD00116DE1 /* TimeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettings.swift; sourceTree = "<group>"; };
 		497875D92806CEC300116DE1 /* DataContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContext.swift; sourceTree = "<group>"; };
+		497875DC2806D19700116DE1 /* IGameServerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGameServerClient.swift; sourceTree = "<group>"; };
 		497875DE2806D33700116DE1 /* HostInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostInfo.swift; sourceTree = "<group>"; };
 		497875E02806D53C00116DE1 /* Slice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slice.swift; sourceTree = "<group>"; };
 		49B6BC75280004EC005AC3BE /* SIOnline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SIOnline.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +158,7 @@
 				4914D27E2807C9AF000224A1 /* GameSettings.swift */,
 				4914D2802807CA89000224A1 /* AccountSettings.swift */,
 				4914D2822807CBB0000224A1 /* ServerAppSettings.swift */,
+				4914D2842807CDFA000224A1 /* GameCreationResult.swift */,
 				4914D2862807CE4B000224A1 /* GameCreationResultCode.swift */,
 			);
 			path = Server;
@@ -173,6 +178,14 @@
 				495A9AE1280581080035ABE5 /* TableState.swift */,
 			);
 			path = Table;
+			sourceTree = "<group>";
+		};
+		497875DB2806D19000116DE1 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				497875DC2806D19700116DE1 /* IGameServerClient.swift */,
+			);
+			path = Client;
 			sourceTree = "<group>";
 		};
 		49B6BC6C280004EC005AC3BE = {
@@ -196,6 +209,7 @@
 		49B6BC77280004EC005AC3BE /* SIOnline */ = {
 			isa = PBXGroup;
 			children = (
+				497875DB2806D19000116DE1 /* Client */,
 				49C5F1E428019C4F003EB248 /* Resources */,
 				49C5F1D328007F35003EB248 /* State */,
 				49B6BC8C280004FB005AC3BE /* Models */,
@@ -422,6 +436,7 @@
 				495A9AD328054AF80035ABE5 /* Account.swift in Sources */,
 				495A9AE4280581C50035ABE5 /* TableMode.swift in Sources */,
 				49C223B6280444B8007170F4 /* GamesFilter.swift in Sources */,
+				4914D2852807CDFA000224A1 /* GameCreationResult.swift in Sources */,
 				495A9ADB280557130035ABE5 /* PlayerStates.swift in Sources */,
 				49B6BC7D280004EC005AC3BE /* ViewController.swift in Sources */,
 				49C223B228043ACD007170F4 /* MainView.swift in Sources */,
@@ -445,6 +460,7 @@
 				495A9AD528054B6A0035ABE5 /* Sex.swift in Sources */,
 				495A9AE2280581080035ABE5 /* TableState.swift in Sources */,
 				49C223BA280446E5007170F4 /* ServerPersonInfo.swift in Sources */,
+				497875DD2806D19700116DE1 /* IGameServerClient.swift in Sources */,
 				495A9ADF28057EE60035ABE5 /* TimerInfo.swift in Sources */,
 				49C5F1D928008052003EB248 /* State.swift in Sources */,
 				497875E12806D53C00116DE1 /* Slice.swift in Sources */,
