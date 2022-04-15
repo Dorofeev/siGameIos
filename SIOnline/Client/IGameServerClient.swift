@@ -44,4 +44,44 @@ protocol IGameServerClient {
      * @param `isMale` If host is a male person (or female otherwise).
      */
     func createAndJoinGameAsync(gameSettings: GameSettings, packageKey: PackageKey, isMale: Bool) -> Promise<GameCreationResult>
+    
+    /**
+     * Creates an automatic game to play with anybody and joins it.
+     * @param `login` User login.
+     * @param `isMale` If person is a male (or female otherwise).
+     */
+    func createAutomaticGameAsync(login: String, isMale: Bool) -> Promise<GameCreationResult>
+    
+    /**
+     * Joins an existsing game.
+     * @param `gameId` Game identifier to join.
+     * @param `role` Role to use.
+     * @param `isMale` If person is a male (or female otherwise).
+     * @param `password` Game password.
+     */
+    func joinGameAsync(gameId: Int, role: Role, isMale: Bool, password: String) -> Promise<GameCreationResult>
+    
+    /**
+     * Sends a message inside game.
+     * @param `message` Message to send.
+     */
+    func sendMessageToServerAsync(message: String) -> Promise<Any>
+    
+    /**
+     * Sends a message inside game.
+     * @param `args` Arguments to construct a message.
+     */
+    func msgAsync(args: [Any]) -> Promise<Any>
+    
+    /**
+     * Sends a message in game chat.
+     * @param `message` Message to send.
+     */
+    func sayAsync(message: String) -> Promise<Any>
+    
+    /** Leaves running game. */
+    func leaveGameAsync() -> Promise<Any>
+    
+    /** Logs out from the server. */
+    func logOutAsync() -> Promise<Any>
 }
