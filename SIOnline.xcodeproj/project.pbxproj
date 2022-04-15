@@ -36,6 +36,7 @@
 		497875DD2806D19700116DE1 /* IGameServerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497875DC2806D19700116DE1 /* IGameServerClient.swift */; };
 		497875DF2806D33700116DE1 /* HostInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497875DE2806D33700116DE1 /* HostInfo.swift */; };
 		497875E12806D53C00116DE1 /* Slice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497875E02806D53C00116DE1 /* Slice.swift */; };
+		498BE63C280954700096AF75 /* DummyGameServerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BE63B280954700096AF75 /* DummyGameServerClient.swift */; };
 		49B6BC79280004EC005AC3BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6BC78280004EC005AC3BE /* AppDelegate.swift */; };
 		49B6BC7B280004EC005AC3BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6BC7A280004EC005AC3BE /* SceneDelegate.swift */; };
 		49B6BC7D280004EC005AC3BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6BC7C280004EC005AC3BE /* ViewController.swift */; };
@@ -89,6 +90,7 @@
 		497875DC2806D19700116DE1 /* IGameServerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGameServerClient.swift; sourceTree = "<group>"; };
 		497875DE2806D33700116DE1 /* HostInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostInfo.swift; sourceTree = "<group>"; };
 		497875E02806D53C00116DE1 /* Slice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slice.swift; sourceTree = "<group>"; };
+		498BE63B280954700096AF75 /* DummyGameServerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyGameServerClient.swift; sourceTree = "<group>"; };
 		49B6BC75280004EC005AC3BE /* SIOnline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SIOnline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B6BC78280004EC005AC3BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49B6BC7A280004EC005AC3BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				497875DC2806D19700116DE1 /* IGameServerClient.swift */,
+				498BE63B280954700096AF75 /* DummyGameServerClient.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				49C5F1D928008052003EB248 /* State.swift in Sources */,
 				497875E12806D53C00116DE1 /* Slice.swift in Sources */,
 				495A9AE8280587FF0035ABE5 /* StakeTypes.swift in Sources */,
+				498BE63C280954700096AF75 /* DummyGameServerClient.swift in Sources */,
 				497875DF2806D33700116DE1 /* HostInfo.swift in Sources */,
 				4914D2812807CA8A000224A1 /* AccountSettings.swift in Sources */,
 				495A9AD728054C0A0035ABE5 /* Persons.swift in Sources */,
