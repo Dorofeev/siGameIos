@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		146C9602280A9D5C00292C4C /* DictionaryExtentsions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C9601280A9D5C00292C4C /* DictionaryExtentsions.swift */; };
 		4914D27F2807C9AF000224A1 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D27E2807C9AF000224A1 /* GameSettings.swift */; };
 		4914D2812807CA8A000224A1 /* AccountSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2802807CA89000224A1 /* AccountSettings.swift */; };
 		4914D2832807CBB0000224A1 /* ServerAppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2822807CBB0000224A1 /* ServerAppSettings.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		146C9601280A9D5C00292C4C /* DictionaryExtentsions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtentsions.swift; sourceTree = "<group>"; };
 		4914D27E2807C9AF000224A1 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 		4914D2802807CA89000224A1 /* AccountSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettings.swift; sourceTree = "<group>"; };
 		4914D2822807CBB0000224A1 /* ServerAppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAppSettings.swift; sourceTree = "<group>"; };
@@ -146,6 +148,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		146C9600280A9C7F00292C4C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				146C9601280A9D5C00292C4C /* DictionaryExtentsions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		2F04F21239AEE23C229715D7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +230,7 @@
 		49B6BC77280004EC005AC3BE /* SIOnline */ = {
 			isa = PBXGroup;
 			children = (
+				146C9600280A9C7F00292C4C /* Utils */,
 				497875DB2806D19000116DE1 /* Client */,
 				49C5F1E428019C4F003EB248 /* Resources */,
 				49C5F1D328007F35003EB248 /* State */,
@@ -446,6 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				146C9602280A9D5C00292C4C /* DictionaryExtentsions.swift in Sources */,
 				495A9AD928054CD50035ABE5 /* PlayerInfo.swift in Sources */,
 				49C223B428044029007170F4 /* OnlineMode.swift in Sources */,
 				498BE64028096F1F0096AF75 /* SIPackageInfo.swift in Sources */,
