@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		146C9602280A9D5C00292C4C /* DictionaryExtentsions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C9601280A9D5C00292C4C /* DictionaryExtentsions.swift */; };
+		146C9604280AC34B00292C4C /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C9603280AC34B00292C4C /* ArrayExtensions.swift */; };
 		4914D27F2807C9AF000224A1 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D27E2807C9AF000224A1 /* GameSettings.swift */; };
 		4914D2812807CA8A000224A1 /* AccountSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2802807CA89000224A1 /* AccountSettings.swift */; };
 		4914D2832807CBB0000224A1 /* ServerAppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2822807CBB0000224A1 /* ServerAppSettings.swift */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		146C9601280A9D5C00292C4C /* DictionaryExtentsions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtentsions.swift; sourceTree = "<group>"; };
+		146C9603280AC34B00292C4C /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		4914D27E2807C9AF000224A1 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 		4914D2802807CA89000224A1 /* AccountSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettings.swift; sourceTree = "<group>"; };
 		4914D2822807CBB0000224A1 /* ServerAppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAppSettings.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				146C9601280A9D5C00292C4C /* DictionaryExtentsions.swift */,
+				146C9603280AC34B00292C4C /* ArrayExtensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				497875E12806D53C00116DE1 /* Slice.swift in Sources */,
 				495A9AE8280587FF0035ABE5 /* StakeTypes.swift in Sources */,
 				498BE63C280954700096AF75 /* DummyGameServerClient.swift in Sources */,
+				146C9604280AC34B00292C4C /* ArrayExtensions.swift in Sources */,
 				497875DF2806D33700116DE1 /* HostInfo.swift in Sources */,
 				4914D2812807CA8A000224A1 /* AccountSettings.swift in Sources */,
 				495A9AD728054C0A0035ABE5 /* Persons.swift in Sources */,
