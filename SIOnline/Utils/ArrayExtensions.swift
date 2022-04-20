@@ -4,29 +4,28 @@
 //
 //  Created by Anna Kuptsova on 16.04.2022.
 //
-extension Array {
-    static func removeFromArray<T: Equatable>(array: [T], item: T) -> [T] {
-        return array.filter {
-            $0 != item
-        }
+extension Array where Element: Equatable {
+    mutating func removeFromArray(item: Element) {
+        self.removeAll { item == $0 }
     }
     
-    static func arrayToDictionary<T>(
-        array: [T],
-        keySelector: (T) -> String
-    ) -> [String: T] {
-        var temp = [String: T]()
-        for value in array {
+    func arrayToDictionary(
+        keySelector: (Element) -> String
+    ) -> [String: Element] {
+        var temp = [String: Element]()
+        for value in self {
             temp[keySelector(value)] = value
-            
         }
         return temp
     }
     
-    static func replace<T>(array: [T], index: Int, item: T) -> [T] {
-        let prefix = array.prefix(upTo: index)
-        let suffix = array.suffix(from: index + 1)
-        return prefix + [item] + suffix
+    mutating func replace(index: Int, item: Element) {
+        self[index] = item
     }
     
+    static func swap<T>(array: [T], index1: Int, index2: Int) -> [T] {
+        var temp = array
+        (temp[index1], temp[index2]) = (temp[index2], temp[index1])
+        return temp
+    }
 }
