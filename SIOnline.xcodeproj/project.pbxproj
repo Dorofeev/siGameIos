@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		146AC7B82813DA07001598FE /* TableActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146AC7B72813DA07001598FE /* TableActions.swift */; };
 		146C9602280A9D5C00292C4C /* DictionaryExtentsions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C9601280A9D5C00292C4C /* DictionaryExtentsions.swift */; };
 		146C9604280AC34B00292C4C /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C9603280AC34B00292C4C /* ArrayExtensions.swift */; };
 		4914D27F2807C9AF000224A1 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D27E2807C9AF000224A1 /* GameSettings.swift */; };
@@ -68,6 +69,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		146AC7B72813DA07001598FE /* TableActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableActions.swift; sourceTree = "<group>"; };
 		146C9601280A9D5C00292C4C /* DictionaryExtentsions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtentsions.swift; sourceTree = "<group>"; };
 		146C9603280AC34B00292C4C /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		4914D27E2807C9AF000224A1 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				495A9AE1280581080035ABE5 /* TableState.swift */,
+				146AC7B72813DA07001598FE /* TableActions.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				498BE64028096F1F0096AF75 /* SIPackageInfo.swift in Sources */,
 				495A9AD328054AF80035ABE5 /* Account.swift in Sources */,
 				495A9AE4280581C50035ABE5 /* TableMode.swift in Sources */,
+				146AC7B82813DA07001598FE /* TableActions.swift in Sources */,
 				49C223B6280444B8007170F4 /* GamesFilter.swift in Sources */,
 				498BE642280970450096AF75 /* SearchEntity.swift in Sources */,
 				4914D2852807CDFA000224A1 /* GameCreationResult.swift in Sources */,
