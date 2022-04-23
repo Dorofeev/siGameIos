@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		146AC7B82813DA07001598FE /* TableActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146AC7B72813DA07001598FE /* TableActions.swift */; };
+		146AC7BA2813EE7A001598FE /* TableReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146AC7B92813EE7A001598FE /* TableReducer.swift */; };
 		146C9602280A9D5C00292C4C /* DictionaryExtentsions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C9601280A9D5C00292C4C /* DictionaryExtentsions.swift */; };
 		146C9604280AC34B00292C4C /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C9603280AC34B00292C4C /* ArrayExtensions.swift */; };
 		4914D27F2807C9AF000224A1 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D27E2807C9AF000224A1 /* GameSettings.swift */; };
@@ -70,6 +71,7 @@
 
 /* Begin PBXFileReference section */
 		146AC7B72813DA07001598FE /* TableActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableActions.swift; sourceTree = "<group>"; };
+		146AC7B92813EE7A001598FE /* TableReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableReducer.swift; sourceTree = "<group>"; };
 		146C9601280A9D5C00292C4C /* DictionaryExtentsions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtentsions.swift; sourceTree = "<group>"; };
 		146C9603280AC34B00292C4C /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		4914D27E2807C9AF000224A1 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			children = (
 				495A9AE1280581080035ABE5 /* TableState.swift */,
 				146AC7B72813DA07001598FE /* TableActions.swift */,
+				146AC7B92813EE7A001598FE /* TableReducer.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				495A9AD1280549A50035ABE5 /* RunState.swift in Sources */,
 				4951098E2803F23F0019160E /* ServerInfo.swift in Sources */,
 				49C5F1E028009E9D003EB248 /* GameType.swift in Sources */,
+				146AC7BA2813EE7A001598FE /* TableReducer.swift in Sources */,
 				495A9AE6280584840035ABE5 /* ThemeInfo.swift in Sources */,
 				4914D27F2807C9AF000224A1 /* GameSettings.swift in Sources */,
 				49C5F1D528007F46003EB248 /* Config.swift in Sources */,

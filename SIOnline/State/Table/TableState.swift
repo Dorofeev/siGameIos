@@ -6,17 +6,17 @@
 //
 
 struct TableState {
-    let mode: TableMode
+    var mode: TableMode
     let caption: String
-    let text: String
-    let tail: String
-    let animateReading: Bool
+    var text: String
+    var tail: String
+    var animateReading: Bool
     let canPress: Bool
-    let gameThemes: [String]
-    let roundInfo: [ThemeInfo]
+    var gameThemes: [String]
+    var roundInfo: [ThemeInfo]
     let isSelectable: Bool
-    let activeThemeIndex: Int
-    let actionQuestionIndex: Int
+    var activeThemeIndex: Int
+    var actionQuestionIndex: Int
     let isMediaStopped: Bool
     
     static func initialState() -> TableState {

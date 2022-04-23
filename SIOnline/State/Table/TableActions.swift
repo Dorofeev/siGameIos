@@ -5,9 +5,10 @@
 //  Created by Anna Kuptsova on 23.04.2022.
 //
 
+import ReSwift
 typealias KnownTableAction = TableActionTypes
 
-enum TableActionTypes {
+enum TableActionTypes: Action {
     case showLogo
     case showGameThemes(gameThemes: [String])
     case showRoundThemes(roundThemes: [ThemeInfo], isFinal: Bool, display: Bool)

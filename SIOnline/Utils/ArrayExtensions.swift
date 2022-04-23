@@ -8,7 +8,8 @@ extension Array where Element: Equatable {
     mutating func removeFromArray(item: Element) {
         self.removeAll { item == $0 }
     }
-    
+}
+extension Array {
     func arrayToDictionary(
         keySelector: (Element) -> String
     ) -> [String: Element] {
