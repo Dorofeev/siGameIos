@@ -60,7 +60,36 @@ var tableReducer: Reducer<TableState> = { action, state in
         state.mode = TableMode.partialText
         state.text = ""
         state.tail = textShape
-    default: break
+    case .appendPatrialText(let text):
+        state.text.append(text)
+        
+        let tail = state.tail
+        let offsetIndex = tail.index(tail.startIndex, offsetBy: text.count)
+        state.tail = String(tail.suffix(from: offsetIndex))
+    case .showImage(let uri):
+        state.mode = TableMode.image
+        state.text = uri
+    case .showAudio(let uri):
+        state.mode = TableMode.audio
+        state.text = uri
+        state.isMediaStopped = false
+    case .showVideo(let uri):
+        state.mode = TableMode.video
+        state.text = uri
+        state.isMediaStopped = false
+    case .showSpecial(let text, let activeThemeIndex):
+        state.mode = TableMode.special
+        state.text = text
+        state.activeThemeIndex = activeThemeIndex
+    case .canPressChanged(let canPress):
+        state.canPress = canPress
+        state.isMediaStopped = true
+    case .isSelectableChanged(let isSelectable):
+        state.isSelectable = isSelectable
+    case .resumeMedia:
+        state.isMediaStopped = false
+    case .captionChanged(let caption):
+        state.caption = caption
     }
 return state
 }
