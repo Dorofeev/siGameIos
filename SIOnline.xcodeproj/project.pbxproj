@@ -17,6 +17,7 @@
 		4914D2852807CDFA000224A1 /* GameCreationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2842807CDFA000224A1 /* GameCreationResult.swift */; };
 		4914D2872807CE4B000224A1 /* GameCreationResultCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2862807CE4B000224A1 /* GameCreationResultCode.swift */; };
 		4942D7C128150842000B3D60 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4942D7C028150842000B3D60 /* Constants.swift */; };
+		4942D7C328151962000B3D60 /* TimerInfoHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4942D7C228151962000B3D60 /* TimerInfoHelpers.swift */; };
 		494BC020280FBC64001B81E9 /* RunActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494BC01F280FBC64001B81E9 /* RunActions.swift */; };
 		4951098B2803D6C80019160E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951098A2803D6C80019160E /* R.generated.swift */; };
 		4951098E2803F23F0019160E /* ServerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951098D2803F23F0019160E /* ServerInfo.swift */; };
@@ -81,6 +82,7 @@
 		4914D2842807CDFA000224A1 /* GameCreationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCreationResult.swift; sourceTree = "<group>"; };
 		4914D2862807CE4B000224A1 /* GameCreationResultCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCreationResultCode.swift; sourceTree = "<group>"; };
 		4942D7C028150842000B3D60 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4942D7C228151962000B3D60 /* TimerInfoHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerInfoHelpers.swift; sourceTree = "<group>"; };
 		494BC01F280FBC64001B81E9 /* RunActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunActions.swift; sourceTree = "<group>"; };
 		4951098A2803D6C80019160E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		4951098D2803F23F0019160E /* ServerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerInfo.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			children = (
 				146C9601280A9D5C00292C4C /* DictionaryExtentsions.swift */,
 				146C9603280AC34B00292C4C /* ArrayExtensions.swift */,
+				4942D7C228151962000B3D60 /* TimerInfoHelpers.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				49C5F1E328015FCA003EB248 /* SettingsState.swift in Sources */,
 				4951098B2803D6C80019160E /* R.generated.swift in Sources */,
 				49C5F1DE280082CE003EB248 /* Role.swift in Sources */,
+				4942D7C328151962000B3D60 /* TimerInfoHelpers.swift in Sources */,
 				498BE644280971100096AF75 /* ActionTypes.swift in Sources */,
 				495A9ACE2804931B0035ABE5 /* PackageType.swift in Sources */,
 				495A9ADD28057EA60035ABE5 /* Timers.swift in Sources */,

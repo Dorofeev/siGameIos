@@ -6,7 +6,7 @@
 //
 
 struct Timers {
-    let round: TimerInfo
-    let press: TimerInfo
-    let decision: TimerInfo
+    var round: TimerInfo
+    var press: TimerInfo
+    var decision: TimerInfo
 }
