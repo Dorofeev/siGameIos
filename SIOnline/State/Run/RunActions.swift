@@ -5,9 +5,11 @@
 //  Created by Andrey Dorofeev on 20.04.2022.
 //
 
+import ReSwift
+
 typealias KnownRunAction = RunActionTypes
 
-enum RunActionTypes {
+enum RunActionTypes: Action {
     case runChatModeChanged(chatMode: ChatMode)
     case runChatMessageChanged(message: String)
     case runChatVisibilityChanged(isOpen: Bool)

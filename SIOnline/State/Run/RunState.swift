@@ -6,25 +6,25 @@
 //
 
 struct RunState {
-    let persons: RunStatePersons
-    let role: Role
-    let answer: String?
-    let lastReplic: ChatMessage?
-    let stage: RunStateStage
-    let timers: Timers
+    var persons: RunStatePersons
+    var role: Role
+    var answer: String?
+    var lastReplic: ChatMessage?
+    var stage: RunStateStage
+    var timers: Timers
     let showMainTimer: Bool
-    let table: TableState
-    let selection: RunStateSelection
-    let stakes: RunStateStakes
-    let validation: RunStateValidation
-    let chat: RunStateChat
-    let selectedTableIndex: Int // 0 for showman; {N} for player {N - 1}
-    let personsVisible: Bool
-    let tablesVisible: Bool
-    let isGameButtonEnabled: Bool
-    let areSumsEditable: Bool
-    let readingSpeed: Int
-    let hint: String?
+    var table: TableState
+    var selection: RunStateSelection
+    var stakes: RunStateStakes
+    var validation: RunStateValidation
+    var chat: RunStateChat
+    var selectedTableIndex: Int // 0 for showman; {N} for player {N - 1}
+    var personsVisible: Bool
+    var tablesVisible: Bool
+    var isGameButtonEnabled: Bool
+    var areSumsEditable: Bool
+    var readingSpeed: Int
+    var hint: String?
     
     static func runInitialState() -> RunState {
         RunState(
@@ -123,54 +123,54 @@ struct RunState {
 }
 
 struct RunStatePersons {
-    let all: Persons
-    let showman: PersonInfo
-    let players: [PlayerInfo]
+    var all: Persons
+    var showman: PersonInfo
+    var players: [PlayerInfo]
     let hostName: String?
 }
 
 struct RunStateStage {
-    let name: String
-    let isGamePaused: Bool
-    let isGameStarted: Bool
-    let isDecisionNeeded: Bool
-    let isAnswering: Bool
-    let isAfterQuestion: Bool
+    var name: String
+    var isGamePaused: Bool
+    var isGameStarted: Bool
+    var isDecisionNeeded: Bool
+    var isAnswering: Bool
+    var isAfterQuestion: Bool
     let themeIndex: Int
-    let currentPrice: Int
+    var currentPrice: Int
     let themeName: String
 }
 
 struct RunStateSelection {
-    let isEnabled: Bool
-    let message: String
+    var isEnabled: Bool
+    var message: String
 }
 
 struct RunStateStakes {
-    let areVisible: Bool
-    let areSimple: Bool
-    let allowedStakeTypes: [StakeTypes: Bool]
-    let minimum: Int
-    let maximum: Int
-    let step: Int
-    let stake: Int
-    let message: String
+    var areVisible: Bool
+    var areSimple: Bool
+    var allowedStakeTypes: [StakeTypes: Bool]
+    var minimum: Int
+    var maximum: Int
+    var step: Int
+    var stake: Int
+    var message: String
 }
 
 struct RunStateValidation {
-    let isVisible: Bool
-    let header: String
-    let name: String
-    let message: String
-    let rightAnswers: [String]
-    let wrongAnswers: [String]
+    var isVisible: Bool
+    var header: String
+    var name: String
+    var message: String
+    var rightAnswers: [String]
+    var wrongAnswers: [String]
 }
 
 struct RunStateChat {
-    let isVisible: Bool
-    let isActive: Bool
-    let mode: ChatMode
-    let message: String
+    var isVisible: Bool
+    var isActive: Bool
+    var mode: ChatMode
+    var message: String
     let messages: [ChatMessage]
-    let selectedPersonName: String?
+    var selectedPersonName: String?
 }

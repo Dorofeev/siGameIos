@@ -6,8 +6,8 @@
 //
 
 struct TimerInfo {
-    let isPausedBySystem: Bool
-    let isPausedByUser: Bool
-    let value: Int
-    let maximum: Int
+    var isPausedBySystem: Bool
+    var isPausedByUser: Bool
+    var value: Int
+    var maximum: Int
 }

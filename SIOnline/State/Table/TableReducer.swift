@@ -7,9 +7,11 @@
 
 import ReSwift
 
-var tableReducer: Reducer<TableState> = { action, state in
-    guard var state = state else { return TableState.initialState() }
+let tableReducer: Reducer<TableState> = { action, state in
+    var state = state ?? TableState.initialState()
+    
     guard let action = action as? KnownTableAction else { return state }
+    
     switch action {
     case .showLogo:
         state.mode = TableMode.logo

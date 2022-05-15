@@ -9,5 +9,5 @@ struct Account {
     let name: String
     let sex: Sex
     let isHuman: Bool
-    let avatar: String?
+    var avatar: String?
 }

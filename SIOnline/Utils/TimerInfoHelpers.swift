@@ -6,14 +6,14 @@
 //
 
 extension Timers {
-    mutating func updateTimers(timerIndex: Int, updater: (TimerInfo) -> TimerInfo) {
+    mutating func updateTimers(timerIndex: Int, updater: (inout TimerInfo) -> Void) {
         switch timerIndex {
         case 0:
-            round = updater(round)
+            updater(&round)
         case 1:
-            press = updater(press)
+            updater(&press)
         case 2:
-            decision = updater(decision)
+            updater(&decision)
         default:
             break
         }

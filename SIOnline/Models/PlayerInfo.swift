@@ -6,10 +6,10 @@
 //
 
 class PlayerInfo: PersonInfo {
-    let sum: Int
-    let stake: Int
-    let state: PlayerStates
-    let canBeSelected: Bool
+    var sum: Int
+    var stake: Int
+    var state: PlayerStates
+    var canBeSelected: Bool
     
     init(
         name: String,
