@@ -7,9 +7,9 @@
 
 class PersonInfo {
     var name: String
-    let isReady: Bool
+    var isReady: Bool
     var replic: String?
-    let isDeciding: Bool
+    var isDeciding: Bool
     let isHuman: Bool
     
     init(name: String, isReady: Bool, replic: String?, isDeciding: Bool, isHuman: Bool) {

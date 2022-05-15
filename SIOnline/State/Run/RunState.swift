@@ -12,7 +12,7 @@ struct RunState {
     var lastReplic: ChatMessage?
     var stage: RunStateStage
     var timers: Timers
-    let showMainTimer: Bool
+    var showMainTimer: Bool
     var table: TableState
     var selection: RunStateSelection
     var stakes: RunStateStakes
@@ -126,7 +126,7 @@ struct RunStatePersons {
     var all: Persons
     var showman: PersonInfo
     var players: [PlayerInfo]
-    let hostName: String?
+    var hostName: String?
 }
 
 struct RunStateStage {
@@ -138,7 +138,7 @@ struct RunStateStage {
     var isAfterQuestion: Bool
     let themeIndex: Int
     var currentPrice: Int
-    let themeName: String
+    var themeName: String
 }
 
 struct RunStateSelection {
@@ -171,6 +171,6 @@ struct RunStateChat {
     var isActive: Bool
     var mode: ChatMode
     var message: String
-    let messages: [ChatMessage]
+    var messages: [ChatMessage]
     var selectedPersonName: String?
 }

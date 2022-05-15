@@ -219,7 +219,42 @@ let runReducer: Reducer<RunState> = { action, state in
                 timerInfo.isPausedBySystem = false
             }
         }
-    default: break
+    case .stopTimer(let timerIndex):
+        state.timers.updateTimers(timerIndex: timerIndex) { timer in
+            timer.isPausedByUser = false
+            timer.isPausedBySystem = true
+            timer.value = 0
+        }
+    case .timerMaximumChanged(let timerIndex, let maximumTime):
+        state.timers.updateTimers(timerIndex: timerIndex) { timer in
+            timer.maximum = maximumTime
+        }
+    case .activateShowmanDecision:
+        state.persons.showman.isDeciding = true
+    case .activatePlayerDecision(let playerIndex):
+        state.persons.players[playerIndex].isDeciding = true
+    case .showMainTimer:
+        state.showMainTimer = true
+    case .clearDecisionsAndMainTimer:
+        state.showMainTimer = false
+        state.persons.showman.isDeciding = false
+        for player in state.persons.players {
+            player.isDeciding = false
+        }
+    case .hintChanged(let hint):
+        state.hint = hint
+    case .operationError(let error):
+        state.chat.messages.append(ChatMessage(sender: "", text: error))
+    case .hostNameChanged(let hostName):
+        state.persons.hostName = hostName
+    case .themeNameChanged(let themeName):
+        state.stage.themeName = themeName
+    case .isReadyChanged(let personIndex, let isReady):
+        if personIndex == -1 {
+            state.persons.showman.isReady = isReady
+        } else {
+            state.persons.players[personIndex].isReady = isReady
+        }
     }
     return state
 }
