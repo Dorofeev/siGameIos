@@ -255,6 +255,8 @@ let runReducer: Reducer<RunState> = { action, state in
         } else {
             state.persons.players[personIndex].isReady = isReady
         }
+    case .chatMessageAdded(let chatMessage):
+        state.chat.messages.append(chatMessage)
     }
     return state
 }
