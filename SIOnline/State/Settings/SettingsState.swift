@@ -6,14 +6,14 @@
 //
 
 struct SettingsState: Codable {
-    let isSoundEnabled: Bool
-    let showPersonsAtBottomOnWideScreen: Bool
-    let sex: Sex
-    let appSettings: AppSettings
+    var soundVolume: Int
+    var showPersonsAtBottomOnWideScreen: Bool
+    var sex: Sex
+    var appSettings: AppSettings
     
     static func initialState() -> SettingsState {
         SettingsState(
-            isSoundEnabled: false,
+            soundVolume: 1,
             showPersonsAtBottomOnWideScreen: true,
             sex: .male,
             appSettings: AppSettings(
@@ -24,6 +24,7 @@ struct SettingsState: Codable {
                 readingSpeed: 20,
                 ignoreWrong: false,
                 managed: false,
+                culture: nil,
                 timeSettings: TimeSettings(
                     timeForChoosingQuestion: 30,
                     timeForThinkingOnQuestion: 5,

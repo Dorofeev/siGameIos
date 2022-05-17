@@ -6,12 +6,13 @@
 //
 
 struct AppSettings: Codable {
-    let oral: Bool
-    let falseStart: Bool
-    let hintShowman: Bool
-    let partialText: Bool
-    let readingSpeed: Int
-    let ignoreWrong: Bool
-    let managed: Bool
-    let timeSettings: TimeSettings
+    var oral: Bool
+    var falseStart: Bool
+    var hintShowman: Bool
+    var partialText: Bool
+    var readingSpeed: Int
+    var ignoreWrong: Bool
+    var managed: Bool
+    var timeSettings: TimeSettings
+    var culture: String?
 }
