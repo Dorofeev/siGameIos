@@ -13,10 +13,10 @@ struct State {
     var ui: StateUI
     var online: StateOnline
     var game: StateGame
-    let run: RunState
+    var run: RunState
     var common: StateCommon
     var settingsState: SettingsState
-    
+    var siPackages: StateSiPackages
     static func initialState() -> State {
         return State(
             user: StateUser(login: ""),
@@ -80,7 +80,14 @@ struct State {
                 serverName: nil,
                 error: nil
             ),
-            settingsState: SettingsState.initialState()
+            settingsState: SettingsState.initialState(),
+            siPackages: StateSiPackages(
+                packages: [],
+                authors: [],
+                tags: [],
+                publishers: [],
+                isLoading: false
+            )
         )
     }
 }
@@ -97,55 +104,63 @@ struct StateLogin {
 struct StateUI {
     var mainView: MainView
     var previousMainView: MainView
-    let onlineView: OnlineMode
-    let windowWidth: Int
+    var onlineView: OnlineMode
+    var windowWidth: Int
     var areSettingsVisible: Bool
 }
 
 struct StateOnline {
     var inProgress: Bool
     var error: String
-    let gamesFilter: GamesFilter
-    let gamesSearch: String
+    var gamesFilter: GamesFilter
+    var gamesSearch: String
     var games: [Int: GameInfo]
     var selectedGameId: Int
     var users: [String]
-    let currentMessage: String
+    var currentMessage: String
     var messages: [ChatMessage]
-    let password: String
-    let chatMode: ChatMode
-    let newGameShown: Bool
-    let gameCreationProgress: Bool
-    let gameCreationError: String?
-    let joinGameProgress: Bool
-    let joingGameError: String?
-    let uploadPackageProgress: Bool
-    let uploadPackagePercentage: Int
+    var password: String
+    var chatMode: ChatMode
+    var newGameShown: Bool
+    var gameCreationProgress: Bool
+    var gameCreationError: String?
+    var joinGameProgress: Bool
+    var joingGameError: String?
+    var uploadPackageProgress: Bool
+    var uploadPackagePercentage: Int
 }
 
 struct StateGame {
     var name: String
     var password: String
-    let package: GamePackage
+    var package: GamePackage
     var type: GameType
     var role: Role
-    let isShowmanHuman: Bool
+    var isShowmanHuman: Bool
     var playersCount: Int
     var humanPlayersCount: Int
-    let id: Int
-    let isAutomatic: Bool
+    var id: Int
+    var isAutomatic: Bool
 }
 
 struct GamePackage {
-    let type: PackageType
-    let name: String
-    let data: Data?
-    let id: String?
+    var type: PackageType
+    var name: String
+    var data: Data?
+    var id: String?
 }
 
 struct StateCommon {
     var computerAccounts: [String]?
     var isConnected: Bool
-    let serverName: String?
-    let error: String?
+    var serverName: String?
+    var error: String?
 }
+struct StateSiPackages {
+    var packages: [SIPackageInfo]
+    var authors: [SearchEntity]
+    var tags: [SearchEntity]
+    var publishers: [SearchEntity]
+    var isLoading: Bool
+ }
+
