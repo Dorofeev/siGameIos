@@ -17,6 +17,7 @@
 		4914D2832807CBB0000224A1 /* ServerAppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2822807CBB0000224A1 /* ServerAppSettings.swift */; };
 		4914D2852807CDFA000224A1 /* GameCreationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2842807CDFA000224A1 /* GameCreationResult.swift */; };
 		4914D2872807CE4B000224A1 /* GameCreationResultCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2862807CE4B000224A1 /* GameCreationResultCode.swift */; };
+		491625A12833ED8E00022237 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491625A02833ED8E00022237 /* Reducer.swift */; };
 		493E98AF2831476100913DE7 /* SettingsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493E98AE2831476100913DE7 /* SettingsReducer.swift */; };
 		4942D7C128150842000B3D60 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4942D7C028150842000B3D60 /* Constants.swift */; };
 		4942D7C328151962000B3D60 /* TimerInfoHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4942D7C228151962000B3D60 /* TimerInfoHelpers.swift */; };
@@ -86,6 +87,7 @@
 		4914D2822807CBB0000224A1 /* ServerAppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAppSettings.swift; sourceTree = "<group>"; };
 		4914D2842807CDFA000224A1 /* GameCreationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCreationResult.swift; sourceTree = "<group>"; };
 		4914D2862807CE4B000224A1 /* GameCreationResultCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCreationResultCode.swift; sourceTree = "<group>"; };
+		491625A02833ED8E00022237 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		493E98AE2831476100913DE7 /* SettingsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsReducer.swift; sourceTree = "<group>"; };
 		4942D7C028150842000B3D60 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4942D7C228151962000B3D60 /* TimerInfoHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerInfoHelpers.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 				49C5F1D828008052003EB248 /* State.swift */,
 				49C5F1DA2800817D003EB248 /* SavedState.swift */,
 				498BE643280971100096AF75 /* ActionTypes.swift */,
+				491625A02833ED8E00022237 /* Reducer.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				49C223BA280446E5007170F4 /* ServerPersonInfo.swift in Sources */,
 				497875DD2806D19700116DE1 /* IGameServerClient.swift in Sources */,
 				495A9ADF28057EE60035ABE5 /* TimerInfo.swift in Sources */,
+				491625A12833ED8E00022237 /* Reducer.swift in Sources */,
 				4967FD652816E9F600A85F13 /* runReducer.swift in Sources */,
 				49C5F1D928008052003EB248 /* State.swift in Sources */,
 				4942D7C128150842000B3D60 /* Constants.swift in Sources */,

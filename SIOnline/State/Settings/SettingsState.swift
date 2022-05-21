@@ -24,7 +24,6 @@ struct SettingsState: Codable {
                 readingSpeed: 20,
                 ignoreWrong: false,
                 managed: false,
-                culture: nil,
                 timeSettings: TimeSettings(
                     timeForChoosingQuestion: 30,
                     timeForThinkingOnQuestion: 5,
@@ -39,7 +38,8 @@ struct SettingsState: Codable {
                     timeForRightAnswer: 2,
                     timeForMediaDelay: 0,
                     timeForBlockingButton: 3
-                )
+                ),
+                culture: nil
             )
         )
     }

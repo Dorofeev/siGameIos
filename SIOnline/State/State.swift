@@ -9,12 +9,12 @@ import UIKit
 
 struct State {
     var user: StateUser
-    let login: StateLogin
-    let ui: StateUI
+    var login: StateLogin
+    var ui: StateUI
     var online: StateOnline
     var game: StateGame
     let run: RunState
-    let common: StateCommon
+    var common: StateCommon
     var settingsState: SettingsState
     
     static func initialState() -> State {
@@ -90,28 +90,28 @@ struct StateUser {
 }
 
 struct StateLogin {
-    let inProgress: Bool
-    let errorMessage: String?
+    var inProgress: Bool
+    var errorMessage: String?
 }
 
 struct StateUI {
-    let mainView: MainView
-    let previousMainView: MainView
+    var mainView: MainView
+    var previousMainView: MainView
     let onlineView: OnlineMode
     let windowWidth: Int
-    let areSettingsVisible: Bool
+    var areSettingsVisible: Bool
 }
 
 struct StateOnline {
-    let inProgress: Bool
-    let error: String
+    var inProgress: Bool
+    var error: String
     let gamesFilter: GamesFilter
     let gamesSearch: String
-    let games: [Int: GameInfo]
+    var games: [Int: GameInfo]
     var selectedGameId: Int
-    let users: [String]
+    var users: [String]
     let currentMessage: String
-    let messages: [ChatMessage]
+    var messages: [ChatMessage]
     let password: String
     let chatMode: ChatMode
     let newGameShown: Bool
@@ -144,8 +144,8 @@ struct GamePackage {
 }
 
 struct StateCommon {
-    let computerAccounts: [String]?
-    let isConnected: Bool
+    var computerAccounts: [String]?
+    var isConnected: Bool
     let serverName: String?
     let error: String?
 }

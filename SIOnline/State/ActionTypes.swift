@@ -4,11 +4,13 @@
 //
 //  Created by Andrey Dorofeev on 15.04.2022.
 //
+
 import Foundation
+import ReSwift
 
 typealias KnownAction = ActionTypes
 
-enum ActionTypes {
+enum ActionTypes: Action {
     case isConnectedChanged(isConnected: Bool)
     case computerAccountsChanged(computerAccounts: [String])
     case navigateToLogin
