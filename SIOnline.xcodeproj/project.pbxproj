@@ -13,6 +13,7 @@
 		146C9604280AC34B00292C4C /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C9603280AC34B00292C4C /* ArrayExtensions.swift */; };
 		146DF0CE284350DE005C0C81 /* tableActionCreators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146DF0CD284350DE005C0C81 /* tableActionCreators.swift */; };
 		146DF0D02843758C005C0C81 /* ErrorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146DF0CF2843758C005C0C81 /* ErrorHelpers.swift */; };
+		146DF0D228437B94005C0C81 /* runActionCreators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146DF0D128437B94005C0C81 /* runActionCreators.swift */; };
 		147069CD2830F1D20045A3E6 /* SettingsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147069CC2830F1D20045A3E6 /* SettingsActions.swift */; };
 		4905C0DE28431BDA00CFB6BB /* GameErrorsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905C0DD28431BDA00CFB6BB /* GameErrorsHelper.swift */; };
 		4914D27F2807C9AF000224A1 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D27E2807C9AF000224A1 /* GameSettings.swift */; };
@@ -86,6 +87,7 @@
 		146C9603280AC34B00292C4C /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		146DF0CD284350DE005C0C81 /* tableActionCreators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableActionCreators.swift; sourceTree = "<group>"; };
 		146DF0CF2843758C005C0C81 /* ErrorHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHelpers.swift; sourceTree = "<group>"; };
+		146DF0D128437B94005C0C81 /* runActionCreators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = runActionCreators.swift; sourceTree = "<group>"; };
 		147069CC2830F1D20045A3E6 /* SettingsActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsActions.swift; sourceTree = "<group>"; };
 		4905C0DD28431BDA00CFB6BB /* GameErrorsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameErrorsHelper.swift; sourceTree = "<group>"; };
 		4914D27E2807C9AF000224A1 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				495A9AD0280549A50035ABE5 /* RunState.swift */,
 				494BC01F280FBC64001B81E9 /* RunActions.swift */,
 				4967FD642816E9F600A85F13 /* runReducer.swift */,
+				146DF0D128437B94005C0C81 /* runActionCreators.swift */,
 			);
 			path = Run;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 			files = (
 				146C9602280A9D5C00292C4C /* DictionaryExtentsions.swift in Sources */,
 				495A9AD928054CD50035ABE5 /* PlayerInfo.swift in Sources */,
+				146DF0D228437B94005C0C81 /* runActionCreators.swift in Sources */,
 				49C223B428044029007170F4 /* OnlineMode.swift in Sources */,
 				498BE64028096F1F0096AF75 /* SIPackageInfo.swift in Sources */,
 				495A9AD328054AF80035ABE5 /* Account.swift in Sources */,
