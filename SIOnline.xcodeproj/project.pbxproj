@@ -11,6 +11,7 @@
 		146AC7BA2813EE7A001598FE /* TableReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146AC7B92813EE7A001598FE /* TableReducer.swift */; };
 		146C9602280A9D5C00292C4C /* DictionaryExtentsions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C9601280A9D5C00292C4C /* DictionaryExtentsions.swift */; };
 		146C9604280AC34B00292C4C /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C9603280AC34B00292C4C /* ArrayExtensions.swift */; };
+		146DF0CE284350DE005C0C81 /* tableActionCreators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146DF0CD284350DE005C0C81 /* tableActionCreators.swift */; };
 		147069CD2830F1D20045A3E6 /* SettingsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147069CC2830F1D20045A3E6 /* SettingsActions.swift */; };
 		4905C0DE28431BDA00CFB6BB /* GameErrorsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905C0DD28431BDA00CFB6BB /* GameErrorsHelper.swift */; };
 		4914D27F2807C9AF000224A1 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D27E2807C9AF000224A1 /* GameSettings.swift */; };
@@ -82,6 +83,7 @@
 		146AC7B92813EE7A001598FE /* TableReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableReducer.swift; sourceTree = "<group>"; };
 		146C9601280A9D5C00292C4C /* DictionaryExtentsions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtentsions.swift; sourceTree = "<group>"; };
 		146C9603280AC34B00292C4C /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		146DF0CD284350DE005C0C81 /* tableActionCreators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableActionCreators.swift; sourceTree = "<group>"; };
 		147069CC2830F1D20045A3E6 /* SettingsActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsActions.swift; sourceTree = "<group>"; };
 		4905C0DD28431BDA00CFB6BB /* GameErrorsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameErrorsHelper.swift; sourceTree = "<group>"; };
 		4914D27E2807C9AF000224A1 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				495A9AE1280581080035ABE5 /* TableState.swift */,
 				146AC7B72813DA07001598FE /* TableActions.swift */,
 				146AC7B92813EE7A001598FE /* TableReducer.swift */,
+				146DF0CD284350DE005C0C81 /* tableActionCreators.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				495A9ACC28048FF40035ABE5 /* ChatMode.swift in Sources */,
 				494BC020280FBC64001B81E9 /* RunActions.swift in Sources */,
 				49B6BC79280004EC005AC3BE /* AppDelegate.swift in Sources */,
+				146DF0CE284350DE005C0C81 /* tableActionCreators.swift in Sources */,
 				4914D2872807CE4B000224A1 /* GameCreationResultCode.swift in Sources */,
 				497875D62806A9CC00116DE1 /* AppSettings.swift in Sources */,
 				495A9ACA28048F6B0035ABE5 /* ChatMessage.swift in Sources */,

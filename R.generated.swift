@@ -172,28 +172,829 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 5 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 194 localization keys.
     struct localizable {
+      /// ru translation:  SIGame — интеллектуальная викторина, в которой каждый может проверить свои знания и скорость реакции и сразиться с оппонентами. Правила игры очень просты: все вопросы в игре поделены по темам, и у каждого вопроса в теме есть своя стоимость. У каждого игрока имеется персональный счёт, который в начале игры равен 0. Звучит вопрос, после которого на экране появляется рамка, показывающая, что можно отвечать. Если игрок знает ответ, он может нажать на красную кнопку. Тот из игроков, кто нажмёт на кнопку ранее (и не допустит фальстарта), и даёт ответ. В случае верного ответа стоимость вопроса прибавляется к счёту игрока; в случае неверного — снимается со счёта. В последнем случае другие игроки снова могут попытать счастья и нажать на кнопку для ответа. Также в игре могут встретиться специальные вопросы. В "Вопросе со ставкой" участники торгуются за вопрос, и отвечает на него тот игрок, кто поставит наибольшую сумму. При этом "Ва-банк" (т.е. ставка всей суммы на кон) может быть перебит только другим "Ва-банком". "Вопрос с секретом" открывший его участник должен передать другому участнику. Получивший его игрок должен (если это заложено в вопросе) выбрать стоимость вопроса и ответить на него. Тема вопроса может отличаться от основной темы, в которой находился вопрос. На "Вопрос без риска" отвечает открывший его игрок. В случае правильного ответа на вопрос он получает удвоенную стоимость вопроса. В случае неверного ответа на вопрос игрок ничего не теряет. В игре также может быть финальный раунд, в котором каждый из игроков делает ставку. Звучит вопрос, даётся время на размышление, и каждый из игроков письменно сдаёт свой ответ. После этого оглашается правильный ответ, и каждый из игроков получает или теряет деньги. Победителем игры становится игрок, набравший после последнего вопроса наибольшую сумму. Игровую кнопку можно также активировать при помощи клавиши Ctrl или правой кнопки мыши. 
+      ///
+      /// Locales: ru
+      static let about = Rswift.StringResource(key: "about", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: (все)
+      ///
+      /// Locales: ru
+      static let librarySearchAll = Rswift.StringResource(key: "librarySearchAll", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: (не задано)
+      ///
+      /// Locales: ru
+      static let librarySearchNotSet = Rswift.StringResource(key: "librarySearchNotSet", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
       /// ru translation: SIGame
       ///
       /// Locales: ru
       static let appUser = Rswift.StringResource(key: "appUser", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: SIGame Online
+      ///
+      /// Locales: ru
+      static let appName = Rswift.StringResource(key: "appName", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Аватар
+      ///
+      /// Locales: ru
+      static let avatar = Rswift.StringResource(key: "avatar", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Автоподбор соперников
+      ///
+      /// Locales: ru
+      static let autoSearch = Rswift.StringResource(key: "autoSearch", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Автор
+      ///
+      /// Locales: ru
+      static let packageAuthor = Rswift.StringResource(key: "packageAuthor", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Автор и лицензии
+      ///
+      /// Locales: ru
+      static let aboutAuthorLicense = Rswift.StringResource(key: "aboutAuthorLicense", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Автор программы: Владимир Хиль.
+      ///
+      /// Locales: ru
+      static let authorInfo = Rswift.StringResource(key: "authorInfo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Апеллировать свой ответ
+      ///
+      /// Locales: ru
+      static let apellateAnswer = Rswift.StringResource(key: "apellateAnswer", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Апелляция
+      ///
+      /// Locales: ru
+      static let apellation = Rswift.StringResource(key: "apellation", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Без пароля
+      ///
+      /// Locales: ru
+      static let withoutPassword = Rswift.StringResource(key: "withoutPassword", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Библиотека вопросов
+      ///
+      /// Locales: ru
+      static let libraryTitle = Rswift.StringResource(key: "libraryTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Бот
+      ///
+      /// Locales: ru
+      static let bot = Rswift.StringResource(key: "bot", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Бот
+      ///
+      /// Locales: ru
+      static let computer = Rswift.StringResource(key: "computer", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Боты:
+      ///
+      /// Locales: ru
+      static let computerPlayers = Rswift.StringResource(key: "computerPlayers", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: В вопросе содержится орфографическая или фактическая ошибка
+      ///
+      /// Locales: ru
+      static let complainHint = Rswift.StringResource(key: "complainHint", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: ВА-БАНК!
+      ///
+      /// Locales: ru
+      static let allIn = Rswift.StringResource(key: "allIn", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: ВОПРОС БЕЗ РИСКА
+      ///
+      /// Locales: ru
+      static let questionTypeNoRisk = Rswift.StringResource(key: "questionTypeNoRisk", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: ВОПРОС С СЕКРЕТОМ
+      ///
+      /// Locales: ru
+      static let questionTypeSecret = Rswift.StringResource(key: "questionTypeSecret", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: ВОПРОС СО СТАВКОЙ
+      ///
+      /// Locales: ru
+      static let questionTypeStake = Rswift.StringResource(key: "questionTypeStake", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Вас выгнали из игры!
+      ///
+      /// Locales: ru
+      static let youAreKicked = Rswift.StringResource(key: "youAreKicked", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Ваша версия игры устарела. Обновите игру
+      ///
+      /// Locales: ru
+      static let errorObsoleteVersion = Rswift.StringResource(key: "errorObsoleteVersion", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Ваше имя
+      ///
+      /// Locales: ru
+      static let yourName = Rswift.StringResource(key: "yourName", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Ведущий
+      ///
+      /// Locales: ru
+      static let showman = Rswift.StringResource(key: "showman", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Верен ли ответ игрока?
+      ///
+      /// Locales: ru
+      static let validateAnswer = Rswift.StringResource(key: "validateAnswer", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Включить звук
+      ///
+      /// Locales: ru
+      static let enableSound = Rswift.StringResource(key: "enableSound", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Войти в лобби
+      ///
+      /// Locales: ru
+      static let joinLobby = Rswift.StringResource(key: "joinLobby", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Войти ведущим
+      ///
+      /// Locales: ru
+      static let joinAsShowman = Rswift.StringResource(key: "joinAsShowman", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Войти зрителем
+      ///
+      /// Locales: ru
+      static let joinAsViewer = Rswift.StringResource(key: "joinAsViewer", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Войти игроком
+      ///
+      /// Locales: ru
+      static let joinAsPlayer = Rswift.StringResource(key: "joinAsPlayer", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Время раунда
+      ///
+      /// Locales: ru
+      static let roundTime = Rswift.StringResource(key: "roundTime", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Все
+      ///
+      /// Locales: ru
+      static let all = Rswift.StringResource(key: "all", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Всего:
+      ///
+      /// Locales: ru
+      static let total = Rswift.StringResource(key: "total", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Вход
+      ///
+      /// Locales: ru
+      static let enter = Rswift.StringResource(key: "enter", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Вход в игру
+      ///
+      /// Locales: ru
+      static let gameJoin = Rswift.StringResource(key: "gameJoin", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Вы можете изменить пол в разделе "Настройки"
+      ///
+      /// Locales: ru
+      static let settingsHint = Rswift.StringResource(key: "settingsHint", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Выберите действие
+      ///
+      /// Locales: ru
+      static let welcomeTitle = Rswift.StringResource(key: "welcomeTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Выберите начинающего раунд
+      ///
+      /// Locales: ru
+      static let selectFirstPlayer = Rswift.StringResource(key: "selectFirstPlayer", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Выберите ставящего
+      ///
+      /// Locales: ru
+      static let selectStaker = Rswift.StringResource(key: "selectStaker", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Выберите убирающего тему
+      ///
+      /// Locales: ru
+      static let selectThemeDeleter = Rswift.StringResource(key: "selectThemeDeleter", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Выбрать
+      ///
+      /// Locales: ru
+      static let librarySelect = Rswift.StringResource(key: "librarySelect", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Выбрать
+      ///
+      /// Locales: ru
+      static let package = Rswift.StringResource(key: "package", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Выбрать…
+      ///
+      /// Locales: ru
+      static let select = Rswift.StringResource(key: "select", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Выгнать
+      ///
+      /// Locales: ru
+      static let kick = Rswift.StringResource(key: "kick", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Выйти из игры
+      ///
+      /// Locales: ru
+      static let exitFromGame = Rswift.StringResource(key: "exitFromGame", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Выход
+      ///
+      /// Locales: ru
+      static let exit = Rswift.StringResource(key: "exit", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Готов
+      ///
+      /// Locales: ru
+      static let readyMale = Rswift.StringResource(key: "readyMale", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Готова
+      ///
+      /// Locales: ru
+      static let readyFemale = Rswift.StringResource(key: "readyFemale", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Да
+      ///
+      /// Locales: ru
+      static let yes = Rswift.StringResource(key: "yes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Дальше
+      ///
+      /// Locales: ru
+      static let next = Rswift.StringResource(key: "next", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Дата публикации
+      ///
+      /// Locales: ru
+      static let packagePublishedDate = Rswift.StringResource(key: "packagePublishedDate", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Действительно выйти?
+      ///
+      /// Locales: ru
+      static let exitConfirmation = Rswift.StringResource(key: "exitConfirmation", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
       /// ru translation: Для ответа на вопрос нажимайте на красную кнопку после загорания рамки на экране
       ///
       /// Locales: ru
       static let tableHint = Rswift.StringResource(key: "tableHint", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Добавить стол
+      ///
+      /// Locales: ru
+      static let addTable = Rswift.StringResource(key: "addTable", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
       /// ru translation: Добро пожаловать в SIOnline!
       ///
       /// Locales: ru
       static let greeting = Rswift.StringResource(key: "greeting", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Если ведущий – человек. Хорошо подходит для стримов. Игроки делают выбор и дают ответ голосом
+      ///
+      /// Locales: ru
+      static let oralGameHint = Rswift.StringResource(key: "oralGameHint", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Забанить
+      ///
+      /// Locales: ru
+      static let ban = Rswift.StringResource(key: "ban", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Загрузка…
+      ///
+      /// Locales: ru
+      static let libraryLoading = Rswift.StringResource(key: "libraryLoading", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Закрыть
+      ///
+      /// Locales: ru
+      static let close = Rswift.StringResource(key: "close", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Звук
+      ///
+      /// Locales: ru
+      static let sound = Rswift.StringResource(key: "sound", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Зрители
+      ///
+      /// Locales: ru
+      static let viewers = Rswift.StringResource(key: "viewers", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Зритель
+      ///
+      /// Locales: ru
+      static let viewer = Rswift.StringResource(key: "viewer", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Игра
+      ///
+      /// Locales: ru
+      static let game = Rswift.StringResource(key: "game", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Игра начнётся через
+      ///
+      /// Locales: ru
+      static let theGameWillStartIn = Rswift.StringResource(key: "theGameWillStartIn", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Игра окончена
+      ///
+      /// Locales: ru
+      static let gameFinished = Rswift.StringResource(key: "gameFinished", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
       /// ru translation: Игра от
       ///
       /// Locales: ru
       static let gameOf = Rswift.StringResource(key: "gameOf", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Игра распространяется бесплатно. Автор не гарантирует корректность работы игры в произвольных условиях и не несёт ответственности за любые последствия от использования игры.
+      ///
+      /// Locales: ru
+      static let noWarranty = Rswift.StringResource(key: "noWarranty", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Игра с таким именем уже существует!
+      ///
+      /// Locales: ru
+      static let errorDuplicateGameName = Rswift.StringResource(key: "errorDuplicateGameName", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Играть одному (с ботами)
+      ///
+      /// Locales: ru
+      static let singlePlay = Rswift.StringResource(key: "singlePlay", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Играть с друзьями
+      ///
+      /// Locales: ru
+      static let friendsPlay = Rswift.StringResource(key: "friendsPlay", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Играть со случайными соперниками
+      ///
+      /// Locales: ru
+      static let anyonePlay = Rswift.StringResource(key: "anyonePlay", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Игровая кнопка
+      ///
+      /// Locales: ru
+      static let gameButton = Rswift.StringResource(key: "gameButton", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Игрок
+      ///
+      /// Locales: ru
+      static let player = Rswift.StringResource(key: "player", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Игрок считает, что его ответ
+      ///
+      /// Locales: ru
+      static let thePlayerThinksThatHisHerAnswer = Rswift.StringResource(key: "thePlayerThinksThatHisHerAnswer", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Игроки
+      ///
+      /// Locales: ru
+      static let players = Rswift.StringResource(key: "players", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Игроки
+      ///
+      /// Locales: ru
+      static let users = Rswift.StringResource(key: "users", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Игры
+      ///
+      /// Locales: ru
+      static let games = Rswift.StringResource(key: "games", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Идёт загрузка игры…
+      ///
+      /// Locales: ru
+      static let gameLoading = Rswift.StringResource(key: "gameLoading", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Издатель
+      ///
+      /// Locales: ru
+      static let packagePublisher = Rswift.StringResource(key: "packagePublisher", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Изменить суммы
+      ///
+      /// Locales: ru
+      static let changeSums = Rswift.StringResource(key: "changeSums", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Имя
+      ///
+      /// Locales: ru
+      static let name = Rswift.StringResource(key: "name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Используемые в игре компоненты и их лицензии:
+      ///
+      /// Locales: ru
+      static let usedComponents = Rswift.StringResource(key: "usedComponents", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Классическая
+      ///
+      /// Locales: ru
+      static let tv = Rswift.StringResource(key: "tv", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Классические
+      ///
+      /// Locales: ru
+      static let tvPlural = Rswift.StringResource(key: "tvPlural", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Леонардо да Винчи
+      ///
+      /// Locales: ru
+      static let defaultShowman = Rswift.StringResource(key: "defaultShowman", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Лицензия: допускается любое использование игры с условием указания авторства.
+      ///
+      /// Locales: ru
+      static let licence = Rswift.StringResource(key: "licence", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Логотип
+      ///
+      /// Locales: ru
+      static let logo = Rswift.StringResource(key: "logo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Люди:
+      ///
+      /// Locales: ru
+      static let humanPlayers = Rswift.StringResource(key: "humanPlayers", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Меню
+      ///
+      /// Locales: ru
+      static let menu = Rswift.StringResource(key: "menu", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: На сервере запрещено использование такого ника!
+      ///
+      /// Locales: ru
+      static let forbiddenNickname = Rswift.StringResource(key: "forbiddenNickname", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Название игры
+      ///
+      /// Locales: ru
+      static let gameName = Rswift.StringResource(key: "gameName", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Найдите игру в списке или создайте новую
+      ///
+      /// Locales: ru
+      static let gamesTitle = Rswift.StringResource(key: "gamesTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Найти игру со свободным слотом или создать новую игру
+      ///
+      /// Locales: ru
+      static let autoSearchHint = Rswift.StringResource(key: "autoSearchHint", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Настройки
+      ///
+      /// Locales: ru
+      static let settings = Rswift.StringResource(key: "settings", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Начата
+      ///
+      /// Locales: ru
+      static let started = Rswift.StringResource(key: "started", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Начать игру
+      ///
+      /// Locales: ru
+      static let startGame = Rswift.StringResource(key: "startGame", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Начать игру, не дожидаясь готовности участников
+      ///
+      /// Locales: ru
+      static let startGameHint = Rswift.StringResource(key: "startGameHint", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Начните поиск, чтобы увидеть список игр
+      ///
+      /// Locales: ru
+      static let searchHint = Rswift.StringResource(key: "searchHint", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Не удалось выйти из игры!
+      ///
+      /// Locales: ru
+      static let exitError = Rswift.StringResource(key: "exitError", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Не удалось подключиться к игре
+      ///
+      /// Locales: ru
+      static let joinError = Rswift.StringResource(key: "joinError", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Не удалось подключиться к серверу
+      ///
+      /// Locales: ru
+      static let cannotConnectToServer = Rswift.StringResource(key: "cannotConnectToServer", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Не удалось создать игру на сервере из-за ошибки на сервере!
+      ///
+      /// Locales: ru
+      static let errorInternalServerError = Rswift.StringResource(key: "errorInternalServerError", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Не удалось создать игру на сервере, так как не был обнаружен игровой пакет!
+      ///
+      /// Locales: ru
+      static let errorPackageNotFound = Rswift.StringResource(key: "errorPackageNotFound", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Не удалось создать игру по неизвестной причине!
+      ///
+      /// Locales: ru
+      static let errorUnknownError = Rswift.StringResource(key: "errorUnknownError", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Неверные настройки игры!
+      ///
+      /// Locales: ru
+      static let wrongGameSettings = Rswift.StringResource(key: "wrongGameSettings", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Неизвестная ошибка
+      ///
+      /// Locales: ru
+      static let unknownError = Rswift.StringResource(key: "unknownError", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Необходимо задать название игры!
+      ///
+      /// Locales: ru
+      static let gameNameMustBeSpecified = Rswift.StringResource(key: "gameNameMustBeSpecified", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Неправильные ответы
+      ///
+      /// Locales: ru
+      static let wrongAnswers = Rswift.StringResource(key: "wrongAnswers", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Нет
+      ///
+      /// Locales: ru
+      static let no = Rswift.StringResource(key: "no", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Новая игра
+      ///
+      /// Locales: ru
+      static let newGame = Rswift.StringResource(key: "newGame", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Новости
+      ///
+      /// Locales: ru
+      static let news = Rswift.StringResource(key: "news", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Новые
+      ///
+      /// Locales: ru
+      static let new = Rswift.StringResource(key: "new", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Номинал
+      ///
+      /// Locales: ru
+      static let nominal = Rswift.StringResource(key: "nominal", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Об игре
+      ///
+      /// Locales: ru
+      static let aboutTitle = Rswift.StringResource(key: "aboutTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Ограничение
+      ///
+      /// Locales: ru
+      static let packageRestriction = Rswift.StringResource(key: "packageRestriction", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Ответ игрока
+      ///
+      /// Locales: ru
+      static let playersAnswer = Rswift.StringResource(key: "playersAnswer", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Отключить звук
+      ///
+      /// Locales: ru
+      static let disableSound = Rswift.StringResource(key: "disableSound", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Отправка пакета на сервер…
+      ///
+      /// Locales: ru
+      static let sendingPackage = Rswift.StringResource(key: "sendingPackage", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Ошибка отправки пакета
+      ///
+      /// Locales: ru
+      static let uploadingPackageError = Rswift.StringResource(key: "uploadingPackageError", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Пакет вопросов
+      ///
+      /// Locales: ru
+      static let questionPackage = Rswift.StringResource(key: "questionPackage", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Пакет вопросов повреждён!
+      ///
+      /// Locales: ru
+      static let corruptedPackage = Rswift.StringResource(key: "corruptedPackage", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Пакеты
+      ///
+      /// Locales: ru
+      static let packages = Rswift.StringResource(key: "packages", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Пароль
+      ///
+      /// Locales: ru
+      static let password = Rswift.StringResource(key: "password", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Пас
+      ///
+      /// Locales: ru
+      static let pass = Rswift.StringResource(key: "pass", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Пауза
+      ///
+      /// Locales: ru
+      static let pause = Rswift.StringResource(key: "pause", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Плохой пакет вопросов!
+      ///
+      /// Locales: ru
+      static let badPackage = Rswift.StringResource(key: "badPackage", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Плохой пакет вопросов!
+      ///
+      /// Locales: ru
+      static let errorBadPackage = Rswift.StringResource(key: "errorBadPackage", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Пожаловаться
+      ///
+      /// Locales: ru
+      static let complain = Rswift.StringResource(key: "complain", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Поиск игр
+      ///
+      /// Locales: ru
+      static let searchGames = Rswift.StringResource(key: "searchGames", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Показать чат
+      ///
+      /// Locales: ru
+      static let showChat = Rswift.StringResource(key: "showChat", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Показывать участников внизу окна на широком экране
+      ///
+      /// Locales: ru
+      static let showPersonsAtBottomOnWideScreen = Rswift.StringResource(key: "showPersonsAtBottomOnWideScreen", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Пол
+      ///
+      /// Locales: ru
+      static let sex = Rswift.StringResource(key: "sex", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Пользователь с таким именем уже вошёл на сервер!
+      ///
+      /// Locales: ru
+      static let duplicateUserName = Rswift.StringResource(key: "duplicateUserName", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Правила
+      ///
+      /// Locales: ru
+      static let rules = Rswift.StringResource(key: "rules", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Правильные ответы
+      ///
+      /// Locales: ru
+      static let rightAnswers = Rswift.StringResource(key: "rightAnswers", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Правильный ответ
+      ///
+      /// Locales: ru
+      static let rightAnswer = Rswift.StringResource(key: "rightAnswer", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Превышено максимальное количество запущенных игр на сервере! Пожалуйста подождите.
+      ///
+      /// Locales: ru
+      static let errorTooManyGames = Rswift.StringResource(key: "errorTooManyGames", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Проверка ответа
+      ///
+      /// Locales: ru
+      static let answerChecking = Rswift.StringResource(key: "answerChecking", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Продолжить
+      ///
+      /// Locales: ru
+      static let resume = Rswift.StringResource(key: "resume", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Производится обслуживание сервера! Пожалуйста, подключите через некоторое время. Приносим извинения за доставленные неудобства. 
+      ///
+      /// Locales: ru
+      static let errorServerUnderMaintainance = Rswift.StringResource(key: "errorServerUnderMaintainance", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Произошла ошибка!
+      ///
+      /// Locales: ru
+      static let errorHappened = Rswift.StringResource(key: "errorHappened", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Раунд
+      ///
+      /// Locales: ru
+      static let round = Rswift.StringResource(key: "round", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Рекламное сообщение
+      ///
+      /// Locales: ru
+      static let adsMessage = Rswift.StringResource(key: "adsMessage", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Роль
+      ///
+      /// Locales: ru
+      static let role = Rswift.StringResource(key: "role", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
       /// ru translation: СИ Онлайн
       ///
       /// Locales: ru
       static let appTitle = Rswift.StringResource(key: "appTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Сервер
+      ///
+      /// Locales: ru
+      static let server = Rswift.StringResource(key: "server", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Сервер не готов начать игру
+      ///
+      /// Locales: ru
+      static let errorServerNotReady = Rswift.StringResource(key: "errorServerNotReady", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Слишком много игр на одном адресе!
+      ///
+      /// Locales: ru
+      static let tooManyGamesByIp = Rswift.StringResource(key: "tooManyGamesByIp", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Сложность
+      ///
+      /// Locales: ru
+      static let packageDifficulty = Rswift.StringResource(key: "packageDifficulty", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Случайный набор тем
+      ///
+      /// Locales: ru
+      static let randomThemes = Rswift.StringResource(key: "randomThemes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Соединение восстановлено!
+      ///
+      /// Locales: ru
+      static let connectionReconnected = Rswift.StringResource(key: "connectionReconnected", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Соединение потеряно, пытаемся переподключиться…
+      ///
+      /// Locales: ru
+      static let connectionReconnecting = Rswift.StringResource(key: "connectionReconnecting", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Соединение с сервером разорвано!
+      ///
+      /// Locales: ru
+      static let connectionClosed = Rswift.StringResource(key: "connectionClosed", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Создана
+      ///
+      /// Locales: ru
+      static let created = Rswift.StringResource(key: "created", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Сообщать ведущему правильные ответы заранее
+      ///
+      /// Locales: ru
+      static let hintShowman = Rswift.StringResource(key: "hintShowman", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Сортировка
+      ///
+      /// Locales: ru
+      static let sort = Rswift.StringResource(key: "sort", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Статус
+      ///
+      /// Locales: ru
+      static let status = Rswift.StringResource(key: "status", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Столы
+      ///
+      /// Locales: ru
+      static let tables = Rswift.StringResource(key: "tables", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Страница исходного кода игры.
+      ///
+      /// Locales: ru
+      static let sourcesInfo = Rswift.StringResource(key: "sourcesInfo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Страница технической поддержки.
+      ///
+      /// Locales: ru
+      static let supportInfo = Rswift.StringResource(key: "supportInfo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Тема
+      ///
+      /// Locales: ru
+      static let theme = Rswift.StringResource(key: "theme", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Тематика
+      ///
+      /// Locales: ru
+      static let packageSubject = Rswift.StringResource(key: "packageSubject", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Техническая поддержка
+      ///
+      /// Locales: ru
+      static let aboutSupport = Rswift.StringResource(key: "aboutSupport", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Тип игры
+      ///
+      /// Locales: ru
+      static let gameType = Rswift.StringResource(key: "gameType", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Удалить стол
+      ///
+      /// Locales: ru
+      static let deleteTable = Rswift.StringResource(key: "deleteTable", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Упрощённая
+      ///
+      /// Locales: ru
+      static let sport = Rswift.StringResource(key: "sport", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Упрощённые
+      ///
+      /// Locales: ru
+      static let sportPlural = Rswift.StringResource(key: "sportPlural", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Устная игра
+      ///
+      /// Locales: ru
+      static let oralGame = Rswift.StringResource(key: "oralGame", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Участники
+      ///
+      /// Locales: ru
+      static let members = Rswift.StringResource(key: "members", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Файл
+      ///
+      /// Locales: ru
+      static let file = Rswift.StringResource(key: "file", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Фальстарты
+      ///
+      /// Locales: ru
+      static let falseStarts = Rswift.StringResource(key: "falseStarts", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Фильтр
+      ///
+      /// Locales: ru
+      static let filter = Rswift.StringResource(key: "filter", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Финал
+      ///
+      /// Locales: ru
+      static let final = Rswift.StringResource(key: "final", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Хост
+      ///
+      /// Locales: ru
+      static let host = Rswift.StringResource(key: "host", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Хост игры был изменён %@ на %@
+      ///
+      /// Locales: ru
+      static let hostNameChanged = Rswift.StringResource(key: "hostNameChanged", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Чат
+      ///
+      /// Locales: ru
+      static let chat = Rswift.StringResource(key: "chat", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Человек
+      ///
+      /// Locales: ru
+      static let human = Rswift.StringResource(key: "human", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Я прав!
+      ///
+      /// Locales: ru
+      static let iAmRightMale = Rswift.StringResource(key: "iAmRightMale", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: Я права!
+      ///
+      /// Locales: ru
+      static let iAmRightFemale = Rswift.StringResource(key: "iAmRightFemale", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: без фальстартов
+      ///
+      /// Locales: ru
+      static let nofalsestart = Rswift.StringResource(key: "nofalsestart", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: больше или равна
+      ///
+      /// Locales: ru
+      static let librarySearchMoreOrEqual = Rswift.StringResource(key: "librarySearchMoreOrEqual", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: верен. Примите решение: засчитать ли ответ?
+      ///
+      /// Locales: ru
+      static let isRightValidateIt = Rswift.StringResource(key: "isRightValidateIt", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: женский
+      ///
+      /// Locales: ru
+      static let female = Rswift.StringResource(key: "female", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: игрой
+      ///
+      /// Locales: ru
+      static let byGame = Rswift.StringResource(key: "byGame", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: или по заполнению
+      ///
+      /// Locales: ru
+      static let orByFilling = Rswift.StringResource(key: "orByFilling", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: меньше или равна
+      ///
+      /// Locales: ru
+      static let librarySearchLessOrEqual = Rswift.StringResource(key: "librarySearchLessOrEqual", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: мужской
+      ///
+      /// Locales: ru
+      static let male = Rswift.StringResource(key: "male", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: нельзя нажимать на кнопку до окончания чтения вопроса
+      ///
+      /// Locales: ru
+      static let falseStartsHint = Rswift.StringResource(key: "falseStartsHint", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: по возрастанию
+      ///
+      /// Locales: ru
+      static let ascending = Rswift.StringResource(key: "ascending", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: по убыванию
+      ///
+      /// Locales: ru
+      static let descending = Rswift.StringResource(key: "descending", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: право на ошибку
+      ///
+      /// Locales: ru
+      static let errorTolerant = Rswift.StringResource(key: "errorTolerant", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+      /// ru translation: устная
+      ///
+      /// Locales: ru
+      static let oral = Rswift.StringResource(key: "oral", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru"], comment: nil)
+
+      /// ru translation:  SIGame — интеллектуальная викторина, в которой каждый может проверить свои знания и скорость реакции и сразиться с оппонентами. Правила игры очень просты: все вопросы в игре поделены по темам, и у каждого вопроса в теме есть своя стоимость. У каждого игрока имеется персональный счёт, который в начале игры равен 0. Звучит вопрос, после которого на экране появляется рамка, показывающая, что можно отвечать. Если игрок знает ответ, он может нажать на красную кнопку. Тот из игроков, кто нажмёт на кнопку ранее (и не допустит фальстарта), и даёт ответ. В случае верного ответа стоимость вопроса прибавляется к счёту игрока; в случае неверного — снимается со счёта. В последнем случае другие игроки снова могут попытать счастья и нажать на кнопку для ответа. Также в игре могут встретиться специальные вопросы. В "Вопросе со ставкой" участники торгуются за вопрос, и отвечает на него тот игрок, кто поставит наибольшую сумму. При этом "Ва-банк" (т.е. ставка всей суммы на кон) может быть перебит только другим "Ва-банком". "Вопрос с секретом" открывший его участник должен передать другому участнику. Получивший его игрок должен (если это заложено в вопросе) выбрать стоимость вопроса и ответить на него. Тема вопроса может отличаться от основной темы, в которой находился вопрос. На "Вопрос без риска" отвечает открывший его игрок. В случае правильного ответа на вопрос он получает удвоенную стоимость вопроса. В случае неверного ответа на вопрос игрок ничего не теряет. В игре также может быть финальный раунд, в котором каждый из игроков делает ставку. Звучит вопрос, даётся время на размышление, и каждый из игроков письменно сдаёт свой ответ. После этого оглашается правильный ответ, и каждый из игроков получает или теряет деньги. Победителем игры становится игрок, набравший после последнего вопроса наибольшую сумму. Игровую кнопку можно также активировать при помощи клавиши Ctrl или правой кнопки мыши. 
+      ///
+      /// Locales: ru
+      static func about(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("about", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "about"
+        }
+
+        return NSLocalizedString("about", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: (все)
+      ///
+      /// Locales: ru
+      static func librarySearchAll(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("librarySearchAll", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "librarySearchAll"
+        }
+
+        return NSLocalizedString("librarySearchAll", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: (не задано)
+      ///
+      /// Locales: ru
+      static func librarySearchNotSet(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("librarySearchNotSet", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "librarySearchNotSet"
+        }
+
+        return NSLocalizedString("librarySearchNotSet", bundle: bundle, comment: "")
+      }
 
       /// ru translation: SIGame
       ///
@@ -208,6 +1009,756 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("appUser", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: SIGame Online
+      ///
+      /// Locales: ru
+      static func appName(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("appName", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "appName"
+        }
+
+        return NSLocalizedString("appName", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Аватар
+      ///
+      /// Locales: ru
+      static func avatar(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("avatar", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "avatar"
+        }
+
+        return NSLocalizedString("avatar", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Автоподбор соперников
+      ///
+      /// Locales: ru
+      static func autoSearch(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("autoSearch", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "autoSearch"
+        }
+
+        return NSLocalizedString("autoSearch", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Автор
+      ///
+      /// Locales: ru
+      static func packageAuthor(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("packageAuthor", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "packageAuthor"
+        }
+
+        return NSLocalizedString("packageAuthor", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Автор и лицензии
+      ///
+      /// Locales: ru
+      static func aboutAuthorLicense(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("aboutAuthorLicense", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "aboutAuthorLicense"
+        }
+
+        return NSLocalizedString("aboutAuthorLicense", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Автор программы: Владимир Хиль.
+      ///
+      /// Locales: ru
+      static func authorInfo(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("authorInfo", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "authorInfo"
+        }
+
+        return NSLocalizedString("authorInfo", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Апеллировать свой ответ
+      ///
+      /// Locales: ru
+      static func apellateAnswer(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("apellateAnswer", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "apellateAnswer"
+        }
+
+        return NSLocalizedString("apellateAnswer", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Апелляция
+      ///
+      /// Locales: ru
+      static func apellation(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("apellation", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "apellation"
+        }
+
+        return NSLocalizedString("apellation", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Без пароля
+      ///
+      /// Locales: ru
+      static func withoutPassword(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("withoutPassword", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "withoutPassword"
+        }
+
+        return NSLocalizedString("withoutPassword", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Библиотека вопросов
+      ///
+      /// Locales: ru
+      static func libraryTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("libraryTitle", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "libraryTitle"
+        }
+
+        return NSLocalizedString("libraryTitle", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Бот
+      ///
+      /// Locales: ru
+      static func bot(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("bot", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "bot"
+        }
+
+        return NSLocalizedString("bot", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Бот
+      ///
+      /// Locales: ru
+      static func computer(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("computer", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "computer"
+        }
+
+        return NSLocalizedString("computer", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Боты:
+      ///
+      /// Locales: ru
+      static func computerPlayers(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("computerPlayers", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "computerPlayers"
+        }
+
+        return NSLocalizedString("computerPlayers", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: В вопросе содержится орфографическая или фактическая ошибка
+      ///
+      /// Locales: ru
+      static func complainHint(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("complainHint", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "complainHint"
+        }
+
+        return NSLocalizedString("complainHint", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: ВА-БАНК!
+      ///
+      /// Locales: ru
+      static func allIn(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("allIn", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "allIn"
+        }
+
+        return NSLocalizedString("allIn", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: ВОПРОС БЕЗ РИСКА
+      ///
+      /// Locales: ru
+      static func questionTypeNoRisk(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("questionTypeNoRisk", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "questionTypeNoRisk"
+        }
+
+        return NSLocalizedString("questionTypeNoRisk", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: ВОПРОС С СЕКРЕТОМ
+      ///
+      /// Locales: ru
+      static func questionTypeSecret(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("questionTypeSecret", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "questionTypeSecret"
+        }
+
+        return NSLocalizedString("questionTypeSecret", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: ВОПРОС СО СТАВКОЙ
+      ///
+      /// Locales: ru
+      static func questionTypeStake(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("questionTypeStake", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "questionTypeStake"
+        }
+
+        return NSLocalizedString("questionTypeStake", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Вас выгнали из игры!
+      ///
+      /// Locales: ru
+      static func youAreKicked(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("youAreKicked", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "youAreKicked"
+        }
+
+        return NSLocalizedString("youAreKicked", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Ваша версия игры устарела. Обновите игру
+      ///
+      /// Locales: ru
+      static func errorObsoleteVersion(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("errorObsoleteVersion", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "errorObsoleteVersion"
+        }
+
+        return NSLocalizedString("errorObsoleteVersion", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Ваше имя
+      ///
+      /// Locales: ru
+      static func yourName(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("yourName", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "yourName"
+        }
+
+        return NSLocalizedString("yourName", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Ведущий
+      ///
+      /// Locales: ru
+      static func showman(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("showman", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "showman"
+        }
+
+        return NSLocalizedString("showman", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Верен ли ответ игрока?
+      ///
+      /// Locales: ru
+      static func validateAnswer(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("validateAnswer", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "validateAnswer"
+        }
+
+        return NSLocalizedString("validateAnswer", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Включить звук
+      ///
+      /// Locales: ru
+      static func enableSound(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("enableSound", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "enableSound"
+        }
+
+        return NSLocalizedString("enableSound", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Войти в лобби
+      ///
+      /// Locales: ru
+      static func joinLobby(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("joinLobby", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "joinLobby"
+        }
+
+        return NSLocalizedString("joinLobby", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Войти ведущим
+      ///
+      /// Locales: ru
+      static func joinAsShowman(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("joinAsShowman", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "joinAsShowman"
+        }
+
+        return NSLocalizedString("joinAsShowman", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Войти зрителем
+      ///
+      /// Locales: ru
+      static func joinAsViewer(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("joinAsViewer", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "joinAsViewer"
+        }
+
+        return NSLocalizedString("joinAsViewer", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Войти игроком
+      ///
+      /// Locales: ru
+      static func joinAsPlayer(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("joinAsPlayer", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "joinAsPlayer"
+        }
+
+        return NSLocalizedString("joinAsPlayer", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Время раунда
+      ///
+      /// Locales: ru
+      static func roundTime(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("roundTime", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "roundTime"
+        }
+
+        return NSLocalizedString("roundTime", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Все
+      ///
+      /// Locales: ru
+      static func all(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("all", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "all"
+        }
+
+        return NSLocalizedString("all", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Всего:
+      ///
+      /// Locales: ru
+      static func total(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("total", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "total"
+        }
+
+        return NSLocalizedString("total", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Вход
+      ///
+      /// Locales: ru
+      static func enter(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("enter", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "enter"
+        }
+
+        return NSLocalizedString("enter", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Вход в игру
+      ///
+      /// Locales: ru
+      static func gameJoin(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("gameJoin", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "gameJoin"
+        }
+
+        return NSLocalizedString("gameJoin", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Вы можете изменить пол в разделе "Настройки"
+      ///
+      /// Locales: ru
+      static func settingsHint(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("settingsHint", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "settingsHint"
+        }
+
+        return NSLocalizedString("settingsHint", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Выберите действие
+      ///
+      /// Locales: ru
+      static func welcomeTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("welcomeTitle", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "welcomeTitle"
+        }
+
+        return NSLocalizedString("welcomeTitle", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Выберите начинающего раунд
+      ///
+      /// Locales: ru
+      static func selectFirstPlayer(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("selectFirstPlayer", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "selectFirstPlayer"
+        }
+
+        return NSLocalizedString("selectFirstPlayer", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Выберите ставящего
+      ///
+      /// Locales: ru
+      static func selectStaker(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("selectStaker", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "selectStaker"
+        }
+
+        return NSLocalizedString("selectStaker", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Выберите убирающего тему
+      ///
+      /// Locales: ru
+      static func selectThemeDeleter(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("selectThemeDeleter", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "selectThemeDeleter"
+        }
+
+        return NSLocalizedString("selectThemeDeleter", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Выбрать
+      ///
+      /// Locales: ru
+      static func librarySelect(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("librarySelect", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "librarySelect"
+        }
+
+        return NSLocalizedString("librarySelect", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Выбрать
+      ///
+      /// Locales: ru
+      static func package(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("package", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "package"
+        }
+
+        return NSLocalizedString("package", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Выбрать…
+      ///
+      /// Locales: ru
+      static func select(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("select", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "select"
+        }
+
+        return NSLocalizedString("select", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Выгнать
+      ///
+      /// Locales: ru
+      static func kick(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("kick", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "kick"
+        }
+
+        return NSLocalizedString("kick", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Выйти из игры
+      ///
+      /// Locales: ru
+      static func exitFromGame(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("exitFromGame", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "exitFromGame"
+        }
+
+        return NSLocalizedString("exitFromGame", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Выход
+      ///
+      /// Locales: ru
+      static func exit(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("exit", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "exit"
+        }
+
+        return NSLocalizedString("exit", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Готов
+      ///
+      /// Locales: ru
+      static func readyMale(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("readyMale", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "readyMale"
+        }
+
+        return NSLocalizedString("readyMale", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Готова
+      ///
+      /// Locales: ru
+      static func readyFemale(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("readyFemale", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "readyFemale"
+        }
+
+        return NSLocalizedString("readyFemale", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Да
+      ///
+      /// Locales: ru
+      static func yes(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("yes", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "yes"
+        }
+
+        return NSLocalizedString("yes", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Дальше
+      ///
+      /// Locales: ru
+      static func next(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("next", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "next"
+        }
+
+        return NSLocalizedString("next", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Дата публикации
+      ///
+      /// Locales: ru
+      static func packagePublishedDate(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("packagePublishedDate", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "packagePublishedDate"
+        }
+
+        return NSLocalizedString("packagePublishedDate", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Действительно выйти?
+      ///
+      /// Locales: ru
+      static func exitConfirmation(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("exitConfirmation", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "exitConfirmation"
+        }
+
+        return NSLocalizedString("exitConfirmation", bundle: bundle, comment: "")
       }
 
       /// ru translation: Для ответа на вопрос нажимайте на красную кнопку после загорания рамки на экране
@@ -225,6 +1776,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("tableHint", bundle: bundle, comment: "")
       }
 
+      /// ru translation: Добавить стол
+      ///
+      /// Locales: ru
+      static func addTable(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("addTable", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "addTable"
+        }
+
+        return NSLocalizedString("addTable", bundle: bundle, comment: "")
+      }
+
       /// ru translation: Добро пожаловать в SIOnline!
       ///
       /// Locales: ru
@@ -238,6 +1804,156 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("greeting", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Если ведущий – человек. Хорошо подходит для стримов. Игроки делают выбор и дают ответ голосом
+      ///
+      /// Locales: ru
+      static func oralGameHint(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("oralGameHint", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "oralGameHint"
+        }
+
+        return NSLocalizedString("oralGameHint", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Забанить
+      ///
+      /// Locales: ru
+      static func ban(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ban", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ban"
+        }
+
+        return NSLocalizedString("ban", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Загрузка…
+      ///
+      /// Locales: ru
+      static func libraryLoading(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("libraryLoading", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "libraryLoading"
+        }
+
+        return NSLocalizedString("libraryLoading", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Закрыть
+      ///
+      /// Locales: ru
+      static func close(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("close", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "close"
+        }
+
+        return NSLocalizedString("close", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Звук
+      ///
+      /// Locales: ru
+      static func sound(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("sound", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "sound"
+        }
+
+        return NSLocalizedString("sound", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Зрители
+      ///
+      /// Locales: ru
+      static func viewers(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("viewers", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "viewers"
+        }
+
+        return NSLocalizedString("viewers", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Зритель
+      ///
+      /// Locales: ru
+      static func viewer(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("viewer", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "viewer"
+        }
+
+        return NSLocalizedString("viewer", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Игра
+      ///
+      /// Locales: ru
+      static func game(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("game", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "game"
+        }
+
+        return NSLocalizedString("game", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Игра начнётся через
+      ///
+      /// Locales: ru
+      static func theGameWillStartIn(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("theGameWillStartIn", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "theGameWillStartIn"
+        }
+
+        return NSLocalizedString("theGameWillStartIn", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Игра окончена
+      ///
+      /// Locales: ru
+      static func gameFinished(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("gameFinished", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "gameFinished"
+        }
+
+        return NSLocalizedString("gameFinished", bundle: bundle, comment: "")
       }
 
       /// ru translation: Игра от
@@ -255,6 +1971,1176 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("gameOf", bundle: bundle, comment: "")
       }
 
+      /// ru translation: Игра распространяется бесплатно. Автор не гарантирует корректность работы игры в произвольных условиях и не несёт ответственности за любые последствия от использования игры.
+      ///
+      /// Locales: ru
+      static func noWarranty(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("noWarranty", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "noWarranty"
+        }
+
+        return NSLocalizedString("noWarranty", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Игра с таким именем уже существует!
+      ///
+      /// Locales: ru
+      static func errorDuplicateGameName(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("errorDuplicateGameName", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "errorDuplicateGameName"
+        }
+
+        return NSLocalizedString("errorDuplicateGameName", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Играть одному (с ботами)
+      ///
+      /// Locales: ru
+      static func singlePlay(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("singlePlay", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "singlePlay"
+        }
+
+        return NSLocalizedString("singlePlay", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Играть с друзьями
+      ///
+      /// Locales: ru
+      static func friendsPlay(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("friendsPlay", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "friendsPlay"
+        }
+
+        return NSLocalizedString("friendsPlay", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Играть со случайными соперниками
+      ///
+      /// Locales: ru
+      static func anyonePlay(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("anyonePlay", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "anyonePlay"
+        }
+
+        return NSLocalizedString("anyonePlay", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Игровая кнопка
+      ///
+      /// Locales: ru
+      static func gameButton(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("gameButton", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "gameButton"
+        }
+
+        return NSLocalizedString("gameButton", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Игрок
+      ///
+      /// Locales: ru
+      static func player(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("player", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "player"
+        }
+
+        return NSLocalizedString("player", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Игрок считает, что его ответ
+      ///
+      /// Locales: ru
+      static func thePlayerThinksThatHisHerAnswer(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("thePlayerThinksThatHisHerAnswer", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "thePlayerThinksThatHisHerAnswer"
+        }
+
+        return NSLocalizedString("thePlayerThinksThatHisHerAnswer", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Игроки
+      ///
+      /// Locales: ru
+      static func players(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("players", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "players"
+        }
+
+        return NSLocalizedString("players", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Игроки
+      ///
+      /// Locales: ru
+      static func users(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("users", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "users"
+        }
+
+        return NSLocalizedString("users", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Игры
+      ///
+      /// Locales: ru
+      static func games(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("games", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "games"
+        }
+
+        return NSLocalizedString("games", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Идёт загрузка игры…
+      ///
+      /// Locales: ru
+      static func gameLoading(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("gameLoading", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "gameLoading"
+        }
+
+        return NSLocalizedString("gameLoading", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Издатель
+      ///
+      /// Locales: ru
+      static func packagePublisher(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("packagePublisher", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "packagePublisher"
+        }
+
+        return NSLocalizedString("packagePublisher", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Изменить суммы
+      ///
+      /// Locales: ru
+      static func changeSums(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("changeSums", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "changeSums"
+        }
+
+        return NSLocalizedString("changeSums", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Имя
+      ///
+      /// Locales: ru
+      static func name(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("name", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "name"
+        }
+
+        return NSLocalizedString("name", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Используемые в игре компоненты и их лицензии:
+      ///
+      /// Locales: ru
+      static func usedComponents(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("usedComponents", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "usedComponents"
+        }
+
+        return NSLocalizedString("usedComponents", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Классическая
+      ///
+      /// Locales: ru
+      static func tv(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("tv", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "tv"
+        }
+
+        return NSLocalizedString("tv", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Классические
+      ///
+      /// Locales: ru
+      static func tvPlural(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("tvPlural", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "tvPlural"
+        }
+
+        return NSLocalizedString("tvPlural", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Леонардо да Винчи
+      ///
+      /// Locales: ru
+      static func defaultShowman(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("defaultShowman", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "defaultShowman"
+        }
+
+        return NSLocalizedString("defaultShowman", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Лицензия: допускается любое использование игры с условием указания авторства.
+      ///
+      /// Locales: ru
+      static func licence(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("licence", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "licence"
+        }
+
+        return NSLocalizedString("licence", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Логотип
+      ///
+      /// Locales: ru
+      static func logo(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("logo", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "logo"
+        }
+
+        return NSLocalizedString("logo", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Люди:
+      ///
+      /// Locales: ru
+      static func humanPlayers(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("humanPlayers", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "humanPlayers"
+        }
+
+        return NSLocalizedString("humanPlayers", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Меню
+      ///
+      /// Locales: ru
+      static func menu(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("menu", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "menu"
+        }
+
+        return NSLocalizedString("menu", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: На сервере запрещено использование такого ника!
+      ///
+      /// Locales: ru
+      static func forbiddenNickname(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("forbiddenNickname", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "forbiddenNickname"
+        }
+
+        return NSLocalizedString("forbiddenNickname", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Название игры
+      ///
+      /// Locales: ru
+      static func gameName(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("gameName", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "gameName"
+        }
+
+        return NSLocalizedString("gameName", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Найдите игру в списке или создайте новую
+      ///
+      /// Locales: ru
+      static func gamesTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("gamesTitle", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "gamesTitle"
+        }
+
+        return NSLocalizedString("gamesTitle", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Найти игру со свободным слотом или создать новую игру
+      ///
+      /// Locales: ru
+      static func autoSearchHint(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("autoSearchHint", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "autoSearchHint"
+        }
+
+        return NSLocalizedString("autoSearchHint", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Настройки
+      ///
+      /// Locales: ru
+      static func settings(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("settings", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "settings"
+        }
+
+        return NSLocalizedString("settings", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Начата
+      ///
+      /// Locales: ru
+      static func started(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("started", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "started"
+        }
+
+        return NSLocalizedString("started", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Начать игру
+      ///
+      /// Locales: ru
+      static func startGame(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("startGame", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "startGame"
+        }
+
+        return NSLocalizedString("startGame", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Начать игру, не дожидаясь готовности участников
+      ///
+      /// Locales: ru
+      static func startGameHint(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("startGameHint", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "startGameHint"
+        }
+
+        return NSLocalizedString("startGameHint", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Начните поиск, чтобы увидеть список игр
+      ///
+      /// Locales: ru
+      static func searchHint(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("searchHint", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "searchHint"
+        }
+
+        return NSLocalizedString("searchHint", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Не удалось выйти из игры!
+      ///
+      /// Locales: ru
+      static func exitError(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("exitError", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "exitError"
+        }
+
+        return NSLocalizedString("exitError", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Не удалось подключиться к игре
+      ///
+      /// Locales: ru
+      static func joinError(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("joinError", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "joinError"
+        }
+
+        return NSLocalizedString("joinError", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Не удалось подключиться к серверу
+      ///
+      /// Locales: ru
+      static func cannotConnectToServer(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("cannotConnectToServer", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "cannotConnectToServer"
+        }
+
+        return NSLocalizedString("cannotConnectToServer", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Не удалось создать игру на сервере из-за ошибки на сервере!
+      ///
+      /// Locales: ru
+      static func errorInternalServerError(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("errorInternalServerError", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "errorInternalServerError"
+        }
+
+        return NSLocalizedString("errorInternalServerError", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Не удалось создать игру на сервере, так как не был обнаружен игровой пакет!
+      ///
+      /// Locales: ru
+      static func errorPackageNotFound(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("errorPackageNotFound", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "errorPackageNotFound"
+        }
+
+        return NSLocalizedString("errorPackageNotFound", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Не удалось создать игру по неизвестной причине!
+      ///
+      /// Locales: ru
+      static func errorUnknownError(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("errorUnknownError", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "errorUnknownError"
+        }
+
+        return NSLocalizedString("errorUnknownError", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Неверные настройки игры!
+      ///
+      /// Locales: ru
+      static func wrongGameSettings(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("wrongGameSettings", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "wrongGameSettings"
+        }
+
+        return NSLocalizedString("wrongGameSettings", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Неизвестная ошибка
+      ///
+      /// Locales: ru
+      static func unknownError(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("unknownError", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "unknownError"
+        }
+
+        return NSLocalizedString("unknownError", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Необходимо задать название игры!
+      ///
+      /// Locales: ru
+      static func gameNameMustBeSpecified(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("gameNameMustBeSpecified", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "gameNameMustBeSpecified"
+        }
+
+        return NSLocalizedString("gameNameMustBeSpecified", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Неправильные ответы
+      ///
+      /// Locales: ru
+      static func wrongAnswers(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("wrongAnswers", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "wrongAnswers"
+        }
+
+        return NSLocalizedString("wrongAnswers", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Нет
+      ///
+      /// Locales: ru
+      static func no(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("no", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "no"
+        }
+
+        return NSLocalizedString("no", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Новая игра
+      ///
+      /// Locales: ru
+      static func newGame(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("newGame", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "newGame"
+        }
+
+        return NSLocalizedString("newGame", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Новости
+      ///
+      /// Locales: ru
+      static func news(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("news", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "news"
+        }
+
+        return NSLocalizedString("news", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Новые
+      ///
+      /// Locales: ru
+      static func new(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("new", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "new"
+        }
+
+        return NSLocalizedString("new", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Номинал
+      ///
+      /// Locales: ru
+      static func nominal(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("nominal", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "nominal"
+        }
+
+        return NSLocalizedString("nominal", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Об игре
+      ///
+      /// Locales: ru
+      static func aboutTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("aboutTitle", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "aboutTitle"
+        }
+
+        return NSLocalizedString("aboutTitle", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Ограничение
+      ///
+      /// Locales: ru
+      static func packageRestriction(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("packageRestriction", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "packageRestriction"
+        }
+
+        return NSLocalizedString("packageRestriction", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Ответ игрока
+      ///
+      /// Locales: ru
+      static func playersAnswer(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("playersAnswer", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "playersAnswer"
+        }
+
+        return NSLocalizedString("playersAnswer", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Отключить звук
+      ///
+      /// Locales: ru
+      static func disableSound(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("disableSound", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "disableSound"
+        }
+
+        return NSLocalizedString("disableSound", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Отправка пакета на сервер…
+      ///
+      /// Locales: ru
+      static func sendingPackage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("sendingPackage", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "sendingPackage"
+        }
+
+        return NSLocalizedString("sendingPackage", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Ошибка отправки пакета
+      ///
+      /// Locales: ru
+      static func uploadingPackageError(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("uploadingPackageError", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "uploadingPackageError"
+        }
+
+        return NSLocalizedString("uploadingPackageError", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Пакет вопросов
+      ///
+      /// Locales: ru
+      static func questionPackage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("questionPackage", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "questionPackage"
+        }
+
+        return NSLocalizedString("questionPackage", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Пакет вопросов повреждён!
+      ///
+      /// Locales: ru
+      static func corruptedPackage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("corruptedPackage", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "corruptedPackage"
+        }
+
+        return NSLocalizedString("corruptedPackage", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Пакеты
+      ///
+      /// Locales: ru
+      static func packages(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("packages", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "packages"
+        }
+
+        return NSLocalizedString("packages", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Пароль
+      ///
+      /// Locales: ru
+      static func password(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("password", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "password"
+        }
+
+        return NSLocalizedString("password", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Пас
+      ///
+      /// Locales: ru
+      static func pass(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("pass", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "pass"
+        }
+
+        return NSLocalizedString("pass", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Пауза
+      ///
+      /// Locales: ru
+      static func pause(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("pause", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "pause"
+        }
+
+        return NSLocalizedString("pause", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Плохой пакет вопросов!
+      ///
+      /// Locales: ru
+      static func badPackage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("badPackage", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "badPackage"
+        }
+
+        return NSLocalizedString("badPackage", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Плохой пакет вопросов!
+      ///
+      /// Locales: ru
+      static func errorBadPackage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("errorBadPackage", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "errorBadPackage"
+        }
+
+        return NSLocalizedString("errorBadPackage", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Пожаловаться
+      ///
+      /// Locales: ru
+      static func complain(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("complain", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "complain"
+        }
+
+        return NSLocalizedString("complain", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Поиск игр
+      ///
+      /// Locales: ru
+      static func searchGames(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("searchGames", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "searchGames"
+        }
+
+        return NSLocalizedString("searchGames", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Показать чат
+      ///
+      /// Locales: ru
+      static func showChat(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("showChat", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "showChat"
+        }
+
+        return NSLocalizedString("showChat", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Показывать участников внизу окна на широком экране
+      ///
+      /// Locales: ru
+      static func showPersonsAtBottomOnWideScreen(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("showPersonsAtBottomOnWideScreen", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "showPersonsAtBottomOnWideScreen"
+        }
+
+        return NSLocalizedString("showPersonsAtBottomOnWideScreen", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Пол
+      ///
+      /// Locales: ru
+      static func sex(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("sex", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "sex"
+        }
+
+        return NSLocalizedString("sex", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Пользователь с таким именем уже вошёл на сервер!
+      ///
+      /// Locales: ru
+      static func duplicateUserName(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("duplicateUserName", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "duplicateUserName"
+        }
+
+        return NSLocalizedString("duplicateUserName", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Правила
+      ///
+      /// Locales: ru
+      static func rules(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("rules", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "rules"
+        }
+
+        return NSLocalizedString("rules", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Правильные ответы
+      ///
+      /// Locales: ru
+      static func rightAnswers(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("rightAnswers", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "rightAnswers"
+        }
+
+        return NSLocalizedString("rightAnswers", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Правильный ответ
+      ///
+      /// Locales: ru
+      static func rightAnswer(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("rightAnswer", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "rightAnswer"
+        }
+
+        return NSLocalizedString("rightAnswer", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Превышено максимальное количество запущенных игр на сервере! Пожалуйста подождите.
+      ///
+      /// Locales: ru
+      static func errorTooManyGames(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("errorTooManyGames", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "errorTooManyGames"
+        }
+
+        return NSLocalizedString("errorTooManyGames", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Проверка ответа
+      ///
+      /// Locales: ru
+      static func answerChecking(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("answerChecking", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "answerChecking"
+        }
+
+        return NSLocalizedString("answerChecking", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Продолжить
+      ///
+      /// Locales: ru
+      static func resume(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("resume", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "resume"
+        }
+
+        return NSLocalizedString("resume", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Производится обслуживание сервера! Пожалуйста, подключите через некоторое время. Приносим извинения за доставленные неудобства. 
+      ///
+      /// Locales: ru
+      static func errorServerUnderMaintainance(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("errorServerUnderMaintainance", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "errorServerUnderMaintainance"
+        }
+
+        return NSLocalizedString("errorServerUnderMaintainance", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Произошла ошибка!
+      ///
+      /// Locales: ru
+      static func errorHappened(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("errorHappened", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "errorHappened"
+        }
+
+        return NSLocalizedString("errorHappened", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Раунд
+      ///
+      /// Locales: ru
+      static func round(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("round", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "round"
+        }
+
+        return NSLocalizedString("round", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Рекламное сообщение
+      ///
+      /// Locales: ru
+      static func adsMessage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("adsMessage", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "adsMessage"
+        }
+
+        return NSLocalizedString("adsMessage", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Роль
+      ///
+      /// Locales: ru
+      static func role(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("role", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "role"
+        }
+
+        return NSLocalizedString("role", bundle: bundle, comment: "")
+      }
+
       /// ru translation: СИ Онлайн
       ///
       /// Locales: ru
@@ -268,6 +3154,713 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("appTitle", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Сервер
+      ///
+      /// Locales: ru
+      static func server(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("server", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "server"
+        }
+
+        return NSLocalizedString("server", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Сервер не готов начать игру
+      ///
+      /// Locales: ru
+      static func errorServerNotReady(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("errorServerNotReady", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "errorServerNotReady"
+        }
+
+        return NSLocalizedString("errorServerNotReady", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Слишком много игр на одном адресе!
+      ///
+      /// Locales: ru
+      static func tooManyGamesByIp(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("tooManyGamesByIp", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "tooManyGamesByIp"
+        }
+
+        return NSLocalizedString("tooManyGamesByIp", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Сложность
+      ///
+      /// Locales: ru
+      static func packageDifficulty(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("packageDifficulty", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "packageDifficulty"
+        }
+
+        return NSLocalizedString("packageDifficulty", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Случайный набор тем
+      ///
+      /// Locales: ru
+      static func randomThemes(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("randomThemes", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "randomThemes"
+        }
+
+        return NSLocalizedString("randomThemes", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Соединение восстановлено!
+      ///
+      /// Locales: ru
+      static func connectionReconnected(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("connectionReconnected", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "connectionReconnected"
+        }
+
+        return NSLocalizedString("connectionReconnected", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Соединение потеряно, пытаемся переподключиться…
+      ///
+      /// Locales: ru
+      static func connectionReconnecting(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("connectionReconnecting", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "connectionReconnecting"
+        }
+
+        return NSLocalizedString("connectionReconnecting", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Соединение с сервером разорвано!
+      ///
+      /// Locales: ru
+      static func connectionClosed(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("connectionClosed", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "connectionClosed"
+        }
+
+        return NSLocalizedString("connectionClosed", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Создана
+      ///
+      /// Locales: ru
+      static func created(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("created", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "created"
+        }
+
+        return NSLocalizedString("created", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Сообщать ведущему правильные ответы заранее
+      ///
+      /// Locales: ru
+      static func hintShowman(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("hintShowman", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "hintShowman"
+        }
+
+        return NSLocalizedString("hintShowman", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Сортировка
+      ///
+      /// Locales: ru
+      static func sort(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("sort", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "sort"
+        }
+
+        return NSLocalizedString("sort", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Статус
+      ///
+      /// Locales: ru
+      static func status(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("status", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "status"
+        }
+
+        return NSLocalizedString("status", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Столы
+      ///
+      /// Locales: ru
+      static func tables(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("tables", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "tables"
+        }
+
+        return NSLocalizedString("tables", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Страница исходного кода игры.
+      ///
+      /// Locales: ru
+      static func sourcesInfo(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("sourcesInfo", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "sourcesInfo"
+        }
+
+        return NSLocalizedString("sourcesInfo", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Страница технической поддержки.
+      ///
+      /// Locales: ru
+      static func supportInfo(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("supportInfo", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "supportInfo"
+        }
+
+        return NSLocalizedString("supportInfo", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Тема
+      ///
+      /// Locales: ru
+      static func theme(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("theme", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "theme"
+        }
+
+        return NSLocalizedString("theme", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Тематика
+      ///
+      /// Locales: ru
+      static func packageSubject(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("packageSubject", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "packageSubject"
+        }
+
+        return NSLocalizedString("packageSubject", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Техническая поддержка
+      ///
+      /// Locales: ru
+      static func aboutSupport(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("aboutSupport", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "aboutSupport"
+        }
+
+        return NSLocalizedString("aboutSupport", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Тип игры
+      ///
+      /// Locales: ru
+      static func gameType(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("gameType", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "gameType"
+        }
+
+        return NSLocalizedString("gameType", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Удалить стол
+      ///
+      /// Locales: ru
+      static func deleteTable(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("deleteTable", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "deleteTable"
+        }
+
+        return NSLocalizedString("deleteTable", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Упрощённая
+      ///
+      /// Locales: ru
+      static func sport(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("sport", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "sport"
+        }
+
+        return NSLocalizedString("sport", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Упрощённые
+      ///
+      /// Locales: ru
+      static func sportPlural(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("sportPlural", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "sportPlural"
+        }
+
+        return NSLocalizedString("sportPlural", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Устная игра
+      ///
+      /// Locales: ru
+      static func oralGame(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("oralGame", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "oralGame"
+        }
+
+        return NSLocalizedString("oralGame", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Участники
+      ///
+      /// Locales: ru
+      static func members(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("members", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "members"
+        }
+
+        return NSLocalizedString("members", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Файл
+      ///
+      /// Locales: ru
+      static func file(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("file", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "file"
+        }
+
+        return NSLocalizedString("file", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Фальстарты
+      ///
+      /// Locales: ru
+      static func falseStarts(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("falseStarts", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "falseStarts"
+        }
+
+        return NSLocalizedString("falseStarts", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Фильтр
+      ///
+      /// Locales: ru
+      static func filter(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("filter", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "filter"
+        }
+
+        return NSLocalizedString("filter", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Финал
+      ///
+      /// Locales: ru
+      static func final(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("final", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "final"
+        }
+
+        return NSLocalizedString("final", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Хост
+      ///
+      /// Locales: ru
+      static func host(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("host", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "host"
+        }
+
+        return NSLocalizedString("host", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Хост игры был изменён %@ на %@
+      ///
+      /// Locales: ru
+      static func hostNameChanged(_ value1: String, _ value2: String, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("hostNameChanged", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1, value2)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "hostNameChanged"
+        }
+
+        let format = NSLocalizedString("hostNameChanged", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1, value2)
+      }
+
+      /// ru translation: Чат
+      ///
+      /// Locales: ru
+      static func chat(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("chat", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "chat"
+        }
+
+        return NSLocalizedString("chat", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Человек
+      ///
+      /// Locales: ru
+      static func human(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("human", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "human"
+        }
+
+        return NSLocalizedString("human", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Я прав!
+      ///
+      /// Locales: ru
+      static func iAmRightMale(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("iAmRightMale", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "iAmRightMale"
+        }
+
+        return NSLocalizedString("iAmRightMale", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: Я права!
+      ///
+      /// Locales: ru
+      static func iAmRightFemale(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("iAmRightFemale", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "iAmRightFemale"
+        }
+
+        return NSLocalizedString("iAmRightFemale", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: без фальстартов
+      ///
+      /// Locales: ru
+      static func nofalsestart(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("nofalsestart", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "nofalsestart"
+        }
+
+        return NSLocalizedString("nofalsestart", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: больше или равна
+      ///
+      /// Locales: ru
+      static func librarySearchMoreOrEqual(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("librarySearchMoreOrEqual", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "librarySearchMoreOrEqual"
+        }
+
+        return NSLocalizedString("librarySearchMoreOrEqual", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: верен. Примите решение: засчитать ли ответ?
+      ///
+      /// Locales: ru
+      static func isRightValidateIt(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("isRightValidateIt", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "isRightValidateIt"
+        }
+
+        return NSLocalizedString("isRightValidateIt", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: женский
+      ///
+      /// Locales: ru
+      static func female(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("female", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "female"
+        }
+
+        return NSLocalizedString("female", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: игрой
+      ///
+      /// Locales: ru
+      static func byGame(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("byGame", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "byGame"
+        }
+
+        return NSLocalizedString("byGame", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: или по заполнению
+      ///
+      /// Locales: ru
+      static func orByFilling(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("orByFilling", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "orByFilling"
+        }
+
+        return NSLocalizedString("orByFilling", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: меньше или равна
+      ///
+      /// Locales: ru
+      static func librarySearchLessOrEqual(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("librarySearchLessOrEqual", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "librarySearchLessOrEqual"
+        }
+
+        return NSLocalizedString("librarySearchLessOrEqual", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: мужской
+      ///
+      /// Locales: ru
+      static func male(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("male", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "male"
+        }
+
+        return NSLocalizedString("male", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: нельзя нажимать на кнопку до окончания чтения вопроса
+      ///
+      /// Locales: ru
+      static func falseStartsHint(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("falseStartsHint", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "falseStartsHint"
+        }
+
+        return NSLocalizedString("falseStartsHint", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: по возрастанию
+      ///
+      /// Locales: ru
+      static func ascending(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ascending", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ascending"
+        }
+
+        return NSLocalizedString("ascending", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: по убыванию
+      ///
+      /// Locales: ru
+      static func descending(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("descending", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "descending"
+        }
+
+        return NSLocalizedString("descending", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: право на ошибку
+      ///
+      /// Locales: ru
+      static func errorTolerant(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("errorTolerant", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "errorTolerant"
+        }
+
+        return NSLocalizedString("errorTolerant", bundle: bundle, comment: "")
+      }
+
+      /// ru translation: устная
+      ///
+      /// Locales: ru
+      static func oral(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("oral", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "oral"
+        }
+
+        return NSLocalizedString("oral", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}
