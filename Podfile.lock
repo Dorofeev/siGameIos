@@ -13,6 +13,11 @@ PODS:
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
   - ReSwift (6.1.0)
+  - ReSwiftThunk (2.0.1):
+    - ReSwift (~> 6.0)
+    - ReSwiftThunk/Core (= 2.0.1)
+  - ReSwiftThunk/Core (2.0.1):
+    - ReSwift (~> 6.0)
   - SwiftSignalRClient (0.9.0)
 
 DEPENDENCIES:
@@ -20,6 +25,7 @@ DEPENDENCIES:
   - PromiseKit (= 6.8)
   - R.swift (= 6.1.0)
   - ReSwift (= 6.1.0)
+  - ReSwiftThunk
   - SwiftSignalRClient (= 0.9.0)
 
 SPEC REPOS:
@@ -29,6 +35,7 @@ SPEC REPOS:
     - R.swift
     - R.swift.Library
     - ReSwift
+    - ReSwiftThunk
     - SwiftSignalRClient
 
 SPEC CHECKSUMS:
@@ -37,8 +44,9 @@ SPEC CHECKSUMS:
   R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   ReSwift: eab3c01e4279ba81b54a61e4fd6499634d20123a
+  ReSwiftThunk: 7ca5145764be6f30b62db88a52d170133954629e
   SwiftSignalRClient: aba134f3d30f7eeb01008929e387b6e66546c7d5
 
-PODFILE CHECKSUM: 6796f4eead32e09463b4387a403a4007c1ba18d8
+PODFILE CHECKSUM: 2b6a84ea47d25c97d7fc89e8c87032e2a2756e32
 
 COCOAPODS: 1.11.3
