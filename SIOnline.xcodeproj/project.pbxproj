@@ -22,6 +22,7 @@
 		4914D2872807CE4B000224A1 /* GameCreationResultCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2862807CE4B000224A1 /* GameCreationResultCode.swift */; };
 		491625A12833ED8E00022237 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491625A02833ED8E00022237 /* Reducer.swift */; };
 		491DD390284C58B000403095 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491DD38F284C58B000403095 /* StringHelpers.swift */; };
+		491DD393284C5B0900403095 /* MessageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491DD392284C5B0900403095 /* MessageProcessor.swift */; };
 		493E98AF2831476100913DE7 /* SettingsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493E98AE2831476100913DE7 /* SettingsReducer.swift */; };
 		4942D7C128150842000B3D60 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4942D7C028150842000B3D60 /* Constants.swift */; };
 		4942D7C328151962000B3D60 /* TimerInfoHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4942D7C228151962000B3D60 /* TimerInfoHelpers.swift */; };
@@ -96,6 +97,7 @@
 		4914D2862807CE4B000224A1 /* GameCreationResultCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCreationResultCode.swift; sourceTree = "<group>"; };
 		491625A02833ED8E00022237 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		491DD38F284C58B000403095 /* StringHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelpers.swift; sourceTree = "<group>"; };
+		491DD392284C5B0900403095 /* MessageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageProcessor.swift; sourceTree = "<group>"; };
 		493E98AE2831476100913DE7 /* SettingsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsReducer.swift; sourceTree = "<group>"; };
 		4942D7C028150842000B3D60 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4942D7C228151962000B3D60 /* TimerInfoHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerInfoHelpers.swift; sourceTree = "<group>"; };
@@ -199,6 +201,14 @@
 				C2D8F96D7E82A0BD02C1C923 /* Pods-SIOnline.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		491DD391284C5AF700403095 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				491DD392284C5B0900403095 /* MessageProcessor.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 		4951098C2803F2350019160E /* Server */ = {
@@ -315,6 +325,7 @@
 				495A9AE0280581010035ABE5 /* Table */,
 				495A9ACF280549A00035ABE5 /* Run */,
 				49C5F1E128015FC3003EB248 /* Settings */,
+				491DD391284C5AF700403095 /* Game */,
 				49C5F1D428007F46003EB248 /* Config.swift */,
 				49C5F1D828008052003EB248 /* State.swift */,
 				49C5F1DA2800817D003EB248 /* SavedState.swift */,
@@ -531,6 +542,7 @@
 				495A9ACC28048FF40035ABE5 /* ChatMode.swift in Sources */,
 				494BC020280FBC64001B81E9 /* RunActions.swift in Sources */,
 				49B6BC79280004EC005AC3BE /* AppDelegate.swift in Sources */,
+				491DD393284C5B0900403095 /* MessageProcessor.swift in Sources */,
 				146DF0CE284350DE005C0C81 /* tableActionCreators.swift in Sources */,
 				4914D2872807CE4B000224A1 /* GameCreationResultCode.swift in Sources */,
 				497875D62806A9CC00116DE1 /* AppSettings.swift in Sources */,
