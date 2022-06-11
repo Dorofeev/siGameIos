@@ -10,7 +10,7 @@ class PersonInfo {
     var isReady: Bool
     var replic: String?
     var isDeciding: Bool
-    let isHuman: Bool
+    var isHuman: Bool
     
     init(name: String, isReady: Bool, replic: String?, isDeciding: Bool, isHuman: Bool) {
         self.name = name
