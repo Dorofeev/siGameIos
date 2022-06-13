@@ -9,4 +9,8 @@ extension String {
     func stringFormat(args: [String]) -> String {
         return String(format: self, arguments: args)
     }
+    
+    func toInt() -> Int? {
+        return Int(self)
+    }
 }
