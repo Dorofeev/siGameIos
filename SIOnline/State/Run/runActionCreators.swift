@@ -5,6 +5,7 @@
 //  Created by Anna Kuptsova on 29.05.2022.
 //
 import ReSwiftThunk
+import PromiseKit
 class RunActionCreators {
     static var timerRef: Int?
     
@@ -286,6 +287,137 @@ class RunActionCreators {
                     dispatch(TableActionCreators.isSelectableChanged(false))
                     dispatch(decisionNeededChanged(false))
                 }
+            }
+        }
+    }
+    static let selectTheme: (DataContext, Int) -> Thunk<State> = { dataContext, themeIndex in
+        Thunk { dispatch, state in
+            guard let state = state(), state.run.table.isSelectable, state.run.table.roundInfo.count > themeIndex else {
+                return
+            }
+            let theme = state.run.table.roundInfo[themeIndex]
+            let result = dataContext.gameClient.msgAsync(args: ["DELETE", themeIndex])
+            result.done { _ in
+                dispatch(TableActionCreators.isSelectableChanged(false))
+                dispatch(decisionNeededChanged(false))
+            }
+        }
+    }
+    static let isGameButtonEnabledChanged: (Bool) -> RunActionTypes = { isGameButtonEnabled in
+        RunActionTypes.isGameButtonEnabledChanged(isGameButtonEnabled: isGameButtonEnabled)
+    }
+    static let pressGameButton: (DataContext) -> Thunk<State> = { dataContext in
+        Thunk { dispatch, state in
+            guard let state = state() else {
+                return
+            }
+            let result = dataContext.gameClient.msgAsync(args: ["I"])
+            result.done { _ in
+                dispatch(isGameButtonEnabledChanged(false))
+                GlobalTimers.setTimeout(delay: 3) {
+                    dispatch(isGameButtonEnabledChanged(true))
+                }
+            }
+        }
+    }
+    static let apellate: (DataContext) -> Thunk<State> = { dataContext in
+        Thunk { _, _ in
+            dataContext.gameClient.msgAsync(args: ["APELLATE", "+"])
+        }
+    }
+    static let disagree: (DataContext) -> Thunk<State> = { dataContext in
+        Thunk { _, _ in
+            dataContext.gameClient.msgAsync(args: ["APELLATE", "-"])
+        }
+    }
+    static let isAnswering: () -> RunActionTypes = {
+        RunActionTypes.isAnswering
+    }
+    static let onAnswerChanged: (String) -> RunActionTypes = { answer in
+        RunActionTypes.answerChanged(answer: answer)
+    }
+    static let sendAnswer: (DataContext) -> Thunk<State> = { dataContext in
+        Thunk { dispatch, state in
+            guard let state = state() else {
+                return
+            }
+            let result = dataContext.gameClient.msgAsync(args: ["ANSWER", state.run.answer])
+            result.done { _ in
+                dispatch(clearDecisions())
+            }
+        }
+    }
+    static let validate: (String, String, [String], [String], String, String)
+    -> RunActionTypes = { name, answer, rightAnswers, wrongAnswers, header, message in
+        RunActionTypes.validateAction(
+            name: name,
+            answer: answer,
+            rightAnswers: rightAnswers,
+            wrongAnswers: wrongAnswers,
+            header: header,
+            message: message
+        )
+    }
+    static let approveAnswer: (DataContext) -> Thunk<State> = { dataContext in
+        Thunk { dispatch, _ in
+            let result = dataContext.gameClient.msgAsync(args: ["ISRIGHT", "+"])
+            result.done { _ in
+                dispatch(clearDecisions())
+            }
+        }
+    }
+    static let rejectAnswer: (DataContext) -> Thunk<State> = { dataContext in
+        Thunk { dispatch, _ in
+            let result = dataContext.gameClient.msgAsync(args: ["ISRIGHT", "-"])
+            result.done { _ in
+                dispatch(clearDecisions())
+            }
+        }
+    }
+    static let setStakes: ([StakeTypes: Bool], Int, Int, Int, Int, String, Bool)
+    -> RunActionTypes = { allowedStakeTypes, minimum, maximum, stake, step, message, areSimple in
+        RunActionTypes.setStakes(
+            allowedStakeTypes: allowedStakeTypes,
+            minimum: minimum,
+            maximum: maximum,
+            stake: stake,
+            step: step,
+            message: message,
+            areSimple: areSimple
+        )
+    }
+    static let stakeChanged: (Int) -> RunActionTypes = { stake in
+        RunActionTypes.stakeChanged(stake: stake)
+    }
+    static let sendNominal: (DataContext) -> Thunk<State> = { dataContext in
+        Thunk { dispatch, _ in
+            let result = dataContext.gameClient.msgAsync(args: ["STAKE", 0])
+            result.done { _ in
+                dispatch(clearDecisions())
+            }
+        }
+    }
+    static let sendStake: (DataContext) -> Thunk<State> = { dataContext in
+        Thunk { dispatch, state in
+            guard let state = state() else {
+                return
+            }
+            var result: Promise<Any>
+            if state.run.stakes.message == "STAKE" {
+                result = dataContext.gameClient.msgAsync(args: ["STAKE", 1, state.run.stakes.stake])
+            } else {
+                result = dataContext.gameClient.msgAsync(args: [state.run.stakes.message, state.run.stakes.stake])
+            }
+            result.done { _ in
+                dispatch(clearDecisions())
+            }
+        }
+    }
+    static let sendPass: (DataContext) -> Thunk<State> = { dataContext in
+        Thunk { dispatch, _ in
+            let result = dataContext.gameClient.msgAsync(args: ["STAKE", 2])
+            result.done { _ in
+                dispatch(clearDecisions())
             }
         }
     }

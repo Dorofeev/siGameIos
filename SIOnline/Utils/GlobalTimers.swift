@@ -16,4 +16,10 @@ class GlobalTimers {
         timer.invalidate()
         timers[id] = nil
     }
+    static func setTimeout(delay: TimeInterval, block: @escaping () -> Void) {
+        let timer = Timer.scheduledTimer(withTimeInterval: delay, repeats: false) { _ in
+            block()
+        }
+        timers[timers.count] = timer
+    }
 }
