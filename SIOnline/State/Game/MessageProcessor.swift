@@ -32,9 +32,7 @@ class MessageProcessor {
             case .Player:
                 playerHandler(dispatch, state, dataContext, args)
             case .Showman:
-                // TODO: - not yet implemented
-                // showmanHandler(dispatch, state, dataContext, args);
-                break
+                showmanHandler(dispatch, state, dataContext, args)
             default:
                 break
             }
@@ -109,20 +107,14 @@ class MessageProcessor {
                     dispatch(TableActionCreators.appendPartialText(text))
                 }
             case "image":
-                // TODO: - not yet implemented
-//                const uri = preprocessServerUri(args[3], dataContext);
-//                dispatch(tableActionCreators.showImage(uri));
-                break
+                let uri = preprocessServerUri(uri: args[3], dataContext: dataContext)
+                dispatch(TableActionCreators.showImage(uri))
             case "voice":
-                // TODO: - not yet implemented
-//                const uri = preprocessServerUri(args[3], dataContext);
-//                dispatch(tableActionCreators.showAudio(uri));
-                break
+                let uri = preprocessServerUri(uri: args[3], dataContext: dataContext)
+                dispatch(TableActionCreators.showAudio(uri))
             case "video":
-                // TODO: - not yet implemented
-//                const uri = preprocessServerUri(args[3], dataContext);
-//                dispatch(tableActionCreators.showVideo(uri));
-                break
+                let uri = preprocessServerUri(uri: args[3], dataContext: dataContext)
+                dispatch(TableActionCreators.showVideo(uri))
             default:
                 break
             }
@@ -158,17 +150,11 @@ class MessageProcessor {
             //     5000
             // )
         case "CONFIG":
-            // TODO: - not yet implemented
-            // config(dispatch, state, ...args);
-            break
+            config(dispatch: dispatch, state: state, args: args)
         case "CONNECTED":
-            // TODO: - not yet implemented
-            // connected(dispatch, state, ...args);
-            break
+            connected(dispatch: dispatch, state: state, args: args)
         case "DISCONNECTED":
-            // TODO: - not yet implemented
-            // disconnected(dispatch, state, ...args);
-            break
+            disconnected(dispatch: dispatch, state: state, args: args)
         case "ENDTRY":
             dispatch(TableActionCreators.canPressChanged(false))
             if let index = Int(secondArg), index > -1, index < state.run.persons.players.count {
@@ -200,9 +186,7 @@ class MessageProcessor {
                 //dispatch(runActionCreators.chatMessageAdded({ sender: '', text: stringFormat(localization.hostNameChanged, changeSource, args[1])
             }
         case "INFO2":
-            // TODO: - not yet implemented
-            // info(dispatch, ...args);
-            break
+            info(dispatch: dispatch, args: args)
         case "OUT":
             guard let themeIndex = Int(secondArg), let themeInfo = state.run.table.roundInfo.getSafe(themeIndex) else { break }
             dispatch(TableActionCreators.blinkTheme(themeIndex))
@@ -278,9 +262,7 @@ class MessageProcessor {
             // TODO: - not yet implemented
             // dispatch(runActionCreators.playerStakeChanged(playerIndex, stake));
         case "PICTURE":
-            
-            // TODO: - not yet implemented
-            // const uri = preprocessServerUri(args[2], dataContext);
+            let uri = preprocessServerUri(uri: args[2], dataContext: dataContext)
             
             // TODO: - not yet implemented
             // dispatch(runActionCreators.personAvatarChanged(personName, uri));
@@ -318,11 +300,7 @@ class MessageProcessor {
             let isReady = args.count < 3 || args.getSafe(2) == "+"
             onReady(personName: secondArg, isReady: isReady, dispatch: dispatch, state: state)
         case "REPLIC" where args.count > 2:
-            
-            // TODO: - not yet implemented
-            // onReplic(dispatch, state, args);
-            
-            break
+            onReplic(dispatch: dispatch, state: state, args: args)
         case "RESUME":
             dispatch(TableActionCreators.resumeMedia())
         case "RIGHTANSWER":
@@ -558,10 +536,10 @@ class MessageProcessor {
             // dispatch(runActionCreators.clearDecisions());
             break
         case "CAT":
+            let indices = getIndices(args: args)
+            
             // TODO: - not yet implemented
-            // const indices = getIndices(args);
             // dispatch(runActionCreators.selectionEnabled(indices, 'CAT'));
-            break
         case "CATCOST":
             let allowedStakeTypes = [StakeTypes.nominal: false, .sum: true, .pass: false, .allIn: false]
             
@@ -578,9 +556,7 @@ class MessageProcessor {
             
             dispatch(TableActionCreators.isSelectableChanged(true))
         case "FINALSTAKE":
-            // TODO: - not yet implemented
-            // const me = getMe(state);
-            // if (!me) { break; }
+            guard let me = getMe(state: state) else { break }
             
             let allowedStakeTypes = [StakeTypes.nominal: false, .sum: true, .pass: false, .allIn: false]
             
@@ -600,19 +576,428 @@ class MessageProcessor {
             
             guard let minimum = args.getSafe(5) else { return }
             
-            // TODO: - not yet implemented
-            // const me = getMe(state);
-            // if (!me) { return; }
+            guard let me = getMe(state: state) else { return }
             
             // TODO: - not yet implemented
             // dispatch(runActionCreators.setStakes(allowedStakeTypes, minimum, me.sum, minimum, 100, 'STAKE', false));
             // dispatch(runActionCreators.decisionNeededChanged(true));
         case "VALIDATION":
+            startValidation(dispatch: dispatch, title: R.string.localizable.apellation(), args: args)
+        default:
+            break
+        }
+    }
+    
+    static let showmanHandler: (DispatchFunction, State, DataContext, [String]) -> Void = { dispatch, state, dataContext, args in
+        guard !args.isEmpty else { return }
+        
+        switch args[0] {
+        case "CANCEL":
             // TODO: - not yet implemented
-            // startValidation(dispatch, localization.apellation, args);
+            // dispatch(runActionCreators.clearDecisions());
+            break
+        case "FIRST":
+            let indices = getIndices(args: args)
+            
+            // TODO: - not yet implemented
+            // dispatch(runActionCreators.selectionEnabled(indices, 'FIRST'));
+            // dispatch(runActionCreators.showmanReplicChanged(localization.selectFirstPlayer));
+        case "FIRSTDELETE":
+            let indices = getIndices(args: args)
+            
+            // TODO: - not yet implemented
+            // dispatch(runActionCreators.selectionEnabled(indices, 'NEXTDELETE'));
+            // dispatch(runActionCreators.showmanReplicChanged(localization.selectThemeDeleter));
+        case "FIRSTSTAKE":
+            let indices = getIndices(args: args)
+            
+            // TODO: - not yet implemented
+            // dispatch(runActionCreators.selectionEnabled(indices, 'NEXT'));
+            // dispatch(runActionCreators.showmanReplicChanged(localization.selectStaker));
+        case "HINT" where args.count > 1:
+            // TODO: - not yet implemented
+            // dispatch(runActionCreators.hintChanged(`${localization.rightAnswer}: ${args[1]}`));
+            break
+        case "RIGHTANSWER":
+            // TODO: - not yet implemented
+            // dispatch(runActionCreators.hintChanged(null));
+            break
+        case "STAGE":
+            // TODO: - not yet implemented
+            // dispatch(runActionCreators.decisionNeededChanged(false));
+            // dispatch(runActionCreators.hintChanged(null));
+            break
+        case "VALIDATION":
+            startValidation(dispatch: dispatch, title: R.string.localizable.answerChecking(), args: args)
+        default:
+            break
+        }
+    }
+    
+    static func startValidation(dispatch: DispatchFunction, title: String, args: [String]) {
+        if args.count < 5 { return }
+        
+        let name = args[1]
+        let answer = args[2]
+        let isVoteForTheRightAnswer = args[3] == "+" // Not used
+        let rightAnswersCount = min(args.count - 5, args[4].toInt() ?? 999)
+        var right: [String] = []
+        
+        for index in 0..<rightAnswersCount {
+            right.append(args[5 + index])
+        }
+        
+        var wrong: [String] = []
+        
+        for arg in args.dropFirst(5 + rightAnswersCount) {
+            wrong.append(arg)
+        }
+        
+        let validationMesssage = "\(R.string.localizable.playersAnswer()) \(name) \"\(answer)\". \(R.string.localizable.validateAnswer())"
+        
+        // TODO: - not yet implemented
+        // dispatch(runActionCreators.validate(name, answer, right, wrong, title, validationMesssage));
+    }
+    
+    static func getIndices(args: [String]) -> [Int] {
+        var indices: [Int] = []
+        for (index, arg) in args.dropFirst().enumerated() where arg == "+" {
+            indices.append(index)
+        }
+        
+        return indices
+    }
+    
+    static func info(dispatch: DispatchFunction, args: [String]) {
+        guard let playersCount = args.getSafe(1)?.toInt() else {
+            return
+        }
+        
+        let viewersCount = (args.count - 2) / 5 - 1 - playersCount
+        var pIndex = 2
+        
+        var name = args[pIndex]
+        pIndex += 1
+        var isMale = args[pIndex] == "+"
+        pIndex += 1
+        var isConnected = args[pIndex] == "+"
+        pIndex += 1
+        var isHuman = args[pIndex] == "+"
+        pIndex += 1
+        var isReady = args[pIndex] == "+"
+        pIndex += 1
+
+        var all: Persons = [:]
+        let showman = PersonInfo(name: name, isReady: isReady, replic: nil, isDeciding: false, isHuman: isHuman)
+        
+        if isConnected {
+            all[name] = Account(name: name, sex: isMale ? .male : .female, isHuman: isHuman, avatar: nil)
+        }
+        
+        var players: [PlayerInfo] = []
+        
+        for _ in 0..<playersCount {
+            name = args[pIndex]
+            pIndex += 1
+            isMale = args[pIndex] == "+"
+            pIndex += 1
+            isConnected = args[pIndex] == "+"
+            pIndex += 1
+            isHuman = args[pIndex] == "+"
+            pIndex += 1
+            isReady = args[pIndex] == "+"
+            pIndex += 1
+            
+            players.append(PlayerInfo(
+                name: name,
+                isReady: isReady,
+                replic: nil,
+                isDeciding: false,
+                isHuman: isHuman,
+                sum: 0,
+                stake: 0,
+                state: .none,
+                canBeSelected: false
+            ))
+            
+            if isConnected {
+                all[name] = Account(name: name, sex: isMale ? .male : .female, isHuman: isHuman, avatar: nil)
+            }
+        }
+        
+        for _ in 0..<viewersCount {
+            name = args[pIndex]
+            pIndex += 1
+            isMale = args[pIndex] == "+"
+            pIndex += 1
+            isConnected = args[pIndex] == "+"
+            pIndex += 1
+            isHuman = args[pIndex] == "+"
+            pIndex += 1
+            isReady = args[pIndex] == "+"
+            pIndex += 1
+            
+            all[name] = Account(name: name, sex: isMale ? .male : .female, isHuman: isHuman, avatar: nil)
+        }
+        
+        // TODO: - not yet implemented
+        // dispatch(runActionCreators.infoChanged(all, showman, players));
+        // dispatch(actionCreators.sendAvatar() as any)
+    }
+    
+    static func onReplic(dispatch: DispatchFunction, state: State, args: [String]) {
+        let personCode = args[1]
+        var text = ""
+        
+        for arg in args.dropFirst(2) {
+            if !text.isEmpty {
+                text += "\n"
+            }
+            
+            text += arg
+        }
+        
+        if personCode == "s" {
+            // TODO: - not yet implemented
+            // dispatch(runActionCreators.showmanReplicChanged(text));
+            return
+        }
+        
+        if personCode.hasPrefix("p"), personCode.count > 1, let index = String(personCode.dropFirst()).toInt() {
+            // TODO: - not yet implemented
+            // dispatch(runActionCreators.playerReplicChanged(index, text));
+            return
+        }
+        
+        if personCode != "l" {
+            return
+        }
+        
+        // TODO: - not yet implemented
+        // dispatch(runActionCreators.chatMessageAdded({ sender: null, text }));
+    }
+    
+    static func preprocessServerUri(uri: String, dataContext: DataContext) -> String {
+        let host: String = !dataContext.contentUris.isEmpty ? dataContext.contentUris[0] : dataContext.serverUri
+        
+        let result = uri.replacingOccurrences(of: "<SERVERHOST>", with: host)
+        
+        return result.replacingOccurrences(of: "http:", with: "https:")
+    }
+    
+    static func connected(dispatch: DispatchFunction, state: State, args: [String]) {
+        let name = args[3]
+        if name == state.user.login {
+            return
+        }
+        
+        guard let index = args[2].toInt() else { return }
+        let role = args[1]
+        let isMale = args[4] == "+"
+        
+        let account = Account(name: name, sex: isMale ? .male : .female, isHuman: true, avatar: nil)
+        
+        // TODO: - not yet implemented
+        // dispatch(runActionCreators.personAdded(account));
+        
+        switch role {
+        case "showman":
+            // TODO: - not yet implemented
+            // dispatch(runActionCreators.showmanChanged(name, true, false));
+            break
+        case "player":
+            // TODO: - not yet implemented
+            // dispatch(runActionCreators.playerChanged(index, name, true, false));
             break
         default:
             break
         }
+    }
+    
+    static func disconnected(dispatch: DispatchFunction, state: State, args: [String]) {
+        let name = args[1]
+        
+        // TODO: - not yet implemented
+        // dispatch(runActionCreators.personRemoved(name));
+        
+        if state.run.persons.showman.name == name {
+            // TODO: - not yet implemented
+            // dispatch(runActionCreators.showmanChanged(Constants.ANY_NAME, null, false));
+        } else {
+            for player in state.run.persons.players where player.name == name {
+                // TODO: - not yet implemented
+                // dispatch(runActionCreators.playerChanged(i, Constants.ANY_NAME, null, false));
+                break
+            }
+        }
+    }
+    
+    static func config(dispatch: DispatchFunction, state: State, args: [String]) {
+        switch args[1] {
+        case "ADDTABLE":
+            // TODO: - not yet implemented
+            // dispatch(runActionCreators.playerAdded());
+            break
+        case "FREE":
+            let personType = args[2]
+            guard let index = args[3].toInt() else { break }
+            let isPlayer = personType == "player"
+            
+            if isPlayer {
+                // TODO: - not yet implemented
+                // dispatch(runActionCreators.playerChanged(index, Constants.ANY_NAME, null, false))
+            } else {
+                // TODO: - not yet implemented
+                // dispatch(runActionCreators.showmanChanged(Constants.ANY_NAME, null, false));)
+            }
+            
+            let account = isPlayer ? state.run.persons.players[index] : state.run.persons.showman
+            
+            if account.name == state.user.login {
+                // TODO: - not yet implemented
+                // dispatch(runActionCreators.roleChanged(Role.Viewer));
+            }
+        case "DELETETABLE":
+            guard let index = args[2].toInt() else { return }
+            let player = state.run.persons.players[index]
+            let person = state.run.persons.all[player.name]
+            
+            // TODO: - not yet implemented
+            // dispatch(runActionCreators.playerDeleted(index));
+            
+            if let person = person, !person.isHuman {
+                // TODO: - not yet implemented
+                // dispatch(runActionCreators.personRemoved(person.name));
+            } else if player.name == state.user.login {
+                // TODO: - not yet implemented
+                // dispatch(runActionCreators.roleChanged(Role.Viewer));
+            }
+        case "SET":
+            let personType = args[2]
+            guard let index = args[3].toInt() else { return }
+            let replacer = args[4]
+            let replacerSex = args[5] == "+" ? Sex.male : Sex.female
+            
+            let isPlayer = personType == "player"
+            let account = isPlayer ? state.run.persons.players[index] : state.run.persons.showman
+            
+            if let person = state.run.persons.all[account.name], !person.isHuman {
+                if isPlayer {
+                    // TODO: - not yet implemented
+                    // dispatch(runActionCreators.playerChanged(index, replacer, null, false))
+                } else {
+                    // TODO: - not yet implemented
+                    // dispatch(runActionCreators.showmanChanged(replacer, null, false)))
+                }
+                
+                // TODO: - not yet implemented
+                // dispatch(runActionCreators.personRemoved(person.name));
+                
+                let newAccount = Account(name: replacer, sex: replacerSex, isHuman: false, avatar: nil)
+                
+                // TODO: - not yet implemented
+                // dispatch(runActionCreators.personAdded(newAccount));
+                break
+            }
+            
+            if state.run.persons.showman.name == replacer { // isPlayer
+                // TODO: - not yet implemented
+                // dispatch(runActionCreators.showmanChanged(account.name, true, account.isReady));
+                // dispatch(runActionCreators.playerChanged(index, replacer, true, state.run.persons.showman.isReady));
+                
+                if account.name == state.user.login {
+                    // TODO: - not yet implemented
+                    // dispatch(runActionCreators.roleChanged(Role.Showman));
+                } else {
+                    // TODO: - not yet implemented
+                    // dispatch(runActionCreators.roleChanged(Role.Player));
+                }
+                break
+            }
+            
+            for (index, player) in state.run.persons.players.enumerated() where player.name == replacer {
+                if isPlayer {
+                    // TODO: - not yet implemented
+                    // dispatch(runActionCreators.playersSwap(index, i));
+                } else {
+                    let isReady = player.isReady
+                    
+                    // TODO: - not yet implemented
+                    // dispatch(runActionCreators.playerChanged(i, account.name, null, account.isReady));
+                    // dispatch(runActionCreators.showmanChanged(replacer, null, isReady));
+                    
+                    if state.run.persons.showman.name == state.user.login {
+                        // TODO: - not yet implemented
+                        // dispatch(runActionCreators.roleChanged(Role.Player));
+                    } else if replacer == state.user.login {
+                        // TODO: - not yet implemented
+                        // dispatch(runActionCreators.roleChanged(Role.Showman));
+                    }
+                }
+                return
+            }
+
+            if isPlayer {
+                // TODO: - not yet implemented
+                // dispatch(runActionCreators.playerChanged(index, replacer, null, false))
+            } else {
+                // TODO: - not yet implemented
+                // dispatch(runActionCreators.showmanChanged(replacer, null, false));)
+            }
+            
+            if account.name == state.user.login {
+                // TODO: - not yet implemented
+                // dispatch(runActionCreators.roleChanged(Role.Viewer));
+            } else if replacer == state.user.login {
+                // TODO: - not yet implemented
+                // dispatch(runActionCreators.roleChanged(isPlayer ? Role.Player : Role.Showman));
+            }
+        case "CHANGETYPE":
+            let personType = args[2]
+            guard let index = args[3].toInt() else { break }
+            let newType = args[4] == "+"
+            let newName = args[5]
+            let newSex = args[6] == "+" ? Sex.male : .female
+            let isPlayer = personType == "player"
+            let account = isPlayer ? state.run.persons.players[index] : state.run.persons.showman
+            
+            let person = state.run.persons.all[account.name]
+            
+            if person != nil && person?.isHuman == newType {
+                break
+            }
+            
+            if !newType {
+                let newAccount = Account(name: newName, sex: newSex, isHuman: false, avatar: nil)
+                
+                // TODO: - not yet implemented
+                // dispatch(runActionCreators.personAdded(newAccount));
+            }
+            
+            if isPlayer {
+                // TODO: - not yet implemented
+                // dispatch(runActionCreators.playerChanged(index, newName, newType, false))
+            } else {
+                // TODO: - not yet implemented
+                // dispatch(runActionCreators.showmanChanged(newName, newType, false));)
+            }
+
+            if newType {
+                // TODO: - not yet implemented
+                // dispatch(runActionCreators.personRemoved(person.name));
+            }
+            
+            if person?.name == state.user.login {
+                // TODO: - not yet implemented
+                // dispatch(runActionCreators.roleChanged(Role.Viewer));
+            }
+        default:
+            break
+        }
+    }
+    
+    static func getMe(state: State) -> PlayerInfo? {
+        let players = state.run.persons.players
+        return players.first { $0.name == state.user.login }
     }
 }
