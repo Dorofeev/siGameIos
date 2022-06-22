@@ -48,25 +48,18 @@ class MessageProcessor {
             }
             
             let replic: ChatMessage = ChatMessage(sender: message.sender, text: message.text, isSystem: false)
-            // TODO: - not yet implemented
-            //  dispatch(runActionCreators.chatMessageAdded(replic));
+            dispatch(RunActionCreators.chatMessageAdded(replic))
             
             if !state.run.chat.isVisible && state.ui.windowWidth < 800 {
-                // TODO: - not yet implemented
-                // dispatch(runActionCreators.lastReplicChanged(replic));
+                dispatch(RunActionCreators.lastReplicChanged(replic))
                 
                 if lastReplicLock != 0 {
-                    // TODO: - not yet implemented
-                    //window.clearTimeout(lastReplicLock);
+                    GlobalTimers.clearTimeout(id: lastReplicLock)
                 }
                 
-                // TODO: - not yet implemented
-                // lastReplicLock = window.setTimeout(
-                //            () => {
-                //                dispatch(runActionCreators.lastReplicChanged(null));
-                //            },
-                //            3000
-                //        );
+                lastReplicLock = GlobalTimers.setTimeout(delay: 3, block: {
+                    dispatch(RunActionCreators.lastReplicChanged(nil))
+                })
             }
         }
     }
@@ -84,7 +77,7 @@ class MessageProcessor {
         //dispatch(runActionCreators.isReadyChanged(personIndex, isReady));
     }
     
-    static let viewerHandler: (DispatchFunction, State, DataContext, [String]) -> Void = { dispatch, state, dataContext, args in
+    static let viewerHandler: (@escaping DispatchFunction, State, DataContext, [String]) -> Void = { dispatch, state, dataContext, args in
         let firstArg = args.first ?? ""
         let secondArg = args.count > 1 ? args[0] : ""
         switch firstArg {
@@ -131,24 +124,22 @@ class MessageProcessor {
             
             // TODO: - not yet implemented
             // dispatch(runActionCreators.playersStateCleared());
-            // dispatch(runActionCreators.afterQuestionStateChanged(false));
+            
+            dispatch(RunActionCreators.afterQuestionStateChanged(false))
             
             guard let themeInfo = state.run.table.roundInfo.getSafe(themeIndex),
                   let quest = themeInfo.questions.getSafe(questIndex) else {
                 break
             }
             
-            // TODO: - not yet implemented
-            //dispatch(runActionCreators.currentPriceChanged(quest));
+            dispatch(RunActionCreators.currentPriceChanged(quest))
             
             dispatch(TableActionCreators.captionChanged("\(themeInfo.name), \(quest)"))
             dispatch(TableActionCreators.blinkQuestion(themeIndex, questIndex))
             
-            // TODO: - not yet implemented
-            // setTimeout(
-            //     dispatch(tableActionCreators.removeQuestion(themeIndex, questIndex));
-            //     5000
-            // )
+            GlobalTimers.setTimeout(delay: 5) {
+                dispatch(TableActionCreators.removeQuestion(themeIndex, questIndex))
+            }
         case "CONFIG":
             config(dispatch: dispatch, state: state, args: args)
         case "CONNECTED":
@@ -158,8 +149,7 @@ class MessageProcessor {
         case "ENDTRY":
             dispatch(TableActionCreators.canPressChanged(false))
             if let index = Int(secondArg), index > -1, index < state.run.persons.players.count {
-                // TODO: - not yet implemented
-                // dispatch(runActionCreators.playerStateChanged(index, PlayerStates.Press));
+                dispatch(RunActionCreators.playerStateChanged(index, .press))
             } else if secondArg == "A" {
                 // TODO: - not yet implemented
                 // dispatch(runActionCreators.stopTimer(1));
@@ -182,8 +172,7 @@ class MessageProcessor {
             if args.count > 2 {
                 let changeSource = args[2].count > 0 ? args[2] : R.string.localizable.byGame()
                 
-                // TODO: - not yet implemented
-                //dispatch(runActionCreators.chatMessageAdded({ sender: '', text: stringFormat(localization.hostNameChanged, changeSource, args[1])
+                dispatch(RunActionCreators.chatMessageAdded(ChatMessage(sender: "", text: R.string.localizable.hostNameChanged(changeSource, args[1]), isSystem: false)))
             }
         case "INFO2":
             info(dispatch: dispatch, args: args)
@@ -191,8 +180,9 @@ class MessageProcessor {
             guard let themeIndex = Int(secondArg), let themeInfo = state.run.table.roundInfo.getSafe(themeIndex) else { break }
             dispatch(TableActionCreators.blinkTheme(themeIndex))
             
-            // TODO: - not yet implemented
-            // setTimeout({ dispatch(tableActionCreators.removeTheme(themeIndex)); }, 600)
+            GlobalTimers.setTimeout(delay: 0.6) {
+                dispatch(TableActionCreators.removeTheme(themeIndex))
+            }
         case "PACKAGELOGO":
             // TODO: process
             break
@@ -202,8 +192,7 @@ class MessageProcessor {
         case "PAUSE":
             let isPaused = secondArg == "+"
             
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.isPausedChanged(isPaused));
+            dispatch(RunActionCreators.isPausedChanged(isPaused))
             
             if args.count > 4 {
                 if isPaused {
@@ -229,8 +218,7 @@ class MessageProcessor {
                   index > -1,
                   index < state.run.persons.players.count else { break }
             
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.playerStateChanged(index, isRight ? PlayerStates.Right : PlayerStates.Wrong));
+            dispatch(RunActionCreators.playerStateChanged(index, isRight ? .right : .wrong))
         case "PERSONAPELLATED":
             // TODO: process
             break
@@ -259,14 +247,11 @@ class MessageProcessor {
                 break
             }
             
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.playerStakeChanged(playerIndex, stake));
+            dispatch(RunActionCreators.playerStakeChanged(playerIndex, stake))
         case "PICTURE":
             let uri = preprocessServerUri(uri: args[2], dataContext: dataContext)
             
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.personAvatarChanged(personName, uri));
-            break
+            dispatch(RunActionCreators.personAvatarChanged(secondArg, uri))
         case "QTYPE":
             switch secondArg {
             case "auction":
@@ -283,15 +268,12 @@ class MessageProcessor {
             //dispatch(runActionCreators.playersStateCleared());
             
             dispatch(TableActionCreators.showText(secondArg, false))
-//            dispatch(runActionCreators.playersStateCleared());
-//            dispatch(tableActionCreators.showText(args[1], false));
-//            dispatch(runActionCreators.afterQuestionStateChanged(false));
+            dispatch(RunActionCreators.afterQuestionStateChanged(false))
 //            dispatch(runActionCreators.updateCaption(args[1]));
             
         case "QUESTIONCAPTION" where args.count > 1:
             dispatch(TableActionCreators.captionChanged(secondArg))
         case "READINGSPEED" where args.count > 1:
-            
             // TODO: - not yet implemented
             // dispatch(runActionCreators.readingSpeedChanged(parseInt(args[1], 10)));
             
@@ -308,8 +290,7 @@ class MessageProcessor {
                 dispatch(TableActionCreators.showAnswer(answer))
             }
             
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.afterQuestionStateChanged(true));
+            dispatch(RunActionCreators.afterQuestionStateChanged(true))
             
             dispatch(TableActionCreators.captionChanged(""))
         case "ROUNDSNAMES":
@@ -334,12 +315,10 @@ class MessageProcessor {
         case "STAGE":
             let roundIndex = args.getSafe(3)?.toInt() ?? -1
             
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.stageChanged(stage, roundIndex));
+            dispatch(RunActionCreators.stageChanged(secondArg, roundIndex))
             
             if secondArg != "Before" {
-                // TODO: - not yet implemented
-                // dispatch(runActionCreators.gameStarted());
+                dispatch(RunActionCreators.gameStarted())
             }
             
             if secondArg == "Round" || secondArg == "Final" {
@@ -351,8 +330,7 @@ class MessageProcessor {
                 dispatch(TableActionCreators.showLogo())
             }
             
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.gameStateCleared());
+            dispatch(RunActionCreators.gameStateCleared())
         case "STOP":
             
             // TODO: - not yet implemented
@@ -370,8 +348,7 @@ class MessageProcessor {
                 }
             }
             
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.sumsChanged(sums));
+            dispatch(RunActionCreators.sumsChanged(sums))
         case "TABLO2":
             let roundInfo = state.run.table.roundInfo
             let areQuestionsFilled = roundInfo.contains(where: { $0.questions.count > 0 })
@@ -496,12 +473,12 @@ class MessageProcessor {
         case "THEME" where args.count > 1:
             // TODO: - not yet implemented
             // dispatch(runActionCreators.playersStateCleared());
-            // dispatch(runActionCreators.showmanReplicChanged(''));
+            dispatch(RunActionCreators.showmanReplicChanged(""))
             
             dispatch(TableActionCreators.showText("\(R.string.localizable.theme): \(secondArg)", false))
             
             // TODO: - not yet implemented
-            // dispatch(runActionCreators.afterQuestionStateChanged(false));
+            dispatch(RunActionCreators.afterQuestionStateChanged(false))
             // dispatch(runActionCreators.themeNameChanged(args[1]));
         case "TRY":
             dispatch(TableActionCreators.canPressChanged(true))
@@ -514,9 +491,10 @@ class MessageProcessor {
             if index > -1 && index < players.count {
                 let player = players[index]
                 if player.state == .none {
-                    // TODO: - not yet implemented
-                    // dispatch(runActionCreators.playerStateChanged(index, PlayerStates.Lost));
-                    // setTimeout( () => { dispatch(runActionCreators.playerLostStateDropped(index)); }, 200 )
+                    dispatch(RunActionCreators.playerStateChanged(index, .lost))
+                    GlobalTimers.setTimeout(delay: 0.2) {
+                        dispatch(RunActionCreators.playerLostStateDropped(index))
+                    }
                 }
             }
         default:
@@ -528,13 +506,9 @@ class MessageProcessor {
         guard !args.isEmpty else { return }
         switch args[0] {
         case "ANSWER":
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.isAnswering());
-            break
+            dispatch(RunActionCreators.isAnswering())
         case "CANCEL":
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.clearDecisions());
-            break
+            dispatch(RunActionCreators.clearDecisions())
         case "CAT":
             let indices = getIndices(args: args)
             
@@ -547,12 +521,10 @@ class MessageProcessor {
                   let maximum = args.getSafe(2)?.toInt(),
                   let step = args.getSafe(3)?.toInt() else { return }
             
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.setStakes(allowedStakeTypes, minimum, maximum, minimum, step, 'CATCOST', true));
-            // dispatch(runActionCreators.decisionNeededChanged(true));
+            dispatch(RunActionCreators.setStakes(allowedStakeTypes, minimum, maximum, minimum, step, "CATCOST", true))
+            dispatch(RunActionCreators.decisionNeededChanged(true))
         case "CHOOSE":
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.decisionNeededChanged(true));
+            dispatch(RunActionCreators.decisionNeededChanged(true))
             
             dispatch(TableActionCreators.isSelectableChanged(true))
         case "FINALSTAKE":
@@ -560,9 +532,8 @@ class MessageProcessor {
             
             let allowedStakeTypes = [StakeTypes.nominal: false, .sum: true, .pass: false, .allIn: false]
             
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.setStakes(allowedStakeTypes, 1, me.sum, 1, 1, 'FINALSTAKE', true));
-            // dispatch(runActionCreators.decisionNeededChanged(true));
+            dispatch(RunActionCreators.setStakes(allowedStakeTypes, 1, me.sum, 1, 1, "FINALSTAKE", true))
+            dispatch(RunActionCreators.decisionNeededChanged(true))
         case "REPORT":
             // TODO: process
             break
@@ -574,13 +545,12 @@ class MessageProcessor {
                 .allIn: args.getSafe(4) == "+"
             ]
             
-            guard let minimum = args.getSafe(5) else { return }
+            guard let minimum = args.getSafe(5)?.toInt() else { return }
             
             guard let me = getMe(state: state) else { return }
             
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.setStakes(allowedStakeTypes, minimum, me.sum, minimum, 100, 'STAKE', false));
-            // dispatch(runActionCreators.decisionNeededChanged(true));
+            dispatch(RunActionCreators.setStakes(allowedStakeTypes, minimum, me.sum, minimum, 100, "STAKE", false))
+            dispatch(RunActionCreators.decisionNeededChanged(true))
         case "VALIDATION":
             startValidation(dispatch: dispatch, title: R.string.localizable.apellation(), args: args)
         default:
@@ -593,15 +563,13 @@ class MessageProcessor {
         
         switch args[0] {
         case "CANCEL":
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.clearDecisions());
-            break
+            dispatch(RunActionCreators.clearDecisions())
         case "FIRST":
             let indices = getIndices(args: args)
             
             // TODO: - not yet implemented
             // dispatch(runActionCreators.selectionEnabled(indices, 'FIRST'));
-            // dispatch(runActionCreators.showmanReplicChanged(localization.selectFirstPlayer));
+            dispatch(RunActionCreators.showmanReplicChanged(R.string.localizable.selectFirstPlayer()))
         case "FIRSTDELETE":
             let indices = getIndices(args: args)
             
@@ -613,7 +581,7 @@ class MessageProcessor {
             
             // TODO: - not yet implemented
             // dispatch(runActionCreators.selectionEnabled(indices, 'NEXT'));
-            // dispatch(runActionCreators.showmanReplicChanged(localization.selectStaker));
+            dispatch(RunActionCreators.showmanReplicChanged(R.string.localizable.selectStaker()))
         case "HINT" where args.count > 1:
             // TODO: - not yet implemented
             // dispatch(runActionCreators.hintChanged(`${localization.rightAnswer}: ${args[1]}`));
@@ -624,7 +592,7 @@ class MessageProcessor {
             break
         case "STAGE":
             // TODO: - not yet implemented
-            // dispatch(runActionCreators.decisionNeededChanged(false));
+            dispatch(RunActionCreators.decisionNeededChanged(false))
             // dispatch(runActionCreators.hintChanged(null));
             break
         case "VALIDATION":
@@ -655,8 +623,7 @@ class MessageProcessor {
         
         let validationMesssage = "\(R.string.localizable.playersAnswer()) \(name) \"\(answer)\". \(R.string.localizable.validateAnswer())"
         
-        // TODO: - not yet implemented
-        // dispatch(runActionCreators.validate(name, answer, right, wrong, title, validationMesssage));
+        dispatch(RunActionCreators.validate(name, answer, right, wrong, title, validationMesssage))
     }
     
     static func getIndices(args: [String]) -> [Int] {
@@ -741,7 +708,7 @@ class MessageProcessor {
         }
         
         // TODO: - not yet implemented
-        // dispatch(runActionCreators.infoChanged(all, showman, players));
+        dispatch(RunActionCreators.infoChanged(all, showman, players))
         // dispatch(actionCreators.sendAvatar() as any)
     }
     
@@ -758,14 +725,12 @@ class MessageProcessor {
         }
         
         if personCode == "s" {
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.showmanReplicChanged(text));
+            dispatch(RunActionCreators.showmanReplicChanged(text))
             return
         }
         
         if personCode.hasPrefix("p"), personCode.count > 1, let index = String(personCode.dropFirst()).toInt() {
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.playerReplicChanged(index, text));
+            dispatch(RunActionCreators.playerReplicChanged(index, text))
             return
         }
         
@@ -773,8 +738,7 @@ class MessageProcessor {
             return
         }
         
-        // TODO: - not yet implemented
-        // dispatch(runActionCreators.chatMessageAdded({ sender: null, text }));
+        dispatch(RunActionCreators.chatMessageAdded(ChatMessage(sender: "", text: text, isSystem: false)))
     }
     
     static func preprocessServerUri(uri: String, dataContext: DataContext) -> String {
@@ -797,18 +761,13 @@ class MessageProcessor {
         
         let account = Account(name: name, sex: isMale ? .male : .female, isHuman: true, avatar: nil)
         
-        // TODO: - not yet implemented
-        // dispatch(runActionCreators.personAdded(account));
+        dispatch(RunActionCreators.personAdded(account))
         
         switch role {
         case "showman":
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.showmanChanged(name, true, false));
-            break
+            dispatch(RunActionCreators.showmanChanged(name, true, false))
         case "player":
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.playerChanged(index, name, true, false));
-            break
+            dispatch(RunActionCreators.playerChanged(index, name, true, false))
         default:
             break
         }
@@ -817,17 +776,13 @@ class MessageProcessor {
     static func disconnected(dispatch: DispatchFunction, state: State, args: [String]) {
         let name = args[1]
         
-        // TODO: - not yet implemented
-        // dispatch(runActionCreators.personRemoved(name));
+        dispatch(RunActionCreators.personRemoved(name))
         
         if state.run.persons.showman.name == name {
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.showmanChanged(Constants.ANY_NAME, null, false));
+            dispatch(RunActionCreators.showmanChanged(Constants.anyName, nil, false))
         } else {
-            for player in state.run.persons.players where player.name == name {
-                // TODO: - not yet implemented
-                // dispatch(runActionCreators.playerChanged(i, Constants.ANY_NAME, null, false));
-                break
+            for (index, player) in state.run.persons.players.enumerated() where player.name == name {
+                dispatch(RunActionCreators.playerChanged(index, Constants.anyName, nil, false))
             }
         }
     }
@@ -835,42 +790,34 @@ class MessageProcessor {
     static func config(dispatch: DispatchFunction, state: State, args: [String]) {
         switch args[1] {
         case "ADDTABLE":
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.playerAdded());
-            break
+            dispatch(RunActionCreators.playerAdded())
         case "FREE":
             let personType = args[2]
             guard let index = args[3].toInt() else { break }
             let isPlayer = personType == "player"
             
             if isPlayer {
-                // TODO: - not yet implemented
-                // dispatch(runActionCreators.playerChanged(index, Constants.ANY_NAME, null, false))
+                dispatch(RunActionCreators.playerChanged(index, Constants.anyName, nil, false))
             } else {
-                // TODO: - not yet implemented
-                // dispatch(runActionCreators.showmanChanged(Constants.ANY_NAME, null, false));)
+                dispatch(RunActionCreators.showmanChanged(Constants.anyName, nil, false))
             }
             
             let account = isPlayer ? state.run.persons.players[index] : state.run.persons.showman
             
             if account.name == state.user.login {
-                // TODO: - not yet implemented
-                // dispatch(runActionCreators.roleChanged(Role.Viewer));
+                dispatch(RunActionCreators.roleChanged(.Viewer))
             }
         case "DELETETABLE":
             guard let index = args[2].toInt() else { return }
             let player = state.run.persons.players[index]
             let person = state.run.persons.all[player.name]
             
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.playerDeleted(index));
+            dispatch(RunActionCreators.playerDeleted(index))
             
             if let person = person, !person.isHuman {
-                // TODO: - not yet implemented
-                // dispatch(runActionCreators.personRemoved(person.name));
+                dispatch(RunActionCreators.personRemoved(person.name))
             } else if player.name == state.user.login {
-                // TODO: - not yet implemented
-                // dispatch(runActionCreators.roleChanged(Role.Viewer));
+                dispatch(RunActionCreators.roleChanged(.Viewer))
             }
         case "SET":
             let personType = args[2]
@@ -883,74 +830,59 @@ class MessageProcessor {
             
             if let person = state.run.persons.all[account.name], !person.isHuman {
                 if isPlayer {
-                    // TODO: - not yet implemented
-                    // dispatch(runActionCreators.playerChanged(index, replacer, null, false))
+                    dispatch(RunActionCreators.playerChanged(index, replacer, nil, false))
                 } else {
-                    // TODO: - not yet implemented
-                    // dispatch(runActionCreators.showmanChanged(replacer, null, false)))
+                    dispatch(RunActionCreators.showmanChanged(replacer, nil, false))
                 }
                 
-                // TODO: - not yet implemented
-                // dispatch(runActionCreators.personRemoved(person.name));
+                dispatch(RunActionCreators.personRemoved(person.name))
                 
                 let newAccount = Account(name: replacer, sex: replacerSex, isHuman: false, avatar: nil)
                 
-                // TODO: - not yet implemented
-                // dispatch(runActionCreators.personAdded(newAccount));
+                dispatch(RunActionCreators.personAdded(newAccount))
                 break
             }
             
             if state.run.persons.showman.name == replacer { // isPlayer
-                // TODO: - not yet implemented
-                // dispatch(runActionCreators.showmanChanged(account.name, true, account.isReady));
-                // dispatch(runActionCreators.playerChanged(index, replacer, true, state.run.persons.showman.isReady));
+                dispatch(RunActionCreators.showmanChanged(account.name, true, account.isReady))
+                dispatch(RunActionCreators.playerChanged(index, replacer, true, state.run.persons.showman.isReady))
                 
                 if account.name == state.user.login {
-                    // TODO: - not yet implemented
-                    // dispatch(runActionCreators.roleChanged(Role.Showman));
+                    dispatch(RunActionCreators.roleChanged(.Showman))
                 } else {
-                    // TODO: - not yet implemented
-                    // dispatch(runActionCreators.roleChanged(Role.Player));
+                    dispatch(RunActionCreators.roleChanged(.Player))
                 }
                 break
             }
             
-            for (index, player) in state.run.persons.players.enumerated() where player.name == replacer {
+            for (i, player) in state.run.persons.players.enumerated() where player.name == replacer {
                 if isPlayer {
-                    // TODO: - not yet implemented
-                    // dispatch(runActionCreators.playersSwap(index, i));
+                    dispatch(RunActionCreators.playersSwap(index, i))
                 } else {
                     let isReady = player.isReady
                     
-                    // TODO: - not yet implemented
-                    // dispatch(runActionCreators.playerChanged(i, account.name, null, account.isReady));
-                    // dispatch(runActionCreators.showmanChanged(replacer, null, isReady));
+                    dispatch(RunActionCreators.playerChanged(i, account.name, nil, account.isReady))
+                    dispatch(RunActionCreators.showmanChanged(replacer, nil, isReady))
                     
                     if state.run.persons.showman.name == state.user.login {
-                        // TODO: - not yet implemented
-                        // dispatch(runActionCreators.roleChanged(Role.Player));
+                        dispatch(RunActionCreators.roleChanged(.Player))
                     } else if replacer == state.user.login {
-                        // TODO: - not yet implemented
-                        // dispatch(runActionCreators.roleChanged(Role.Showman));
+                        dispatch(RunActionCreators.roleChanged(.Showman))
                     }
                 }
                 return
             }
 
             if isPlayer {
-                // TODO: - not yet implemented
-                // dispatch(runActionCreators.playerChanged(index, replacer, null, false))
+                dispatch(RunActionCreators.playerChanged(index, replacer, nil, false))
             } else {
-                // TODO: - not yet implemented
-                // dispatch(runActionCreators.showmanChanged(replacer, null, false));)
+                dispatch(RunActionCreators.showmanChanged(replacer, nil, false))
             }
             
             if account.name == state.user.login {
-                // TODO: - not yet implemented
-                // dispatch(runActionCreators.roleChanged(Role.Viewer));
+                dispatch(RunActionCreators.roleChanged(.Viewer))
             } else if replacer == state.user.login {
-                // TODO: - not yet implemented
-                // dispatch(runActionCreators.roleChanged(isPlayer ? Role.Player : Role.Showman));
+                dispatch(RunActionCreators.roleChanged(isPlayer ? .Player : .Showman))
             }
         case "CHANGETYPE":
             let personType = args[2]
@@ -970,26 +902,21 @@ class MessageProcessor {
             if !newType {
                 let newAccount = Account(name: newName, sex: newSex, isHuman: false, avatar: nil)
                 
-                // TODO: - not yet implemented
-                // dispatch(runActionCreators.personAdded(newAccount));
+                dispatch(RunActionCreators.personAdded(newAccount))
             }
             
             if isPlayer {
-                // TODO: - not yet implemented
-                // dispatch(runActionCreators.playerChanged(index, newName, newType, false))
+                dispatch(RunActionCreators.playerChanged(index, newName, newType, false))
             } else {
-                // TODO: - not yet implemented
-                // dispatch(runActionCreators.showmanChanged(newName, newType, false));)
+                dispatch(RunActionCreators.showmanChanged(newName, newType, false))
             }
 
             if newType {
-                // TODO: - not yet implemented
-                // dispatch(runActionCreators.personRemoved(person.name));
+                dispatch(RunActionCreators.personRemoved(person?.name ?? ""))
             }
             
             if person?.name == state.user.login {
-                // TODO: - not yet implemented
-                // dispatch(runActionCreators.roleChanged(Role.Viewer));
+                dispatch(RunActionCreators.roleChanged(.Viewer))
             }
         default:
             break
