@@ -52,7 +52,8 @@ struct RunState {
                 isAfterQuestion: false,
                 themeIndex: -1,
                 currentPrice: 0,
-                themeName: ""
+                themeName: "",
+                roundIndex: -1
             ),
             timers: Timers(
                 round: TimerInfo(
@@ -139,6 +140,7 @@ struct RunStateStage {
     let themeIndex: Int
     var currentPrice: Int
     var themeName: String
+    var roundIndex: Int
 }
 
 struct RunStateSelection {

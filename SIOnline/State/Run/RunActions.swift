@@ -27,7 +27,7 @@ enum RunActionTypes: Action {
     case tableSelected(tableIndex: Int)
     case personAvatarChanged(personName: String, avatarUri: String)
     case gameStarted
-    case stageChanged(stageName: String)
+    case stageChanged(stageName: String, roundIndex: Int)
     case playersStateCleared
     case gameStateCleared
     case sumsChanged(sums: [Int])
@@ -35,9 +35,9 @@ enum RunActionTypes: Action {
     case currentPriceChanged(currentPrice: Int)
     case personAdded(person: Account)
     case personRemoved(name: String)
-    case showmanChanged(name: String)
+    case showmanChanged(name: String, isHuman: Bool?, isReady: Bool?)
     case playerAdded
-    case playerChanged(index: Int, name: String)
+    case playerChanged(index: Int, name: String, isHuman: Bool?, isReady: Bool?)
     case playerDeleted(index: Int)
     case playersSwap(index1: Int, index2: Int)
     case roleChanged(role: Role)
