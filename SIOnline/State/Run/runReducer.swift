@@ -270,6 +270,8 @@ let runReducer: Reducer<RunState> = { action, state in
         }
     case .chatMessageAdded(let chatMessage):
         state.chat.messages.append(chatMessage)
+    case .roundsNamesChanged(roundsNames: let roundsNames):
+        state.roundsNames = roundsNames
     }
     return state
 }

@@ -25,6 +25,7 @@ struct RunState {
     var areSumsEditable: Bool
     var readingSpeed: Int
     var hint: String?
+    var roundsNames: [String]?
     
     static func runInitialState() -> RunState {
         RunState(
@@ -118,7 +119,8 @@ struct RunState {
             isGameButtonEnabled: true,
             areSumsEditable: false,
             readingSpeed: 20,
-            hint: nil
+            hint: nil,
+            roundsNames: nil
         )
     }
 }

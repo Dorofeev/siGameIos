@@ -5,6 +5,7 @@
 //  Created by Anna Kuptsova on 29.05.2022.
 //
 import ReSwiftThunk
+import ReSwift
 import PromiseKit
 class RunActionCreators {
     static var timerRef: Int?
@@ -421,5 +422,107 @@ class RunActionCreators {
             }
         }
     }
+    static let sendAllIn: (DataContext) -> Thunk<State> = { dataContext in
+        Thunk { dispatch, _ in
+            let result = dataContext.gameClient.msgAsync(args: ["STAKE", 3])
+            result.done { _ in
+                dispatch(clearDecisions())
+            }
+        }
+    }
+    static let selectionEnabled: ([Int], String) -> RunActionTypes = { allowedIndices, message in
+        RunActionTypes.selectionEnabled(allowedIndices: allowedIndices, message: message)
+    }
+    static let showLeftSeconds: (Int, @escaping DispatchFunction) -> Void = { leftSecond, dispatch in
+        var leftSecondString = String(leftSecond % 60)
+        if leftSecondString.count < 2 {
+            leftSecondString = "0\(leftSecond)"
+        }
+        let replic = "\(R.string.localizable.theGameWillStartIn()) 00:00:\(leftSecondString) \(R.string.localizable.orByFilling())"
+        dispatch(showmanReplicChanged(replic))
+        if leftSecond > 0 {
+            timerRef = GlobalTimers.setTimeout(delay: 1, block: {
+                showLeftSeconds(leftSecond - 1, dispatch)
+            })
+        }
+    }
+    static let onMediaEnded: (DataContext) -> Thunk<State> = { dataContext in
+        Thunk { dispatch, _ in
+            dataContext.gameClient.msgAsync(args: ["ATOM"])
+        }
+    }
+    static let areSumsEditableChanged: (Bool) -> RunActionTypes = { areSumsEditable in
+        RunActionTypes.areSumsEditableChanged(areSumsEditable: areSumsEditable)
+    }
+    static let changePlayerSum: (DataContext, Int, Int) -> Thunk<State> = { dataContext, playerIndex, sum in
+        Thunk { dispatch, _ in
+            dataContext.gameClient.msgAsync(args: ["CHANGE", playerIndex + 1, sum]) // playerIndex here starts with 1
+        }
+    }
+    static let readingSpeedChanged: (Int) -> RunActionTypes = { readingSpeed in
+        RunActionTypes.readingSpeedChanged(readingSpeed: readingSpeed)
+    }
+    static let runTimer: (Int, Int, Bool) -> RunActionTypes = { timerIndex, maximumTime, runByUser in
+        RunActionTypes.runTimer(timerIndex: timerIndex, maximumTime: maximumTime, runByUser: runByUser)
+    }
+    static let pauseTimer: (Int, Int, Bool) -> RunActionTypes = { timerIndex, currentTime, pauseByUser in
+        RunActionTypes.pauseTimer(timerIndex: timerIndex, currentTime: currentTime, pausedByUser: pauseByUser)
+    }
+    static let resumeTimer: (Int, Bool) -> RunActionTypes = { timerIndex, runByUser in
+        RunActionTypes.resumeTimer(timerIndex: timerIndex, runByUser: runByUser)
+    }
+    static let stopTimer: (Int) -> RunActionTypes = { timerIndex in
+        RunActionTypes.stopTimer(timerIndex: timerIndex)
+    }
+    static let timerMaximumChanged: (Int, Int) -> RunActionTypes = { timerIndex, maximumTime in
+        RunActionTypes.timerMaximumChanged(timerIndex: timerIndex, maximumTime: maximumTime)
+    }
+    static let activateShowmanDecision: () -> RunActionTypes = {
+        RunActionTypes.activateShowmanDecision
+    }
+    static let activatePlayerDecision: (Int) -> RunActionTypes = { playerIndex in
+        RunActionTypes.activatePlayerDecision(playerIndex: playerIndex)
+    }
+    static let showMainTimer: () -> RunActionTypes = {
+        RunActionTypes.showMainTimer
+    }
+    static let clearDecisionsAndMainTimer: () -> RunActionTypes = {
+        RunActionTypes.clearDecisionsAndMainTimer
+    }
+    static let hintChanged: (String?) -> RunActionTypes = { hint in
+        RunActionTypes.hintChanged(hint: hint)
+    }
+    static let startGame: (DataContext) -> Thunk<State> = { dataContext in
+        Thunk { dispatch, _ in
+            dataContext.gameClient.msgAsync(args: ["START"])
+        }
+    }
+    static let ready: (DataContext, Bool) -> Thunk<State> = { dataContext, isReady in
+        Thunk { dispatch, _ in
+            dataContext.gameClient.msgAsync(args: ["READY", isReady ? "+" : "-"])
+        }
+    }
+    static let roundsNamesChanged: ([String]) -> RunActionTypes = { roundNames in
+        RunActionTypes.roundsNamesChanged(roundsNames: roundNames)
+    }
+    static let hostNameChanged: (String?) -> RunActionTypes = { hostName in
+        RunActionTypes.hostNameChanged(hostName: hostName)
+    }
+    static let themeNameChanged: (String) -> RunActionTypes = { themeName in
+        RunActionTypes.themeNameChanged(themeName: themeName)
+    }
+    static let updateCaption: (DataContext, String) -> Thunk<State> = { dataContext, questionCaption in
+        Thunk { dispatch, state in
+            guard let state = state() else {
+                return
+            }
+            let themeName = state.run.stage.themeName
+            dispatch(TableActionCreators.captionChanged("\(themeName), \(questionCaption)"))
+        }
+    }
+    
 }
 
+/*
+659
+ */
