@@ -10,6 +10,8 @@ import UIKit
 class Index {
     private var config: Config?
     
+    static var dataContext: DataContext?
+    
     func setState(state: State, savedState: SavedState?, gameId: String?) -> State {
         guard let savedState = savedState else {
             return state

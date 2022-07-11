@@ -14,8 +14,8 @@ class PlayerInfo: PersonInfo {
     init(
         name: String,
         isReady: Bool,
-        replic: String?
-        , isDeciding: Bool,
+        replic: String?,
+        isDeciding: Bool,
         isHuman: Bool,
         sum: Int,
         stake: Int,
@@ -27,5 +27,9 @@ class PlayerInfo: PersonInfo {
         self.state = state
         self.canBeSelected = canBeSelected
         super.init(name: name, isReady: isReady, replic: replic, isDeciding: isDeciding, isHuman: isHuman)
+    }
+    
+    required init(from decoder: Decoder) throws {
+        fatalError("init(from:) has not been implemented")
     }
 }
