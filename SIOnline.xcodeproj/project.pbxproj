@@ -77,6 +77,7 @@
 		49C5F1E328015FCA003EB248 /* SettingsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5F1E228015FCA003EB248 /* SettingsState.swift */; };
 		49C5F1EB28019CFA003EB248 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49C5F1E928019CFA003EB248 /* Localizable.strings */; };
 		49E7BC522806EAA900843FB7 /* PackageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E7BC512806EAA900843FB7 /* PackageKey.swift */; };
+		49F2B7FC28826766007ED54C /* FileKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F2B7FB28826766007ED54C /* FileKey.swift */; };
 		7F3DB3EB683C5727F0DEEA0D /* Pods_SIOnline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B118D17261E5B8EB30D59E4A /* Pods_SIOnline.framework */; };
 /* End PBXBuildFile section */
 
@@ -153,6 +154,7 @@
 		49C5F1E228015FCA003EB248 /* SettingsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsState.swift; sourceTree = "<group>"; };
 		49C5F1EA28019CFA003EB248 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		49E7BC512806EAA900843FB7 /* PackageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageKey.swift; sourceTree = "<group>"; };
+		49F2B7FB28826766007ED54C /* FileKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileKey.swift; sourceTree = "<group>"; };
 		706AEA9C60F4E83C7C204180 /* Pods-SIOnline.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIOnline.debug.xcconfig"; path = "Target Support Files/Pods-SIOnline/Pods-SIOnline.debug.xcconfig"; sourceTree = "<group>"; };
 		B118D17261E5B8EB30D59E4A /* Pods_SIOnline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIOnline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D8F96D7E82A0BD02C1C923 /* Pods-SIOnline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIOnline.release.xcconfig"; path = "Target Support Files/Pods-SIOnline/Pods-SIOnline.release.xcconfig"; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 		497875DB2806D19000116DE1 /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				49F2B7FA28826758007ED54C /* Contracts */,
 				497875DC2806D19700116DE1 /* IGameServerClient.swift */,
 				498BE63B280954700096AF75 /* DummyGameServerClient.swift */,
 			);
@@ -361,6 +364,14 @@
 				49C5F1E928019CFA003EB248 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		49F2B7FA28826758007ED54C /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				49F2B7FB28826766007ED54C /* FileKey.swift */,
+			);
+			path = Contracts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -564,6 +575,7 @@
 				4942D7C328151962000B3D60 /* TimerInfoHelpers.swift in Sources */,
 				498BE644280971100096AF75 /* ActionTypes.swift in Sources */,
 				495A9ACE2804931B0035ABE5 /* PackageType.swift in Sources */,
+				49F2B7FC28826766007ED54C /* FileKey.swift in Sources */,
 				491DD390284C58B000403095 /* StringHelpers.swift in Sources */,
 				495A9ADD28057EA60035ABE5 /* Timers.swift in Sources */,
 				495A9AEA28058F790035ABE5 /* PersonInfo.swift in Sources */,
