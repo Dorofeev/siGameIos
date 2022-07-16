@@ -29,4 +29,12 @@ extension Array {
         (temp[index1], temp[index2]) = (temp[index2], temp[index1])
         return temp
     }
+    
+    func getSafe(_ index: Int) -> Element? {
+        if count > index {
+            return self[index]
+        } else {
+            return nil
+        }
+    }
 }

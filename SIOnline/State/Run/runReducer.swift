@@ -58,8 +58,9 @@ let runReducer: Reducer<RunState> = { action, state in
         state.persons.all[personName]?.avatar = avatarUri
     case .gameStarted:
         state.stage.isGameStarted = true
-    case .stageChanged(let stageName):
+    case .stageChanged(let stageName, let roundIndex):
         state.stage.name = stageName
+        state.stage.roundIndex = roundIndex
     case .playersStateCleared:
         state.persons.players.forEach { playerInfo in
             playerInfo.state = .none
@@ -92,8 +93,14 @@ let runReducer: Reducer<RunState> = { action, state in
         state.persons.all.setItem(key: person.name, item: person)
     case .personRemoved(let name):
         state.persons.all.remove(key: name)
-    case .showmanChanged(let name):
+    case .showmanChanged(let name, let isHuman, let isReady):
         state.persons.showman.name = name
+        if let isHuman = isHuman {
+            state.persons.showman.isHuman = isHuman
+        }
+        if let isReady = isReady {
+            state.persons.showman.isReady = isReady
+        }
     case .playerAdded:
         state.persons.players.append(
             PlayerInfo(
@@ -105,15 +112,23 @@ let runReducer: Reducer<RunState> = { action, state in
                 sum: 0,
                 stake: 0,
                 state: .none,
-                canBeSelected: false
+                canBeSelected: false,
+                isChooser: false,
+                inGame: true
             )
         )
-    case .playerChanged(let index, let name):
+    case .playerChanged(let index, let name, let isHuman, let isReady):
         if index < 0 || index >= state.persons.players.count {
             Logger.log(message: "PlayerChanged: Wrong index \(index)!")
             break
         }
         state.persons.players[index].name = name
+        if let isHuman = isHuman {
+            state.persons.players[index].isHuman = isHuman
+        }
+        if let isReady = isReady {
+            state.persons.players[index].isReady = isReady
+        }
     case .playerDeleted(let index):
         if index < 0 || index >= state.persons.players.count {
             Logger.log(message: "PlayerDeleted: Wrong index \(index)!")
@@ -244,7 +259,7 @@ let runReducer: Reducer<RunState> = { action, state in
     case .hintChanged(let hint):
         state.hint = hint
     case .operationError(let error):
-        state.chat.messages.append(ChatMessage(sender: "", text: error))
+        state.chat.messages.append(ChatMessage(sender: "", text: error, isSystem: false))
     case .hostNameChanged(let hostName):
         state.persons.hostName = hostName
     case .themeNameChanged(let themeName):
@@ -257,6 +272,15 @@ let runReducer: Reducer<RunState> = { action, state in
         }
     case .chatMessageAdded(let chatMessage):
         state.chat.messages.append(chatMessage)
+    case .roundsNamesChanged(let roundsNames):
+        state.roundsNames = roundsNames
+    case .chooserChanged(let chooserIndex):
+        for (index, player) in state.persons.players.enumerated() {
+            player.isChooser = index == chooserIndex
+        }
+    case .playerInGameChanged(let playerIndex, let inGame):
+        state.persons.players[playerIndex].inGame = inGame
     }
     return state
 }
+

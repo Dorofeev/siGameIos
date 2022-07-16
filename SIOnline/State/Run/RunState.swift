@@ -25,6 +25,7 @@ struct RunState {
     var areSumsEditable: Bool
     var readingSpeed: Int
     var hint: String?
+    var roundsNames: [String]?
     
     static func runInitialState() -> RunState {
         RunState(
@@ -52,7 +53,8 @@ struct RunState {
                 isAfterQuestion: false,
                 themeIndex: -1,
                 currentPrice: 0,
-                themeName: ""
+                themeName: "",
+                roundIndex: -1
             ),
             timers: Timers(
                 round: TimerInfo(
@@ -117,7 +119,8 @@ struct RunState {
             isGameButtonEnabled: true,
             areSumsEditable: false,
             readingSpeed: 20,
-            hint: nil
+            hint: nil,
+            roundsNames: nil
         )
     }
 }
@@ -139,6 +142,7 @@ struct RunStateStage {
     let themeIndex: Int
     var currentPrice: Int
     var themeName: String
+    var roundIndex: Int
 }
 
 struct RunStateSelection {

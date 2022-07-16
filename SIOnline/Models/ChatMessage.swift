@@ -8,4 +8,5 @@
 struct ChatMessage {
     let sender: String
     let text: String
+    let isSystem: Bool
 }
