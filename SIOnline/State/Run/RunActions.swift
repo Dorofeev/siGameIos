@@ -86,4 +86,6 @@ enum RunActionTypes: Action {
     case themeNameChanged(themeName: String)
     case isReadyChanged(personIndex: Int, isReady: Bool)
     case roundsNamesChanged(roundsNames: [String])
+    case chooserChanged(chooserIndex: Int)
+    case playerInGameChanged(playerIndex: Int, inGame: Bool)
 }

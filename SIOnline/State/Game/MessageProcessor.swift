@@ -684,7 +684,9 @@ class MessageProcessor {
                 sum: 0,
                 stake: 0,
                 state: .none,
-                canBeSelected: false
+                canBeSelected: false,
+                isChooser: false,
+                inGame: true
             ))
             
             if isConnected {

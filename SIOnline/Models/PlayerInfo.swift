@@ -10,6 +10,8 @@ class PlayerInfo: PersonInfo {
     var stake: Int
     var state: PlayerStates
     var canBeSelected: Bool
+    var isChooser: Bool
+    var inGame: Bool
     
     init(
         name: String,
@@ -20,12 +22,16 @@ class PlayerInfo: PersonInfo {
         sum: Int,
         stake: Int,
         state: PlayerStates,
-        canBeSelected: Bool
+        canBeSelected: Bool,
+        isChooser: Bool,
+        inGame:Bool
     ) {
         self.sum = sum
         self.stake = stake
         self.state = state
         self.canBeSelected = canBeSelected
+        self.isChooser = isChooser
+        self.inGame = inGame
         super.init(name: name, isReady: isReady, replic: replic, isDeciding: isDeciding, isHuman: isHuman)
     }
 }

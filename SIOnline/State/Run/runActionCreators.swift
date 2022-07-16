@@ -520,9 +520,23 @@ class RunActionCreators {
             dispatch(TableActionCreators.captionChanged("\(themeName), \(questionCaption)"))
         }
     }
-    
+    static let moveNext: (DataContext) -> Thunk<State> = { dataContext in
+        Thunk { dispatch, _ in
+            dataContext.gameClient.msgAsync(args: ["MOVE", "1"])
+        }
+    }
+    static let navigateToRound: (DataContext, Int) -> Thunk<State> = { dataContext, roundIndex in
+        Thunk { dispatch, _ in
+            dataContext.gameClient.msgAsync(args: ["MOVE", "3", roundIndex])
+        }
+    }
+    static let isReadyChanged: (Int, Bool) -> RunActionTypes = { personIndex, isReady in
+        RunActionTypes.isReadyChanged(personIndex: personIndex, isReady: isReady)
+    }
+    static let chooserChanged: (Int) -> RunActionTypes = { chooserIndex in
+        RunActionTypes.chooserChanged(chooserIndex: chooserIndex)
+    }
+    static let playerInGameChanged: (Int, Bool) -> RunActionTypes = { playerIndex, inGame in
+        RunActionTypes.playerInGameChanged(playerIndex: playerIndex, inGame: inGame)
+    }
 }
-
-/*
-659
- */

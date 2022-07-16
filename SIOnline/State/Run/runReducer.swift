@@ -112,7 +112,9 @@ let runReducer: Reducer<RunState> = { action, state in
                 sum: 0,
                 stake: 0,
                 state: .none,
-                canBeSelected: false
+                canBeSelected: false,
+                isChooser: false,
+                inGame: true
             )
         )
     case .playerChanged(let index, let name, let isHuman, let isReady):
@@ -270,8 +272,15 @@ let runReducer: Reducer<RunState> = { action, state in
         }
     case .chatMessageAdded(let chatMessage):
         state.chat.messages.append(chatMessage)
-    case .roundsNamesChanged(roundsNames: let roundsNames):
+    case .roundsNamesChanged(let roundsNames):
         state.roundsNames = roundsNames
+    case .chooserChanged(let chooserIndex):
+        for (index, player) in state.persons.players.enumerated() {
+            player.isChooser = index == chooserIndex
+        }
+    case .playerInGameChanged(let playerIndex, let inGame):
+        state.persons.players[playerIndex].inGame = inGame
     }
     return state
 }
+
