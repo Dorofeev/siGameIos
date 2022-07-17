@@ -11,7 +11,7 @@ import ReSwiftThunk
 class MessageProcessor {
     static var lastReplicLock: Int = 0
     
-    static func messageProcessor(dispatch: DispatchFunction, message: ChatMessage, dataContext: DataContext) {
+    static func messageProcessor(dispatch: DispatchFunction, message: Message, dataContext: DataContext) {
         if message.isSystem {
             dispatch(processSystemMessage(message, dataContext))
             return
@@ -20,7 +20,7 @@ class MessageProcessor {
         dispatch(userMessageReceived(message))
     }
     
-    static let processSystemMessage: (ChatMessage, DataContext) -> Thunk<State> = { message, dataContext in
+    static let processSystemMessage: (Message, DataContext) -> Thunk<State> = { message, dataContext in
         Thunk { dispatch, state in
             guard let state = state() else { return }
             let role = state.run.role
@@ -39,7 +39,7 @@ class MessageProcessor {
         }
     }
     
-    static let userMessageReceived: (ChatMessage) -> Thunk<State> = { message in
+    static let userMessageReceived: (Message) -> Thunk<State> = { message in
         Thunk { dispatch, state in
             guard let state = state() else { return }
             
@@ -47,7 +47,7 @@ class MessageProcessor {
                 return
             }
             
-            let replic: ChatMessage = ChatMessage(sender: message.sender, text: message.text, isSystem: false)
+            let replic: ChatMessage = ChatMessage(sender: message.sender, text: message.text)
             dispatch(RunActionCreators.chatMessageAdded(replic))
             
             if !state.run.chat.isVisible && state.ui.windowWidth < 800 {
@@ -168,7 +168,7 @@ class MessageProcessor {
             if args.count > 2 {
                 let changeSource = args[2].count > 0 ? args[2] : R.string.localizable.byGame()
                 
-                dispatch(RunActionCreators.chatMessageAdded(ChatMessage(sender: "", text: R.string.localizable.hostNameChanged(changeSource, args[1]), isSystem: false)))
+                dispatch(RunActionCreators.chatMessageAdded(ChatMessage(sender: "", text: R.string.localizable.hostNameChanged(changeSource, args[1]))))
             }
         case "INFO2":
             info(dispatch: dispatch, args: args)
@@ -686,7 +686,7 @@ class MessageProcessor {
             return
         }
         
-        dispatch(RunActionCreators.chatMessageAdded(ChatMessage(sender: "", text: text, isSystem: false)))
+        dispatch(RunActionCreators.chatMessageAdded(ChatMessage(sender: "", text: text)))
     }
     
     static func preprocessServerUri(uri: String, dataContext: DataContext) -> String {
