@@ -73,8 +73,7 @@ class MessageProcessor {
             if personIndex == -1 { return }
         }
         
-        // TODO: - not yet implemented
-        //dispatch(runActionCreators.isReadyChanged(personIndex, isReady));
+        dispatch(RunActionCreators.isReadyChanged(personIndex, isReady))
     }
     
     static let viewerHandler: (@escaping DispatchFunction, State, DataContext, [String]) -> Void = { dispatch, state, dataContext, args in
@@ -122,8 +121,7 @@ class MessageProcessor {
                   let themeIndex = Int(secondArg),
                   let questIndex = Int(args[2]) else { break }
             
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.playersStateCleared());
+            dispatch(RunActionCreators.playersStateCleared())
             
             dispatch(RunActionCreators.afterQuestionStateChanged(false))
             
@@ -151,8 +149,7 @@ class MessageProcessor {
             if let index = Int(secondArg), index > -1, index < state.run.persons.players.count {
                 dispatch(RunActionCreators.playerStateChanged(index, .press))
             } else if secondArg == "A" {
-                // TODO: - not yet implemented
-                // dispatch(runActionCreators.stopTimer(1));
+                dispatch(RunActionCreators.stopTimer(1))
             }
         case "FALSESTART":
             // TODO: process
@@ -167,8 +164,7 @@ class MessageProcessor {
             let gameThemes = Array(args.dropFirst())
             dispatch(TableActionCreators.showGameThemes(gameThemes))
         case "HOSTNAME" where args.count > 1:
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.hostNameChanged(secondArg));
+            dispatch(RunActionCreators.hostNameChanged(secondArg))
             if args.count > 2 {
                 let changeSource = args[2].count > 0 ? args[2] : R.string.localizable.byGame()
                 
@@ -196,19 +192,13 @@ class MessageProcessor {
             
             if args.count > 4 {
                 if isPaused {
-                    
-                    // TODO: - not yet implemented
-                    // dispatch(runActionCreators.pauseTimer(0, args[2], true));
-                    // dispatch(runActionCreators.pauseTimer(1, args[3], true));
-                    // dispatch(runActionCreators.pauseTimer(2, args[4], true));
-                    
+                    dispatch(RunActionCreators.pauseTimer(0, args[2].toInt() ?? 0, true))
+                    dispatch(RunActionCreators.pauseTimer(1, args[3].toInt() ?? 0, true))
+                    dispatch(RunActionCreators.pauseTimer(2, args[4].toInt() ?? 0, true))
                 } else {
-                    
-                    // TODO: - not yet implemented
-                    // dispatch(runActionCreators.resumeTimer(0, true));
-                    // dispatch(runActionCreators.resumeTimer(1, true));
-                    // dispatch(runActionCreators.resumeTimer(2, true));
-                    
+                    dispatch(RunActionCreators.resumeTimer(0, true))
+                    dispatch(RunActionCreators.resumeTimer(1, true))
+                    dispatch(RunActionCreators.resumeTimer(2, true))
                 }
             }
         case "PERSON":
@@ -264,20 +254,15 @@ class MessageProcessor {
                 break
             }
         case "QUESTION" where args.count > 1:
-            // TODO: - not yet implemented
-            //dispatch(runActionCreators.playersStateCleared());
+            dispatch(RunActionCreators.playersStateCleared())
             
             dispatch(TableActionCreators.showText(secondArg, false))
             dispatch(RunActionCreators.afterQuestionStateChanged(false))
-//            dispatch(runActionCreators.updateCaption(args[1]));
-            
+            dispatch(RunActionCreators.updateCaption(dataContext, args[1]))
         case "QUESTIONCAPTION" where args.count > 1:
             dispatch(TableActionCreators.captionChanged(secondArg))
         case "READINGSPEED" where args.count > 1:
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.readingSpeedChanged(parseInt(args[1], 10)));
-            
-            break
+            dispatch(RunActionCreators.readingSpeedChanged(args[1].toInt() ?? 0))
         case "READY" where args.count > 1:
             let isReady = args.count < 3 || args.getSafe(2) == "+"
             onReady(personName: secondArg, isReady: isReady, dispatch: dispatch, state: state)
@@ -294,11 +279,7 @@ class MessageProcessor {
             
             dispatch(TableActionCreators.captionChanged(""))
         case "ROUNDSNAMES":
-            
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.roundsNamesChanged(args.slice(1)));
-            
-            break
+            dispatch(RunActionCreators.roundsNamesChanged(Array(args[1...])))
         case "ROUNDTHEMES":
             let printThemes = secondArg == "+"
             
@@ -324,19 +305,16 @@ class MessageProcessor {
             if secondArg == "Round" || secondArg == "Final" {
                 dispatch(TableActionCreators.showText(secondArg, false))
                 
-                // TODO: - not yet implemented
-                // dispatch(runActionCreators.playersStateCleared());
+                dispatch(RunActionCreators.playersStateCleared())
             } else if secondArg == "After" {
                 dispatch(TableActionCreators.showLogo())
             }
             
             dispatch(RunActionCreators.gameStateCleared())
         case "STOP":
-            
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.stopTimer(0));
-            // dispatch(runActionCreators.stopTimer(1));
-            // dispatch(runActionCreators.stopTimer(2));
+            dispatch(RunActionCreators.stopTimer(0))
+            dispatch(RunActionCreators.stopTimer(1))
+            dispatch(RunActionCreators.stopTimer(2))
             
             dispatch(TableActionCreators.showLogo())
         case "SUMS":
@@ -412,8 +390,7 @@ class MessageProcessor {
             if !state.run.stage.isGameStarted && state.game.isAutomatic && args.count == 5 && args[1] == "2" && args[2] == "GO" && args[4] == "-2" {
                 let leftSeconds = (args[3].toInt() ?? 0) / 10
              
-                // TODO: - not yet implemented
-                // runActionCreators.showLeftSeconds(leftSeconds, dispatch);
+                RunActionCreators.showLeftSeconds(leftSeconds, dispatch)
             } else if args.count > 2 {
                 let timerIndex = args[1].toInt() ?? 0
                 let timerCommand = args[2]
@@ -422,64 +399,44 @@ class MessageProcessor {
                 
                 switch timerCommand {
                 case "GO":
-                    // TODO: - not yet implemented
-                    // dispatch(runActionCreators.runTimer(timerIndex, timerArgument, false));
+                    dispatch(RunActionCreators.runTimer(timerIndex, timerArgument, false))
                     
                     if let timerPersonIndex = timerPersonIndex, timerIndex == 2 {
                         if timerPersonIndex == -1 {
-                            // TODO: - not yet implemented
-                            // dispatch(runActionCreators.activateShowmanDecision());
+                            dispatch(RunActionCreators.activateShowmanDecision())
                         } else if timerPersonIndex == -2 {
-                            // TODO: - not yet implemented
-                            // dispatch(runActionCreators.showMainTimer());
+                            dispatch(RunActionCreators.showMainTimer())
                         } else if timerPersonIndex > -1 && timerPersonIndex < state.run.persons.players.count {
-                            // TODO: - not yet implemented
-                            // dispatch(runActionCreators.activatePlayerDecision(timerPersonIndex));
+                            dispatch(RunActionCreators.activatePlayerDecision(timerPersonIndex))
                         }
-                        
                     }
                 case "STOP":
-                    // TODO: - not yet implemented
-                    // dispatch(runActionCreators.stopTimer(timerIndex));
-                    
+                    dispatch(RunActionCreators.stopTimer(timerIndex))
                     if timerIndex == 2 {
-                        // TODO: - not yet implemented
-                        // dispatch(runActionCreators.clearDecisionsAndMainTimer());
+                        dispatch(RunActionCreators.clearDecisionsAndMainTimer())
                     }
                 case "PAUSE":
-                    // TODO: - not yet implemented
-                    // dispatch(runActionCreators.pauseTimer(timerIndex, timerArgument, false));
-                    break
+                    dispatch(RunActionCreators.pauseTimer(timerIndex, timerArgument, false))
                 case "USER_PAUSE":
-                    // TODO: - not yet implemented
-                    // dispatch(runActionCreators.pauseTimer(timerIndex, timerArgument, true));
-                    break
+                    dispatch(RunActionCreators.pauseTimer(timerIndex, timerArgument, true))
                 case "RESUME":
-                    // TODO: - not yet implemented
-                    // dispatch(runActionCreators.resumeTimer(timerIndex, false));
-                    break
+                    dispatch(RunActionCreators.resumeTimer(timerIndex, false))
                 case "USER_RESUME":
-                    // TODO: - not yet implemented
-                    // dispatch(runActionCreators.resumeTimer(timerIndex, true));
-                    break
+                    dispatch(RunActionCreators.resumeTimer(timerIndex, true))
                 case "MAXTIME":
-                    // TODO: - not yet implemented
-                    // dispatch(runActionCreators.timerMaximumChanged(timerIndex, timerArgument));
-                    break
+                    dispatch(RunActionCreators.timerMaximumChanged(timerIndex, timerArgument))
                 default:
                     break
                 }
             }
         case "THEME" where args.count > 1:
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.playersStateCleared());
+            dispatch(RunActionCreators.playersStateCleared())
             dispatch(RunActionCreators.showmanReplicChanged(""))
             
             dispatch(TableActionCreators.showText("\(R.string.localizable.theme): \(secondArg)", false))
             
-            // TODO: - not yet implemented
             dispatch(RunActionCreators.afterQuestionStateChanged(false))
-            // dispatch(runActionCreators.themeNameChanged(args[1]));
+            dispatch(RunActionCreators.themeNameChanged(args[1]))
         case "TRY":
             dispatch(TableActionCreators.canPressChanged(true))
         case "WINNER":
@@ -511,9 +468,7 @@ class MessageProcessor {
             dispatch(RunActionCreators.clearDecisions())
         case "CAT":
             let indices = getIndices(args: args)
-            
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.selectionEnabled(indices, 'CAT'));
+            dispatch(RunActionCreators.selectionEnabled(indices, "CAT"))
         case "CATCOST":
             let allowedStakeTypes = [StakeTypes.nominal: false, .sum: true, .pass: false, .allIn: false]
             
@@ -567,34 +522,25 @@ class MessageProcessor {
         case "FIRST":
             let indices = getIndices(args: args)
             
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.selectionEnabled(indices, 'FIRST'));
+            dispatch(RunActionCreators.selectionEnabled(indices, "FIRST"))
             dispatch(RunActionCreators.showmanReplicChanged(R.string.localizable.selectFirstPlayer()))
         case "FIRSTDELETE":
             let indices = getIndices(args: args)
             
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.selectionEnabled(indices, 'NEXTDELETE'));
-            // dispatch(runActionCreators.showmanReplicChanged(localization.selectThemeDeleter));
+            dispatch(RunActionCreators.selectionEnabled(indices, "NEXTDELETE"))
+            dispatch(RunActionCreators.showmanReplicChanged(R.string.localizable.selectThemeDeleter()))
         case "FIRSTSTAKE":
             let indices = getIndices(args: args)
             
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.selectionEnabled(indices, 'NEXT'));
+            dispatch(RunActionCreators.selectionEnabled(indices, "NEXT"))
             dispatch(RunActionCreators.showmanReplicChanged(R.string.localizable.selectStaker()))
         case "HINT" where args.count > 1:
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.hintChanged(`${localization.rightAnswer}: ${args[1]}`));
-            break
+            dispatch(RunActionCreators.hintChanged("\(R.string.localizable.rightAnswer): \(args[1])"))
         case "RIGHTANSWER":
-            // TODO: - not yet implemented
-            // dispatch(runActionCreators.hintChanged(null));
-            break
+            dispatch(RunActionCreators.hintChanged(nil))
         case "STAGE":
-            // TODO: - not yet implemented
             dispatch(RunActionCreators.decisionNeededChanged(false))
-            // dispatch(runActionCreators.hintChanged(null));
-            break
+            dispatch(RunActionCreators.hintChanged(nil))
         case "VALIDATION":
             startValidation(dispatch: dispatch, title: R.string.localizable.answerChecking(), args: args)
         default:
@@ -709,8 +655,8 @@ class MessageProcessor {
             all[name] = Account(name: name, sex: isMale ? .male : .female, isHuman: isHuman, avatar: nil)
         }
         
-        // TODO: - not yet implemented
         dispatch(RunActionCreators.infoChanged(all, showman, players))
+        // TODO: - SI-6 not yet implemented
         // dispatch(actionCreators.sendAvatar() as any)
     }
     
