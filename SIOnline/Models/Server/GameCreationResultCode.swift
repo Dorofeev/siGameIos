@@ -5,7 +5,7 @@
 //  Created by Andrey Dorofeev on 14.04.2022.
 //
 
-enum GameCreationResultCode {
+enum GameCreationResultCode: Decodable {
     case ok
     case noPackage
     case tooMuchGames

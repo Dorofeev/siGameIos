@@ -5,7 +5,7 @@
 //  Created by Andrey Dorofeev on 11.04.2022.
 //
 
-struct GameInfo {
+struct GameInfo: Decodable {
     let gameID: Int
     let gameName: String
     let language: String

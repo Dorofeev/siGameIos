@@ -5,7 +5,7 @@
 //  Created by Andrey Dorofeev on 12.04.2022.
 //
 
-class PersonInfo {
+class PersonInfo: Decodable {
     var name: String
     var isReady: Bool
     var replic: String?
