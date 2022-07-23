@@ -12,13 +12,13 @@ class DummyGameServerClient: IGameServerClient {
     
     private let error: NSError = NSError(domain: "DummyGameServerClient", code: 500, userInfo: [NSLocalizedDescriptionKey: "Connection is closed!"])
     
-    func getComputerAccountsAsync() -> Promise<[String]> {
+    func getComputerAccountsAsync(culture: String) -> Promise<[String]> {
         return Promise { promise in
             promise.resolve([], nil)
         }
     }
     
-    func getGameHostInfoAsync() -> Promise<HostInfo> {
+    func getGameHostInfoAsync(culture: String) -> Promise<HostInfo> {
         return Promise { promise in
             promise.resolve(nil, error)
         }
@@ -72,13 +72,13 @@ class DummyGameServerClient: IGameServerClient {
         }
     }
     
-    func sendMessageToServerAsync(message: String) -> Promise<Any> {
+    func sendMessageToServerAsync(message: String) -> Promise<Bool> {
         return Promise { promise in
-            promise.resolve(.none, nil)
+            promise.resolve(false, nil)
         }
     }
     
-    func msgAsync(args: [Any]) -> Promise<Any> {
+    func msgAsync(args: [String]) -> Promise<Bool> {
         return Promise { promise in
             promise.resolve(.none, error)
         }

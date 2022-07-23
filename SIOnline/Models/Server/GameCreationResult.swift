@@ -5,7 +5,7 @@
 //  Created by Andrey Dorofeev on 14.04.2022.
 //
 
-struct GameCreationResult {
+struct GameCreationResult: Decodable {
     let code: GameCreationResultCode
     let errorMessage: String
     let gameId: Int

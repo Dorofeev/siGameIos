@@ -8,10 +8,10 @@ import PromiseKit
 /** Defines the SIGame Server client. */
 protocol IGameServerClient {
     /** Gets default computer accounts names. */
-    func getComputerAccountsAsync() -> Promise<[String]>
+    func getComputerAccountsAsync(culture: String) -> Promise<[String]>
     
     /** Gets server global info. */
-    func getGameHostInfoAsync() -> Promise<HostInfo>
+    func getGameHostInfoAsync(culture: String) -> Promise<HostInfo>
     
     /**
      * Gets partial running games list starting from the first game after the game with id {@link fromId}.
@@ -65,13 +65,13 @@ protocol IGameServerClient {
      * Sends a message inside game.
      * @param `message` Message to send.
      */
-    func sendMessageToServerAsync(message: String) -> Promise<Any>
+    func sendMessageToServerAsync(message: String) -> Promise<Bool>
     
     /**
      * Sends a message inside game.
      * @param `args` Arguments to construct a message.
      */
-    func msgAsync(args: [Any]) -> Promise<Any>
+    func msgAsync(args: [String]) -> Promise<Bool>
     
     /**
      * Sends a message in game chat.
