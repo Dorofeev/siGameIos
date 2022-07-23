@@ -5,7 +5,7 @@
 //  Created by Andrey Dorofeev on 13.04.2022.
 //
 
-class Slice<T> {
+class Slice<T: Decodable>: Decodable {
     let data: [T]
     let isLastSlice: Bool
     

@@ -34,4 +34,8 @@ class PlayerInfo: PersonInfo {
         self.inGame = inGame
         super.init(name: name, isReady: isReady, replic: replic, isDeciding: isDeciding, isHuman: isHuman)
     }
+    
+    required init(from decoder: Decoder) throws {
+        fatalError("init(from:) has not been implemented")
+    }
 }

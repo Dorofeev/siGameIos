@@ -70,7 +70,7 @@ class RunActionCreators {
             guard let state = state() else {
                 return
             }
-            var result = dataContext.gameClient.msgAsync(args: [state.run.selection.message, playerIndex])
+            var result = dataContext.gameClient.msgAsync(args: [state.run.selection.message, String(playerIndex)])
             result.done { _ in
                 dispatch(clearDecisions())
             }
@@ -157,7 +157,7 @@ class RunActionCreators {
             if tableIndex < 0 || tableIndex >= state.run.persons.players.count {
                 return
             }
-            dataContext.gameClient.msgAsync(args: ["CONFIG", "DELETETABLE", tableIndex])
+            dataContext.gameClient.msgAsync(args: ["CONFIG", "DELETETABLE", String(tableIndex)])
         }
     }
     static let freeTable: (DataContext) -> Thunk<State> = { dataContext in
@@ -170,7 +170,7 @@ class RunActionCreators {
                 return
             }
             let isShowman = tableIndex == 0
-            dataContext.gameClient.msgAsync(args: ["CONFIG", "FREE", isShowman ? "showman" : "player", isShowman ? "" : tableIndex - 1])
+            dataContext.gameClient.msgAsync(args: ["CONFIG", "FREE", isShowman ? "showman" : "player", isShowman ? "" : String(tableIndex - 1)])
         }
     }
     static let setTable: (DataContext, String) -> Thunk<State> = { dataContext, name in
@@ -183,7 +183,13 @@ class RunActionCreators {
                 return
             }
             let isShowman = tableIndex == 0
-            dataContext.gameClient.msgAsync(args: ["CONFIG", "SET", isShowman ? "showman" : "player", isShowman ? "" : tableIndex - 1, name])
+            dataContext.gameClient.msgAsync(args: [
+                "CONFIG",
+                "SET",
+                isShowman ? "showman" : "player",
+                isShowman ? "" : String(tableIndex - 1),
+                name
+            ])
         }
         
     }
@@ -197,7 +203,7 @@ class RunActionCreators {
                 return
             }
             let isShowman = tableIndex == 0
-            dataContext.gameClient.msgAsync(args: ["CONFIG", " CHANGETYPE", isShowman ? "showman" : "player", isShowman ? "" : tableIndex - 1])
+            dataContext.gameClient.msgAsync(args: ["CONFIG", " CHANGETYPE", isShowman ? "showman" : "player", isShowman ? "" : String(tableIndex - 1)])
         }
     }
     static let kickPerson: (DataContext) -> Thunk<State> = { dataContext in
@@ -288,7 +294,7 @@ class RunActionCreators {
             let theme = state.run.table.roundInfo[themeIndex]
             let question = theme.questions[questionIndex]
             if question > -1 {
-                let result = dataContext.gameClient.msgAsync(args: ["CHOICE", themeIndex, questionIndex])
+                let result = dataContext.gameClient.msgAsync(args: ["CHOICE", String(themeIndex), String(questionIndex)])
                 result.done { _ in
                     dispatch(TableActionCreators.isSelectableChanged(false))
                     dispatch(decisionNeededChanged(false))
@@ -302,7 +308,7 @@ class RunActionCreators {
                 return
             }
             let theme = state.run.table.roundInfo[themeIndex]
-            let result = dataContext.gameClient.msgAsync(args: ["DELETE", themeIndex])
+            let result = dataContext.gameClient.msgAsync(args: ["DELETE", String(themeIndex)])
             result.done { _ in
                 dispatch(TableActionCreators.isSelectableChanged(false))
                 dispatch(decisionNeededChanged(false))
@@ -347,7 +353,7 @@ class RunActionCreators {
             guard let state = state() else {
                 return
             }
-            let result = dataContext.gameClient.msgAsync(args: ["ANSWER", state.run.answer])
+            let result = dataContext.gameClient.msgAsync(args: ["ANSWER", state.run.answer ?? ""])
             result.done { _ in
                 dispatch(clearDecisions())
             }
@@ -397,7 +403,7 @@ class RunActionCreators {
     }
     static let sendNominal: (DataContext) -> Thunk<State> = { dataContext in
         Thunk { dispatch, _ in
-            let result = dataContext.gameClient.msgAsync(args: ["STAKE", 0])
+            let result = dataContext.gameClient.msgAsync(args: ["STAKE", "0"])
             result.done { _ in
                 dispatch(clearDecisions())
             }
@@ -408,11 +414,11 @@ class RunActionCreators {
             guard let state = state() else {
                 return
             }
-            var result: Promise<Any>
+            var result: Promise<Bool>
             if state.run.stakes.message == "STAKE" {
-                result = dataContext.gameClient.msgAsync(args: ["STAKE", 1, state.run.stakes.stake])
+                result = dataContext.gameClient.msgAsync(args: ["STAKE", "1", String(state.run.stakes.stake)])
             } else {
-                result = dataContext.gameClient.msgAsync(args: [state.run.stakes.message, state.run.stakes.stake])
+                result = dataContext.gameClient.msgAsync(args: [state.run.stakes.message, String(state.run.stakes.stake)])
             }
             result.done { _ in
                 dispatch(clearDecisions())
@@ -421,7 +427,7 @@ class RunActionCreators {
     }
     static let sendPass: (DataContext) -> Thunk<State> = { dataContext in
         Thunk { dispatch, _ in
-            let result = dataContext.gameClient.msgAsync(args: ["STAKE", 2])
+            let result = dataContext.gameClient.msgAsync(args: ["STAKE", "2"])
             result.done { _ in
                 dispatch(clearDecisions())
             }
@@ -429,7 +435,7 @@ class RunActionCreators {
     }
     static let sendAllIn: (DataContext) -> Thunk<State> = { dataContext in
         Thunk { dispatch, _ in
-            let result = dataContext.gameClient.msgAsync(args: ["STAKE", 3])
+            let result = dataContext.gameClient.msgAsync(args: ["STAKE", "3"])
             result.done { _ in
                 dispatch(clearDecisions())
             }
@@ -461,7 +467,7 @@ class RunActionCreators {
     }
     static let changePlayerSum: (DataContext, Int, Int) -> Thunk<State> = { dataContext, playerIndex, sum in
         Thunk { dispatch, _ in
-            dataContext.gameClient.msgAsync(args: ["CHANGE", playerIndex + 1, sum]) // playerIndex here starts with 1
+            dataContext.gameClient.msgAsync(args: ["CHANGE", String(playerIndex + 1), String(sum)]) // playerIndex here starts with 1
         }
     }
     static let readingSpeedChanged: (Int) -> RunActionTypes = { readingSpeed in
@@ -532,7 +538,7 @@ class RunActionCreators {
     }
     static let navigateToRound: (DataContext, Int) -> Thunk<State> = { dataContext, roundIndex in
         Thunk { dispatch, _ in
-            dataContext.gameClient.msgAsync(args: ["MOVE", "3", roundIndex])
+            dataContext.gameClient.msgAsync(args: ["MOVE", "3", String(roundIndex)])
         }
     }
     static let isReadyChanged: (Int, Bool) -> RunActionTypes = { personIndex, isReady in
