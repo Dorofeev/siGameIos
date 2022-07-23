@@ -84,4 +84,10 @@ protocol IGameServerClient {
     
     /** Logs out from the server. */
     func logOutAsync() -> Promise<Any>
+    
+    /**
+     * Checks whether a specific image exists on a server.
+     * @param fileKey File key to check.
+     */
+    func hasImageAsync(fileKey: FileKey) -> Promise<String?>
 }

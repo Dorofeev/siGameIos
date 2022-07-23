@@ -81,7 +81,9 @@
 		49C5F1E328015FCA003EB248 /* SettingsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5F1E228015FCA003EB248 /* SettingsState.swift */; };
 		49C5F1EB28019CFA003EB248 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49C5F1E928019CFA003EB248 /* Localizable.strings */; };
 		49E7BC522806EAA900843FB7 /* PackageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E7BC512806EAA900843FB7 /* PackageKey.swift */; };
+		49ECB0C02885ABCF00963195 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ECB0BF2885ABCF00963195 /* File.swift */; };
 		49F2B7FC28826766007ED54C /* FileKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F2B7FB28826766007ED54C /* FileKey.swift */; };
+		49F2B7FE28846747007ED54C /* ActionCreators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F2B7FD28846747007ED54C /* ActionCreators.swift */; };
 		7F3DB3EB683C5727F0DEEA0D /* Pods_SIOnline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B118D17261E5B8EB30D59E4A /* Pods_SIOnline.framework */; };
 /* End PBXBuildFile section */
 
@@ -162,7 +164,9 @@
 		49C5F1E228015FCA003EB248 /* SettingsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsState.swift; sourceTree = "<group>"; };
 		49C5F1EA28019CFA003EB248 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		49E7BC512806EAA900843FB7 /* PackageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageKey.swift; sourceTree = "<group>"; };
+		49ECB0BF2885ABCF00963195 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		49F2B7FB28826766007ED54C /* FileKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileKey.swift; sourceTree = "<group>"; };
+		49F2B7FD28846747007ED54C /* ActionCreators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCreators.swift; sourceTree = "<group>"; };
 		706AEA9C60F4E83C7C204180 /* Pods-SIOnline.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIOnline.debug.xcconfig"; path = "Target Support Files/Pods-SIOnline/Pods-SIOnline.debug.xcconfig"; sourceTree = "<group>"; };
 		B118D17261E5B8EB30D59E4A /* Pods_SIOnline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIOnline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D8F96D7E82A0BD02C1C923 /* Pods-SIOnline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIOnline.release.xcconfig"; path = "Target Support Files/Pods-SIOnline/Pods-SIOnline.release.xcconfig"; sourceTree = "<group>"; };
@@ -199,6 +203,7 @@
 				146DF0CF2843758C005C0C81 /* ErrorHelpers.swift */,
 				146E269E284B6462009D0B95 /* GlobalTimers.swift */,
 				491DD38F284C58B000403095 /* StringHelpers.swift */,
+				49ECB0BF2885ABCF00963195 /* File.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 				49C5F1DA2800817D003EB248 /* SavedState.swift */,
 				498BE643280971100096AF75 /* ActionTypes.swift */,
 				491625A02833ED8E00022237 /* Reducer.swift */,
+				49F2B7FD28846747007ED54C /* ActionCreators.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -542,6 +548,7 @@
 				495A9AE4280581C50035ABE5 /* TableMode.swift in Sources */,
 				147069CD2830F1D20045A3E6 /* SettingsActions.swift in Sources */,
 				146AC7B82813DA07001598FE /* TableActions.swift in Sources */,
+				49ECB0C02885ABCF00963195 /* File.swift in Sources */,
 				49C223B6280444B8007170F4 /* GamesFilter.swift in Sources */,
 				498BE642280970450096AF75 /* SearchEntity.swift in Sources */,
 				4914D2852807CDFA000224A1 /* GameCreationResult.swift in Sources */,
@@ -581,6 +588,7 @@
 				491625A12833ED8E00022237 /* Reducer.swift in Sources */,
 				4967FD652816E9F600A85F13 /* runReducer.swift in Sources */,
 				49C5F1D928008052003EB248 /* State.swift in Sources */,
+				49F2B7FE28846747007ED54C /* ActionCreators.swift in Sources */,
 				4942D7C128150842000B3D60 /* Constants.swift in Sources */,
 				497875E12806D53C00116DE1 /* Slice.swift in Sources */,
 				495A9AE8280587FF0035ABE5 /* StakeTypes.swift in Sources */,

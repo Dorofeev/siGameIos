@@ -94,6 +94,7 @@ struct State {
 
 struct StateUser {
     var login: String
+    var avatar: String?
 }
 
 struct StateLogin {
@@ -155,6 +156,7 @@ struct StateCommon {
     var isConnected: Bool
     var serverName: String?
     var error: String?
+    var serverLicense: String?
 }
 struct StateSiPackages {
     var packages: [SIPackageInfo]

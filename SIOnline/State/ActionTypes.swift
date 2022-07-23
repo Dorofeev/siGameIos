@@ -66,7 +66,7 @@ enum ActionTypes: Action {
     case uploadPackageFinished
     case uploadPackageProgress(progress: Int)
     case unselectGame
-    case serverNameChanged(serverName: String)
+    case serverInfoChanged(serverName: String, serverLicense: String)
     case searchPackages
     case searchPackagesFinished(packages: [SIPackageInfo])
     case receiveAuthors
@@ -75,4 +75,8 @@ enum ActionTypes: Action {
     case receiveTagsFinished(tags: [SearchEntity])
     case receivePublishers
     case receivePublishersFinished(publishers: [SearchEntity])
+    case avatarLoadStart
+    case avatarLoadEnd
+    case avatarChanged(avatar: String)
+    case avatarLoadError(error: String?)
 }

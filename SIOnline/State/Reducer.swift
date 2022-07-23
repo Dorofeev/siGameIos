@@ -180,8 +180,9 @@ let reducer: Reducer<State> = { action, state in
         state.online.uploadPackageProgress = false
     case .uploadPackageProgress(let progress):
         state.online.uploadPackagePercentage = progress
-    case .serverNameChanged(let serverName):
+    case .serverInfoChanged(let serverName, let license):
         state.common.serverName = serverName
+        state.common.serverLicense = license
     case .searchPackages:
         state.siPackages.isLoading = true
     case .searchPackagesFinished(let packages):
