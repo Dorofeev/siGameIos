@@ -43,8 +43,7 @@ struct State {
                 messages: [
                     ChatMessage(
                         sender: R.string.localizable.appUser(),
-                        text: R.string.localizable.greeting(),
-                        isSystem: false
+                        text: R.string.localizable.greeting()
                     )
                 ],
                 password: "",

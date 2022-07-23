@@ -16,17 +16,22 @@ class RunActionCreators {
     static let runChatMessageChanged: (String) -> RunActionTypes = { message in
         RunActionTypes.runChatMessageChanged(message: message)
     }
-    static let runChatMessageSend: (DataContext) -> (Thunk<State>) = {dataContext in
+    static let runChatMessageSend: (DataContext) -> (Thunk<State>) = { dataContext in
         Thunk { dispatch, state in
-            let text = state()?.run.chat.message ?? ""
+            guard let state = state() else { return }
+            let text = state.run.chat.message
+            let login = state.user.login
             if text.count > 0 {
                 dataContext.gameClient.sayAsync(message: text)
             }
+            
             dispatch(runChatMessageChanged(""))
-            /* Временно
-             dispatch(chatMessageAdded({ sender: state.user.login, text }));
-             if (!state.run.chat.isVisible) {
-             dispatch(activateChat()); */
+            
+            // Временно
+            dispatch(chatMessageAdded(ChatMessage(sender: login, text: text)))
+            if (!state.run.chat.isVisible) {
+                dispatch(activateChat())
+            }
         }
     }
     static let markQuestion: (DataContext) -> (Thunk<State>) = { dataContext in
