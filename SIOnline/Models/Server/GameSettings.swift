@@ -5,7 +5,7 @@
 //  Created by Andrey Dorofeev on 14.04.2022.
 //
 
-struct GameSettings {
+struct GameSettings: Encodable {
     let humanPlayerName: String
     let randomSpecials: Bool
     let networkGameName: String

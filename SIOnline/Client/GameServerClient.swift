@@ -15,7 +15,7 @@ class GameServerClient: IGameServerClient {
         self.connection = connection
         self.errorHandler = errorHandler
     }
-    func getComputerAccountAsync(culture: String) -> Promise<[String]> {
+    func getComputerAccountsAsync(culture: String) -> Promise<[String]> {
         return Promise<[String]> { resolver in
             connection.invoke(method: "GetComputerAccountNew", culture, resultType: [String].self) { result, error in
                 if let result = result {
@@ -70,4 +70,115 @@ class GameServerClient: IGameServerClient {
             }
         }
     }
+    func sayInLobbyAsync(text: String) -> Promise<Any> {
+        return Promise<Any> { resolver in
+            connection.invoke(method: "Say", text) { error in
+                if let error = error {
+                    resolver.reject(error)
+                } else {
+                    resolver.fulfill("")
+                }
+            }
+        }
+    }
+    func hasPackageAsync(packageKey: PackageKey) -> Promise<Bool> {
+        return Promise<Bool> { resolver in
+            connection.invoke(method: "HasPackage", packageKey, resultType: Bool.self) { result, error in
+                if let result = result {
+                    resolver.fulfill(result)
+                } else {
+                    resolver.reject(error ?? UnknownError(message: "Failed to has package async"))
+                }
+            }
+        }
+    }
+    func hasImageAsync(fileKey: FileKey) -> Promise<String?> {
+        return Promise<String?> { resolver in
+            connection.invoke(method: "HasPicture", fileKey, resultType: String.self) { result, error in
+                if let error = error {
+                    resolver.reject(error)
+                } else {
+                    resolver.fulfill(result)
+                }
+            }
+        }
+    }
+    func createAndJoinGameAsync(gameSettings: GameSettings, packageKey: PackageKey, isMale: Bool) -> Promise<GameCreationResult> {
+        return Promise<GameCreationResult> { resolver in
+            connection.invoke(
+                method: "CreareAndJoinGameNew",
+                gameSettings,
+                packageKey,
+                [String](),
+                isMale,
+                resultType: GameCreationResult.self
+            ) { result, error in
+                if let result = result {
+                    resolver.fulfill(result)
+                } else {
+                    resolver.reject(error ?? UnknownError(message: "Failed to create and join game async"))
+                }
+            }
+        }
+    }
+    func createAutomaticGameAsync(login: String, isMale: Bool) -> Promise<GameCreationResult> {
+        return Promise<GameCreationResult> {resolver in
+            connection.invoke(method: "CreateAutomaticGameNew", login, isMale, resultType: GameCreationResult.self) { result, error in
+                if let result = result {
+                    resolver.fulfill(result)
+                } else {
+                    resolver.reject(error ?? UnknownError(message: "Failed to create automatic game async"))
+                }
+            }
+        }
+    }
+    func joinGameAsync(gameId: Int, role: Role, isMale: Bool, password: String) -> Promise<GameCreationResult> {
+        return Promise<GameCreationResult> { resolver in
+            connection.invoke(method: "JoinGameNew", gameId, role, isMale, password, resultType: GameCreationResult.self) { result, error in
+                if let result = result {
+                    resolver.fulfill(result)
+                } else {
+                    resolver.reject(error ?? UnknownError(message: "Failed to join game asyng"))
+                }
+            }
+        }
+    }
+    func sendMessageToServerAsync(message: String) -> Promise<Bool> {
+        return Promise<Bool> { resolver in
+            connection.invoke(method: "SendMessage", ["Text": message, "IsSystem": "true", "Receiver": "@"]) { [weak self] error in
+                if let error = error {
+                    self?.errorHandler(error)
+                    resolver.fulfill(false)
+                } else {
+                    resolver.fulfill(true)
+                }
+            }
+        }
+    }
+    func msgAsync(args: [String]) -> Promise<Bool> {
+        return sendMessageToServerAsync(message: args.joined(separator: "\n"))
+    }
+    func sayAsync(message: String) -> Promise<Any> {
+        return Promise<Any> { resolver in
+            connection.invoke(method: "SendMessage", ["Text": message, "IsSystem": "false", "Receiver" : "*"]) { _ in
+                resolver.fulfill("")
+            }
+        }
+    }
+    func leaveGameAsync() -> Promise<Any> {
+        return Promise<Any> {resolver in
+            connection.invoke(method: "LeaveGame") { _ in
+                resolver.fulfill("")
+            }
+        }
+    }
+    func logOutAsync() -> Promise<Any> {
+        return Promise<Any> { resolver in
+            connection.invoke(method: "LogOut") { _ in
+                resolver.fulfill("")
+            }
+        }
+    }
 }
+
+
