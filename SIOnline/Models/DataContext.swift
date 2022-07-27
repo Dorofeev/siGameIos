@@ -9,8 +9,8 @@ import SwiftSignalRClient
 class DataContext {
     let config: Config
     let serverUri: String
-    let connection: HubConnection?
-    let gameClient: IGameServerClient
+    var connection: HubConnection?
+    var gameClient: IGameServerClient
     var contentUris: [String]
     
     init(config: Config, serverUri: String, connection: HubConnection?, gameClient: IGameServerClient, contentUris: [String]) {

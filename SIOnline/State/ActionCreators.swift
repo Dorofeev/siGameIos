@@ -6,8 +6,10 @@
 //
 
 import Alamofire
+import Foundation
 import ReSwift
 import ReSwiftThunk
+import SwiftSignalRClient
 
 class ActionCreators {
     static func isConnectedChanged(isConnected: Bool) -> KnownAction {
@@ -196,7 +198,7 @@ class ActionCreators {
     }
     
     static func loadHostInfoAsync(dispatch: @escaping DispatchFunction, dataContext: DataContext, culture: String) {
-        let hostInfo = dataContext.gameClient.getGameHostInfoAsync()
+        let hostInfo = dataContext.gameClient.getGameHostInfoAsync(culture: culture)
         hostInfo.done { result in
             guard let urls = result.contentPublicBaseUrls else { return }
             dataContext.contentUris = urls
@@ -219,4 +221,216 @@ class ActionCreators {
     static func receiveGames(games: [GameInfo]) -> KnownAction {
         .receiveGames(games: games)
     }
+    
+    static func loadGamesAsync(dispatch: DispatchFunction, gameClient: IGameServerClient) async throws {
+        dispatch(clearGames())
+        var gameSlice: Slice<GameInfo> = Slice(data: [], isLastSlice: false)
+        var whileGuard = 100
+        
+        repeat {
+            let fromId = gameSlice.data.count > 0 ? gameSlice.data[gameSlice.data.count - 1].gameID + 1 : 0
+            
+            gameSlice = try await gameClient.getGamesSliceAsync(fromId: fromId).async()
+            
+            dispatch(receiveGames(games: gameSlice.data))
+            whileGuard -= 1
+        } while (!gameSlice.isLastSlice && whileGuard > 0)
+    }
+    
+    static func onlineLoadFinish() -> KnownAction {
+        .onlineLoadFinished
+    }
+    
+    static func onlineLoadError(error: String) -> KnownAction {
+        .onlineLoadError(error: error)
+    }
+    
+    static func friendsPlay(dataContext: DataContext) -> Thunk<State> {
+        Thunk { dispatch, getState in
+            guard let state = getState() else { return }
+            let selectedGameId = state.online.selectedGameId
+            dispatch(friendsPlayInternal())
+            Task {
+                do {
+                    try await loadGamesAsync(dispatch: dispatch, gameClient: dataContext.gameClient)
+                    let state2 = getState()
+                    
+                    if selectedGameId != 0 && state2?.online.games[selectedGameId] != nil {
+                        dispatch(selectGame(gameId: selectedGameId, showInfo: false))
+                    }
+                    
+                    dispatch(onlineLoadFinish())
+                } catch {
+                    dispatch(onlineLoadError(error: getErrorMessage(e: error)))
+                }
+            }
+        }
+    }
+    
+    static func login(dataContext: DataContext) -> Thunk<State> {
+        Thunk { dispatch, getState in
+            dispatch(loginStart())
+            
+            guard let state = getState() else { return }
+            Task {
+                do {
+                    guard let url = URL(string: "\(dataContext.serverUri)/api/Account/LogOn") else { return }
+                    let response = try await withCheckedThrowingContinuation({ continuation in
+                        AF.request(
+                            url,
+                            method: .post,
+                            parameters: Parameters(dictionaryLiteral: ("login", state.user.login), ("password", "")),
+                            headers: HTTPHeaders(["Content-Type": "application/x-www-form-urlencoded"])
+                        ).responseString { response in
+                            continuation.resume(returning: response)
+                        }
+                    })
+                    
+                    if response.response?.statusCode == 200 {
+                        saveStateToStorage(state: state)
+                        
+                        guard let token = response.value else { return }
+                        let queryString = "?token=\(token.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")"
+                        
+                        guard let url = try? "\(dataContext.serverUri)/sionline\(queryString)".asURL() else { return }
+                        let connectionBuilder = HubConnectionBuilder(url: url).withAutoReconnect()
+                        
+                        if dataContext.config.useMessagePackProtocol {
+                            // Implement if needed
+                            // connectionBuilder = connectionBuilder.withHubProtocol(new signalRMsgPack.MessagePackHubProtocol());
+                        }
+                        
+                        let connection = connectionBuilder.build()
+                        dataContext.connection = connection
+                        dataContext.gameClient = GameServerClient(connection: connection, errorHandler: { error in
+                            dispatch(RunActionCreators.operationError(getErrorMessage(e: error)))
+                        })
+                        
+                        
+                        let _: Void = try await withCheckedThrowingContinuation({ continuation in
+                            let delegate = HubConnectionDelegateImpl(
+                                connectionOpen: {
+                                    continuation.resume()
+                                },
+                                connectionFailed: { error in
+                                    continuation.resume(throwing: error)
+                                }
+                            )
+                            connection.delegate = delegate
+                            
+                            connection.start()
+                        })
+                        
+                        if let connectionId = connection.connectionId {
+                            // TODO: - 
+                            // activeConnections.push(dataContext.connection.connectionId);
+                        }
+                        
+                    }
+                    
+                }
+            }
+        }
+    }
 }
+
+class HubConnectionDelegateImpl: HubConnectionDelegate {
+    
+    private var connectionOpen: (() -> Void)?
+    private var connectionFailed: ((Error) -> Void)?
+    
+    init(connectionOpen: @escaping () -> Void, connectionFailed: @escaping (Error) -> Void) {
+        self.connectionOpen = connectionOpen
+        self.connectionFailed = connectionFailed
+    }
+    
+    func connectionDidOpen(hubConnection: HubConnection) {
+        connectionOpen?()
+    }
+    
+    func connectionDidFailToOpen(error: Error) {
+        connectionFailed?(error)
+    }
+    
+    func connectionDidClose(error: Error?) {
+        print("connectionDidClose \(error)")
+    }
+}
+
+//const login: ActionCreator<ThunkAction<void, State, DataContext, Action>> =
+//() => async (dispatch: Dispatch<Actions.KnownAction>, getState: () => State, dataContext: DataContext) => {
+//    dispatch(loginStart());
+//
+//    const state = getState();
+//
+//    try {
+//        const response = await fetch(`${dataContext.serverUri}/api/Account/LogOn`, {
+//        method: 'POST',
+//        credentials: 'include',
+//        body: `login=${state.user.login}&password=`,
+//        headers: {
+//            'Content-Type': 'application/x-www-form-urlencoded'
+//        }
+//        });
+//
+//        if (response.ok) {
+//            saveStateToStorage(state);
+//
+//            const token = await response.text();
+//            const queryString = `?token=${encodeURIComponent(token)}`;
+//
+//            let connectionBuilder = new signalR.HubConnectionBuilder()
+//                .withAutomaticReconnect()
+//                .withUrl(`${dataContext.serverUri}/sionline${queryString}`);
+//
+//            if (dataContext.config.useMessagePackProtocol) {
+//                connectionBuilder = connectionBuilder.withHubProtocol(new signalRMsgPack.MessagePackHubProtocol());
+//            }
+//
+//            const connection = connectionBuilder.build();
+//            // eslint-disable-next-line no-param-reassign
+//            dataContext.connection = connection;
+//            // eslint-disable-next-line no-param-reassign
+//            dataContext.gameClient = new GameServerClient(
+//                connection,
+//                e => dispatch(runActionCreators.operationError(getErrorMessage(e)) as object as Actions.KnownAction)
+//            );
+//
+//            try {
+//                await dataContext.connection.start();
+//
+//                if (dataContext.connection.connectionId) {
+//                    activeConnections.push(dataContext.connection.connectionId);
+//                }
+//
+//                attachListeners(dataContext.connection, dispatch);
+//
+//                const requestCulture = getFullCulture(state);
+//
+//                const computerAccounts = await dataContext.gameClient.getComputerAccountsAsync(requestCulture);
+//                dispatch(computerAccountsChanged(computerAccounts));
+//
+//                dispatch(loginEnd());
+//                dispatch(onLoginChanged(state.user.login.trim())); // Normalize login
+//
+//                await loadHostInfoAsync(dispatch, dataContext, requestCulture);
+//
+//                const urlParams = new URLSearchParams(window.location.search);
+//                const invite = urlParams.get('invite');
+//
+//                if (state.online.selectedGameId && invite == 'true') {
+//                    friendsPlay()(dispatch, getState, dataContext);
+//                } else {
+//                    dispatch(navigateToWelcome());
+//                }
+//            } catch (error) {
+//                dispatch(loginEnd(`${localization.cannotConnectToServer}: ${getErrorMessage(error)}`));
+//            }
+//        } else {
+//            const errorText = getLoginErrorByCode(response);
+//            dispatch(loginEnd(errorText));
+//        }
+//    } catch (err) {
+//        dispatch(loginEnd(`${localization.cannotConnectToServer}: ${getErrorMessage(err)}`));
+//    }
+//};
