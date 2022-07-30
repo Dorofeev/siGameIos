@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1411F7B02894EB0100332DB9 /* UILoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1411F7AF2894EB0100332DB9 /* UILoadableView.swift */; };
 		146AC7B82813DA07001598FE /* TableActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146AC7B72813DA07001598FE /* TableActions.swift */; };
 		146AC7BA2813EE7A001598FE /* TableReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146AC7B92813EE7A001598FE /* TableReducer.swift */; };
 		146C9602280A9D5C00292C4C /* DictionaryExtentsions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C9601280A9D5C00292C4C /* DictionaryExtentsions.swift */; };
@@ -91,6 +92,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1411F7AF2894EB0100332DB9 /* UILoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILoadableView.swift; sourceTree = "<group>"; };
 		146AC7B72813DA07001598FE /* TableActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableActions.swift; sourceTree = "<group>"; };
 		146AC7B92813EE7A001598FE /* TableReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableReducer.swift; sourceTree = "<group>"; };
 		146C9601280A9D5C00292C4C /* DictionaryExtentsions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtentsions.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 		146C9600280A9C7F00292C4C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				1411F7AF2894EB0100332DB9 /* UILoadableView.swift */,
 				146C9601280A9D5C00292C4C /* DictionaryExtentsions.swift */,
 				146C9603280AC34B00292C4C /* ArrayExtensions.swift */,
 				4942D7C228151962000B3D60 /* TimerInfoHelpers.swift */,
@@ -613,6 +616,7 @@
 				49C223BA280446E5007170F4 /* ServerPersonInfo.swift in Sources */,
 				497875DD2806D19700116DE1 /* IGameServerClient.swift in Sources */,
 				495A9ADF28057EE60035ABE5 /* TimerInfo.swift in Sources */,
+				1411F7B02894EB0100332DB9 /* UILoadableView.swift in Sources */,
 				491625A12833ED8E00022237 /* Reducer.swift in Sources */,
 				4967FD652816E9F600A85F13 /* runReducer.swift in Sources */,
 				49C5F1D928008052003EB248 /* State.swift in Sources */,

@@ -170,6 +170,26 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  struct nib {
+    /// Nib `ProgressBar`.
+    static let progressBar = _R.nib._ProgressBar()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ProgressBar", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.progressBar) instead")
+    static func progressBar(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.progressBar)
+    }
+    #endif
+
+    static func progressBar(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.progressBar.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    fileprivate init() {}
+  }
+
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
     /// This `R.string.localizable` struct is generated, and contains static references to 194 localization keys.
@@ -3888,6 +3908,23 @@ struct _R: Rswift.Validatable {
     try storyboard.validate()
     #endif
   }
+
+  #if os(iOS) || os(tvOS)
+  struct nib {
+    struct _ProgressBar: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ProgressBar"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
 
   #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {

@@ -7,10 +7,14 @@
 
 import UIKit
 
-class ProgressBar: UIView {
+class ProgressBar: UILoadableView {
     @IBOutlet private var widthConstraint: NSLayoutConstraint!
     
-    func setup(value: CGFloat) {
-        widthConstraint.constant = value
+    func setup(value: CGFloat, valueChangeDuration: CGFloat) {
+        widthConstraint.constant = frame.width * value
+        UIView.animate(withDuration: valueChangeDuration) {
+            self.widthConstraint.constant = self.frame.width
+            self.layoutIfNeeded()
+        }
     }
 }
