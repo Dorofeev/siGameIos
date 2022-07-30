@@ -9,6 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
     let test = Index()
+    
+    var progressBar: ProgressBar = {
+        let bar = ProgressBar.
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

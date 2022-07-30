@@ -17,9 +17,11 @@
 		146E269F284B6462009D0B95 /* GlobalTimers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E269E284B6462009D0B95 /* GlobalTimers.swift */; };
 		147069CD2830F1D20045A3E6 /* SettingsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147069CC2830F1D20045A3E6 /* SettingsActions.swift */; };
 		14C6E46C2882B38C0040D825 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C6E46B2882B38C0040D825 /* Message.swift */; };
-		14C6E472288BF54B0040D825 /* PackageFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C6E471288BF54B0040D825 /* PackageFilters.swift */; };
 		14C6E46E2882BB9F0040D825 /* GameServerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C6E46D2882BB9F0040D825 /* GameServerClient.swift */; };
 		14C6E4702882CDEC0040D825 /* UnknownError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C6E46F2882CDEC0040D825 /* UnknownError.swift */; };
+		14C6E472288BF54B0040D825 /* PackageFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C6E471288BF54B0040D825 /* PackageFilters.swift */; };
+		14C6E476288C021B0040D825 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C6E475288C021B0040D825 /* ProgressBar.swift */; };
+		14C6E47A288C0A8B0040D825 /* ProgressBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C6E479288C0A8B0040D825 /* ProgressBar.xib */; };
 		4905C0DE28431BDA00CFB6BB /* GameErrorsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905C0DD28431BDA00CFB6BB /* GameErrorsHelper.swift */; };
 		4914D27F2807C9AF000224A1 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D27E2807C9AF000224A1 /* GameSettings.swift */; };
 		4914D2812807CA8A000224A1 /* AccountSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2802807CA89000224A1 /* AccountSettings.swift */; };
@@ -99,9 +101,11 @@
 		146E269E284B6462009D0B95 /* GlobalTimers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTimers.swift; sourceTree = "<group>"; };
 		147069CC2830F1D20045A3E6 /* SettingsActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsActions.swift; sourceTree = "<group>"; };
 		14C6E46B2882B38C0040D825 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		14C6E471288BF54B0040D825 /* PackageFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageFilters.swift; sourceTree = "<group>"; };
 		14C6E46D2882BB9F0040D825 /* GameServerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameServerClient.swift; sourceTree = "<group>"; };
 		14C6E46F2882CDEC0040D825 /* UnknownError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnknownError.swift; sourceTree = "<group>"; };
+		14C6E471288BF54B0040D825 /* PackageFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageFilters.swift; sourceTree = "<group>"; };
+		14C6E475288C021B0040D825 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		14C6E479288C0A8B0040D825 /* ProgressBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressBar.xib; sourceTree = "<group>"; };
 		4905C0DD28431BDA00CFB6BB /* GameErrorsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameErrorsHelper.swift; sourceTree = "<group>"; };
 		4914D27E2807C9AF000224A1 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 		4914D2802807CA89000224A1 /* AccountSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettings.swift; sourceTree = "<group>"; };
@@ -210,6 +214,23 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		14C6E473288C015C0040D825 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				14C6E474288C01810040D825 /* Common */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		14C6E474288C01810040D825 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				14C6E475288C021B0040D825 /* ProgressBar.swift */,
+				14C6E479288C0A8B0040D825 /* ProgressBar.xib */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		2F04F21239AEE23C229715D7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +321,7 @@
 		49B6BC77280004EC005AC3BE /* SIOnline */ = {
 			isa = PBXGroup;
 			children = (
+				14C6E473288C015C0040D825 /* Components */,
 				146C9600280A9C7F00292C4C /* Utils */,
 				497875DB2806D19000116DE1 /* Client */,
 				49C5F1E428019C4F003EB248 /* Resources */,
@@ -467,6 +489,7 @@
 			files = (
 				49B6BC85280004ED005AC3BE /* LaunchScreen.storyboard in Resources */,
 				49C5F1EB28019CFA003EB248 /* Localizable.strings in Resources */,
+				14C6E47A288C0A8B0040D825 /* ProgressBar.xib in Resources */,
 				49B6BC82280004ED005AC3BE /* Assets.xcassets in Resources */,
 				49B6BC80280004EC005AC3BE /* Main.storyboard in Resources */,
 			);
@@ -615,6 +638,7 @@
 				495A9ADD28057EA60035ABE5 /* Timers.swift in Sources */,
 				495A9AEA28058F790035ABE5 /* PersonInfo.swift in Sources */,
 				49C223B82804461A007170F4 /* GameInfo.swift in Sources */,
+				14C6E476288C021B0040D825 /* ProgressBar.swift in Sources */,
 				146E269F284B6462009D0B95 /* GlobalTimers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
