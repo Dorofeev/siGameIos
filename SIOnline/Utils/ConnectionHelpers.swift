@@ -17,51 +17,44 @@ class ConnectionHelpers {
         connection.on(method: "Joined") { argumentExtractor in
             guard let login = try? argumentExtractor.getArgument(type: String.self) else { return }
 
-            // TODO: - SIO-6 not yet implemented
-            // dispatch(actionCreators.userJoined(login)));
+            dispatch(ActionCreators.shared.userJoined(login: login))
         }
         
         connection.on(method: "Leaved") { argumentExtractor in
             guard let login = try? argumentExtractor.getArgument(type: String.self) else { return }
             
-            // TODO: - SIO-6 not yet implemented
-            // dispatch(actionCreators.userLeaved(login)));
+            dispatch(ActionCreators.shared.userLeaved(login: login))
         }
         
         connection.on(method: "Say") { argumentExtractor in
             guard let name = try? argumentExtractor.getArgument(type: String.self),
                   let text = try? argumentExtractor.getArgument(type: String.self) else { return }
             
-            // TODO: - SIO-6 not yet implemented
-            // dispatch(actionCreators.receiveMessage(name, text)));
+            dispatch(ActionCreators.shared.receiveMessage(sender: name, message: text))
         }
         
         connection.on(method: "GameCreated") { argumentExtractor in
             guard let game = try? argumentExtractor.getArgument(type: GameInfo.self) else { return }
             
-            // TODO: - SIO-6 not yet implemented
-            // dispatch(actionCreators.gameCreated(game)));
+            dispatch(ActionCreators.shared.gameCreated(game: game))
         }
         
         connection.on(method: "GameChanged") { argumentExtractor in
             guard let game = try? argumentExtractor.getArgument(type: GameInfo.self) else { return }
             
-            // TODO: - SIO-6 not yet implemented
-            // dispatch(actionCreators.gameChanged(game)));
+            dispatch(ActionCreators.shared.gameChanged(game: game))
         }
         
         connection.on(method: "GameDeleted") { argumentExtractor in
             guard let id = try? argumentExtractor.getArgument(type: Int.self) else { return }
             
-            // TODO: - SIO-6 not yet implemented
-            // dispatch(actionCreators.gameDeleted(id)));
+            dispatch(ActionCreators.shared.gameDeleted(gameId: id))
         }
         
         connection.on(method: "Receive") { argumentExtractor in
-            guard let message = try? argumentExtractor.getArgument(type: ChatMessage.self) else { return }
+            guard let message = try? argumentExtractor.getArgument(type: Message.self), let dataContext = Index.dataContext else { return }
             
-            // TODO: - SIO-6 not yet implemented
-            // messageProcessor(dispatch, message));
+            MessageProcessor.messageProcessor(dispatch: dispatch, message: message, dataContext: dataContext)
         }
         
         connection.on(method: "Disconnect") { argumentExtractor in
@@ -97,19 +90,31 @@ class ConnectionDelegateImpl: HubConnectionDelegate {
     func connectionDidReceiveData(connection: Connection, data: Data) {}
     
     func connectionDidClose(error: Error?) {
-        // TODO: - SIO-6 not yet implemented
-        // dispatch(actionCreators.onConnectionChanged(false, `${localization.connectionClosed} ${e?.message || ''}`) as object as AnyAction);
+        guard let dataContext = Index.dataContext else { return }
+        dispatch(ActionCreators.shared.onConnectionChanged(
+            dataContext: dataContext,
+            isConnected: false,
+            message: "\(R.string.localizable.connectionClosed()) \(error?.localizedDescription)")
+        )
     }
     
     func connectionWillReconnect(error: Error) {
+        guard let dataContext = Index.dataContext else { return }
         let errorMessage = error.localizedDescription
         
-        // TODO: - SIO-6 not yet implemented
-        //dispatch(actionCreators.onConnectionChanged(false, `${localization.connectionReconnecting}${errorMessage}`) as object as AnyAction);
+        dispatch(ActionCreators.shared.onConnectionChanged(
+            dataContext: dataContext,
+            isConnected: false,
+            message: "\(R.string.localizable.connectionReconnecting()) \(errorMessage)")
+        )
     }
     
     func connectionDidReconnect() {
-        // TODO: - SIO-6 not yet implemented
-        // dispatch(actionCreators.onConnectionChanged(true, localization.connectionReconnected) as object as AnyAction);
+        guard let dataContext = Index.dataContext else { return }
+        dispatch(ActionCreators.shared.onConnectionChanged(
+            dataContext: dataContext,
+            isConnected: true,
+            message: R.string.localizable.connectionReconnected())
+        )
     }
 }

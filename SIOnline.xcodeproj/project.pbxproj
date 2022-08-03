@@ -29,6 +29,7 @@
 		491625A12833ED8E00022237 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491625A02833ED8E00022237 /* Reducer.swift */; };
 		491DD390284C58B000403095 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491DD38F284C58B000403095 /* StringHelpers.swift */; };
 		491DD393284C5B0900403095 /* MessageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491DD392284C5B0900403095 /* MessageProcessor.swift */; };
+		493C6B7A2891840300B6A842 /* URLSearchParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493C6B792891840300B6A842 /* URLSearchParams.swift */; };
 		493E98AF2831476100913DE7 /* SettingsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493E98AE2831476100913DE7 /* SettingsReducer.swift */; };
 		4942D7C128150842000B3D60 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4942D7C028150842000B3D60 /* Constants.swift */; };
 		4942D7C328151962000B3D60 /* TimerInfoHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4942D7C228151962000B3D60 /* TimerInfoHelpers.swift */; };
@@ -67,6 +68,7 @@
 		498BE642280970450096AF75 /* SearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BE641280970450096AF75 /* SearchEntity.swift */; };
 		498BE644280971100096AF75 /* ActionTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BE643280971100096AF75 /* ActionTypes.swift */; };
 		49913604288D01BA00A6D935 /* PromiseAsyncExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49913603288D01BA00A6D935 /* PromiseAsyncExtension.swift */; };
+		49B32D662894E97700AA9312 /* UILoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B32D652894E97700AA9312 /* UILoadableView.swift */; };
 		49B6BC79280004EC005AC3BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6BC78280004EC005AC3BE /* AppDelegate.swift */; };
 		49B6BC7B280004EC005AC3BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6BC7A280004EC005AC3BE /* SceneDelegate.swift */; };
 		49B6BC7D280004EC005AC3BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6BC7C280004EC005AC3BE /* ViewController.swift */; };
@@ -116,6 +118,7 @@
 		491625A02833ED8E00022237 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		491DD38F284C58B000403095 /* StringHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelpers.swift; sourceTree = "<group>"; };
 		491DD392284C5B0900403095 /* MessageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageProcessor.swift; sourceTree = "<group>"; };
+		493C6B792891840300B6A842 /* URLSearchParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSearchParams.swift; sourceTree = "<group>"; };
 		493E98AE2831476100913DE7 /* SettingsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsReducer.swift; sourceTree = "<group>"; };
 		4942D7C028150842000B3D60 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4942D7C228151962000B3D60 /* TimerInfoHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerInfoHelpers.swift; sourceTree = "<group>"; };
@@ -154,6 +157,7 @@
 		498BE641280970450096AF75 /* SearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEntity.swift; sourceTree = "<group>"; };
 		498BE643280971100096AF75 /* ActionTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTypes.swift; sourceTree = "<group>"; };
 		49913603288D01BA00A6D935 /* PromiseAsyncExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseAsyncExtension.swift; sourceTree = "<group>"; };
+		49B32D652894E97700AA9312 /* UILoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILoadableView.swift; sourceTree = "<group>"; };
 		49B6BC75280004EC005AC3BE /* SIOnline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SIOnline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B6BC78280004EC005AC3BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49B6BC7A280004EC005AC3BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,6 +224,8 @@
 				4967DE1F287C6DD500B0E5B1 /* Alert.swift */,
 				49ECB0BF2885ABCF00963195 /* File.swift */,
 				49913603288D01BA00A6D935 /* PromiseAsyncExtension.swift */,
+				493C6B792891840300B6A842 /* URLSearchParams.swift */,
+				49B32D652894E97700AA9312 /* UILoadableView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -599,6 +605,7 @@
 				4914D2872807CE4B000224A1 /* GameCreationResultCode.swift in Sources */,
 				497875D62806A9CC00116DE1 /* AppSettings.swift in Sources */,
 				495A9ACA28048F6B0035ABE5 /* ChatMessage.swift in Sources */,
+				49B32D662894E97700AA9312 /* UILoadableView.swift in Sources */,
 				49B6BC7B280004EC005AC3BE /* SceneDelegate.swift in Sources */,
 				497875DA2806CEC300116DE1 /* DataContext.swift in Sources */,
 				49C5F1D728007FE9003EB248 /* Index.swift in Sources */,
@@ -634,6 +641,7 @@
 				491DD390284C58B000403095 /* StringHelpers.swift in Sources */,
 				495A9ADD28057EA60035ABE5 /* Timers.swift in Sources */,
 				495A9AEA28058F790035ABE5 /* PersonInfo.swift in Sources */,
+				493C6B7A2891840300B6A842 /* URLSearchParams.swift in Sources */,
 				49C223B82804461A007170F4 /* GameInfo.swift in Sources */,
 				146E269F284B6462009D0B95 /* GlobalTimers.swift in Sources */,
 			);

@@ -5,8 +5,8 @@
 //  Created by Andrey Dorofeev on 14.04.2022.
 //
 
-enum GameCreationResultCode: Decodable {
-    case ok
+enum GameCreationResultCode: Int, Decodable {
+    case ok = 0
     case noPackage
     case tooMuchGames
     case serverUnderMaintainance

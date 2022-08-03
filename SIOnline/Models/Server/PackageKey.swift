@@ -9,4 +9,10 @@ struct PackageKey: Codable {
     let name: String?
     let hash: String?
     let id: String?
+    
+    init(name: String?, hash: String?, id: String?) {
+        self.name = name
+        self.hash = hash
+        self.id = id
+    }
 }

@@ -5,7 +5,7 @@
 //  Created by Andrey Dorofeev on 15.04.2022.
 //
 
-enum RestrictionType: String {
+enum RestrictionType: String, Decodable {
     case age18 = "18+"
     case age12 = "12+"
 }

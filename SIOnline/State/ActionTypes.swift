@@ -46,11 +46,11 @@ enum ActionTypes: Action {
     case userJoined(login: String)
     case userLeaved(login: String)
     case messageChanged(message: String)
-    case windowWidthChanged(width: Int)
+    case windowSizeChanged(width: Int, height: Int)
     case gameNameChanged(gameName: String)
     case gamePasswordChanged(gamePassword: String)
     case gamePackageTypeChanged(packageType: PackageType)
-    case gamePackageDataChanged(packageName: String, packageData: Data? )
+    case gamePackageDataChanged(packageName: String, packageData: File? )
     case gamePackageLibraryChanged(name: String, id: String)
     case gameTypeChanged(gameType: GameType)
     case gameRoleChanged(gameRole: Role)
@@ -64,7 +64,7 @@ enum ActionTypes: Action {
     case joinGameFinished(error: String)
     case uploadPackageStarted
     case uploadPackageFinished
-    case uploadPackageProgress(progress: Int)
+    case uploadPackageProgress(progress: Double)
     case unselectGame
     case serverInfoChanged(serverName: String, serverLicense: String)
     case searchPackages
@@ -79,4 +79,6 @@ enum ActionTypes: Action {
     case avatarLoadEnd
     case avatarChanged(avatar: String)
     case avatarLoadError(error: String?)
+    case navigateToError(error: String)
+    case isSettingGameButtonKeyChanged(isSettingGameButtonKey: Bool)
 }
