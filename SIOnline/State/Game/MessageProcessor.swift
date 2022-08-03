@@ -582,7 +582,7 @@ class MessageProcessor {
     }
     
     static func info(dispatch: DispatchFunction, args: [String]) {
-        guard let playersCount = args.getSafe(1)?.toInt() else {
+        guard let playersCount = args.getSafe(1)?.toInt(), let dataContext = Index.dataContext else {
             return
         }
         
@@ -656,8 +656,7 @@ class MessageProcessor {
         }
         
         dispatch(RunActionCreators.infoChanged(all, showman, players))
-        // TODO: - SI-6 not yet implemented
-        // dispatch(actionCreators.sendAvatar() as any)
+        dispatch(ActionCreators.shared.sendAvatar(dataContext: dataContext))
     }
     
     static func onReplic(dispatch: DispatchFunction, state: State, args: [String]) {

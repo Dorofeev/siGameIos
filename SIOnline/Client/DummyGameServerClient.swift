@@ -101,4 +101,10 @@ class DummyGameServerClient: IGameServerClient {
             promise.resolve(.none, error)
         }
     }
+    
+    func hasImageAsync(fileKey: FileKey) -> Promise<String?> {
+        Promise { promise in
+            promise.fulfill(nil)
+        }
+    }
 }

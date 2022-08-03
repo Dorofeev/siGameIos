@@ -16,8 +16,8 @@ class PlayerInfo: PersonInfo {
     init(
         name: String,
         isReady: Bool,
-        replic: String?
-        , isDeciding: Bool,
+        replic: String?,
+        isDeciding: Bool,
         isHuman: Bool,
         sum: Int,
         stake: Int,

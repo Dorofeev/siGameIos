@@ -115,8 +115,9 @@ let reducer: Reducer<State> = { action, state in
         state.online.chatMode = chatMode
     case .onlineModeChanged(let mode):
         state.ui.onlineView = mode
-    case .windowWidthChanged(let width):
+    case .windowSizeChanged(let width, let height):
         state.ui.windowWidth = width
+        state.ui.windowHeight = height
     case .newGame:
         state.online.newGameShown = true
         state.online.gameCreationProgress = false
@@ -180,8 +181,9 @@ let reducer: Reducer<State> = { action, state in
         state.online.uploadPackageProgress = false
     case .uploadPackageProgress(let progress):
         state.online.uploadPackagePercentage = progress
-    case .serverNameChanged(let serverName):
+    case .serverInfoChanged(let serverName, let license):
         state.common.serverName = serverName
+        state.common.serverLicense = license
     case .searchPackages:
         state.siPackages.isLoading = true
     case .searchPackagesFinished(let packages):
@@ -193,8 +195,30 @@ let reducer: Reducer<State> = { action, state in
         state.siPackages.tags = tags
     case .receivePublishersFinished(let publishers):
         state.siPackages.publishers = publishers
-    default:
+    case .newAutoGame:
         break
+    case .receiveAuthors:
+        break
+    case .receiveTags:
+        break
+    case .receivePublishers:
+        break
+    case .avatarLoadStart:
+        state.common.avatarLoadProgress = true
+    case .avatarLoadEnd:
+        state.common.avatarLoadProgress = false
+        state.common.avatarLoadError = nil
+    case .avatarChanged(avatar: let avatar):
+        state.user.avatar = avatar
+    case .avatarLoadError(error: let error):
+        state.common.avatarLoadError =  error
+        state.common.avatarLoadProgress = false
+    case .navigateToError(error: let error):
+        state.ui.previousMainView = state.ui.mainView
+        state.ui.mainView = .error
+        state.common.error = error
+    case .isSettingGameButtonKeyChanged(let isSettingGameButtonKey):
+        state.ui.isSettingGameButtonKey = isSettingGameButtonKey
     }
     return state
 }

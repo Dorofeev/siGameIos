@@ -11,4 +11,5 @@ struct HostInfo: Decodable {
     let port: String
     let packagesPublicBaseUrl: String?
     let contentPublicBaseUrls: [String]?
+    let license: String
 }

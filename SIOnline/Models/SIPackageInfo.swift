@@ -5,7 +5,7 @@
 //  Created by Andrey Dorofeev on 15.04.2022.
 //
 
-struct SIPackageInfo {
+struct SIPackageInfo: Decodable {
     let authors: String
     let description: String
     let difficulty: Int

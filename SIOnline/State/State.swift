@@ -29,7 +29,9 @@ struct State {
                 previousMainView: .loading,
                 onlineView: .games,
                 windowWidth: Int(UIScreen.main.bounds.width),
-                areSettingsVisible: false
+                areSettingsVisible: false,
+                windowHeight: Int(UIScreen.main.bounds.height),
+                isSettingGameButtonKey: false
             ),
             online: StateOnline(
                 inProgress: false,
@@ -78,7 +80,9 @@ struct State {
                 computerAccounts: nil,
                 isConnected: true,
                 serverName: nil,
-                error: nil
+                error: nil,
+                avatarLoadProgress: false,
+                avatarLoadError: nil
             ),
             settingsState: SettingsState.initialState(),
             siPackages: StateSiPackages(
@@ -94,6 +98,7 @@ struct State {
 
 struct StateUser {
     var login: String
+    var avatar: String?
 }
 
 struct StateLogin {
@@ -107,6 +112,8 @@ struct StateUI {
     var onlineView: OnlineMode
     var windowWidth: Int
     var areSettingsVisible: Bool
+    var windowHeight: Int
+    var isSettingGameButtonKey: Bool
 }
 
 struct StateOnline {
@@ -127,7 +134,7 @@ struct StateOnline {
     var joinGameProgress: Bool
     var joingGameError: String?
     var uploadPackageProgress: Bool
-    var uploadPackagePercentage: Int
+    var uploadPackagePercentage: Double
 }
 
 struct StateGame {
@@ -146,7 +153,7 @@ struct StateGame {
 struct GamePackage {
     var type: PackageType
     var name: String
-    var data: Data?
+    var data: File?
     var id: String?
 }
 
@@ -155,6 +162,9 @@ struct StateCommon {
     var isConnected: Bool
     var serverName: String?
     var error: String?
+    var serverLicense: String?
+    var avatarLoadProgress: Bool
+    var avatarLoadError: String?
 }
 struct StateSiPackages {
     var packages: [SIPackageInfo]
