@@ -95,6 +95,7 @@
 		49ECB0C02885ABCF00963195 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ECB0BF2885ABCF00963195 /* File.swift */; };
 		49F2B7FC28826766007ED54C /* FileKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F2B7FB28826766007ED54C /* FileKey.swift */; };
 		49F2B7FE28846747007ED54C /* ActionCreators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F2B7FD28846747007ED54C /* ActionCreators.swift */; };
+		49F8ED8C28A748C700294AC7 /* StateHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8ED8B28A748C700294AC7 /* StateHelpers.swift */; };
 		7F3DB3EB683C5727F0DEEA0D /* Pods_SIOnline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B118D17261E5B8EB30D59E4A /* Pods_SIOnline.framework */; };
 /* End PBXBuildFile section */
 
@@ -189,6 +190,7 @@
 		49ECB0BF2885ABCF00963195 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		49F2B7FB28826766007ED54C /* FileKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileKey.swift; sourceTree = "<group>"; };
 		49F2B7FD28846747007ED54C /* ActionCreators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCreators.swift; sourceTree = "<group>"; };
+		49F8ED8B28A748C700294AC7 /* StateHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateHelpers.swift; sourceTree = "<group>"; };
 		706AEA9C60F4E83C7C204180 /* Pods-SIOnline.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIOnline.debug.xcconfig"; path = "Target Support Files/Pods-SIOnline/Pods-SIOnline.debug.xcconfig"; sourceTree = "<group>"; };
 		B118D17261E5B8EB30D59E4A /* Pods_SIOnline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIOnline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D8F96D7E82A0BD02C1C923 /* Pods-SIOnline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIOnline.release.xcconfig"; path = "Target Support Files/Pods-SIOnline/Pods-SIOnline.release.xcconfig"; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				49913603288D01BA00A6D935 /* PromiseAsyncExtension.swift */,
 				493C6B792891840300B6A842 /* URLSearchParams.swift */,
 				49B32D652894E97700AA9312 /* UILoadableView.swift */,
+				49F8ED8B28A748C700294AC7 /* StateHelpers.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				4914D2852807CDFA000224A1 /* GameCreationResult.swift in Sources */,
 				495A9ADB280557130035ABE5 /* PlayerStates.swift in Sources */,
 				49B6BC7D280004EC005AC3BE /* ViewController.swift in Sources */,
+				49F8ED8C28A748C700294AC7 /* StateHelpers.swift in Sources */,
 				49C223B228043ACD007170F4 /* MainView.swift in Sources */,
 				493E98AF2831476100913DE7 /* SettingsReducer.swift in Sources */,
 				4914D2832807CBB0000224A1 /* ServerAppSettings.swift in Sources */,

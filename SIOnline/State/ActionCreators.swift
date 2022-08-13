@@ -155,9 +155,7 @@ class ActionCreators: NSObject {
         Thunk { [unowned self] dispatch, getState in
             guard let state = getState() else { return }
             
-            // TODO: - SIO-71 not yet implemented
-            // const requestCulture = getFullCulture(state);
-            let requestCulture = ""
+            let requestCulture = StateHelpers.shared.getFullCulture(state: state)
             
             let computerAccounts = dataContext.gameClient.getComputerAccountsAsync(culture: requestCulture)
             computerAccounts.done { value in
@@ -330,9 +328,7 @@ class ActionCreators: NSObject {
                         
                         ConnectionHelpers.attachListeners(connection: connection, dispatch: dispatch)
                         
-                        // TODO: - SIO-71 not yet implemented
-                        // const requestCulture = getFullCulture(state);
-                        let requestCulture = ""
+                        let requestCulture = StateHelpers.shared.getFullCulture(state: state)
                         
                         let computerAccounts = try await dataContext.gameClient.getComputerAccountsAsync(culture: requestCulture).async()
                         dispatch(computerAccountsChanged(computerAccounts: computerAccounts))
@@ -742,7 +738,7 @@ class ActionCreators: NSObject {
                         randomQuestionsBasePrice: gameMode == .Simple ? 10 : 100,
                         randomRoundsCount: gameMode == .Simple ? 1 : 3,
                         randomThemesCount: gameMode == .Simple ? 5 : 6,
-                        culture: "" // TODO: - Not yet implemented getFullCulture(state)
+                        culture: StateHelpers.shared.getFullCulture(state: state)
                     )
                     
                     let gameSettings = GameSettings(
