@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,21 +16,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9rm-fA-aoR" customClass="ProgressBar" customModule="SIOnline" customModuleProvider="target">
-                                <rect key="frame" x="16" y="364" width="382" height="128"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WJV-Ie-nop" customClass="Dialog" customModule="SIOnline" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9rm-fA-aoR" secondAttribute="trailing" constant="16" id="Z5l-g0-lHB"/>
-                            <constraint firstItem="9rm-fA-aoR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="loj-Df-c9j"/>
-                            <constraint firstItem="9rm-fA-aoR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="y4m-63-o73"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WJV-Ie-nop" secondAttribute="trailing" id="1wi-Cl-ZwB"/>
+                            <constraint firstItem="WJV-Ie-nop" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4mo-lz-pbn"/>
+                            <constraint firstItem="WJV-Ie-nop" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="54P-Iy-hGP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WJV-Ie-nop" secondAttribute="bottom" id="wX1-Pr-Mcv"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="progressBar" destination="9rm-fA-aoR" id="QLY-v5-NAz"/>
+                        <outlet property="dialog" destination="WJV-Ie-nop" id="hl7-4b-nzf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

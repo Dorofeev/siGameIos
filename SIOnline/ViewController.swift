@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     let test = Index()
     
-    @IBOutlet private var progressBar: ProgressBar!
+    @IBOutlet private var dialog: Dialog!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,9 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        progressBar.setup(value: 0.25, valueChangeDuration: 10)
+        dialog.setup(title: "Dialog", children: [UIView()]) {
+            print("close action")
+        }
     }
     func showError(error: Error) {
         print("some error \(error)")
