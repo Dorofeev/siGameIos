@@ -32,6 +32,7 @@
 		491625A12833ED8E00022237 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491625A02833ED8E00022237 /* Reducer.swift */; };
 		491DD390284C58B000403095 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491DD38F284C58B000403095 /* StringHelpers.swift */; };
 		491DD393284C5B0900403095 /* MessageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491DD392284C5B0900403095 /* MessageProcessor.swift */; };
+		4924DC9228B20CB100D67D54 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4924DC9028B20CB100D67D54 /* LoginViewController.swift */; };
 		493C6B7A2891840300B6A842 /* URLSearchParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493C6B792891840300B6A842 /* URLSearchParams.swift */; };
 		493E98AF2831476100913DE7 /* SettingsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493E98AE2831476100913DE7 /* SettingsReducer.swift */; };
 		4942D7C128150842000B3D60 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4942D7C028150842000B3D60 /* Constants.swift */; };
@@ -108,7 +109,6 @@
 		49F8EDA128A8AFC600294AC7 /* Clefs.eot in Resources */ = {isa = PBXBuildFile; fileRef = 49F8ED9828A8AFC600294AC7 /* Clefs.eot */; };
 		49F8EDA228A8AFC600294AC7 /* FuturaC.woff in Resources */ = {isa = PBXBuildFile; fileRef = 49F8ED9928A8AFC600294AC7 /* FuturaC.woff */; };
 		49F8EDA328A8AFC600294AC7 /* FuturaC.eot in Resources */ = {isa = PBXBuildFile; fileRef = 49F8ED9A28A8AFC600294AC7 /* FuturaC.eot */; };
-		49F8EDA428A8AFC600294AC7 /* FuturaC.otf in Resources */ = {isa = PBXBuildFile; fileRef = 49F8ED9B28A8AFC600294AC7 /* FuturaC.otf */; };
 		49F8EDA528A8AFC600294AC7 /* Clefs.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49F8ED9C28A8AFC600294AC7 /* Clefs.ttf */; };
 		7F3DB3EB683C5727F0DEEA0D /* Pods_SIOnline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B118D17261E5B8EB30D59E4A /* Pods_SIOnline.framework */; };
 /* End PBXBuildFile section */
@@ -139,6 +139,7 @@
 		491625A02833ED8E00022237 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		491DD38F284C58B000403095 /* StringHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelpers.swift; sourceTree = "<group>"; };
 		491DD392284C5B0900403095 /* MessageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageProcessor.swift; sourceTree = "<group>"; };
+		4924DC9028B20CB100D67D54 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		493C6B792891840300B6A842 /* URLSearchParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSearchParams.swift; sourceTree = "<group>"; };
 		493E98AE2831476100913DE7 /* SettingsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsReducer.swift; sourceTree = "<group>"; };
 		4942D7C028150842000B3D60 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -217,7 +218,6 @@
 		49F8ED9828A8AFC600294AC7 /* Clefs.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = Clefs.eot; sourceTree = "<group>"; };
 		49F8ED9928A8AFC600294AC7 /* FuturaC.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaC.woff; sourceTree = "<group>"; };
 		49F8ED9A28A8AFC600294AC7 /* FuturaC.eot */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaC.eot; sourceTree = "<group>"; };
-		49F8ED9B28A8AFC600294AC7 /* FuturaC.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuturaC.otf; sourceTree = "<group>"; };
 		49F8ED9C28A8AFC600294AC7 /* Clefs.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Clefs.ttf; sourceTree = "<group>"; };
 		706AEA9C60F4E83C7C204180 /* Pods-SIOnline.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIOnline.debug.xcconfig"; path = "Target Support Files/Pods-SIOnline/Pods-SIOnline.debug.xcconfig"; sourceTree = "<group>"; };
 		B118D17261E5B8EB30D59E4A /* Pods_SIOnline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SIOnline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -271,6 +271,7 @@
 		14C6E473288C015C0040D825 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4924DC8F28B20C9800D67D54 /* Login */,
 				14C6E474288C01810040D825 /* Common */,
 			);
 			path = Components;
@@ -300,6 +301,14 @@
 				491DD392284C5B0900403095 /* MessageProcessor.swift */,
 			);
 			path = Game;
+			sourceTree = "<group>";
+		};
+		4924DC8F28B20C9800D67D54 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4924DC9028B20CB100D67D54 /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		4951098C2803F2350019160E /* Server */ = {
@@ -520,7 +529,6 @@
 				49F8ED9828A8AFC600294AC7 /* Clefs.eot */,
 				49F8ED9928A8AFC600294AC7 /* FuturaC.woff */,
 				49F8ED9A28A8AFC600294AC7 /* FuturaC.eot */,
-				49F8ED9B28A8AFC600294AC7 /* FuturaC.otf */,
 				49F8ED9C28A8AFC600294AC7 /* Clefs.ttf */,
 			);
 			path = fonts;
@@ -600,7 +608,6 @@
 				49B6BC80280004EC005AC3BE /* Main.storyboard in Resources */,
 				49F8EDA028A8AFC600294AC7 /* FuturaC.ttf in Resources */,
 				49F8ED9F28A8AFC600294AC7 /* Clefs.svg in Resources */,
-				49F8EDA428A8AFC600294AC7 /* FuturaC.otf in Resources */,
 				49F8EDA528A8AFC600294AC7 /* Clefs.ttf in Resources */,
 				49F8ED9228A8ACB400294AC7 /* Dialog.xib in Resources */,
 			);
@@ -705,6 +712,7 @@
 				4951098E2803F23F0019160E /* ServerInfo.swift in Sources */,
 				49C5F1E028009E9D003EB248 /* GameType.swift in Sources */,
 				146AC7BA2813EE7A001598FE /* TableReducer.swift in Sources */,
+				4924DC9228B20CB100D67D54 /* LoginViewController.swift in Sources */,
 				4967DE20287C6DD500B0E5B1 /* Alert.swift in Sources */,
 				4905C0DE28431BDA00CFB6BB /* GameErrorsHelper.swift in Sources */,
 				14C6E472288BF54B0040D825 /* PackageFilters.swift in Sources */,

@@ -8,31 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SIOnline" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="SIOnline" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WJV-Ie-nop" customClass="Dialog" customModule="SIOnline" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WJV-Ie-nop" secondAttribute="trailing" id="1wi-Cl-ZwB"/>
-                            <constraint firstItem="WJV-Ie-nop" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4mo-lz-pbn"/>
-                            <constraint firstItem="WJV-Ie-nop" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="54P-Iy-hGP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WJV-Ie-nop" secondAttribute="bottom" id="wX1-Pr-Mcv"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="dialog" destination="WJV-Ie-nop" id="hl7-4b-nzf"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
