@@ -36,18 +36,12 @@ class Dialog: Body {
         return button
     }()
     
-    override func didMoveToSuperview() {
-        super.didMoveToSuperview()
-        if superview != nil {
-            initialSetup()
-        }
-    }
-    
     // MARK: - Setup
     
     func setup(title: String, children: [UIView], onClose: @escaping () -> Void) {
         self.onClose = onClose
         titleLabel.text = title
+        initialSetup()
         children.forEach { contentStackView.addArrangedSubview($0) }
     }
     

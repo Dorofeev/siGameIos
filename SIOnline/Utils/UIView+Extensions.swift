@@ -31,10 +31,10 @@ extension UIView {
     
     func addEnclosedSubview(_ view: UIView, insets: NSDirectionalEdgeInsets = .zero) {
         addSubview(view, activateConstraints: [
-            view.topAnchor.constraint(equalTo: self.topAnchor, constant: insets.top),
-            view.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -insets.bottom),
-            view.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: insets.leading),
-            view.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -insets.trailing),
+            view.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: insets.top),
+            view.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -insets.bottom),
+            view.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: insets.leading),
+            view.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -insets.trailing),
         ])
     }
 }
