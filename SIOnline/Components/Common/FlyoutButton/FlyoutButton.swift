@@ -13,13 +13,6 @@ class FlyoutButton: UIView {
         var isOpen: Bool
     }
     
-    // MARK: - Enums
-    
-    enum FlyoutTheme {
-        case dark
-        case light
-    }
-    
     // MARK: - Properties
     
     private var state = FlyoutButtonState(isOpen: false)
@@ -30,8 +23,6 @@ class FlyoutButton: UIView {
         let button = UIButton()
         button.tintColor = R.color.buttonTint()
         button.backgroundColor = .clear
-        button.layer.borderColor = R.color.buttonTint()?.cgColor
-        button.layer.borderWidth = 1
         button.titleLabel?.font = R.font.futuraCondensed(size: 17)
         return button
     }()
@@ -63,22 +54,8 @@ class FlyoutButton: UIView {
         button.isEnabled = isEnabled
     }
     
-    func setup(flyout: UIView, theme: FlyoutTheme) {
-        func setupLabels(for view: UIView) {
-            for subview in view.subviews {
-                if let label = subview as? UILabel {
-                    label.textColor = .white
-                    label.font = R.font.futuraCondensed(size: 26)
-                } else {
-                    setupLabels(for: view)
-                }
-            }
-        }
-        
-        setupLabels(for: flyout)
+    func setup(flyout: UIView) {
         flyoutView.addEnclosedSubview(flyout)
-        
-        flyout.backgroundColor = theme == .dark ? R.color.backgroundColor() : .white
     }
     
     private func setupLayout() {
@@ -103,8 +80,8 @@ class FlyoutButton: UIView {
         
         window.addSubview(flyoutView, activateConstraints: [
             flyoutView.topAnchor.constraint(equalTo: window.topAnchor, constant: windowFrame.maxY),
-            flyoutView.leadingAnchor.constraint(equalTo: window.leadingAnchor),
-            flyoutView.trailingAnchor.constraint(equalTo: window.trailingAnchor),
+            flyoutView.leadingAnchor.constraint(equalTo: window.leadingAnchor, constant: 10),
+            flyoutView.trailingAnchor.constraint(equalTo: window.trailingAnchor, constant: -10),
         ])
         state.isOpen = true
     }

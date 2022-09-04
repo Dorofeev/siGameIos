@@ -33,6 +33,7 @@
 		491DD390284C58B000403095 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491DD38F284C58B000403095 /* StringHelpers.swift */; };
 		491DD393284C5B0900403095 /* MessageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491DD392284C5B0900403095 /* MessageProcessor.swift */; };
 		4920A5C128C3108B001446C0 /* FlyoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920A5C028C3108B001446C0 /* FlyoutButton.swift */; };
+		4920A5BE28C30843001446C0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920A5BD28C30843001446C0 /* WelcomeViewController.swift */; };
 		4924DC9228B20CB100D67D54 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4924DC9028B20CB100D67D54 /* LoginViewController.swift */; };
 		493C6B7A2891840300B6A842 /* URLSearchParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493C6B792891840300B6A842 /* URLSearchParams.swift */; };
 		493E98AF2831476100913DE7 /* SettingsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493E98AE2831476100913DE7 /* SettingsReducer.swift */; };
@@ -144,6 +145,7 @@
 		491DD38F284C58B000403095 /* StringHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelpers.swift; sourceTree = "<group>"; };
 		491DD392284C5B0900403095 /* MessageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageProcessor.swift; sourceTree = "<group>"; };
 		4920A5C028C3108B001446C0 /* FlyoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyoutButton.swift; sourceTree = "<group>"; };
+		4920A5BD28C30843001446C0 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		4924DC9028B20CB100D67D54 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		493C6B792891840300B6A842 /* URLSearchParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSearchParams.swift; sourceTree = "<group>"; };
 		493E98AE2831476100913DE7 /* SettingsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsReducer.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 		14C6E473288C015C0040D825 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4920A5BC28C3081A001446C0 /* Welcome */,
 				49D2D83A28BB1D0800A73B13 /* About */,
 				496A0F5D28B9F7C900594E41 /* Loading */,
 				4924DC8F28B20C9800D67D54 /* Login */,
@@ -320,6 +323,14 @@
 				4920A5C028C3108B001446C0 /* FlyoutButton.swift */,
 			);
 			path = FlyoutButton;
+			sourceTree = "<group>";
+		};
+		4920A5BC28C3081A001446C0 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				4920A5BD28C30843001446C0 /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		4924DC8F28B20C9800D67D54 /* Login */ = {
@@ -728,6 +739,7 @@
 				14C6E46E2882BB9F0040D825 /* GameServerClient.swift in Sources */,
 				495A9AE4280581C50035ABE5 /* TableMode.swift in Sources */,
 				147069CD2830F1D20045A3E6 /* SettingsActions.swift in Sources */,
+				4920A5BE28C30843001446C0 /* WelcomeViewController.swift in Sources */,
 				146AC7B82813DA07001598FE /* TableActions.swift in Sources */,
 				498972C4287A8DD5007EFA67 /* ConnectionHelpers.swift in Sources */,
 				49ECB0C02885ABCF00963195 /* File.swift in Sources */,
