@@ -32,8 +32,8 @@
 		491625A12833ED8E00022237 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491625A02833ED8E00022237 /* Reducer.swift */; };
 		491DD390284C58B000403095 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491DD38F284C58B000403095 /* StringHelpers.swift */; };
 		491DD393284C5B0900403095 /* MessageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491DD392284C5B0900403095 /* MessageProcessor.swift */; };
-		4920A5C128C3108B001446C0 /* FlyoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920A5C028C3108B001446C0 /* FlyoutButton.swift */; };
 		4920A5BE28C30843001446C0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920A5BD28C30843001446C0 /* WelcomeViewController.swift */; };
+		4920A5C128C3108B001446C0 /* FlyoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920A5C028C3108B001446C0 /* FlyoutButton.swift */; };
 		4924DC9228B20CB100D67D54 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4924DC9028B20CB100D67D54 /* LoginViewController.swift */; };
 		493C6B7A2891840300B6A842 /* URLSearchParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493C6B792891840300B6A842 /* URLSearchParams.swift */; };
 		493E98AF2831476100913DE7 /* SettingsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493E98AE2831476100913DE7 /* SettingsReducer.swift */; };
@@ -76,6 +76,7 @@
 		498BE642280970450096AF75 /* SearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BE641280970450096AF75 /* SearchEntity.swift */; };
 		498BE644280971100096AF75 /* ActionTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BE643280971100096AF75 /* ActionTypes.swift */; };
 		49913604288D01BA00A6D935 /* PromiseAsyncExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49913603288D01BA00A6D935 /* PromiseAsyncExtension.swift */; };
+		49935C2128C5F591007E6E8B /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49935C2028C5F591007E6E8B /* CheckBox.swift */; };
 		49A3839128AD33C3005D6D84 /* LabelStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3839028AD33C3005D6D84 /* LabelStyles.swift */; };
 		49A3839328AD3DEB005D6D84 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3839228AD3DEB005D6D84 /* UIView+Extensions.swift */; };
 		49AC2F6928A9501C0038150F /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AC2F6828A9501C0038150F /* Body.swift */; };
@@ -144,8 +145,8 @@
 		491625A02833ED8E00022237 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		491DD38F284C58B000403095 /* StringHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelpers.swift; sourceTree = "<group>"; };
 		491DD392284C5B0900403095 /* MessageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageProcessor.swift; sourceTree = "<group>"; };
-		4920A5C028C3108B001446C0 /* FlyoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyoutButton.swift; sourceTree = "<group>"; };
 		4920A5BD28C30843001446C0 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		4920A5C028C3108B001446C0 /* FlyoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyoutButton.swift; sourceTree = "<group>"; };
 		4924DC9028B20CB100D67D54 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		493C6B792891840300B6A842 /* URLSearchParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSearchParams.swift; sourceTree = "<group>"; };
 		493E98AE2831476100913DE7 /* SettingsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsReducer.swift; sourceTree = "<group>"; };
@@ -188,6 +189,7 @@
 		498BE641280970450096AF75 /* SearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEntity.swift; sourceTree = "<group>"; };
 		498BE643280971100096AF75 /* ActionTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTypes.swift; sourceTree = "<group>"; };
 		49913603288D01BA00A6D935 /* PromiseAsyncExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseAsyncExtension.swift; sourceTree = "<group>"; };
+		49935C2028C5F591007E6E8B /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		49A3839028AD33C3005D6D84 /* LabelStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStyles.swift; sourceTree = "<group>"; };
 		49A3839228AD3DEB005D6D84 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		49AC2F6828A9501C0038150F /* Body.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 		14C6E474288C01810040D825 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				49935C1F28C5F571007E6E8B /* CheckBox */,
 				4920A5BF28C30FE7001446C0 /* FlyoutButton */,
 				49F8ED8E28A8AC8D00294AC7 /* Dialog */,
 				49F8ED8D28A8AC8300294AC7 /* ProgressBar */,
@@ -317,20 +320,20 @@
 			path = Game;
 			sourceTree = "<group>";
 		};
-		4920A5BF28C30FE7001446C0 /* FlyoutButton */ = {
-			isa = PBXGroup;
-			children = (
-				4920A5C028C3108B001446C0 /* FlyoutButton.swift */,
-			);
-			path = FlyoutButton;
-			sourceTree = "<group>";
-		};
 		4920A5BC28C3081A001446C0 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
 				4920A5BD28C30843001446C0 /* WelcomeViewController.swift */,
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		4920A5BF28C30FE7001446C0 /* FlyoutButton */ = {
+			isa = PBXGroup;
+			children = (
+				4920A5C028C3108B001446C0 /* FlyoutButton.swift */,
+			);
+			path = FlyoutButton;
 			sourceTree = "<group>";
 		};
 		4924DC8F28B20C9800D67D54 /* Login */ = {
@@ -399,6 +402,14 @@
 				14C6E46D2882BB9F0040D825 /* GameServerClient.swift */,
 			);
 			path = Client;
+			sourceTree = "<group>";
+		};
+		49935C1F28C5F571007E6E8B /* CheckBox */ = {
+			isa = PBXGroup;
+			children = (
+				49935C2028C5F591007E6E8B /* CheckBox.swift */,
+			);
+			path = CheckBox;
 			sourceTree = "<group>";
 		};
 		49AC2F6728A94FF50038150F /* Style */ = {
@@ -794,6 +805,7 @@
 				491625A12833ED8E00022237 /* Reducer.swift in Sources */,
 				4967FD652816E9F600A85F13 /* runReducer.swift in Sources */,
 				49C5F1D928008052003EB248 /* State.swift in Sources */,
+				49935C2128C5F591007E6E8B /* CheckBox.swift in Sources */,
 				49F2B7FE28846747007ED54C /* ActionCreators.swift in Sources */,
 				4942D7C128150842000B3D60 /* Constants.swift in Sources */,
 				497875E12806D53C00116DE1 /* Slice.swift in Sources */,
