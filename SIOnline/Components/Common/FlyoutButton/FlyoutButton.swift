@@ -19,7 +19,7 @@ class FlyoutButton: UIView {
     
     // MARK: - Views
     
-    private lazy var button: UIButton = {
+    lazy var button: UIButton = {
         let button = UIButton()
         button.tintColor = R.color.buttonTint()
         button.backgroundColor = .clear

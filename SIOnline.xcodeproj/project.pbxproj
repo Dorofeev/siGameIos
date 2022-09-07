@@ -30,6 +30,7 @@
 		4914D2852807CDFA000224A1 /* GameCreationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2842807CDFA000224A1 /* GameCreationResult.swift */; };
 		4914D2872807CE4B000224A1 /* GameCreationResultCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2862807CE4B000224A1 /* GameCreationResultCode.swift */; };
 		491625A12833ED8E00022237 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491625A02833ED8E00022237 /* Reducer.swift */; };
+		491BF91B28C85A7400516ED9 /* LobbyMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491BF91A28C85A7400516ED9 /* LobbyMenu.swift */; };
 		491DD390284C58B000403095 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491DD38F284C58B000403095 /* StringHelpers.swift */; };
 		491DD393284C5B0900403095 /* MessageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491DD392284C5B0900403095 /* MessageProcessor.swift */; };
 		4920A5BE28C30843001446C0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920A5BD28C30843001446C0 /* WelcomeViewController.swift */; };
@@ -144,6 +145,7 @@
 		4914D2842807CDFA000224A1 /* GameCreationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCreationResult.swift; sourceTree = "<group>"; };
 		4914D2862807CE4B000224A1 /* GameCreationResultCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCreationResultCode.swift; sourceTree = "<group>"; };
 		491625A02833ED8E00022237 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
+		491BF91A28C85A7400516ED9 /* LobbyMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyMenu.swift; sourceTree = "<group>"; };
 		491DD38F284C58B000403095 /* StringHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelpers.swift; sourceTree = "<group>"; };
 		491DD392284C5B0900403095 /* MessageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageProcessor.swift; sourceTree = "<group>"; };
 		4920A5BD28C30843001446C0 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 		14C6E473288C015C0040D825 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				491BF91928C85A6700516ED9 /* LobbyMenu */,
 				4920A5BC28C3081A001446C0 /* Welcome */,
 				49D2D83A28BB1D0800A73B13 /* About */,
 				496A0F5D28B9F7C900594E41 /* Loading */,
@@ -312,6 +315,14 @@
 				C2D8F96D7E82A0BD02C1C923 /* Pods-SIOnline.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		491BF91928C85A6700516ED9 /* LobbyMenu */ = {
+			isa = PBXGroup;
+			children = (
+				491BF91A28C85A7400516ED9 /* LobbyMenu.swift */,
+			);
+			path = LobbyMenu;
 			sourceTree = "<group>";
 		};
 		491DD391284C5AF700403095 /* Game */ = {
@@ -804,6 +815,7 @@
 				49C223BA280446E5007170F4 /* ServerPersonInfo.swift in Sources */,
 				497875DD2806D19700116DE1 /* IGameServerClient.swift in Sources */,
 				49A3839328AD3DEB005D6D84 /* UIView+Extensions.swift in Sources */,
+				491BF91B28C85A7400516ED9 /* LobbyMenu.swift in Sources */,
 				495A9ADF28057EE60035ABE5 /* TimerInfo.swift in Sources */,
 				1411F7B02894EB0100332DB9 /* UILoadableView.swift in Sources */,
 				491625A12833ED8E00022237 /* Reducer.swift in Sources */,
