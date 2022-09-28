@@ -36,7 +36,7 @@ struct State {
             online: StateOnline(
                 inProgress: false,
                 error: "",
-                gamesFilter: .noFilter,
+                gamesFilter: 0,
                 gamesSearch: "",
                 games: [:],
                 selectedGameId: -1,
@@ -119,7 +119,7 @@ struct StateUI {
 struct StateOnline {
     var inProgress: Bool
     var error: String
-    var gamesFilter: GamesFilter
+    var gamesFilter: Int
     var gamesSearch: String
     var games: [Int: GameInfo]
     var selectedGameId: Int

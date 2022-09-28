@@ -95,8 +95,7 @@ let reducer: Reducer<State> = { action, state in
         state.online.error = error
     case .gamesFilterToggle(let filter):
         // TODO: - check how its working
-        let rawValue = state.online.gamesFilter.rawValue ^ filter.rawValue
-        state.online.gamesFilter = GamesFilter(rawValue: rawValue)!
+        state.online.gamesFilter = state.online.gamesFilter ^ filter.rawValue
     case .gamesSearchChanged(let search):
         state.online.gamesSearch = search
     case .selectGame(let gameId ,let showInfo):
