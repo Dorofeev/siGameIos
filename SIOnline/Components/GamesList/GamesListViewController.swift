@@ -122,6 +122,14 @@ class GamesListViewController: UIViewController {
         return stackView
     }()
     
+    private lazy var newAutoGameButton: UIButton = {
+        var button = UIButton()
+        button.backgroundColor = R.color.standartButtonBackground()
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 19)
+        button.setTitle(R.string.localizable.autoSearch(), for: .normal)
+        return button
+    }()
+    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -185,6 +193,8 @@ class GamesListViewController: UIViewController {
         gamesTableView.isHidden = !state.online.error.isEmpty
         loadErrorLabel.isHidden = state.online.error.isEmpty
         loadErrorLabel.text = state.online.error
+        
+        newAutoGameButton.isEnabled = state.common.isConnected
     }
     
     private func setupLayout() {
@@ -248,7 +258,8 @@ class GamesListViewController: UIViewController {
         view.addSubview(commandButtonsPanel, activateConstraints: [
             commandButtonsPanel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
             commandButtonsPanel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
-            commandButtonsPanel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8)
+            commandButtonsPanel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8),
+            commandButtonsPanel.heightAnchor.constraint(equalToConstant: 45)
         ])
     }
     
@@ -273,6 +284,11 @@ class GamesListViewController: UIViewController {
             guard let text = self?.gamesSearchTextField.text else { return }
             self?.dispatch?(ActionCreators.shared.onGamesSearchChanged(search: text))
         }), for: .editingChanged)
+        
+        newAutoGameButton.addAction(UIAction(handler: { [weak self] _ in
+            guard let dataContext = Index.dataContext else { return }
+            self?.dispatch?(ActionCreators.shared.createNewAutoGame(dataContext: dataContext))
+        }), for: .touchUpInside)
     }
 }
 

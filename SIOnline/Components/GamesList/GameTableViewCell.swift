@@ -25,12 +25,17 @@ class GameTableViewCell: UITableViewCell {
         return label
     }()
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = .clear
         self.backgroundColor = .clear
         self.backgroundView?.backgroundColor = .clear
+        self.selectionStyle = .none
         setupLayout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func fill(_ info: GameInfo) {
