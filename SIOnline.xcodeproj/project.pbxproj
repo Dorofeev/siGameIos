@@ -80,6 +80,7 @@
 		49935C2128C5F591007E6E8B /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49935C2028C5F591007E6E8B /* CheckBox.swift */; };
 		49A3839128AD33C3005D6D84 /* LabelStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3839028AD33C3005D6D84 /* LabelStyles.swift */; };
 		49A3839328AD3DEB005D6D84 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3839228AD3DEB005D6D84 /* UIView+Extensions.swift */; };
+		49A42F0328DA08C8004D4091 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A42F0228DA08C8004D4091 /* GameTableViewCell.swift */; };
 		49AC2F6928A9501C0038150F /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AC2F6828A9501C0038150F /* Body.swift */; };
 		49B6BC79280004EC005AC3BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6BC78280004EC005AC3BE /* AppDelegate.swift */; };
 		49B6BC7B280004EC005AC3BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6BC7A280004EC005AC3BE /* SceneDelegate.swift */; };
@@ -103,6 +104,7 @@
 		49C5F1EB28019CFA003EB248 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49C5F1E928019CFA003EB248 /* Localizable.strings */; };
 		49D2D83C28BB1D2A00A73B13 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2D83B28BB1D2A00A73B13 /* AboutViewController.swift */; };
 		49D2D83E28BB4A2800A73B13 /* LinkedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2D83D28BB4A2800A73B13 /* LinkedLabel.swift */; };
+		49DDBAA528C9BE89002ACEB0 /* GamesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDBAA428C9BE89002ACEB0 /* GamesListViewController.swift */; };
 		49E7BC522806EAA900843FB7 /* PackageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E7BC512806EAA900843FB7 /* PackageKey.swift */; };
 		49ECB0C02885ABCF00963195 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ECB0BF2885ABCF00963195 /* File.swift */; };
 		49F2B7FC28826766007ED54C /* FileKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F2B7FB28826766007ED54C /* FileKey.swift */; };
@@ -195,7 +197,9 @@
 		49935C2028C5F591007E6E8B /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		49A3839028AD33C3005D6D84 /* LabelStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStyles.swift; sourceTree = "<group>"; };
 		49A3839228AD3DEB005D6D84 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		49A42F0228DA08C8004D4091 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		49AC2F6828A9501C0038150F /* Body.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
+		49AF9DFF29151F090015C7EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		49B6BC75280004EC005AC3BE /* SIOnline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SIOnline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B6BC78280004EC005AC3BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49B6BC7A280004EC005AC3BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 		49C5F1EA28019CFA003EB248 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		49D2D83B28BB1D2A00A73B13 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		49D2D83D28BB4A2800A73B13 /* LinkedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedLabel.swift; sourceTree = "<group>"; };
+		49DDBAA428C9BE89002ACEB0 /* GamesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListViewController.swift; sourceTree = "<group>"; };
 		49E7BC512806EAA900843FB7 /* PackageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageKey.swift; sourceTree = "<group>"; };
 		49ECB0BF2885ABCF00963195 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		49F2B7FB28826766007ED54C /* FileKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileKey.swift; sourceTree = "<group>"; };
@@ -287,6 +292,7 @@
 		14C6E473288C015C0040D825 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				49DDBAA328C9BE7A002ACEB0 /* GamesList */,
 				491BF91928C85A6700516ED9 /* LobbyMenu */,
 				4920A5BC28C3081A001446C0 /* Welcome */,
 				49D2D83A28BB1D0800A73B13 /* About */,
@@ -565,6 +571,15 @@
 			path = About;
 			sourceTree = "<group>";
 		};
+		49DDBAA328C9BE7A002ACEB0 /* GamesList */ = {
+			isa = PBXGroup;
+			children = (
+				49DDBAA428C9BE89002ACEB0 /* GamesListViewController.swift */,
+				49A42F0228DA08C8004D4091 /* GameTableViewCell.swift */,
+			);
+			path = GamesList;
+			sourceTree = "<group>";
+		};
 		49F2B7FA28826758007ED54C /* Contracts */ = {
 			isa = PBXGroup;
 			children = (
@@ -811,6 +826,7 @@
 				49D2D83E28BB4A2800A73B13 /* LinkedLabel.swift in Sources */,
 				146DF0D02843758C005C0C81 /* ErrorHelpers.swift in Sources */,
 				495A9AD528054B6A0035ABE5 /* Sex.swift in Sources */,
+				49DDBAA528C9BE89002ACEB0 /* GamesListViewController.swift in Sources */,
 				495A9AE2280581080035ABE5 /* TableState.swift in Sources */,
 				49C223BA280446E5007170F4 /* ServerPersonInfo.swift in Sources */,
 				497875DD2806D19700116DE1 /* IGameServerClient.swift in Sources */,
@@ -837,6 +853,7 @@
 				4920A5C128C3108B001446C0 /* FlyoutButton.swift in Sources */,
 				49545A252822C65200E161FA /* Logger.swift in Sources */,
 				4951098B2803D6C80019160E /* R.generated.swift in Sources */,
+				49A42F0328DA08C8004D4091 /* GameTableViewCell.swift in Sources */,
 				49C5F1DE280082CE003EB248 /* Role.swift in Sources */,
 				4942D7C328151962000B3D60 /* TimerInfoHelpers.swift in Sources */,
 				498BE644280971100096AF75 /* ActionTypes.swift in Sources */,
@@ -878,6 +895,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				49C5F1EA28019CFA003EB248 /* ru */,
+				49AF9DFF29151F090015C7EF /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

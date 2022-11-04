@@ -56,6 +56,13 @@ class FlyoutButton: UIView {
     
     func setup(flyout: UIView) {
         flyoutView.addEnclosedSubview(flyout)
+        
+        flyoutView.backgroundColor = R.color.backgroundColor()
+        flyoutView.layer.masksToBounds = false
+        flyoutView.layer.shadowColor = UIColor.black.cgColor
+        flyoutView.layer.shadowOpacity = 0.5
+        flyoutView.layer.shadowOffset = CGSize(width: -1, height: 1)
+        flyoutView.layer.shadowRadius = 5
     }
     
     private func setupLayout() {

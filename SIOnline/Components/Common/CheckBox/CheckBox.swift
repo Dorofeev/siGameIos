@@ -9,13 +9,23 @@ import UIKit
 
 class CheckBox: UIView {
     
+    // MARK: - Properties
+    
+    private var onClick: (() -> Void)?
+    
+    // MARK: - Views
+    
     private lazy var checkmarkLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .white
+        label.font = R.font.futuraCondensed(size: 26)
         return label
     }()
     
     private lazy var headerLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .white
+        label.font = R.font.futuraCondensed(size: 26)
         return label
     }()
     
@@ -43,8 +53,20 @@ class CheckBox: UIView {
         checkmarkLabel.text = isChecked ? "✔" : ""
     }
     
+    func setup(onClick: @escaping () -> Void) {
+        self.onClick = onClick
+    }
+    
+    func setup(isEnabled: Bool) {
+        self.isUserInteractionEnabled = isEnabled
+        self.checkmarkLabel.textColor = isEnabled ? UIColor.white : UIColor.darkGray
+        self.headerLabel.textColor = isEnabled ? UIColor.white : UIColor.darkGray
+    }
+    
     private func initialSetup() {
         self.backgroundColor = .clear
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onClickAction))
+        self.addGestureRecognizer(tapGesture)
     }
     
     private func setupLayout() {
@@ -59,5 +81,8 @@ class CheckBox: UIView {
             headerLabel.leadingAnchor.constraint(equalTo: checkmarkLabel.trailingAnchor, constant: 8),
         ])
     }
-
+    
+    @objc private func onClickAction() {
+        onClick?()
+    }
 }
