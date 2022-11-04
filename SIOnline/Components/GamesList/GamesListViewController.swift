@@ -117,8 +117,9 @@ class GamesListViewController: UIViewController {
     
     private lazy var commandButtonsPanel: UIStackView = {
         let stackView = UIStackView()
-        stackView.axis = .horizontal
+        stackView.axis = .vertical
         stackView.spacing = 8
+        stackView.distribution = .fillEqually
         return stackView
     }()
     
@@ -127,6 +128,14 @@ class GamesListViewController: UIViewController {
         button.backgroundColor = R.color.standartButtonBackground()
         button.titleLabel?.font = UIFont.systemFont(ofSize: 19)
         button.setTitle(R.string.localizable.autoSearch(), for: .normal)
+        return button
+    }()
+    
+    private lazy var newGameButton: UIButton = {
+        var button = UIButton()
+        button.backgroundColor = R.color.standartButtonBackground()
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 19)
+        button.setTitle(R.string.localizable.newGame(), for: .normal)
         return button
     }()
     
@@ -195,6 +204,7 @@ class GamesListViewController: UIViewController {
         loadErrorLabel.text = state.online.error
         
         newAutoGameButton.isEnabled = state.common.isConnected
+        newGameButton.isEnabled = state.common.isConnected
     }
     
     private func setupLayout() {
@@ -258,9 +268,15 @@ class GamesListViewController: UIViewController {
         view.addSubview(commandButtonsPanel, activateConstraints: [
             commandButtonsPanel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
             commandButtonsPanel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
-            commandButtonsPanel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8),
-            commandButtonsPanel.heightAnchor.constraint(equalToConstant: 45)
+            commandButtonsPanel.bottomAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.bottomAnchor,
+                constant: -8
+            ),
+            commandButtonsPanel.heightAnchor.constraint(equalToConstant: 98)
         ])
+        
+        commandButtonsPanel.addArrangedSubview(newAutoGameButton)
+        commandButtonsPanel.addArrangedSubview(newGameButton)
     }
     
     private func setupActions() {
@@ -288,6 +304,10 @@ class GamesListViewController: UIViewController {
         newAutoGameButton.addAction(UIAction(handler: { [weak self] _ in
             guard let dataContext = Index.dataContext else { return }
             self?.dispatch?(ActionCreators.shared.createNewAutoGame(dataContext: dataContext))
+        }), for: .touchUpInside)
+        
+        newGameButton.addAction(UIAction(handler: { [weak self] _ in
+            self?.dispatch?(ActionCreators.shared.newGame())
         }), for: .touchUpInside)
     }
 }
