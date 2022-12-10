@@ -13,10 +13,18 @@ class GameInfoViewController: UIViewController {
     
     // MARK: - Views
     
-    private lazy var innerInfoView: UIView = {
-        let view = UIView()
-        
+    private lazy var innerInfoView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .vertical
         return view
+    }()
+    
+    private lazy var gameNameContainer = UIView()
+    private lazy var gameNameLabel: UILabel = {
+        let label = UILabel()
+        label.font = R.font.futuraCondensed(size: 36)
+        label.textColor = .white
+        return label
     }()
     
     // MARK: - Lifecycle
@@ -24,6 +32,26 @@ class GameInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        setupLayout()
+        
+        setup(
+            game: GameInfo(
+                gameID: 0,
+                gameName: "Test game",
+                language: "",
+                mode: .Classic,
+                owner: "",
+                packageName: "",
+                passwordRequired: true,
+                persons: [],
+                realStartTime: "",
+                rules: 0,
+                stage: 0,
+                stageName: "",
+                started: false,
+                startTime: ""
+            ),
+            showGameName: false)
     }
     
     // MARK: - Setup
@@ -33,6 +61,23 @@ class GameInfoViewController: UIViewController {
     }
     
     private func setupLayout() {
-        view.addEnclosedSubview(innerInfoView, insets: NSDirectionalEdgeInsets(top: 30, leading: 0, bottom: 0, trailing: 0))
+        view.addEnclosedSubview(
+            innerInfoView,
+            insets: NSDirectionalEdgeInsets(top: 30, leading: 0, bottom: 0, trailing: 0)
+        )
+        
+        gameNameContainer.addEnclosedSubview(
+            gameNameLabel,
+            insets: NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0)
+        )
+        
+        innerInfoView.addArrangedSubview(gameNameContainer)
+    }
+    
+    // MARK: - Public setup
+    
+    func setup(game: GameInfo, showGameName: Bool) {
+        gameNameContainer.isHidden = !showGameName
+        gameNameLabel.text = game.gameName
     }
 }
