@@ -27,6 +27,8 @@ class GameInfoViewController: UIViewController {
         return label
     }()
     
+    private lazy var scrollView = UIScrollView()
+    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -51,7 +53,7 @@ class GameInfoViewController: UIViewController {
                 started: false,
                 startTime: ""
             ),
-            showGameName: false)
+            showGameName: true)
     }
     
     // MARK: - Setup
@@ -72,6 +74,8 @@ class GameInfoViewController: UIViewController {
         )
         
         innerInfoView.addArrangedSubview(gameNameContainer)
+        innerInfoView.addArrangedSubview(scrollView)
+        
     }
     
     // MARK: - Public setup
