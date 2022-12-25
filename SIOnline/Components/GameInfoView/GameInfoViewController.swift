@@ -29,6 +29,28 @@ class GameInfoViewController: UIViewController {
     
     private lazy var scrollView = UIScrollView()
     
+    private lazy var hostStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.addArrangedSubview(hostLabel)
+        stackView.addArrangedSubview(ownerLabel)
+        return stackView
+    }()
+    
+    private lazy var hostLabel: UILabel = {
+        let label = UILabel()
+        label.font = R.font.futuraCondensed(size: 14)
+        label.textColor = .white
+        return label
+    }()
+    
+    private lazy var ownerLabel: UILabel = {
+        let label = UILabel()
+        label.font = R.font.futuraCondensed(size: 18)
+        label.textColor = .white
+        return label
+    }()
+    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -76,6 +98,15 @@ class GameInfoViewController: UIViewController {
         innerInfoView.addArrangedSubview(gameNameContainer)
         innerInfoView.addArrangedSubview(scrollView)
         
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        
+        scrollView.addEnclosedSubview(
+            stackView,
+            insets: NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0)
+        )
+        
+        stackView.addArrangedSubview(hostStackView)
     }
     
     // MARK: - Public setup
