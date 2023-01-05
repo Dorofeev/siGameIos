@@ -41,10 +41,34 @@ class GameInfoViewController: UIViewController {
         let label = UILabel()
         label.font = R.font.futuraCondensed(size: 14)
         label.textColor = .white
+        label.text = R.string.localizable.host()
         return label
     }()
     
     private lazy var ownerLabel: UILabel = {
+        let label = UILabel()
+        label.font = R.font.futuraCondensed(size: 18)
+        label.textColor = .white
+        return label
+    }()
+    
+    private lazy var questionPackageStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.addArrangedSubview(questionPackageLabel)
+        stackView.addArrangedSubview(packageNameLabel)
+        return stackView
+    }()
+    
+    private lazy var questionPackageLabel: UILabel = {
+        let label = UILabel()
+        label.font = R.font.futuraCondensed(size: 14)
+        label.textColor = .white
+        label.text = R.string.localizable.questionPackage()
+        return label
+    }()
+    
+    private lazy var packageNameLabel: UILabel = {
         let label = UILabel()
         label.font = R.font.futuraCondensed(size: 18)
         label.textColor = .white
@@ -64,8 +88,8 @@ class GameInfoViewController: UIViewController {
                 gameName: "Test game",
                 language: "",
                 mode: .Classic,
-                owner: "",
-                packageName: "",
+                owner: "Kormak",
+                packageName: "Большой мешок сюрпризов",
                 passwordRequired: true,
                 persons: [],
                 realStartTime: "",
@@ -107,6 +131,7 @@ class GameInfoViewController: UIViewController {
         )
         
         stackView.addArrangedSubview(hostStackView)
+        stackView.addArrangedSubview(questionPackageStackView)
     }
     
     // MARK: - Public setup
@@ -114,5 +139,8 @@ class GameInfoViewController: UIViewController {
     func setup(game: GameInfo, showGameName: Bool) {
         gameNameContainer.isHidden = !showGameName
         gameNameLabel.text = game.gameName
+        
+        ownerLabel.text = game.owner
+        packageNameLabel.text = game.packageName
     }
 }
