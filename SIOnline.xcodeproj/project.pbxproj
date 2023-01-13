@@ -78,6 +78,7 @@
 		498BE644280971100096AF75 /* ActionTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BE643280971100096AF75 /* ActionTypes.swift */; };
 		49913604288D01BA00A6D935 /* PromiseAsyncExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49913603288D01BA00A6D935 /* PromiseAsyncExtension.swift */; };
 		49935C2128C5F591007E6E8B /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49935C2028C5F591007E6E8B /* CheckBox.swift */; };
+		4997A7372971B43400F94D5D /* RulesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4997A7362971B43400F94D5D /* RulesCollectionViewCell.swift */; };
 		49A3839128AD33C3005D6D84 /* LabelStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3839028AD33C3005D6D84 /* LabelStyles.swift */; };
 		49A3839328AD3DEB005D6D84 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3839228AD3DEB005D6D84 /* UIView+Extensions.swift */; };
 		49A42F0328DA08C8004D4091 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A42F0228DA08C8004D4091 /* GameTableViewCell.swift */; };
@@ -196,6 +197,7 @@
 		498BE643280971100096AF75 /* ActionTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTypes.swift; sourceTree = "<group>"; };
 		49913603288D01BA00A6D935 /* PromiseAsyncExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseAsyncExtension.swift; sourceTree = "<group>"; };
 		49935C2028C5F591007E6E8B /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		4997A7362971B43400F94D5D /* RulesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesCollectionViewCell.swift; sourceTree = "<group>"; };
 		49A3839028AD33C3005D6D84 /* LabelStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStyles.swift; sourceTree = "<group>"; };
 		49A3839228AD3DEB005D6D84 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		49A42F0228DA08C8004D4091 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
@@ -449,6 +451,7 @@
 			isa = PBXGroup;
 			children = (
 				49AF9E012915228A0015C7EF /* GameInfoViewController.swift */,
+				4997A7362971B43400F94D5D /* RulesCollectionViewCell.swift */,
 			);
 			path = GameInfoView;
 			sourceTree = "<group>";
@@ -827,6 +830,7 @@
 				14C6E4702882CDEC0040D825 /* UnknownError.swift in Sources */,
 				491DD393284C5B0900403095 /* MessageProcessor.swift in Sources */,
 				146DF0CE284350DE005C0C81 /* tableActionCreators.swift in Sources */,
+				4997A7372971B43400F94D5D /* RulesCollectionViewCell.swift in Sources */,
 				4914D2872807CE4B000224A1 /* GameCreationResultCode.swift in Sources */,
 				497875D62806A9CC00116DE1 /* AppSettings.swift in Sources */,
 				495A9ACA28048F6B0035ABE5 /* ChatMessage.swift in Sources */,

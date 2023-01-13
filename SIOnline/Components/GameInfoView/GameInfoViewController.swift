@@ -9,20 +9,19 @@ import UIKit
 
 class GameInfoViewController: UIViewController {
     
-    // color: white;
-    
     // MARK: - Views
     
     private lazy var innerInfoView: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
+        view.spacing = 16
         return view
     }()
     
     private lazy var gameNameContainer = UIView()
     private lazy var gameNameLabel: UILabel = {
         let label = UILabel()
-        label.font = R.font.futuraCondensed(size: 36)
+        label.font = R.font.futuraCondensed(size: 54)
         label.textColor = .white
         return label
     }()
@@ -39,7 +38,7 @@ class GameInfoViewController: UIViewController {
     
     private lazy var hostLabel: UILabel = {
         let label = UILabel()
-        label.font = R.font.futuraCondensed(size: 14)
+        label.font = R.font.futuraCondensed(size: 21)
         label.textColor = .white
         label.text = R.string.localizable.host()
         return label
@@ -47,7 +46,7 @@ class GameInfoViewController: UIViewController {
     
     private lazy var ownerLabel: UILabel = {
         let label = UILabel()
-        label.font = R.font.futuraCondensed(size: 18)
+        label.font = R.font.futuraCondensed(size: 27)
         label.textColor = .white
         return label
     }()
@@ -62,7 +61,7 @@ class GameInfoViewController: UIViewController {
     
     private lazy var questionPackageLabel: UILabel = {
         let label = UILabel()
-        label.font = R.font.futuraCondensed(size: 14)
+        label.font = R.font.futuraCondensed(size: 21)
         label.textColor = .white
         label.text = R.string.localizable.questionPackage()
         return label
@@ -70,9 +69,31 @@ class GameInfoViewController: UIViewController {
     
     private lazy var packageNameLabel: UILabel = {
         let label = UILabel()
-        label.font = R.font.futuraCondensed(size: 18)
+        label.font = R.font.futuraCondensed(size: 27)
         label.textColor = .white
         return label
+    }()
+    
+    private lazy var rulesStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.addArrangedSubview(rulesLabel)
+        stackView.addArrangedSubview(rulesCollectionView)
+        return stackView
+    }()
+    
+    private lazy var rulesLabel: UILabel = {
+        let label = UILabel()
+        label.font = R.font.futuraCondensed(size: 21)
+        label.textColor = .white
+        label.text = R.string.localizable.rules()
+        return label
+    }()
+    
+    private lazy var rulesCollectionView: UICollectionView = {
+        let collectionView = UICollectionView()
+        collectionView.register(RulesCollectionViewCell.self, forCellWithReuseIdentifier: "RulesCollectionViewCell")
+        return collectionView
     }()
     
     // MARK: - Lifecycle
@@ -111,7 +132,7 @@ class GameInfoViewController: UIViewController {
     private func setupLayout() {
         view.addEnclosedSubview(
             innerInfoView,
-            insets: NSDirectionalEdgeInsets(top: 30, leading: 0, bottom: 0, trailing: 0)
+            insets: NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         )
         
         gameNameContainer.addEnclosedSubview(
@@ -121,9 +142,11 @@ class GameInfoViewController: UIViewController {
         
         innerInfoView.addArrangedSubview(gameNameContainer)
         innerInfoView.addArrangedSubview(scrollView)
+        innerInfoView.addArrangedSubview(UIView())
         
         let stackView = UIStackView()
         stackView.axis = .vertical
+        stackView.spacing = 8
         
         scrollView.addEnclosedSubview(
             stackView,
@@ -132,6 +155,7 @@ class GameInfoViewController: UIViewController {
         
         stackView.addArrangedSubview(hostStackView)
         stackView.addArrangedSubview(questionPackageStackView)
+        stackView.addArrangedSubview(rulesLabel)
     }
     
     // MARK: - Public setup
@@ -143,4 +167,26 @@ class GameInfoViewController: UIViewController {
         ownerLabel.text = game.owner
         packageNameLabel.text = game.packageName
     }
+}
+
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
+
+extension GameInfoViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: "RulesCollectionViewCell",
+            for: indexPath
+        ) as? RulesCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        cell.fill(title: "")
+        return cell
+    }
+    
+    
 }
