@@ -5,6 +5,7 @@
 //  Created by Andrey Dorofeev on 04.11.2022.
 //
 
+import AlignedCollectionViewFlowLayout
 import UIKit
 
 class GameInfoViewController: UIViewController {
@@ -77,6 +78,7 @@ class GameInfoViewController: UIViewController {
     private lazy var rulesStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
+        stackView.spacing = 4
         stackView.addArrangedSubview(rulesLabel)
         stackView.addArrangedSubview(rulesCollectionView)
         return stackView
@@ -91,10 +93,26 @@ class GameInfoViewController: UIViewController {
     }()
     
     private lazy var rulesCollectionView: UICollectionView = {
-        let collectionView = UICollectionView()
+        let layout = AlignedCollectionViewFlowLayout(horizontalAlignment: .left)
+        layout.scrollDirection = .horizontal
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        let collectionView = UICollectionView(
+            frame: .zero,
+            collectionViewLayout: layout
+        )
         collectionView.register(RulesCollectionViewCell.self, forCellWithReuseIdentifier: "RulesCollectionViewCell")
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.backgroundColor = .clear
+        collectionView.showsHorizontalScrollIndicator = false
+        
+        collectionView.heightAnchor.constraint(equalToConstant: 36).isActive = true
         return collectionView
     }()
+    
+    // MARK: - private properties
+    
+    private var rules: [String] = []
     
     // MARK: - Lifecycle
 
@@ -114,7 +132,7 @@ class GameInfoViewController: UIViewController {
                 passwordRequired: true,
                 persons: [],
                 realStartTime: "",
-                rules: 0,
+                rules: 4,
                 stage: 0,
                 stageName: "",
                 started: false,
@@ -155,7 +173,7 @@ class GameInfoViewController: UIViewController {
         
         stackView.addArrangedSubview(hostStackView)
         stackView.addArrangedSubview(questionPackageStackView)
-        stackView.addArrangedSubview(rulesLabel)
+        stackView.addArrangedSubview(rulesStackView)
     }
     
     // MARK: - Public setup
@@ -166,6 +184,35 @@ class GameInfoViewController: UIViewController {
         
         ownerLabel.text = game.owner
         packageNameLabel.text = game.packageName
+        
+        self.rules = buildRules(rules: game.rules, isSimple: game.mode == .Simple)
+        rulesCollectionView.reloadData()
+    }
+    
+    // MARK: - build rules
+    
+    func buildRules(rules: Int, isSimple: Bool) -> [String] {
+        var result = [String]()
+        
+        if isSimple {
+            result.append(R.string.localizable.sport())
+        } else {
+            result.append(R.string.localizable.tv())
+        }
+        
+        if rules & 1 == 0 {
+            result.append(R.string.localizable.nofalsestart())
+        }
+        
+        if rules & 2 > 0 {
+            result.append(R.string.localizable.oral())
+        }
+        
+        if rules & 4 > 0 {
+            result.append(R.string.localizable.errorTolerant())
+        }
+        
+        return result
     }
 }
 
@@ -173,7 +220,7 @@ class GameInfoViewController: UIViewController {
 
 extension GameInfoViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return rules.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -184,7 +231,7 @@ extension GameInfoViewController: UICollectionViewDelegate, UICollectionViewData
             return UICollectionViewCell()
         }
         
-        cell.fill(title: "")
+        cell.fill(title: rules[indexPath.row])
         return cell
     }
     

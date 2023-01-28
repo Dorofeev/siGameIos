@@ -3,6 +3,7 @@ use_frameworks!
 
 target 'SIOnline' do
 
+pod "AlignedCollectionViewFlowLayout", '~> 1.1.2'
 pod 'R.swift', '6.1.0'
 pod 'Alamofire', '5.5'
 pod 'PromiseKit', '6.8'

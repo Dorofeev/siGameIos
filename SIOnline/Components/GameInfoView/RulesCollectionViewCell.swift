@@ -32,7 +32,7 @@ class RulesCollectionViewCell: UICollectionViewCell {
         contentView.backgroundColor = .white.withAlphaComponent(0.15)
         contentView.addEnclosedSubview(
             titleLabel,
-            insets: NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 4, trailing: 8)
+            insets: NSDirectionalEdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8)
         )
     }
     
