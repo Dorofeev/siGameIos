@@ -5,7 +5,7 @@
 //  Created by Andrey Dorofeev on 11.04.2022.
 //
 
-class ServerPersonInfo {
+class ServerPersonInfo: Decodable {
     let isOnline: Bool
     let name: String
     let role: Int

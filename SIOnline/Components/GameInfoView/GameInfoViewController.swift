@@ -19,15 +19,23 @@ class GameInfoViewController: UIViewController {
         return view
     }()
     
+    // MARK: - game name
+    
     private lazy var gameNameContainer = UIView()
     private lazy var gameNameLabel: UILabel = {
         let label = UILabel()
         label.font = R.font.futuraCondensed(size: 54)
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
         label.textColor = .white
         return label
     }()
     
+    // MARK: - game info
+    
     private lazy var scrollView = UIScrollView()
+    
+    // MARK: - host
     
     private lazy var hostStackView: UIStackView = {
         let stackView = UIStackView()
@@ -52,6 +60,8 @@ class GameInfoViewController: UIViewController {
         return label
     }()
     
+    // MARK: - question package
+    
     private lazy var questionPackageStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -74,6 +84,8 @@ class GameInfoViewController: UIViewController {
         label.textColor = .white
         return label
     }()
+    
+    // MARK: - rules
     
     private lazy var rulesStackView: UIStackView = {
         let stackView = UIStackView()
@@ -110,6 +122,31 @@ class GameInfoViewController: UIViewController {
         return collectionView
     }()
     
+    // MARK: - Showman
+    
+    private lazy var showmanStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.addArrangedSubview(showmanLabel)
+        stackView.addArrangedSubview(showmanNameLabel)
+        return stackView
+    }()
+    
+    private lazy var showmanLabel: UILabel = {
+        let label = UILabel()
+        label.font = R.font.futuraCondensed(size: 21)
+        label.textColor = .white
+        label.text = R.string.localizable.showman()
+        return label
+    }()
+    
+    private lazy var showmanNameLabel: UILabel = {
+        let label = UILabel()
+        label.font = R.font.futuraCondensed(size: 27)
+        label.textColor = .white
+        return label
+    }()
+    
     // MARK: - private properties
     
     private var rules: [String] = []
@@ -124,15 +161,17 @@ class GameInfoViewController: UIViewController {
         setup(
             game: GameInfo(
                 gameID: 0,
-                gameName: "Test game",
+                gameName: "Eefrit's Game (с дискордом)",
                 language: "",
                 mode: .Classic,
                 owner: "Kormak",
                 packageName: "Большой мешок сюрпризов",
                 passwordRequired: true,
-                persons: [],
+                persons: [
+                    ServerPersonInfo(isOnline: true, name: "Eefrit", role: 2)
+                ],
                 realStartTime: "",
-                rules: 4,
+                rules: 2,
                 stage: 0,
                 stageName: "",
                 started: false,
@@ -174,6 +213,7 @@ class GameInfoViewController: UIViewController {
         stackView.addArrangedSubview(hostStackView)
         stackView.addArrangedSubview(questionPackageStackView)
         stackView.addArrangedSubview(rulesStackView)
+        stackView.addArrangedSubview(showmanStackView)
     }
     
     // MARK: - Public setup
@@ -187,11 +227,13 @@ class GameInfoViewController: UIViewController {
         
         self.rules = buildRules(rules: game.rules, isSimple: game.mode == .Simple)
         rulesCollectionView.reloadData()
+        
+        setupPersons(persons: game.persons)
     }
     
     // MARK: - build rules
     
-    func buildRules(rules: Int, isSimple: Bool) -> [String] {
+    private func buildRules(rules: Int, isSimple: Bool) -> [String] {
         var result = [String]()
         
         if isSimple {
@@ -213,6 +255,16 @@ class GameInfoViewController: UIViewController {
         }
         
         return result
+    }
+    
+    // MARK: - persons
+    
+    private func setupPersons(persons: [ServerPersonInfo]) {
+        for person in persons {
+            if person.role == Role.Showman.rawValue {
+                showmanNameLabel.text = person.name
+            }
+        }
     }
 }
 
