@@ -70,6 +70,7 @@
 		497875DD2806D19700116DE1 /* IGameServerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497875DC2806D19700116DE1 /* IGameServerClient.swift */; };
 		497875DF2806D33700116DE1 /* HostInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497875DE2806D33700116DE1 /* HostInfo.swift */; };
 		497875E12806D53C00116DE1 /* Slice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497875E02806D53C00116DE1 /* Slice.swift */; };
+		4982E50C29C711ED000EDDA1 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982E50B29C711ED000EDDA1 /* UIViewController+Extension.swift */; };
 		498972C4287A8DD5007EFA67 /* ConnectionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498972C3287A8DD5007EFA67 /* ConnectionHelpers.swift */; };
 		498BE63C280954700096AF75 /* DummyGameServerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BE63B280954700096AF75 /* DummyGameServerClient.swift */; };
 		498BE63E28096E590096AF75 /* RestrictionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BE63D28096E590096AF75 /* RestrictionType.swift */; };
@@ -189,6 +190,7 @@
 		497875DC2806D19700116DE1 /* IGameServerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGameServerClient.swift; sourceTree = "<group>"; };
 		497875DE2806D33700116DE1 /* HostInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostInfo.swift; sourceTree = "<group>"; };
 		497875E02806D53C00116DE1 /* Slice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slice.swift; sourceTree = "<group>"; };
+		4982E50B29C711ED000EDDA1 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		498972C3287A8DD5007EFA67 /* ConnectionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionHelpers.swift; sourceTree = "<group>"; };
 		498BE63B280954700096AF75 /* DummyGameServerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyGameServerClient.swift; sourceTree = "<group>"; };
 		498BE63D28096E590096AF75 /* RestrictionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictionType.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				493C6B792891840300B6A842 /* URLSearchParams.swift */,
 				49F8ED8B28A748C700294AC7 /* StateHelpers.swift */,
 				49A3839228AD3DEB005D6D84 /* UIView+Extensions.swift */,
+				4982E50B29C711ED000EDDA1 /* UIViewController+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -856,6 +859,7 @@
 				49935C2128C5F591007E6E8B /* CheckBox.swift in Sources */,
 				49F2B7FE28846747007ED54C /* ActionCreators.swift in Sources */,
 				4942D7C128150842000B3D60 /* Constants.swift in Sources */,
+				4982E50C29C711ED000EDDA1 /* UIViewController+Extension.swift in Sources */,
 				497875E12806D53C00116DE1 /* Slice.swift in Sources */,
 				495A9AE8280587FF0035ABE5 /* StakeTypes.swift in Sources */,
 				498BE63C280954700096AF75 /* DummyGameServerClient.swift in Sources */,

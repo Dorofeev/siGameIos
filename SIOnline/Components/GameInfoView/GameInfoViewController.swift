@@ -6,6 +6,7 @@
 //
 
 import AlignedCollectionViewFlowLayout
+import ReSwift
 import UIKit
 
 class GameInfoViewController: UIViewController {
@@ -221,6 +222,107 @@ class GameInfoViewController: UIViewController {
         return collectionView
     }()
     
+    // MARK: - Status
+    
+    private lazy var statusStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.addArrangedSubview(statusLabel)
+        stackView.addArrangedSubview(stageLabel)
+        return stackView
+    }()
+    
+    private lazy var statusLabel: UILabel = {
+        let label = UILabel()
+        label.font = R.font.futuraCondensed(size: 21)
+        label.textColor = .white
+        label.text = R.string.localizable.status()
+        return label
+    }()
+    
+    private lazy var stageLabel: UILabel = {
+        let label = UILabel()
+        label.font = R.font.futuraCondensed(size: 27)
+        label.textColor = .white
+        return label
+    }()
+    
+    // MARK: - Created
+    
+    private lazy var createdStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.addArrangedSubview(createdLabel)
+        stackView.addArrangedSubview(createdTimeLabel)
+        return stackView
+    }()
+    
+    private lazy var createdLabel: UILabel = {
+        let label = UILabel()
+        label.font = R.font.futuraCondensed(size: 21)
+        label.textColor = .white
+        label.text = R.string.localizable.created()
+        return label
+    }()
+    
+    private lazy var createdTimeLabel: UILabel = {
+        let label = UILabel()
+        label.font = R.font.futuraCondensed(size: 27)
+        label.textColor = .white
+        return label
+    }()
+    
+    // MARK: - Started
+    
+    private lazy var startedStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.addArrangedSubview(startedLabel)
+        stackView.addArrangedSubview(startedTimeLabel)
+        return stackView
+    }()
+    
+    private lazy var startedLabel: UILabel = {
+        let label = UILabel()
+        label.font = R.font.futuraCondensed(size: 21)
+        label.textColor = .white
+        label.text = R.string.localizable.started()
+        return label
+    }()
+    
+    private lazy var startedTimeLabel: UILabel = {
+        let label = UILabel()
+        label.font = R.font.futuraCondensed(size: 27)
+        label.textColor = .white
+        return label
+    }()
+    
+    // MARK: - Started
+    
+    private lazy var passwordInfoStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.addArrangedSubview(passwordLabel)
+        stackView.addArrangedSubview(passwordInput)
+        passwordInput.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -20).isActive = true
+        return stackView
+    }()
+    
+    private lazy var passwordLabel: UILabel = {
+        let label = UILabel()
+        label.font = R.font.futuraCondensed(size: 21)
+        label.textColor = .white
+        label.text = R.string.localizable.password()
+        return label
+    }()
+    
+    private lazy var passwordInput: Input = {
+        let input = Input()
+        input.font = R.font.futuraCondensed(size: 21)
+        input.isSecureTextEntry = true
+        return input
+    }()
+    
     // MARK: - private properties
     
     private var free: [Bool] = [true, false, false]
@@ -230,6 +332,8 @@ class GameInfoViewController: UIViewController {
     private var players: [String] = []
     
     private var viewers: [String] = []
+    
+    private var dispatch: DispatchFunction?
     
     // MARK: - Lifecycle
 
@@ -257,9 +361,16 @@ class GameInfoViewController: UIViewController {
                 stage: 0,
                 stageName: "",
                 started: false,
-                startTime: ""
+                startTime: "18.12.2022, 12:30:02"
             ),
-            showGameName: true)
+            showGameName: true,
+        state: State.initialState())
+        
+        startObservingKeyboard()
+    }
+    
+    deinit {
+        stopObservingKeyboard()
     }
     
     // MARK: - Setup
@@ -281,16 +392,30 @@ class GameInfoViewController: UIViewController {
         
         innerInfoView.addArrangedSubview(gameNameContainer)
         innerInfoView.addArrangedSubview(scrollView)
-        innerInfoView.addArrangedSubview(UIView())
         
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 8
         
-        scrollView.addEnclosedSubview(
+        scrollView.addSubview(
             stackView,
-            insets: NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0)
-        )
+            activateConstraints: [
+                scrollView.contentLayoutGuide.leadingAnchor.constraint(
+                    equalTo: stackView.leadingAnchor,
+                    constant: -20
+                ),
+                scrollView.contentLayoutGuide.trailingAnchor.constraint(
+                    equalTo: stackView.trailingAnchor
+                ),
+                scrollView.contentLayoutGuide.topAnchor.constraint(
+                    equalTo: stackView.topAnchor
+                ),
+                scrollView.contentLayoutGuide.bottomAnchor.constraint(
+                    equalTo: stackView.bottomAnchor
+                ),
+                scrollView.frameLayoutGuide.widthAnchor.constraint(equalTo: innerInfoView.widthAnchor),
+                stackView.widthAnchor.constraint(equalTo: innerInfoView.widthAnchor, constant: -20)
+        ])
         
         stackView.addArrangedSubview(hostStackView)
         stackView.addArrangedSubview(questionPackageStackView)
@@ -298,11 +423,19 @@ class GameInfoViewController: UIViewController {
         stackView.addArrangedSubview(showmanStackView)
         stackView.addArrangedSubview(playersStackView)
         stackView.addArrangedSubview(viewersStackView)
+        stackView.addArrangedSubview(statusStackView)
+        stackView.addArrangedSubview(createdStackView)
+        stackView.addArrangedSubview(startedStackView)
+        stackView.addArrangedSubview(passwordInfoStackView)
     }
     
     // MARK: - Public setup
     
-    func setup(game: GameInfo, showGameName: Bool) {
+    func setup(dispatch: @escaping DispatchFunction) {
+        self.dispatch = dispatch
+    }
+    
+    func setup(game: GameInfo, showGameName: Bool, state: State) {
         gameNameContainer.isHidden = !showGameName
         gameNameLabel.text = game.gameName
         
@@ -311,10 +444,22 @@ class GameInfoViewController: UIViewController {
         
         self.rules = buildRules(rules: game.rules, isSimple: game.mode == .Simple)
         rulesCollectionView.reloadData()
+        rulesCollectionView.isHidden = rules.isEmpty
         
         setupPersons(persons: game.persons)
         playersCollectionView.reloadData()
         viewersCollectionView.reloadData()
+        
+        viewersCollectionView.isHidden = viewers.isEmpty
+        playersCollectionView.isHidden = players.isEmpty
+        
+        stageLabel.text = buildStage(stage: game.stage, stageName: game.stageName)
+        createdTimeLabel.text = game.startTime
+        startedTimeLabel.text = game.realStartTime
+        
+        passwordInfoStackView.isHidden = !game.passwordRequired
+        passwordInput.isEnabled = !state.online.joinGameProgress
+        passwordInput.text = state.online.password
     }
     
     // MARK: - build rules
@@ -379,6 +524,18 @@ class GameInfoViewController: UIViewController {
                 viewers.append(person.name)
             }
         }
+    }
+}
+
+extension GameInfoViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let text = textField.text,
+           let textRange = Range(range, in: text) {
+            let updatedText = text.replacingCharacters(in: textRange,
+                                                       with: string)
+            dispatch?(ActionCreators.shared.passwordChanged(newPassword: updatedText))
+        }
+        return false
     }
 }
 
