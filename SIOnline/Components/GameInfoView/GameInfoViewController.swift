@@ -297,7 +297,7 @@ class GameInfoViewController: UIViewController {
         return label
     }()
     
-    // MARK: - Started
+    // MARK: - Password Info
     
     private lazy var passwordInfoStackView: UIStackView = {
         let stackView = UIStackView()
@@ -321,6 +321,21 @@ class GameInfoViewController: UIViewController {
         input.font = R.font.futuraCondensed(size: 21)
         input.isSecureTextEntry = true
         return input
+    }()
+    
+    // MARK: - Join Game Error
+    
+    private lazy var joinGameErrorLabel: UILabel = {
+        let label = UILabel()
+        label.font = R.font.futuraCondensed(size: 21)
+        label.textColor = .red
+        return label
+    }()
+    
+    private lazy var joinGameErrorView: UIView = {
+        let view = UIView()
+        view.addEnclosedSubview(joinGameErrorLabel, insets: NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+        return view
     }()
     
     // MARK: - private properties
@@ -350,7 +365,7 @@ class GameInfoViewController: UIViewController {
                 mode: .Classic,
                 owner: "Kormak",
                 packageName: "Большой мешок сюрпризов",
-                passwordRequired: true,
+                passwordRequired: false,
                 persons: [
                     ServerPersonInfo(isOnline: true, name: "Eefrit", role: 2),
                     ServerPersonInfo(isOnline: true, name: "Ideality", role: 1),
@@ -427,6 +442,7 @@ class GameInfoViewController: UIViewController {
         stackView.addArrangedSubview(createdStackView)
         stackView.addArrangedSubview(startedStackView)
         stackView.addArrangedSubview(passwordInfoStackView)
+        stackView.addArrangedSubview(joinGameErrorView)
     }
     
     // MARK: - Public setup
@@ -460,6 +476,8 @@ class GameInfoViewController: UIViewController {
         passwordInfoStackView.isHidden = !game.passwordRequired
         passwordInput.isEnabled = !state.online.joinGameProgress
         passwordInput.text = state.online.password
+        
+        joinGameErrorLabel.text = state.online.joingGameError
     }
     
     // MARK: - build rules
