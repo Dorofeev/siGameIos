@@ -338,6 +338,23 @@ class GameInfoViewController: UIViewController {
         return view
     }()
     
+    // MARK: - Buttons
+    
+    private lazy var buttonsStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.addArrangedSubview(joinButton)
+        return stackView
+    }()
+    
+    private lazy var joinButton: UIButton = {
+        let button = UIButton()
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
+        button.backgroundColor = R.color.standartButtonBackground()
+        button.setTitle(R.string.localizable.joinAsShowman(), for: .normal)
+        return button
+    }()
+    
     // MARK: - private properties
     
     private var free: [Bool] = [true, false, false]
@@ -347,6 +364,8 @@ class GameInfoViewController: UIViewController {
     private var players: [String] = []
     
     private var viewers: [String] = []
+    
+    private var gameId: Int = 0
     
     private var dispatch: DispatchFunction?
     
@@ -382,6 +401,7 @@ class GameInfoViewController: UIViewController {
         state: State.initialState())
         
         startObservingKeyboard()
+        setupActions()
     }
     
     deinit {
@@ -397,8 +417,14 @@ class GameInfoViewController: UIViewController {
     private func setupLayout() {
         view.addEnclosedSubview(
             innerInfoView,
-            insets: NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+            insets: NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 48, trailing: 0)
         )
+        view.addSubview(buttonsStackView, activateConstraints: [
+            buttonsStackView.heightAnchor.constraint(equalToConstant: 48),
+            buttonsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 8),
+            buttonsStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
         
         gameNameContainer.addEnclosedSubview(
             gameNameLabel,
@@ -445,6 +471,14 @@ class GameInfoViewController: UIViewController {
         stackView.addArrangedSubview(joinGameErrorView)
     }
     
+    private func setupActions() {
+        joinButton.addAction(UIAction(handler: { [weak self] _ in
+            guard let self, let dataContext = Index.dataContext else { return }
+            
+            self.dispatch?(ActionCreators.shared.joinGame(dataContext: dataContext, gameId: self.gameId, role: Role.Showman))
+        }), for: .touchUpInside)
+    }
+    
     // MARK: - Public setup
     
     func setup(dispatch: @escaping DispatchFunction) {
@@ -478,6 +512,10 @@ class GameInfoViewController: UIViewController {
         passwordInput.text = state.online.password
         
         joinGameErrorLabel.text = state.online.joingGameError
+        
+        self.gameId = game.gameID
+        
+        joinButton.isEnabled = state.common.isConnected && !state.online.joinGameProgress && !(game.passwordRequired && state.online.password.isEmpty) && free[Role.Showman.rawValue]
     }
     
     // MARK: - build rules
