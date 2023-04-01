@@ -13,12 +13,24 @@ class GameInfoViewController: UIViewController {
     
     // MARK: - Views
     
-    private lazy var innerInfoView: UIStackView = {
-        let view = UIStackView()
-        view.axis = .vertical
-        view.spacing = 16
-        return view
-    }()
+    private lazy var innerInfoView: UIStackView = createStackView(views: [], spacing: 16)
+    
+    private lazy var scrollStackView: UIStackView = createStackView(
+        views: [
+            hostStackView,
+            questionPackageStackView,
+            rulesStackView,
+            showmanStackView,
+            playersStackView,
+            viewersStackView,
+            statusStackView,
+            createdStackView,
+            startedStackView,
+            passwordInfoStackView,
+            joinGameErrorView
+        ],
+        spacing: 8
+    )
     
     // MARK: - game name
     
@@ -38,283 +50,66 @@ class GameInfoViewController: UIViewController {
     
     // MARK: - host
     
-    private lazy var hostStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.addArrangedSubview(hostLabel)
-        stackView.addArrangedSubview(ownerLabel)
-        return stackView
-    }()
-    
-    private lazy var hostLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.font.futuraCondensed(size: 21)
-        label.textColor = .white
-        label.text = R.string.localizable.host()
-        return label
-    }()
-    
-    private lazy var ownerLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.font.futuraCondensed(size: 27)
-        label.textColor = .white
-        return label
-    }()
+    private lazy var hostStackView: UIStackView = createStackView(views: [hostLabel, ownerLabel], spacing: 0)
+    private lazy var hostLabel: UILabel = createTitleLabel(title: R.string.localizable.host())
+    private lazy var ownerLabel: UILabel = createValueLabel()
     
     // MARK: - question package
     
-    private lazy var questionPackageStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.addArrangedSubview(questionPackageLabel)
-        stackView.addArrangedSubview(packageNameLabel)
-        return stackView
-    }()
-    
-    private lazy var questionPackageLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.font.futuraCondensed(size: 21)
-        label.textColor = .white
-        label.text = R.string.localizable.questionPackage()
-        return label
-    }()
-    
-    private lazy var packageNameLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.font.futuraCondensed(size: 27)
-        label.textColor = .white
-        return label
-    }()
+    private lazy var questionPackageStackView: UIStackView = createStackView(views: [questionPackageLabel, packageNameLabel], spacing: 0)
+    private lazy var questionPackageLabel: UILabel = createTitleLabel(title: R.string.localizable.questionPackage())
+    private lazy var packageNameLabel: UILabel = createValueLabel()
     
     // MARK: - rules
     
-    private lazy var rulesStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 4
-        stackView.addArrangedSubview(rulesLabel)
-        stackView.addArrangedSubview(rulesCollectionView)
-        return stackView
-    }()
-    
-    private lazy var rulesLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.font.futuraCondensed(size: 21)
-        label.textColor = .white
-        label.text = R.string.localizable.rules()
-        return label
-    }()
-    
-    private lazy var rulesCollectionView: UICollectionView = {
-        let layout = AlignedCollectionViewFlowLayout(horizontalAlignment: .left)
-        layout.scrollDirection = .horizontal
-        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        let collectionView = UICollectionView(
-            frame: .zero,
-            collectionViewLayout: layout
-        )
-        collectionView.register(RulesCollectionViewCell.self, forCellWithReuseIdentifier: "RulesCollectionViewCell")
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.backgroundColor = .clear
-        collectionView.showsHorizontalScrollIndicator = false
-        
-        collectionView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        return collectionView
-    }()
+    private lazy var rulesStackView: UIStackView = createStackView(views: [rulesLabel, rulesCollectionView], spacing: 4)
+    private lazy var rulesLabel: UILabel = createTitleLabel(title: R.string.localizable.rules())
+    private lazy var rulesCollectionView: UICollectionView = createCollectionView()
     
     // MARK: - Showman
     
-    private lazy var showmanStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.addArrangedSubview(showmanLabel)
-        stackView.addArrangedSubview(showmanNameLabel)
-        return stackView
-    }()
-    
-    private lazy var showmanLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.font.futuraCondensed(size: 21)
-        label.textColor = .white
-        label.text = R.string.localizable.showman()
-        return label
-    }()
-    
-    private lazy var showmanNameLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.font.futuraCondensed(size: 27)
-        label.textColor = .white
-        return label
-    }()
+    private lazy var showmanStackView: UIStackView = createStackView(views: [showmanLabel, showmanNameLabel], spacing: 0)
+    private lazy var showmanLabel: UILabel = createTitleLabel(title: R.string.localizable.showman())
+    private lazy var showmanNameLabel: UILabel = createValueLabel()
     
     // MARK: - Players
     
-    private lazy var playersStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 4
-        stackView.addArrangedSubview(playersLabel)
-        stackView.addArrangedSubview(playersCollectionView)
-        return stackView
-    }()
-    
-    private lazy var playersLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.font.futuraCondensed(size: 21)
-        label.textColor = .white
-        label.text = R.string.localizable.players()
-        return label
-    }()
-    
-    private lazy var playersCollectionView: UICollectionView = {
-        let layout = AlignedCollectionViewFlowLayout(horizontalAlignment: .left)
-        layout.scrollDirection = .horizontal
-        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        let collectionView = UICollectionView(
-            frame: .zero,
-            collectionViewLayout: layout
-        )
-        collectionView.register(RulesCollectionViewCell.self, forCellWithReuseIdentifier: "RulesCollectionViewCell")
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.backgroundColor = .clear
-        collectionView.showsHorizontalScrollIndicator = false
-        
-        collectionView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        return collectionView
-    }()
+    private lazy var playersStackView: UIStackView = createStackView(views: [playersLabel, playersCollectionView], spacing: 4)
+    private lazy var playersLabel: UILabel = createTitleLabel(title: R.string.localizable.players())
+    private lazy var playersCollectionView: UICollectionView = createCollectionView()
     
     // MARK: - Viewers
     
-    private lazy var viewersStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 4
-        stackView.addArrangedSubview(viewersLabel)
-        stackView.addArrangedSubview(viewersCollectionView)
-        return stackView
-    }()
-    
-    private lazy var viewersLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.font.futuraCondensed(size: 21)
-        label.textColor = .white
-        label.text = R.string.localizable.viewers()
-        return label
-    }()
-    
-    private lazy var viewersCollectionView: UICollectionView = {
-        let layout = AlignedCollectionViewFlowLayout(horizontalAlignment: .left)
-        layout.scrollDirection = .horizontal
-        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        let collectionView = UICollectionView(
-            frame: .zero,
-            collectionViewLayout: layout
-        )
-        collectionView.register(RulesCollectionViewCell.self, forCellWithReuseIdentifier: "RulesCollectionViewCell")
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.backgroundColor = .clear
-        collectionView.showsHorizontalScrollIndicator = false
-        
-        collectionView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        return collectionView
-    }()
+    private lazy var viewersStackView: UIStackView = createStackView(views: [viewersLabel, viewersCollectionView], spacing: 4)
+    private lazy var viewersLabel: UILabel = createTitleLabel(title: R.string.localizable.viewers())
+    private lazy var viewersCollectionView: UICollectionView = createCollectionView()
     
     // MARK: - Status
     
-    private lazy var statusStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.addArrangedSubview(statusLabel)
-        stackView.addArrangedSubview(stageLabel)
-        return stackView
-    }()
-    
-    private lazy var statusLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.font.futuraCondensed(size: 21)
-        label.textColor = .white
-        label.text = R.string.localizable.status()
-        return label
-    }()
-    
-    private lazy var stageLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.font.futuraCondensed(size: 27)
-        label.textColor = .white
-        return label
-    }()
-    
+    private lazy var statusStackView: UIStackView = createStackView(views: [statusLabel, stageLabel], spacing: 0)
+    private lazy var statusLabel: UILabel = createTitleLabel(title: R.string.localizable.status())
+    private lazy var stageLabel: UILabel = createValueLabel()
     // MARK: - Created
     
-    private lazy var createdStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.addArrangedSubview(createdLabel)
-        stackView.addArrangedSubview(createdTimeLabel)
-        return stackView
-    }()
-    
-    private lazy var createdLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.font.futuraCondensed(size: 21)
-        label.textColor = .white
-        label.text = R.string.localizable.created()
-        return label
-    }()
-    
-    private lazy var createdTimeLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.font.futuraCondensed(size: 27)
-        label.textColor = .white
-        return label
-    }()
+    private lazy var createdStackView: UIStackView = createStackView(views: [createdLabel, createdTimeLabel], spacing: 0)
+    private lazy var createdLabel: UILabel = createTitleLabel(title: R.string.localizable.created())
+    private lazy var createdTimeLabel: UILabel = createValueLabel()
     
     // MARK: - Started
     
-    private lazy var startedStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.addArrangedSubview(startedLabel)
-        stackView.addArrangedSubview(startedTimeLabel)
-        return stackView
-    }()
-    
-    private lazy var startedLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.font.futuraCondensed(size: 21)
-        label.textColor = .white
-        label.text = R.string.localizable.started()
-        return label
-    }()
-    
-    private lazy var startedTimeLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.font.futuraCondensed(size: 27)
-        label.textColor = .white
-        return label
-    }()
+    private lazy var startedStackView: UIStackView = createStackView(views: [startedLabel, startedTimeLabel], spacing: 0)
+    private lazy var startedLabel: UILabel = createTitleLabel(title: R.string.localizable.started())
+    private lazy var startedTimeLabel: UILabel = createValueLabel()
     
     // MARK: - Password Info
     
-    private lazy var passwordInfoStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.addArrangedSubview(passwordLabel)
-        stackView.addArrangedSubview(passwordInput)
+    private lazy var passwordInfoStackView: UIStackView =  {
+        let stackView = createStackView(views: [passwordLabel, passwordInput], spacing: 0)
         passwordInput.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -20).isActive = true
         return stackView
     }()
     
-    private lazy var passwordLabel: UILabel = {
-        let label = UILabel()
-        label.font = R.font.futuraCondensed(size: 21)
-        label.textColor = .white
-        label.text = R.string.localizable.password()
-        return label
-    }()
+    private lazy var passwordLabel: UILabel = createTitleLabel(title: R.string.localizable.password())
     
     private lazy var passwordInput: Input = {
         let input = Input()
@@ -341,18 +136,23 @@ class GameInfoViewController: UIViewController {
     // MARK: - Buttons
     
     private lazy var buttonsStackView: UIStackView = {
-        let stackView = UIStackView()
+        let stackView = createStackView(views: [joinAsShowmanButton, joinAsPlayerButton, joinAsViewerButton], spacing: 8)
         stackView.axis = .horizontal
-        stackView.addArrangedSubview(joinButton)
+        stackView.distribution = .fillEqually
         return stackView
     }()
     
-    private lazy var joinButton: UIButton = {
-        let button = UIButton()
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
-        button.backgroundColor = R.color.standartButtonBackground()
-        button.setTitle(R.string.localizable.joinAsShowman(), for: .normal)
-        return button
+    private lazy var joinAsShowmanButton: UIButton = createButton(title: R.string.localizable.joinAsShowman())
+    private lazy var joinAsPlayerButton: UIButton = createButton(title: R.string.localizable.joinAsPlayer())
+    private lazy var joinAsViewerButton: UIButton = createButton(title: R.string.localizable.joinAsViewer())
+    
+    // MARK: - Progress Bar
+    
+    private lazy var progressBar: ProgressBar = {
+        let view = ProgressBar()
+        view.setupIndeterminate()
+        view.isHidden = true
+        return view
     }()
     
     // MARK: - private properties
@@ -373,7 +173,6 @@ class GameInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
         setupLayout()
         
         setup(
@@ -410,11 +209,10 @@ class GameInfoViewController: UIViewController {
     
     // MARK: - Setup
     
-    private func setup() {
-        view.backgroundColor = R.color.gameinfoBackground()
-    }
-    
     private func setupLayout() {
+        
+        view.backgroundColor = R.color.gameinfoBackground()
+        
         view.addEnclosedSubview(
             innerInfoView,
             insets: NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 48, trailing: 0)
@@ -422,7 +220,7 @@ class GameInfoViewController: UIViewController {
         view.addSubview(buttonsStackView, activateConstraints: [
             buttonsStackView.heightAnchor.constraint(equalToConstant: 48),
             buttonsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
-            buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 8),
+            buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
             buttonsStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         
@@ -434,49 +232,124 @@ class GameInfoViewController: UIViewController {
         innerInfoView.addArrangedSubview(gameNameContainer)
         innerInfoView.addArrangedSubview(scrollView)
         
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 8
+        setupScrollViewConstrinats()
         
+        view.addSubview(progressBar, activateConstraints: [
+            progressBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            progressBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            progressBar.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+    }
+    
+    private func setupScrollViewConstrinats() {
         scrollView.addSubview(
-            stackView,
+            scrollStackView,
             activateConstraints: [
                 scrollView.contentLayoutGuide.leadingAnchor.constraint(
-                    equalTo: stackView.leadingAnchor,
+                    equalTo: scrollStackView.leadingAnchor,
                     constant: -20
                 ),
                 scrollView.contentLayoutGuide.trailingAnchor.constraint(
-                    equalTo: stackView.trailingAnchor
+                    equalTo: scrollStackView.trailingAnchor
                 ),
                 scrollView.contentLayoutGuide.topAnchor.constraint(
-                    equalTo: stackView.topAnchor
+                    equalTo: scrollStackView.topAnchor
                 ),
                 scrollView.contentLayoutGuide.bottomAnchor.constraint(
-                    equalTo: stackView.bottomAnchor
+                    equalTo: scrollStackView.bottomAnchor
                 ),
                 scrollView.frameLayoutGuide.widthAnchor.constraint(equalTo: innerInfoView.widthAnchor),
-                stackView.widthAnchor.constraint(equalTo: innerInfoView.widthAnchor, constant: -20)
-        ])
-        
-        stackView.addArrangedSubview(hostStackView)
-        stackView.addArrangedSubview(questionPackageStackView)
-        stackView.addArrangedSubview(rulesStackView)
-        stackView.addArrangedSubview(showmanStackView)
-        stackView.addArrangedSubview(playersStackView)
-        stackView.addArrangedSubview(viewersStackView)
-        stackView.addArrangedSubview(statusStackView)
-        stackView.addArrangedSubview(createdStackView)
-        stackView.addArrangedSubview(startedStackView)
-        stackView.addArrangedSubview(passwordInfoStackView)
-        stackView.addArrangedSubview(joinGameErrorView)
+                scrollStackView.widthAnchor.constraint(equalTo: innerInfoView.widthAnchor, constant: -20)
+            ])
     }
     
     private func setupActions() {
-        joinButton.addAction(UIAction(handler: { [weak self] _ in
+        joinAsShowmanButton.addAction(UIAction(handler: { [weak self] _ in
             guard let self, let dataContext = Index.dataContext else { return }
             
             self.dispatch?(ActionCreators.shared.joinGame(dataContext: dataContext, gameId: self.gameId, role: Role.Showman))
         }), for: .touchUpInside)
+        
+        joinAsPlayerButton.addAction(UIAction(handler: { [weak self] _ in
+            guard let self, let dataContext = Index.dataContext else { return }
+            
+            self.dispatch?(ActionCreators.shared.joinGame(dataContext: dataContext, gameId: self.gameId, role: Role.Player))
+        }), for: .touchUpInside)
+        
+        joinAsViewerButton.addAction(UIAction(handler: { [weak self] _ in
+            guard let self, let dataContext = Index.dataContext else { return }
+            
+            self.dispatch?(ActionCreators.shared.joinGame(dataContext: dataContext, gameId: self.gameId, role: Role.Viewer))
+        }), for: .touchUpInside)
+    }
+    
+    private func setupUI(game: GameInfo?, showGameName: Bool, state: State) {
+        progressBar.isHidden = !state.online.joinGameProgress
+        view.isUserInteractionEnabled = state.online.joinGameProgress
+        innerInfoView.isHidden = game == nil
+        
+        guard let game else { return }
+        
+        gameNameContainer.isHidden = !showGameName
+        gameNameLabel.text = game.gameName
+        
+        ownerLabel.text = game.owner
+        packageNameLabel.text = game.packageName
+        
+        passwordInfoStackView.isHidden = !game.passwordRequired
+        passwordInput.isEnabled = !state.online.joinGameProgress
+        passwordInput.text = state.online.password
+    }
+    
+    private func createButton(title: String) -> UIButton {
+        let button = UIButton()
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        button.backgroundColor = R.color.standartButtonBackground()
+        button.setTitle(title, for: .normal)
+        return button
+    }
+    
+    private func createTitleLabel(title: String) -> UILabel {
+        let label = UILabel()
+        label.font = R.font.futuraCondensed(size: 21)
+        label.textColor = .white
+        label.text = title
+        return label
+    }
+    
+    private func createValueLabel() -> UILabel {
+        let label = UILabel()
+        label.font = R.font.futuraCondensed(size: 27)
+        label.textColor = .white
+        return label
+    }
+    
+    private func createStackView(views: [UIView], spacing: CGFloat) -> UIStackView {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = spacing
+        views.forEach { view in
+            stackView.addArrangedSubview(view)
+        }
+        return stackView
+    }
+    
+    private func createCollectionView() -> UICollectionView {
+        let layout = AlignedCollectionViewFlowLayout(horizontalAlignment: .left)
+        layout.scrollDirection = .horizontal
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        let collectionView = UICollectionView(
+            frame: .zero,
+            collectionViewLayout: layout
+        )
+        collectionView.register(RulesCollectionViewCell.self, forCellWithReuseIdentifier: "RulesCollectionViewCell")
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.backgroundColor = .clear
+        collectionView.showsHorizontalScrollIndicator = false
+        
+        collectionView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        return collectionView
     }
     
     // MARK: - Public setup
@@ -485,42 +358,48 @@ class GameInfoViewController: UIViewController {
         self.dispatch = dispatch
     }
     
-    func setup(game: GameInfo, showGameName: Bool, state: State) {
-        gameNameContainer.isHidden = !showGameName
-        gameNameLabel.text = game.gameName
+    func setup(game: GameInfo?, showGameName: Bool, state: State) {
+        setupUI(game: game, showGameName: showGameName, state: state)
         
-        ownerLabel.text = game.owner
-        packageNameLabel.text = game.packageName
+        guard let game else { return }
         
-        self.rules = buildRules(rules: game.rules, isSimple: game.mode == .Simple)
-        rulesCollectionView.reloadData()
-        rulesCollectionView.isHidden = rules.isEmpty
+        self.rules = generateRuleDescriptions(rules: game.rules, isSimple: game.mode == .Simple)
+        setupCollectionView(rulesCollectionView, data: rules)
         
         setupPersons(persons: game.persons)
-        playersCollectionView.reloadData()
-        viewersCollectionView.reloadData()
         
-        viewersCollectionView.isHidden = viewers.isEmpty
-        playersCollectionView.isHidden = players.isEmpty
+        setupCollectionView(playersCollectionView, data: players)
+        setupCollectionView(viewersCollectionView, data: viewers)
         
         stageLabel.text = buildStage(stage: game.stage, stageName: game.stageName)
         createdTimeLabel.text = game.startTime
         startedTimeLabel.text = game.realStartTime
         
-        passwordInfoStackView.isHidden = !game.passwordRequired
-        passwordInput.isEnabled = !state.online.joinGameProgress
-        passwordInput.text = state.online.password
-        
         joinGameErrorLabel.text = state.online.joingGameError
         
         self.gameId = game.gameID
         
-        joinButton.isEnabled = state.common.isConnected && !state.online.joinGameProgress && !(game.passwordRequired && state.online.password.isEmpty) && free[Role.Showman.rawValue]
+        let canJoinGame: Bool = state.common.isConnected && !state.online.joinGameProgress && !(game.passwordRequired && state.online.password.isEmpty)
+        
+        joinAsShowmanButton.isEnabled = canJoinGame && free[Role.Showman.rawValue]
+        
+        joinAsPlayerButton.isEnabled = canJoinGame && free[Role.Player.rawValue]
+        
+        joinAsViewerButton.isEnabled = canJoinGame
+    }
+    
+    func setupCollectionView(_ collectionView: UICollectionView, data: [String]) {
+        collectionView.isHidden = data.isEmpty
+        collectionView.reloadData()
     }
     
     // MARK: - build rules
     
-    private func buildRules(rules: Int, isSimple: Bool) -> [String] {
+    private func generateRuleDescriptions(rules: Int, isSimple: Bool) -> [String] {
+        let falseStartMask = 1
+        let oralRulesMask = 2
+        let errorTolerantMask = 4
+        
         var result = [String]()
         
         if isSimple {
@@ -529,15 +408,15 @@ class GameInfoViewController: UIViewController {
             result.append(R.string.localizable.tv())
         }
         
-        if rules & 1 == 0 {
+        if rules & falseStartMask == 0 {
             result.append(R.string.localizable.nofalsestart())
         }
         
-        if rules & 2 > 0 {
+        if rules & oralRulesMask > 0 {
             result.append(R.string.localizable.oral())
         }
         
-        if rules & 4 > 0 {
+        if rules & errorTolerantMask > 0 {
             result.append(R.string.localizable.errorTolerant())
         }
         
@@ -547,18 +426,18 @@ class GameInfoViewController: UIViewController {
     // MARK: - build stage
 
     private func buildStage(stage: Int, stageName: String) -> String {
-        switch stage {
-        case 0:
-            return R.string.localizable.created()
-        case 1:
-            return R.string.localizable.started()
-        case 2:
-            return R.string.localizable.round() + ": \(stageName)"
-        case 3:
-            return R.string.localizable.final()
-        default:
+        let stageNames = [
+            R.string.localizable.created(),
+            R.string.localizable.started(),
+            R.string.localizable.round() + ": \(stageName)",
+            R.string.localizable.final(),
+        ]
+        
+        guard (0..<stageNames.count).contains(stage) else {
             return R.string.localizable.gameFinished()
         }
+        
+        return stageNames[stage]
     }
     
     // MARK: - persons
@@ -572,12 +451,15 @@ class GameInfoViewController: UIViewController {
         for person in persons {
             if !person.isOnline {
                 free[person.role] = true
-            } else if person.role == Role.Showman.rawValue {
-                showmanNameLabel.text = person.name
-            } else if person.role == Role.Player.rawValue {
-                players.append(person.name)
             } else {
-                viewers.append(person.name)
+                switch person.role {
+                case Role.Showman.rawValue:
+                    showmanNameLabel.text = person.name
+                case Role.Player.rawValue:
+                    players.append(person.name)
+                default:
+                    viewers.append(person.name)
+                }
             }
         }
     }
@@ -585,12 +467,13 @@ class GameInfoViewController: UIViewController {
 
 extension GameInfoViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if let text = textField.text,
-           let textRange = Range(range, in: text) {
-            let updatedText = text.replacingCharacters(in: textRange,
-                                                       with: string)
-            dispatch?(ActionCreators.shared.passwordChanged(newPassword: updatedText))
+        guard let text = textField.text,
+              let textRange = Range(range, in: text),
+              let dispatch else {
+            return true
         }
+        let updatedText = text.replacingCharacters(in: textRange, with: string)
+        dispatch(ActionCreators.shared.passwordChanged(newPassword: updatedText))
         return false
     }
 }
@@ -598,15 +481,35 @@ extension GameInfoViewController: UITextFieldDelegate {
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 
 extension GameInfoViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    enum CollectionViewType {
+        case rules
+        case players
+        case viewers
+    }
+    
+    private func collectionViewType(for collectionView: UICollectionView) -> CollectionViewType {
+        switch collectionView {
+        case rulesCollectionView:
+            return .rules
+        case playersCollectionView:
+            return .players
+        case viewersCollectionView:
+            return .viewers
+        default:
+            fatalError("Unknown collection view")
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == rulesCollectionView {
+        switch collectionViewType(for: collectionView) {
+        case .rules:
             return rules.count
-        } else if collectionView == playersCollectionView {
+        case .players:
             return players.count
-        } else {
+        case .viewers:
             return viewers.count
         }
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -617,11 +520,12 @@ extension GameInfoViewController: UICollectionViewDelegate, UICollectionViewData
             return UICollectionViewCell()
         }
         
-        if collectionView == rulesCollectionView {
+        switch collectionViewType(for: collectionView) {
+        case .rules:
             cell.fill(title: rules[indexPath.row])
-        } else if collectionView == playersCollectionView {
+        case .players:
             cell.fill(title: players[indexPath.row])
-        } else {
+        case .viewers:
             cell.fill(title: viewers[indexPath.row])
         }
         
