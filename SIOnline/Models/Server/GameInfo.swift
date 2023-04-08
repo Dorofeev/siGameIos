@@ -13,7 +13,7 @@ struct GameInfo: Decodable {
     let owner: String
     let packageName: String
     let passwordRequired: Bool
-    let persons: [PersonInfo]
+    let persons: [ServerPersonInfo]
     let realStartTime: String
     let rules: Int
     let stage: Int
