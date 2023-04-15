@@ -8,4 +8,5 @@
 struct ChatMessage: Decodable {
     let sender: String
     let text: String
+    let messageLevel: MessageLevel
 }

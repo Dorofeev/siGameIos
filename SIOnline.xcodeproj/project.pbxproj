@@ -24,6 +24,7 @@
 		14C6E476288C021B0040D825 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C6E475288C021B0040D825 /* ProgressBar.swift */; };
 		14C6E47A288C0A8B0040D825 /* ProgressBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C6E479288C0A8B0040D825 /* ProgressBar.xib */; };
 		4905C0DE28431BDA00CFB6BB /* GameErrorsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905C0DD28431BDA00CFB6BB /* GameErrorsHelper.swift */; };
+		490DB53929EAAE8200C5BB32 /* MentionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DB53829EAAE8200C5BB32 /* MentionHelpers.swift */; };
 		4914D27F2807C9AF000224A1 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D27E2807C9AF000224A1 /* GameSettings.swift */; };
 		4914D2812807CA8A000224A1 /* AccountSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2802807CA89000224A1 /* AccountSettings.swift */; };
 		4914D2832807CBB0000224A1 /* ServerAppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914D2822807CBB0000224A1 /* ServerAppSettings.swift */; };
@@ -105,6 +106,8 @@
 		49C5F1E028009E9D003EB248 /* GameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5F1DF28009E9D003EB248 /* GameType.swift */; };
 		49C5F1E328015FCA003EB248 /* SettingsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C5F1E228015FCA003EB248 /* SettingsState.swift */; };
 		49C5F1EB28019CFA003EB248 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49C5F1E928019CFA003EB248 /* Localizable.strings */; };
+		49CD490529E168D500E1F134 /* ChatLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CD490429E168D500E1F134 /* ChatLogView.swift */; };
+		49CD490729E16AA300E1F134 /* MessageLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CD490629E16AA300E1F134 /* MessageLevel.swift */; };
 		49D2D83C28BB1D2A00A73B13 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2D83B28BB1D2A00A73B13 /* AboutViewController.swift */; };
 		49D2D83E28BB4A2800A73B13 /* LinkedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2D83D28BB4A2800A73B13 /* LinkedLabel.swift */; };
 		49DDBAA528C9BE89002ACEB0 /* GamesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDBAA428C9BE89002ACEB0 /* GamesListViewController.swift */; };
@@ -144,6 +147,7 @@
 		14C6E475288C021B0040D825 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		14C6E479288C0A8B0040D825 /* ProgressBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressBar.xib; sourceTree = "<group>"; };
 		4905C0DD28431BDA00CFB6BB /* GameErrorsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameErrorsHelper.swift; sourceTree = "<group>"; };
+		490DB53829EAAE8200C5BB32 /* MentionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentionHelpers.swift; sourceTree = "<group>"; };
 		4914D27E2807C9AF000224A1 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 		4914D2802807CA89000224A1 /* AccountSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettings.swift; sourceTree = "<group>"; };
 		4914D2822807CBB0000224A1 /* ServerAppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAppSettings.swift; sourceTree = "<group>"; };
@@ -228,6 +232,8 @@
 		49C5F1DF28009E9D003EB248 /* GameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameType.swift; sourceTree = "<group>"; };
 		49C5F1E228015FCA003EB248 /* SettingsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsState.swift; sourceTree = "<group>"; };
 		49C5F1EA28019CFA003EB248 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		49CD490429E168D500E1F134 /* ChatLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogView.swift; sourceTree = "<group>"; };
+		49CD490629E16AA300E1F134 /* MessageLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLevel.swift; sourceTree = "<group>"; };
 		49D2D83B28BB1D2A00A73B13 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		49D2D83D28BB4A2800A73B13 /* LinkedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedLabel.swift; sourceTree = "<group>"; };
 		49DDBAA428C9BE89002ACEB0 /* GamesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListViewController.swift; sourceTree = "<group>"; };
@@ -292,6 +298,7 @@
 				49F8ED8B28A748C700294AC7 /* StateHelpers.swift */,
 				49A3839228AD3DEB005D6D84 /* UIView+Extensions.swift */,
 				4982E50B29C711ED000EDDA1 /* UIViewController+Extension.swift */,
+				490DB53829EAAE8200C5BB32 /* MentionHelpers.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -314,6 +321,7 @@
 		14C6E474288C01810040D825 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				49CD490329E168BC00E1F134 /* ChatLog */,
 				49935C1F28C5F571007E6E8B /* CheckBox */,
 				4920A5BF28C30FE7001446C0 /* FlyoutButton */,
 				49F8ED8E28A8AC8D00294AC7 /* Dialog */,
@@ -556,6 +564,7 @@
 				495A9AE7280587FF0035ABE5 /* StakeTypes.swift */,
 				498BE63D28096E590096AF75 /* RestrictionType.swift */,
 				4942D7C028150842000B3D60 /* Constants.swift */,
+				49CD490629E16AA300E1F134 /* MessageLevel.swift */,
 			);
 			path = "Enums ";
 			sourceTree = "<group>";
@@ -578,6 +587,14 @@
 				49C5F1E928019CFA003EB248 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		49CD490329E168BC00E1F134 /* ChatLog */ = {
+			isa = PBXGroup;
+			children = (
+				49CD490429E168D500E1F134 /* ChatLogView.swift */,
+			);
+			path = ChatLog;
 			sourceTree = "<group>";
 		};
 		49D2D83A28BB1D0800A73B13 /* About */ = {
@@ -812,6 +829,7 @@
 				4914D2832807CBB0000224A1 /* ServerAppSettings.swift in Sources */,
 				49F8ED9028A8ACA600294AC7 /* Dialog.swift in Sources */,
 				49AF9E022915228A0015C7EF /* GameInfoViewController.swift in Sources */,
+				49CD490529E168D500E1F134 /* ChatLogView.swift in Sources */,
 				498BE63E28096E590096AF75 /* RestrictionType.swift in Sources */,
 				49D2D83C28BB1D2A00A73B13 /* AboutViewController.swift in Sources */,
 				49C5F1DB2800817D003EB248 /* SavedState.swift in Sources */,
@@ -857,9 +875,11 @@
 				4967FD652816E9F600A85F13 /* runReducer.swift in Sources */,
 				49C5F1D928008052003EB248 /* State.swift in Sources */,
 				49935C2128C5F591007E6E8B /* CheckBox.swift in Sources */,
+				490DB53929EAAE8200C5BB32 /* MentionHelpers.swift in Sources */,
 				49F2B7FE28846747007ED54C /* ActionCreators.swift in Sources */,
 				4942D7C128150842000B3D60 /* Constants.swift in Sources */,
 				4982E50C29C711ED000EDDA1 /* UIViewController+Extension.swift in Sources */,
+				49CD490729E16AA300E1F134 /* MessageLevel.swift in Sources */,
 				497875E12806D53C00116DE1 /* Slice.swift in Sources */,
 				495A9AE8280587FF0035ABE5 /* StakeTypes.swift in Sources */,
 				498BE63C280954700096AF75 /* DummyGameServerClient.swift in Sources */,

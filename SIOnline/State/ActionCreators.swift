@@ -29,7 +29,7 @@ class ActionCreators: NSObject {
             guard let state = getState() else { return }
             
             if state.ui.mainView == .game {
-                dispatch(RunActionCreators.chatMessageAdded(ChatMessage(sender: "", text: message)))
+                dispatch(RunActionCreators.chatMessageAdded(ChatMessage(sender: "", text: message, messageLevel: .system)))
             } else {
                 dispatch(self.receiveMessage(sender: "", message: message))
             }

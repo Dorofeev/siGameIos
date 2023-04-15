@@ -70,7 +70,7 @@ let reducer: Reducer<State> = { action, state in
     case .receiveUsers(let users):
         state.online.users = users
     case .receiveMessage(let sender, let message):
-        state.online.messages.append(ChatMessage(sender: sender, text: message))
+        state.online.messages.append(ChatMessage(sender: sender, text: message, messageLevel: .information))
     case .gameCreated(let game):
         state.online.games[game.gameID] = game
     case .gameChanged(let game):

@@ -28,7 +28,7 @@ class RunActionCreators {
             dispatch(runChatMessageChanged(""))
             
             // Временно
-            dispatch(chatMessageAdded(ChatMessage(sender: login, text: text)))
+            dispatch(chatMessageAdded(ChatMessage(sender: login, text: text, messageLevel: .information)))
             if (!state.run.chat.isVisible) {
                 dispatch(activateChat())
             }

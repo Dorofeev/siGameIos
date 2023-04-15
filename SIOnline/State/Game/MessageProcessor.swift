@@ -47,7 +47,7 @@ class MessageProcessor {
                 return
             }
             
-            let replic: ChatMessage = ChatMessage(sender: message.sender, text: message.text)
+            let replic: ChatMessage = ChatMessage(sender: message.sender, text: message.text, messageLevel: .information)
             dispatch(RunActionCreators.chatMessageAdded(replic))
             
             if !state.run.chat.isVisible && state.ui.windowWidth < 800 {
@@ -168,7 +168,7 @@ class MessageProcessor {
             if args.count > 2 {
                 let changeSource = args[2].count > 0 ? args[2] : R.string.localizable.byGame()
                 
-                dispatch(RunActionCreators.chatMessageAdded(ChatMessage(sender: "", text: R.string.localizable.hostNameChanged(changeSource, args[1]))))
+                dispatch(RunActionCreators.chatMessageAdded(ChatMessage(sender: "", text: R.string.localizable.hostNameChanged(changeSource, args[1]), messageLevel: .system)))
             }
         case "INFO2":
             info(dispatch: dispatch, args: args)
@@ -685,7 +685,7 @@ class MessageProcessor {
             return
         }
         
-        dispatch(RunActionCreators.chatMessageAdded(ChatMessage(sender: "", text: text)))
+        dispatch(RunActionCreators.chatMessageAdded(ChatMessage(sender: "", text: text, messageLevel: .system)))
     }
     
     static func preprocessServerUri(uri: String, dataContext: DataContext) -> String {
