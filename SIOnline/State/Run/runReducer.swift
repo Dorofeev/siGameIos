@@ -259,7 +259,7 @@ let runReducer: Reducer<RunState> = { action, state in
     case .hintChanged(let hint):
         state.hint = hint
     case .operationError(let error):
-        state.chat.messages.append(ChatMessage(sender: "", text: error))
+        state.chat.messages.append(ChatMessage(sender: "", text: error, messageLevel: .warning))
     case .hostNameChanged(let hostName):
         state.persons.hostName = hostName
     case .themeNameChanged(let themeName):
