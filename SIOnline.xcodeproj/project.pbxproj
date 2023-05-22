@@ -109,6 +109,7 @@
 		49C5F1EB28019CFA003EB248 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49C5F1E928019CFA003EB248 /* Localizable.strings */; };
 		49CD490529E168D500E1F134 /* ChatLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CD490429E168D500E1F134 /* ChatLogView.swift */; };
 		49CD490729E16AA300E1F134 /* MessageLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CD490629E16AA300E1F134 /* MessageLevel.swift */; };
+		49D13F622A1BAD5200A060BC /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D13F612A1BAD5200A060BC /* ChatView.swift */; };
 		49D2D83C28BB1D2A00A73B13 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2D83B28BB1D2A00A73B13 /* AboutViewController.swift */; };
 		49D2D83E28BB4A2800A73B13 /* LinkedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2D83D28BB4A2800A73B13 /* LinkedLabel.swift */; };
 		49DDBAA528C9BE89002ACEB0 /* GamesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDBAA428C9BE89002ACEB0 /* GamesListViewController.swift */; };
@@ -236,6 +237,7 @@
 		49C5F1EA28019CFA003EB248 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		49CD490429E168D500E1F134 /* ChatLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogView.swift; sourceTree = "<group>"; };
 		49CD490629E16AA300E1F134 /* MessageLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLevel.swift; sourceTree = "<group>"; };
+		49D13F612A1BAD5200A060BC /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		49D2D83B28BB1D2A00A73B13 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		49D2D83D28BB4A2800A73B13 /* LinkedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedLabel.swift; sourceTree = "<group>"; };
 		49DDBAA428C9BE89002ACEB0 /* GamesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListViewController.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 		14C6E473288C015C0040D825 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				49D13F602A1BAD5200A060BC /* Chat */,
 				49AF9E00291521B60015C7EF /* GameInfoView */,
 				49DDBAA328C9BE7A002ACEB0 /* GamesList */,
 				491BF91928C85A6700516ED9 /* LobbyMenu */,
@@ -608,6 +611,14 @@
 			path = ChatLog;
 			sourceTree = "<group>";
 		};
+		49D13F602A1BAD5200A060BC /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				49D13F612A1BAD5200A060BC /* ChatView.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		49D2D83A28BB1D0800A73B13 /* About */ = {
 			isa = PBXGroup;
 			children = (
@@ -858,6 +869,7 @@
 				4914D27F2807C9AF000224A1 /* GameSettings.swift in Sources */,
 				49C5F1D528007F46003EB248 /* Config.swift in Sources */,
 				495A9ACC28048FF40035ABE5 /* ChatMode.swift in Sources */,
+				49D13F622A1BAD5200A060BC /* ChatView.swift in Sources */,
 				494BC020280FBC64001B81E9 /* RunActions.swift in Sources */,
 				49B6BC79280004EC005AC3BE /* AppDelegate.swift in Sources */,
 				14C6E4702882CDEC0040D825 /* UnknownError.swift in Sources */,
