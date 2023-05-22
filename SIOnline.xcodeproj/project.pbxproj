@@ -84,6 +84,7 @@
 		49A3839128AD33C3005D6D84 /* LabelStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3839028AD33C3005D6D84 /* LabelStyles.swift */; };
 		49A3839328AD3DEB005D6D84 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3839228AD3DEB005D6D84 /* UIView+Extensions.swift */; };
 		49A42F0328DA08C8004D4091 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A42F0228DA08C8004D4091 /* GameTableViewCell.swift */; };
+		49A7AE9B2A1A669B002998F5 /* ChatInputEmojiPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7AE9A2A1A669B002998F5 /* ChatInputEmojiPicker.swift */; };
 		49AC2F6928A9501C0038150F /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AC2F6828A9501C0038150F /* Body.swift */; };
 		49AF9E022915228A0015C7EF /* GameInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AF9E012915228A0015C7EF /* GameInfoViewController.swift */; };
 		49B6BC79280004EC005AC3BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6BC78280004EC005AC3BE /* AppDelegate.swift */; };
@@ -207,6 +208,7 @@
 		49A3839028AD33C3005D6D84 /* LabelStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStyles.swift; sourceTree = "<group>"; };
 		49A3839228AD3DEB005D6D84 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		49A42F0228DA08C8004D4091 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
+		49A7AE9A2A1A669B002998F5 /* ChatInputEmojiPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputEmojiPicker.swift; sourceTree = "<group>"; };
 		49AC2F6828A9501C0038150F /* Body.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
 		49AF9DFF29151F090015C7EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		49AF9E012915228A0015C7EF /* GameInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfoViewController.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 		14C6E474288C01810040D825 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				49A7AE992A1A668D002998F5 /* ChatInputEmojiPicker */,
 				49CD490329E168BC00E1F134 /* ChatLog */,
 				49935C1F28C5F571007E6E8B /* CheckBox */,
 				4920A5BF28C30FE7001446C0 /* FlyoutButton */,
@@ -445,6 +448,14 @@
 				49935C2028C5F591007E6E8B /* CheckBox.swift */,
 			);
 			path = CheckBox;
+			sourceTree = "<group>";
+		};
+		49A7AE992A1A668D002998F5 /* ChatInputEmojiPicker */ = {
+			isa = PBXGroup;
+			children = (
+				49A7AE9A2A1A669B002998F5 /* ChatInputEmojiPicker.swift */,
+			);
+			path = ChatInputEmojiPicker;
 			sourceTree = "<group>";
 		};
 		49AC2F6728A94FF50038150F /* Style */ = {
@@ -839,6 +850,7 @@
 				146AC7BA2813EE7A001598FE /* TableReducer.swift in Sources */,
 				4924DC9228B20CB100D67D54 /* LoginViewController.swift in Sources */,
 				4967DE20287C6DD500B0E5B1 /* Alert.swift in Sources */,
+				49A7AE9B2A1A669B002998F5 /* ChatInputEmojiPicker.swift in Sources */,
 				4905C0DE28431BDA00CFB6BB /* GameErrorsHelper.swift in Sources */,
 				14C6E472288BF54B0040D825 /* PackageFilters.swift in Sources */,
 				495A9AE6280584840035ABE5 /* ThemeInfo.swift in Sources */,
