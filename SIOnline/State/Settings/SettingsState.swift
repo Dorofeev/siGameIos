@@ -10,6 +10,7 @@ struct SettingsState: Codable {
     var showPersonsAtBottomOnWideScreen: Bool
     var sex: Sex
     var appSettings: AppSettings
+    var isLobbyChatHidden: Bool
     
     static func initialState() -> SettingsState {
         SettingsState(
@@ -40,7 +41,8 @@ struct SettingsState: Codable {
                     timeForBlockingButton: 3
                 ),
                 culture: nil
-            )
+            ),
+            isLobbyChatHidden: false
         )
     }
 }
