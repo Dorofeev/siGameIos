@@ -14,15 +14,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let test = ChatInputEmojiPicker()
-        view.addSubview(test, activateConstraints: [
-            test.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            test.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-        test.onEmojiClick = { emoji in
-            print(emoji)
-        }
+        let test = ChatViewController()
+        let state = State.initialState()
         
+        test.newState(state: state)
+        test.setup { action in
+            print(action)
+        }
+        test.modalPresentationStyle = .overFullScreen
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+            self.present(test, animated: true)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

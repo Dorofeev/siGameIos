@@ -13,6 +13,8 @@ class ChatInputEmojiPicker: UIView {
     
     var onEmojiClick: ((String) -> Void)?
     
+    weak var presentingViewController: UIViewController?
+    
     override init(frame: CGRect) {
         emojiButton = UIButton(type: .custom)
         
@@ -47,13 +49,12 @@ class ChatInputEmojiPicker: UIView {
     }
     
     @objc private func emojiButtonTapped() {
-        print("hoba")
         let viewController = EmojiPickerViewController()
         viewController.delegate = self
         viewController.sourceView = emojiButton
+        viewController.arrowDirection = .down
         viewController.selectedEmojiCategoryTintColor = UIColor(red: 217/255, green: 227/255, blue: 249/255, alpha: 1)
-        self.window?.rootViewController?.present(viewController, animated: true)
-        
+        presentingViewController?.present(viewController, animated: true)
     }
 }
 

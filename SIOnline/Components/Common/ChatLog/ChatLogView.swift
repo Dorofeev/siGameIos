@@ -13,6 +13,7 @@ class ChatLogView: UIView {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.showsVerticalScrollIndicator = false
+        scrollView.alwaysBounceVertical = true
         return scrollView
     }()
     
