@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         test.setup { action in
             print(action)
         }
+        test.modalPresentationStyle = .overFullScreen
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
             self.present(test, animated: true)
         }

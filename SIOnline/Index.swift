@@ -10,7 +10,7 @@ import UIKit
 class Index {
     private var config: Config?
     
-    static var dataContext: DataContext?
+    static var dataContext: DataContext? = DataContext.mock()
     
     func setState(state: State, savedState: SavedState?, gameId: String?) -> State {
         guard let savedState = savedState else {

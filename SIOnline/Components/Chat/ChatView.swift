@@ -22,7 +22,10 @@ class ChatViewController: UIViewController {
         
         super.init(nibName: nil, bundle: nil)
         
+        emojiPicker.presentingViewController = self
         setupUI()
+        setupViewTapRecognizer()
+        emojiPicker.onEmojiClick = emojiSelected(emoji:)
     }
     
     required init?(coder: NSCoder) {
@@ -30,7 +33,7 @@ class ChatViewController: UIViewController {
     }
     
     private func setupUI() {
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = R.color.backgroundColor()
         
         let chatBodyHost = UIView()
         view.addEnclosedSubview(chatBodyHost)
@@ -47,15 +50,14 @@ class ChatViewController: UIViewController {
         NSLayoutConstraint.activate([
             chatLog.topAnchor.constraint(equalTo: chatBodyHost.topAnchor, constant: 7),
             chatLog.leadingAnchor.constraint(equalTo: chatBodyHost.leadingAnchor, constant: 7),
-            chatLog.trailingAnchor.constraint(equalTo: chatBodyHost.trailingAnchor, constant: 7),
-            chatLog.bottomAnchor.constraint(equalTo: inputField.topAnchor, constant: 12),
+            chatLog.trailingAnchor.constraint(equalTo: chatBodyHost.trailingAnchor, constant: -7),
+            chatLog.bottomAnchor.constraint(equalTo: inputField.topAnchor, constant: -12),
             
-            emojiPicker.leadingAnchor.constraint(equalTo: chatBodyHost.leadingAnchor),
             emojiPicker.trailingAnchor.constraint(equalTo: chatBodyHost.trailingAnchor),
-            emojiPicker.bottomAnchor.constraint(equalTo: inputField.topAnchor),
+            emojiPicker.bottomAnchor.constraint(equalTo: chatBodyHost.bottomAnchor),
             
             inputField.leadingAnchor.constraint(equalTo: chatBodyHost.leadingAnchor),
-            inputField.trailingAnchor.constraint(equalTo: chatBodyHost.trailingAnchor),
+            inputField.trailingAnchor.constraint(equalTo: emojiPicker.leadingAnchor, constant: -8),
             inputField.bottomAnchor.constraint(equalTo: chatBodyHost.bottomAnchor),
             inputField.heightAnchor.constraint(equalToConstant: 45.0)
         ])
@@ -104,9 +106,9 @@ class ChatViewController: UIViewController {
     }
     
     @objc private func sendMessage() {
-        if let message = inputField.text, !message.isEmpty {
+        if let message = inputField.text, !message.isEmpty, let dataContext = Index.dataContext {
             // Dispatch an action to send the message
-            dispatch?(ActionCreators.shared.sendMessage(dataContext: Index.dataContext!))
+            dispatch?(ActionCreators.shared.sendMessage(dataContext: dataContext))
         }
     }
     
@@ -118,17 +120,29 @@ class ChatViewController: UIViewController {
     
     @objc private func keyboardWillShow(notification: Notification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            view.frame.origin.y = -keyboardSize.height
+            view.frame.size.height = (view.window?.screen.bounds.height ?? 0) - keyboardSize.height
         }
     }
     
     @objc private func keyboardWillHide(notification: Notification) {
-        view.frame.origin.y = 0
+        view.frame.size.height = view.window?.screen.bounds.height ?? 0
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+    
+    private func setupViewTapRecognizer() {
+        let tapRecognizer = UITapGestureRecognizer(target: self,
+                                                   action: #selector(viewTapped))
+        view.addGestureRecognizer(tapRecognizer)
+    }
+    
+    @objc
+    private func viewTapped() {
+        view.endEditing(true)
+    }
+
 }
 
 extension ChatViewController: UITextFieldDelegate {

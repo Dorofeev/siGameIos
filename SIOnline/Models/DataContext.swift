@@ -20,4 +20,11 @@ class DataContext {
         self.gameClient = gameClient
         self.contentUris = contentUris
     }
+    
+    static func mock() -> DataContext {
+        let config = Config(serverUri: nil, apiUri: "", serverDiscoveryUri: nil, rootUri: "", useMessagePackProtocol: false, ads: "", forceHttps: false, rewriteUrl: false)
+        let gameClient = DummyGameServerClient()
+        return DataContext(config: config, serverUri: "", connection: nil, gameClient: gameClient, contentUris: [])
+    }
 }
+
