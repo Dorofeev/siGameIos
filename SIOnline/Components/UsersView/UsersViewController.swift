@@ -18,7 +18,7 @@ private struct UsersViewOwnProps {
     var onChatModeChanged: (ChatMode) -> Void
 }
 
-class UsersView: UIViewController {
+class UsersViewController: UIViewController {
     let lobbyMenu = LobbyMenu()
     let chat = ChatViewController()
     let usersList = UsersListView()
@@ -36,6 +36,8 @@ class UsersView: UIViewController {
         )
         self.props = props
         updateUI(with: props)
+        chat.newState(state: state)
+        usersList.newState(state: state)
     }
     
     private func updateUI(with props: UsersViewStateProps) {
@@ -83,44 +85,52 @@ class UsersView: UIViewController {
     
     func setup(dispatch: @escaping DispatchFunction) {
         self.dispatch = dispatch
+        lobbyMenu.setup(dispatch: dispatch)
+        chat.setup(dispatch: dispatch)
     }
 }
 
-extension UsersView {
+extension UsersViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         // Layout the subviews
+        let lobbyMenuWidth: CGFloat = 50
+        let widthWithoutLobbyMenu = view.frame.width - lobbyMenuWidth
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
-        let chatHostTitleView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
-        let chatBodyView = UIView(frame: CGRect(x: 0, y: 50, width: view.frame.width, height: view.frame.height - 50))
+        let chatHostTitleView = UIView(frame: CGRect(x: 0, y: 0, width: widthWithoutLobbyMenu, height: 50))
+        chat.view.frame = CGRect(x: 0, y: 50, width: widthWithoutLobbyMenu, height: view.frame.height - 50)
+        usersList.frame = CGRect(x: 0, y: 50, width: widthWithoutLobbyMenu, height: view.frame.height - 50)
         
         // Setup headerView
-        headerView.backgroundColor = UIColor.lightGray
+        headerView.backgroundColor = R.color.gameinfoBackground()
         view.addSubview(headerView)
         
         // Setup chatHostTitleView
-        chatHostTitleView.backgroundColor = UIColor.darkGray
+        chatHostTitleView.backgroundColor = R.color.standartButtonBackground()
         headerView.addSubview(chatHostTitleView)
         
-        // Setup chatBodyView
-        chatBodyView.backgroundColor = UIColor.white
-        view.addSubview(chatBodyView)
+        // Setup LobbyMenu
+        
+        lobbyMenu.frame = CGRect(x: widthWithoutLobbyMenu, y: 0, width: lobbyMenuWidth, height: 50)
+        headerView.addSubview(lobbyMenu)
         
         // Setup title labels
         let chatLabel = UILabel(frame: CGRect(x: 0, y: 0, width: chatHostTitleView.frame.width / 2, height: chatHostTitleView.frame.height))
         let usersLabel = UILabel(frame: CGRect(x: chatHostTitleView.frame.width / 2, y: 0, width: chatHostTitleView.frame.width / 2, height: chatHostTitleView.frame.height))
         
-        chatLabel.text = "Chat"
+        chatLabel.text = R.string.localizable.chat()
         chatLabel.textAlignment = .center
-        chatLabel.textColor = UIColor.white
+        chatLabel.textColor = props?.chatMode == .chat ? .white : .lightGray
+        chatLabel.backgroundColor = props?.chatMode == .chat ? R.color.loginBackground() : .clear
         chatHostTitleView.addSubview(chatLabel)
         
         if let props {
-            usersLabel.text = "Users (\(props.usersCount))"
+            usersLabel.text = R.string.localizable.users() + " (\(props.usersCount))"
         }
         usersLabel.textAlignment = .center
-        usersLabel.textColor = UIColor.white
+        usersLabel.textColor = props?.chatMode == .users ? .white : .lightGray
+        usersLabel.backgroundColor = props?.chatMode == .users ? R.color.loginBackground() : .clear
         chatHostTitleView.addSubview(usersLabel)
         
         // Add tap gesture recognizer to labels
@@ -131,6 +141,8 @@ extension UsersView {
         let usersTapGesture = UITapGestureRecognizer(target: self, action: #selector(usersLabelTapped))
         usersLabel.isUserInteractionEnabled = true
         usersLabel.addGestureRecognizer(usersTapGesture)
+        
+        view.backgroundColor = R.color.backgroundColor()
     }
     
     @objc func chatLabelTapped() {
