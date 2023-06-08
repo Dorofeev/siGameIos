@@ -117,6 +117,7 @@
 		49DDBAA528C9BE89002ACEB0 /* GamesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDBAA428C9BE89002ACEB0 /* GamesListViewController.swift */; };
 		49E7BC522806EAA900843FB7 /* PackageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E7BC512806EAA900843FB7 /* PackageKey.swift */; };
 		49ECB0C02885ABCF00963195 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ECB0BF2885ABCF00963195 /* File.swift */; };
+		49EDDE6D2A3210C600E749CD /* SIPackagesActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EDDE6C2A3210C600E749CD /* SIPackagesActions.swift */; };
 		49F2B7FC28826766007ED54C /* FileKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F2B7FB28826766007ED54C /* FileKey.swift */; };
 		49F2B7FE28846747007ED54C /* ActionCreators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F2B7FD28846747007ED54C /* ActionCreators.swift */; };
 		49F8ED8C28A748C700294AC7 /* StateHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8ED8B28A748C700294AC7 /* StateHelpers.swift */; };
@@ -247,6 +248,7 @@
 		49DDBAA428C9BE89002ACEB0 /* GamesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListViewController.swift; sourceTree = "<group>"; };
 		49E7BC512806EAA900843FB7 /* PackageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageKey.swift; sourceTree = "<group>"; };
 		49ECB0BF2885ABCF00963195 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		49EDDE6C2A3210C600E749CD /* SIPackagesActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIPackagesActions.swift; sourceTree = "<group>"; };
 		49F2B7FB28826766007ED54C /* FileKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileKey.swift; sourceTree = "<group>"; };
 		49F2B7FD28846747007ED54C /* ActionCreators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCreators.swift; sourceTree = "<group>"; };
 		49F8ED8B28A748C700294AC7 /* StateHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateHelpers.swift; sourceTree = "<group>"; };
@@ -569,6 +571,7 @@
 		49C5F1D328007F35003EB248 /* State */ = {
 			isa = PBXGroup;
 			children = (
+				49EDDE6B2A3210AC00E749CD /* SIPackages */,
 				495A9AE0280581010035ABE5 /* Table */,
 				495A9ACF280549A00035ABE5 /* Run */,
 				49C5F1E128015FC3003EB248 /* Settings */,
@@ -656,6 +659,14 @@
 				49A42F0228DA08C8004D4091 /* GameTableViewCell.swift */,
 			);
 			path = GamesList;
+			sourceTree = "<group>";
+		};
+		49EDDE6B2A3210AC00E749CD /* SIPackages */ = {
+			isa = PBXGroup;
+			children = (
+				49EDDE6C2A3210C600E749CD /* SIPackagesActions.swift */,
+			);
+			path = SIPackages;
 			sourceTree = "<group>";
 		};
 		49F2B7FA28826758007ED54C /* Contracts */ = {
@@ -874,6 +885,7 @@
 				4914D2832807CBB0000224A1 /* ServerAppSettings.swift in Sources */,
 				49F8ED9028A8ACA600294AC7 /* Dialog.swift in Sources */,
 				49AF9E022915228A0015C7EF /* GameInfoViewController.swift in Sources */,
+				49EDDE6D2A3210C600E749CD /* SIPackagesActions.swift in Sources */,
 				49CD490529E168D500E1F134 /* ChatLogView.swift in Sources */,
 				498BE63E28096E590096AF75 /* RestrictionType.swift in Sources */,
 				49D2D83C28BB1D2A00A73B13 /* AboutViewController.swift in Sources */,
