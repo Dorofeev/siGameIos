@@ -28,6 +28,7 @@ class UsersListView: UIView {
         usersTableView.delegate = self
         self.addEnclosedSubview(usersTableView)
         usersTableView.backgroundColor = .clear
+        usersTableView.allowsSelection = false
     }
     
     func newState(state: State) {

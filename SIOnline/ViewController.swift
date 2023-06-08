@@ -15,16 +15,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = R.color.backgroundColor()
-        let test = UsersListView()
-        var state = State.initialState()
-        state.online.users = ["QWERTY", "Kormak", "Hob a bob a"]
-        state.user.login = "Kormak"
-        test.newState(state: state)
-        self.view.addEnclosedSubview(test)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        let test = UsersViewController()
+        var state = State.initialState()
+        state.online.users = ["QWERTY", "Kormak", "Hob a bob a"]
+        state.user.login = "Kormak"
+        state.settingsState.isLobbyChatHidden = false
+        state.online.chatMode = .users
+        test.newState(state: state)
+        test.setup { action in
+            print(action)
+        }
+        self.present(test, animated: true)
         
     }
     func showError(error: Error) {

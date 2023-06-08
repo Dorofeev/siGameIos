@@ -87,6 +87,8 @@
 		49A7AE9B2A1A669B002998F5 /* ChatInputEmojiPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7AE9A2A1A669B002998F5 /* ChatInputEmojiPicker.swift */; };
 		49AC2F6928A9501C0038150F /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AC2F6828A9501C0038150F /* Body.swift */; };
 		49AF9E022915228A0015C7EF /* GameInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AF9E012915228A0015C7EF /* GameInfoViewController.swift */; };
+		49B37D6D2A2649A200067D59 /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B37D6C2A2649A200067D59 /* UsersListView.swift */; };
+		49B37D702A26519100067D59 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B37D6F2A26519100067D59 /* UsersViewController.swift */; };
 		49B6BC79280004EC005AC3BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6BC78280004EC005AC3BE /* AppDelegate.swift */; };
 		49B6BC7B280004EC005AC3BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6BC7A280004EC005AC3BE /* SceneDelegate.swift */; };
 		49B6BC7D280004EC005AC3BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6BC7C280004EC005AC3BE /* ViewController.swift */; };
@@ -213,6 +215,8 @@
 		49AC2F6828A9501C0038150F /* Body.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
 		49AF9DFF29151F090015C7EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		49AF9E012915228A0015C7EF /* GameInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfoViewController.swift; sourceTree = "<group>"; };
+		49B37D6C2A2649A200067D59 /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
+		49B37D6F2A26519100067D59 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		49B6BC75280004EC005AC3BE /* SIOnline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SIOnline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B6BC78280004EC005AC3BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49B6BC7A280004EC005AC3BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -310,6 +314,8 @@
 		14C6E473288C015C0040D825 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				49B37D6E2A26517700067D59 /* UsersView */,
+				49B37D6B2A26499600067D59 /* UsersListView */,
 				49D13F602A1BAD5200A060BC /* Chat */,
 				49AF9E00291521B60015C7EF /* GameInfoView */,
 				49DDBAA328C9BE7A002ACEB0 /* GamesList */,
@@ -479,6 +485,22 @@
 				4997A7362971B43400F94D5D /* RulesCollectionViewCell.swift */,
 			);
 			path = GameInfoView;
+			sourceTree = "<group>";
+		};
+		49B37D6B2A26499600067D59 /* UsersListView */ = {
+			isa = PBXGroup;
+			children = (
+				49B37D6C2A2649A200067D59 /* UsersListView.swift */,
+			);
+			path = UsersListView;
+			sourceTree = "<group>";
+		};
+		49B37D6E2A26517700067D59 /* UsersView */ = {
+			isa = PBXGroup;
+			children = (
+				49B37D6F2A26519100067D59 /* UsersViewController.swift */,
+			);
+			path = UsersView;
 			sourceTree = "<group>";
 		};
 		49B6BC6C280004EC005AC3BE = {
@@ -840,6 +862,7 @@
 				498972C4287A8DD5007EFA67 /* ConnectionHelpers.swift in Sources */,
 				49ECB0C02885ABCF00963195 /* File.swift in Sources */,
 				49C223B6280444B8007170F4 /* GamesFilter.swift in Sources */,
+				49B37D702A26519100067D59 /* UsersViewController.swift in Sources */,
 				498BE642280970450096AF75 /* SearchEntity.swift in Sources */,
 				4914D2852807CDFA000224A1 /* GameCreationResult.swift in Sources */,
 				495A9ADB280557130035ABE5 /* PlayerStates.swift in Sources */,
@@ -870,6 +893,7 @@
 				49C5F1D528007F46003EB248 /* Config.swift in Sources */,
 				495A9ACC28048FF40035ABE5 /* ChatMode.swift in Sources */,
 				49D13F622A1BAD5200A060BC /* ChatView.swift in Sources */,
+				49B37D6D2A2649A200067D59 /* UsersListView.swift in Sources */,
 				494BC020280FBC64001B81E9 /* RunActions.swift in Sources */,
 				49B6BC79280004EC005AC3BE /* AppDelegate.swift in Sources */,
 				14C6E4702882CDEC0040D825 /* UnknownError.swift in Sources */,
