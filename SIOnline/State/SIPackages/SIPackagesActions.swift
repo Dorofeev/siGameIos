@@ -5,7 +5,10 @@
 //  Created by Andrey Dorofeev on 08.06.2023.
 //
 
-enum SIPackagesActionTypes {
+import ReSwift
+
+typealias KnownSIPackagesAction = SIPackagesActionTypes
+enum SIPackagesActionTypes: Action {
     case searchPackages
     case searchPackagesFinished(packages: [SIPackageInfo])
     case searchPackagesError(error: String?)
