@@ -20,16 +20,8 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let test = UsersViewController()
-        var state = State.initialState()
-        state.online.users = ["QWERTY", "Kormak", "Hob a bob a"]
-        state.user.login = "Kormak"
-        state.settingsState.isLobbyChatHidden = false
-        state.online.chatMode = .users
-        test.newState(state: state)
-        test.setup { action in
-            print(action)
-        }
+        let test = SIStorageDialogViewController()
+        
         self.present(test, animated: true)
         
     }
