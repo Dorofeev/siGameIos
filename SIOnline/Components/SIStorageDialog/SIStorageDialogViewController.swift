@@ -5,9 +5,18 @@
 //  Created by Andrey Dorofeev on 24.08.2023.
 //
 
+import ReSwift
 import UIKit
 
+private struct SIStorageDialogStateProps {
+    var tags: [SearchEntity]
+}
+
 class SIStorageDialogViewController: UIViewController {
+    
+    private enum StorageDialogSelector {
+        case tagId
+    }
     
     // MARK: - Public properties
     
@@ -18,7 +27,11 @@ class SIStorageDialogViewController: UIViewController {
     private let librarySearchAllTagId = SIStorageSelectorOption(key: "null", title: R.string.localizable.librarySearchAll())
     private let librarySearchNotSeTagId = SIStorageSelectorOption(key: "-1", title: R.string.localizable.librarySearchNotSet())
     
+    private var packageFilters: PackageFilters = .initial()
     private var selectedTagId: SIStorageSelectorOption?
+    
+    private var dispatch: DispatchFunction?
+    private var props: SIStorageDialogStateProps?
     
     // MARK: - Views
     
@@ -54,6 +67,31 @@ class SIStorageDialogViewController: UIViewController {
     override func loadView() {
         self.view = dialogView
     }
+    
+    // MARK: - public functions
+    
+    func newState(state: State) {
+        // Handle state updates from the Redux store
+        props = SIStorageDialogStateProps(tags: state.siPackages.tags)
+    }
+    
+    func setup(dispatch: @escaping DispatchFunction) {
+        self.dispatch = dispatch
+    }
+    
+    // MARK: - private functions
+    
+    private func onSelectorChange(selector: StorageDialogSelector) {
+        switch selector {
+        case .tagId:
+            packageFilters.tagId = selectedTagId?.key.toInt()
+        }
+        filterPackages()
+    }
+    
+    private func filterPackages() {
+        dispatch?(SIPackagesActionCreators.searchPackagesThunk(filters: packageFilters))
+    }
 }
 
 extension SIStorageDialogViewController: UITableViewDelegate, UITableViewDataSource {
@@ -75,9 +113,10 @@ extension SIStorageDialogViewController: UITableViewDelegate, UITableViewDataSou
                 selectorName: R.string.localizable.packageSubject(),
                 selectedValue: selectedTagId ?? librarySearchAllTagId,
                 options: [librarySearchAllTagId, librarySearchNotSeTagId]
+                // TODO: - add custom tags list 
             )
-        ) {
-            print($0)
+        ) { [weak self] in
+            self?.selectedTagId = $0
         }
         return cell
     }

@@ -49,7 +49,6 @@ class SIStorageSelectorCell: UITableViewCell {
     
     private lazy var arrowImageView: UIImageView = {
         let imageView = UIImageView()
-        // TODO: - Add constraints for arrowImageView
         imageView.image = R.image.arrowDown()
         return imageView
     }()
@@ -81,14 +80,18 @@ class SIStorageSelectorCell: UITableViewCell {
     private func setupLayout() {
         contentView.addEnclosedSubview(selectorBackgroundView, insets: NSDirectionalEdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
         
-        selectorBackgroundView.addSubviews([selectorNameLabel, selectorValueLabel], activateConstraints: [
+        selectorBackgroundView.addSubviews([selectorNameLabel, selectorValueLabel, arrowImageView], activateConstraints: [
             selectorNameLabel.topAnchor.constraint(equalTo: selectorBackgroundView.topAnchor, constant: 8),
             selectorNameLabel.leadingAnchor.constraint(equalTo: selectorBackgroundView.leadingAnchor, constant: 16),
             selectorNameLabel.trailingAnchor.constraint(equalTo: selectorBackgroundView.trailingAnchor, constant: -16),
+            
             selectorValueLabel.bottomAnchor.constraint(equalTo: selectorBackgroundView.bottomAnchor, constant: -8),
             selectorValueLabel.leadingAnchor.constraint(equalTo: selectorBackgroundView.leadingAnchor, constant: 16),
             selectorValueLabel.trailingAnchor.constraint(equalTo: selectorBackgroundView.trailingAnchor, constant: -16),
-            selectorValueLabel.topAnchor.constraint(equalTo: selectorNameLabel.bottomAnchor, constant: 8)
+            selectorValueLabel.topAnchor.constraint(equalTo: selectorNameLabel.bottomAnchor, constant: 8),
+            
+            arrowImageView.centerYAnchor.constraint(equalTo: selectorBackgroundView.centerYAnchor),
+            arrowImageView.trailingAnchor.constraint(equalTo: selectorBackgroundView.trailingAnchor, constant: -16)
         ])
     }
     
